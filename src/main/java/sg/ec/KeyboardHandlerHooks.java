@@ -12,7 +12,7 @@ public final class KeyboardHandlerHooks {
          return false;
       }
 
-      if ((var1 == 1 || var1 == 0) && ScriptRuntime.INSTANCE.method06198(var3, var2.keycode(), var2.modifiers(), var1 == 1)) {
+      if ((var1 == 1 || var1 == 0) && ScriptRuntime.INSTANCE.method06198(var3, var2.scancode(), var2.modifiers(), var1 == 1)) {
          return true;
       }
 

@@ -9,7 +9,6 @@ import hex.script.api.event.ScreenEvent;
 import hex.script.api.event.ScrollEvent;
 import hex.script.api.event.TickEvent;
 import hex.script.api.event.ChatEvent.TextOp;
-import net.minecraft.client.multiplayer.chat.GuiMessageSource;
 import net.minecraft.network.chat.Component;
 
 // $VF: Compiled from s

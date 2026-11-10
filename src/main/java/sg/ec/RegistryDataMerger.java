@@ -26,7 +26,6 @@ import net.minecraft.core.RegistryAccess.ImmutableRegistryAccess;
 import net.minecraft.core.RegistryAccess.RegistryEntry;
 import net.minecraft.core.RegistrySynchronization.PackedRegistryEntry;
 import net.minecraft.core.component.DataComponentMap;
-import net.minecraft.core.component.DataComponentInitializers.PendingComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.RegistryDataLoader;
@@ -181,9 +180,7 @@ public final class RegistryDataMerger {
    }
 
    private static void method08048(Provider var0) {
-      for (PendingComponents var2 : BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.build(var0)) {
-         var2.apply();
-      }
+      // 1.21.11: varsayilan component'ler kayit sirasinda baglanir, ayrica uygulamaya gerek yok.
    }
 
    private static boolean method08050() {

@@ -8,12 +8,11 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.protocol.game.ServerboundSelectBundleItemPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BundleItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.component.BundleContents.Mutable;
 
@@ -276,7 +275,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
          var var3 = var2.items();
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
-            ItemStack var5 = ((ItemStackTemplate)var3.get(var4)).create();
+            ItemStack var5 = (ItemStack)var3.get(var4);
             var1.add(var5);
             if (method05500(var5)) {
                method05489(var5, var1);
@@ -307,7 +306,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
       var var3 = var2.items();
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
-         if (var1.test(((ItemStackTemplate)var3.get(var4)).create())) {
+         if (var1.test((ItemStack)var3.get(var4))) {
             return var4;
          }
       }
@@ -368,7 +367,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
    private static void method05501(int var0, int var1, int var2) {
       if (mc.player != null && mc.gameMode != null) {
          if (mc.player.containerMenu.containerId == var0) {
-            mc.gameMode.handleContainerInput(var0, var1, var2, ClickType.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var0, var1, var2, ContainerInput.PICKUP, mc.player);
          }
       }
    }

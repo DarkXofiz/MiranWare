@@ -201,8 +201,4 @@ String.valueOf(
    public void handleStoreCookie(ClientboundStoreCookiePacket var1) {
       this.field09982.method00134(var1.key(), var1.payload());
    }
-
-   @Override
-   public void handlePostEffects(net.minecraft.network.protocol.common.ClientboundPostEffectsPacket var1) {
-   }
 }

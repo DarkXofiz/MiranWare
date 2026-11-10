@@ -7,11 +7,9 @@ import hex.api.baritone.api.Settings;
 import hex.api.baritone.utils.accessor.IEntityRenderManager;
 import java.awt.Color;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import sg.ec.BaritoneVertexConsumerAccess;
-import sg.ec.EffectRenderPipelines;
 import sg.ec.WorldVertexCollector;
 
 // $VF: Compiled from s
@@ -29,13 +27,8 @@ public interface IRenderer {
    }
 
    static BaritoneVertexConsumerAccess buffer() {
-      WorldVertexCollector var0 = PROVIDER[0];
-      if (var0 == null) {
-         return null;
-      }
-
-      RenderType sx = EffectRenderPipelines.method05562();
-      return var0.method07407(sx) instanceof BaritoneVertexConsumerAccess sxx ? sxx : null;
+      // TODO(port 1.21.11): baritone cizgi render hatti yeni render sistemine tasinacak.
+      return null;
    }
 
    static BaritoneVertexConsumerAccess startLines(Color var0, float var1) {

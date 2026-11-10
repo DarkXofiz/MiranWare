@@ -3,7 +3,6 @@ package sg.ec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.protocol.game.ServerboundAttackPacket;
 import net.minecraft.network.protocol.game.ServerboundInteractPacket;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
@@ -313,7 +312,10 @@ public final class BotInteractionController {
 
    public void method06274(int var1) {
       this.method06259();
-      this.field13917.method00123(new ServerboundAttackPacket(var1));
+      var hex$atk = CompatPackets.attack(this.field13917.method00090().method07688(), var1);
+      if (hex$atk != null) {
+         this.field13917.method00123(hex$atk);
+      }
       this.method06265(InteractionHand.MAIN_HAND);
       BotLocalPlayer var2 = this.field13917.method00090().method07688();
       if (var2 != null) {

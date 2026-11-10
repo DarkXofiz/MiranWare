@@ -17,7 +17,6 @@ import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.scores.ScoreAccess;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.Scoreboard;
-import net.minecraft.world.scores.TeamColor;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType;
 
@@ -160,8 +159,8 @@ public enum ScoreboardTextFormatter implements MinecraftAccess {
          PlayerTeam var2 = var1.getPlayersTeam(mc.player.getScoreboardName());
          if (var2 != null) {
             var var3 = var2.getColor();
-            if (var3.isPresent()) {
-               Objective var4 = var1.getDisplayObjective(((TeamColor)var3.get()).displaySlot());
+            if (DisplaySlot.teamColorToSlot(var3) != null) {
+               Objective var4 = var1.getDisplayObjective(DisplaySlot.teamColorToSlot(var3));
                if (var4 != null) {
                   return var4;
                }

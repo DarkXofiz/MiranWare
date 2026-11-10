@@ -6,7 +6,6 @@ import java.util.List;
 import net.minecraft.client.ClientRecipeBook;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientPacketListener;
-import net.minecraft.client.multiplayer.chat.ChatAbilities;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.syncher.SynchedEntityData.DataValue;
 import net.minecraft.stats.StatsCounter;
@@ -41,7 +40,7 @@ public final class BotLocalPlayer extends LocalPlayer {
    }
 
    public BotLocalPlayer(Minecraft var1, BotClientLevel var2, ClientPacketListener var3) {
-      super(var1, var2, var3, new StatsCounter(), new ClientRecipeBook(), Input.EMPTY, false, ChatAbilities.NO_RESTRICTIONS, new net.minecraft.client.player.ItemActivation());
+      super(var1, var2, var3, new StatsCounter(), new ClientRecipeBook(), Input.EMPTY, false);
       this.input = new BotKeyboardInput();
       ((LocalPlayerMixin_1170)(Object)this).ambientSoundHandlers().clear();
    }

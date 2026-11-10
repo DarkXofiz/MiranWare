@@ -757,16 +757,4 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
       }
       return 0.0;
    }
-
-   @Override
-   public void handleAddTransientBlockPacket(net.minecraft.network.protocol.game.ClientboundAddTransientBlockPacket var1) {
-   }
-
-   @Override
-   public void handleSwingAnimation(net.minecraft.network.protocol.game.ClientboundSwingAnimationPacket var1) {
-   }
-
-   @Override
-   public void handlePostEffects(net.minecraft.network.protocol.common.ClientboundPostEffectsPacket var1) {
-   }
 }

@@ -14,7 +14,6 @@ import net.minecraft.network.protocol.game.ClientboundDamageEventPacket;
 import net.minecraft.network.protocol.game.ClientboundLoginPacket;
 import net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket;
 import net.minecraft.network.protocol.game.ClientboundSectionBlocksUpdatePacket;
-import net.minecraft.network.protocol.game.ServerboundAttackPacket;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.network.protocol.game.ServerboundUseItemOnPacket;
 import net.minecraft.network.protocol.game.ServerboundUseItemPacket;
@@ -83,8 +82,8 @@ public enum ServerLatencyTracker implements MinecraftAccess {
          this.method01670(var3);
       } else if (var1 instanceof ServerboundUseItemPacket) {
          this.field03996 = System.currentTimeMillis();
-      } else if (var1 instanceof ServerboundAttackPacket var4) {
-         method01675(this.field03993, var4.entityId());
+      } else if (var1 instanceof net.minecraft.network.protocol.game.ServerboundInteractPacket var4 && CompatPackets.isAttack(var4)) {
+         method01675(this.field03993, CompatPackets.entityId(var4));
       }
    }
 

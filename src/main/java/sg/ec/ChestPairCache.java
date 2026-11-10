@@ -5,7 +5,6 @@ import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import net.minecraft.client.renderer.blockentity.BrightnessCombiner;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.DoubleBlockCombiner.BlockType;
@@ -136,7 +135,7 @@ public final class ChestPairCache {
       public int get(int var1) {
          return this.field02078 == null
             ? var1
-            : LightCoordsUtil.max(
+            : BlockEntityLightCache.maxLight(
                BlockEntityLightCache.method05926(this.field02077.getLevel(), this.field02077.getBlockPos(), this.field02077),
                BlockEntityLightCache.method05926(this.field02078.getLevel(), this.field02078.getBlockPos(), this.field02078)
             );

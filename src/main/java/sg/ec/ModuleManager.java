@@ -40,7 +40,6 @@ public enum ModuleManager implements ModuleRegistry {
    private SpearStrafe field19067;
    private Trails field19068;
    private ChinaHat field19069;
-   private Constellation field19070;
    private WindStreaks field19071;
    private WorldHelper field19072;
    private CustomHands field19073;
@@ -150,7 +149,6 @@ public enum ModuleManager implements ModuleRegistry {
       this.method08166(this.field19056 = new LowDurabilityWarn());
       this.method08166(this.field19068 = new Trails());
       this.method08166(this.field19069 = new ChinaHat());
-      this.method08166(this.field19070 = new Constellation());
       this.method08166(this.field19071 = new WindStreaks());
       this.method08166(this.field19078 = new AutoCrystal());
       this.method08166(this.field19079 = new CrystalAura());
@@ -402,10 +400,6 @@ public enum ModuleManager implements ModuleRegistry {
 
    public ChinaHat method08196() {
       return this.field19069;
-   }
-
-   public Constellation method08197() {
-      return this.field19070;
    }
 
    public WindStreaks method08198() {

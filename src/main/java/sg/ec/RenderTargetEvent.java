@@ -2,7 +2,7 @@
 package sg.ec;
 
 import com.mojang.blaze3d.pipeline.RenderTarget;
-import com.mojang.renderpearl.api.textures.GpuTextureView;
+import com.mojang.blaze3d.textures.GpuTextureView;
 
 // $VF: Compiled from s
 public class RenderTargetEvent extends Event {

@@ -6,7 +6,6 @@ import hex.script.api.Packets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ServerboundAttackPacket;
 import net.minecraft.network.protocol.game.ServerboundClientCommandPacket;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 import net.minecraft.network.protocol.game.ServerboundInteractPacket;
@@ -57,11 +56,13 @@ public final class ScriptPacketsAdapter implements MinecraftAccess {
       }
 
       if (var0 == 0) {
-         return new ServerboundAttackPacket(var10.getId());
+         return ServerboundInteractPacket.createAttackPacket(var10, var9);
       }
 
       Vec3 sx = var0 == 2 ? new Vec3(var2, var4, var6) : Vec3.ZERO;
-      return new ServerboundInteractPacket(var10.getId(), method03451(var8), sx, var9);
+      return var0 == 2
+         ? ServerboundInteractPacket.createInteractionPacket(var10, var9, method03451(var8), sx)
+         : ServerboundInteractPacket.createInteractionPacket(var10, var9, method03451(var8));
    }
 
    private static boolean method03450(Object var0) {

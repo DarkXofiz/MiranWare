@@ -13,8 +13,7 @@ import net.minecraft.client.multiplayer.CommonListenerCookie;
 import net.minecraft.client.multiplayer.LevelLoadTracker;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerData.Type;
-import net.minecraft.client.GuiMessage;
-import net.minecraft.client.multiplayer.chat.GuiMessageSource;
+import net.minecraft.client.multiplayer.chat.GuiMessage;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.client.resources.server.ServerPackManager.PackPromptStatus;
 import net.minecraft.network.Connection;
@@ -198,7 +197,7 @@ public final class BotSessionTransfer implements MinecraftAccess {
       int var4 = mc.gui.hud.getGuiTicks();
 
       for (int var5 = var2.size() - 1; var5 >= 0; var5--) {
-         var3.add(new GuiMessage(var4, (Component)var2.get(var5), null, GuiMessageSource.SYSTEM_SERVER, null));
+         var3.add(new GuiMessage(var4, (Component)var2.get(var5), null, null));
       }
 
       return new State(var3, var1, List.of());

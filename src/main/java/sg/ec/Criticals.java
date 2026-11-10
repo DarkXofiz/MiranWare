@@ -7,7 +7,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.common.ServerboundPongPacket;
 import net.minecraft.network.protocol.game.ClientboundExplodePacket;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
-import net.minecraft.network.protocol.game.ServerboundAttackPacket;
 import net.minecraft.network.protocol.game.ServerboundClientTickEndPacket;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
 import net.minecraft.network.protocol.game.ServerboundUseItemPacket;
@@ -175,7 +174,7 @@ public class Criticals extends ClientModule {
                this.method08129(var2, var1);
             } else if (var2 instanceof ServerboundMovePlayerPacket var3) {
                this.method08126(var3);
-            } else if (!(var2 instanceof ServerboundAttackPacket)) {
+            } else if (!CompatPackets.isAttack(var2)) {
                if (var2 instanceof ServerboundClientTickEndPacket) {
                   this.method08143(var1);
                   this.field18994 = false;
@@ -492,7 +491,7 @@ public class Criticals extends ClientModule {
    private void method08153(PacketEvent var1) {
       if (!this.method08152() && var1.method10899()) {
          Packet var2 = var1.method10897();
-         if (!(var2 instanceof ServerboundAttackPacket)) {
+         if (!CompatPackets.isAttack(var2)) {
             if (var2 instanceof ServerboundMovePlayerPacket var3) {
                if (this.field18981) {
                   this.field18981 = false;

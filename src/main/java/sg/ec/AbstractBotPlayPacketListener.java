@@ -52,7 +52,6 @@ import net.minecraft.network.protocol.game.ClientboundEntityPositionSyncPacket;
 import net.minecraft.network.protocol.game.ClientboundExplodePacket;
 import net.minecraft.network.protocol.game.ClientboundForgetLevelChunkPacket;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
-import net.minecraft.network.protocol.game.ClientboundGameRuleValuesPacket;
 import net.minecraft.network.protocol.game.ClientboundGameTestHighlightPosPacket;
 import net.minecraft.network.protocol.game.ClientboundHurtAnimationPacket;
 import net.minecraft.network.protocol.game.ClientboundInitializeBorderPacket;
@@ -61,7 +60,6 @@ import net.minecraft.network.protocol.game.ClientboundLevelEventPacket;
 import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
 import net.minecraft.network.protocol.game.ClientboundLightUpdatePacket;
 import net.minecraft.network.protocol.game.ClientboundLoginPacket;
-import net.minecraft.network.protocol.game.ClientboundLowDiskSpaceWarningPacket;
 import net.minecraft.network.protocol.game.ClientboundMapItemDataPacket;
 import net.minecraft.network.protocol.game.ClientboundMerchantOffersPacket;
 import net.minecraft.network.protocol.game.ClientboundMountScreenOpenPacket;
@@ -154,10 +152,6 @@ public abstract class AbstractBotPlayPacketListener implements ClientGamePacketL
 
    @Override
    public void handleLogin(ClientboundLoginPacket var1) {
-   }
-
-   @Override
-   public void handleLowDiskSpaceWarning(ClientboundLowDiskSpaceWarningPacket var1) {
    }
 
    @Override
@@ -534,10 +528,6 @@ public abstract class AbstractBotPlayPacketListener implements ClientGamePacketL
 
    @Override
    public void handleUpdateAdvancementsPacket(ClientboundUpdateAdvancementsPacket var1) {
-   }
-
-   @Override
-   public void handleGameRuleValues(ClientboundGameRuleValuesPacket var1) {
    }
 
    @Override
