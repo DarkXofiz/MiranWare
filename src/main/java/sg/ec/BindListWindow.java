@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -102,7 +102,7 @@ public class BindListWindow extends FloatingWindow {
    private static final float field04090 = 0.5F;
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method01691();
       this.method09557(this.method09569() && this.field04040 != null);
@@ -120,7 +120,7 @@ public class BindListWindow extends FloatingWindow {
       var1.pose().popMatrix();
    }
 
-   private void method01681(GuiGraphicsExtractor var1, float var2) {
+   private void method01681(GuiGraphics var1, float var2) {
       ThemeSettings var3 = ThemeManager.INSTANCE.method09611();
       int var4 = ColorUtils.method04611(
          ColorUtils.method04583(var3.field22121.method11676(), ColorUtils.field10170, field04075), field04076 * var2
@@ -238,7 +238,7 @@ public class BindListWindow extends FloatingWindow {
       return false;
    }
 
-   private void method01687(GuiGraphicsExtractor var1, float var2) {
+   private void method01687(GuiGraphics var1, float var2) {
       float var3 = var2 * var2 * (field04048 - 2.0F * var2);
       float var4 = field04049 + field04050 * var3;
       float var5 = this.method09576() + this.method09568() / 2.0F;
@@ -248,7 +248,7 @@ public class BindListWindow extends FloatingWindow {
       var1.pose().translate(-var5, -this.method09560());
    }
 
-   private void method01688(GuiGraphicsExtractor var1, GuiBounds var2, float var3, float var4) {
+   private void method01688(GuiGraphics var1, GuiBounds var2, float var3, float var4) {
       float var5 = var2.method02808() + (var2.method02802() - this.field04031.method09485(var3)) / 2.0F;
       this.field04031
          .method09473(var1, field04073, var2.method02809() + var2.method02804() / 2.0F, var5, ColorUtils.method04611(field04074, var4), var3);
@@ -302,7 +302,7 @@ public class BindListWindow extends FloatingWindow {
       }
    }
 
-   private void method01695(GuiGraphicsExtractor var1, float var2) {
+   private void method01695(GuiGraphics var1, float var2) {
       ThemeSettings var3 = ThemeManager.INSTANCE.method09611();
       float var4 = this.method09560() + (field04069 - this.field04031.method09485(field04070)) / 2.0F;
       this.field04031

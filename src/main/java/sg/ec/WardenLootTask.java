@@ -11,7 +11,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.phys.BlockHitResult;
 
 // $VF: Compiled from s
@@ -123,7 +123,7 @@ public final class WardenLootTask extends AbstractBotTask implements MinecraftAc
    }
 
    @Override
-   public void method01776(int var1, int var2, ContainerInput var3) {
+   public void method01776(int var1, int var2, ClickType var3) {
       AbstractContainerMenu var4 = this.method01765();
       if (var4 == null) {
          InventoryUtils.method06123(var1, var2, var3, false);

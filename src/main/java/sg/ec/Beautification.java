@@ -6,7 +6,7 @@ import java.util.List;
 import net.minecraft.client.AttackIndicatorStatus;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Hud;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
@@ -97,7 +97,7 @@ public class Beautification extends ClientModule {
    @Subscribe
    private void method03468(PlayerListRenderEvent var1) {
       if (this.field07747) {
-         GuiGraphicsExtractor var2 = var1.method04114();
+         GuiGraphics var2 = var1.method04114();
          Matrix3x2fStack sx = var2.pose();
          float sxx = var1.method04122();
          switch (var1.method04113()) {
@@ -182,7 +182,7 @@ public class Beautification extends ClientModule {
       }
    }
 
-   private void method03474(GuiGraphicsExtractor var1, DeltaTracker var2, Player var3, Beautification.Nested99 var4) {
+   private void method03474(GuiGraphics var1, DeltaTracker var2, Player var3, Beautification.Nested99 var4) {
       int var5 = var4.field07809();
       int var6 = var4.field07810();
       ItemStack var7 = var4.stack();
@@ -225,7 +225,7 @@ public class Beautification extends ClientModule {
             } else {
                this.field07745++;
                if (!this.field07744) {
-                  GuiGraphicsExtractor var2 = var1.method05378();
+                  GuiGraphics var2 = var1.method05378();
                   AnimationUtils var3 = var1.method05376();
                   var3.method03375(1.0);
                   float var4 = Math.max(field07782, Math.min(1.0F, var3.method03377()));
@@ -253,7 +253,7 @@ public class Beautification extends ClientModule {
       };
    }
 
-   private void method03478(GuiGraphicsExtractor var1, Beautification.Nested99 var2) {
+   private void method03478(GuiGraphics var1, Beautification.Nested99 var2) {
       int var3 = var2.field07809();
       int var4 = var2.field07810();
       ItemStack var5 = var2.stack();
@@ -280,7 +280,7 @@ public class Beautification extends ClientModule {
          if (this.field07749) {
             Minecraft var2 = var1.method09175();
             Hud var3 = var1.method09180();
-            GuiGraphicsExtractor var4 = var1.method09170();
+            GuiGraphics var4 = var1.method09170();
             DeltaTracker var5 = var1.method09181();
             Player var6 = ((HudMixin_1316)(Object)var3).IgetCameraPlayer();
             int var7 = ColorUtils.method04604(0, 0, 0);

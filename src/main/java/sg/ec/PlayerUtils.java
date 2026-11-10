@@ -21,7 +21,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.AABB;
@@ -75,7 +75,7 @@ public final class PlayerUtils implements MinecraftAccess {
    public static void method11806(Minecraft var0) {
       if (var0 != null && var0.player != null && var0.gameMode != null && mc.player != null) {
          var0.gameMode
-            .handleContainerInput(var0.player.containerMenu.containerId, 36 + mc.player.getInventory().getSelectedSlot(), 1, ContainerInput.THROW, var0.player);
+            .handleContainerInput(var0.player.containerMenu.containerId, 36 + mc.player.getInventory().getSelectedSlot(), 1, ClickType.THROW, var0.player);
       }
    }
 
@@ -297,7 +297,7 @@ public final class PlayerUtils implements MinecraftAccess {
       if (var0 != null && var0.player != null && var0.gameMode != null) {
          for (int var1 = 0; var1 < var0.player.containerMenu.slots.size(); var1++) {
             if (!var0.player.containerMenu.slots.get(var1).getItem().isEmpty()) {
-               var0.gameMode.handleContainerInput(mc.player.containerMenu.containerId, var1, 1, ContainerInput.THROW, var0.player);
+               var0.gameMode.handleContainerInput(mc.player.containerMenu.containerId, var1, 1, ClickType.THROW, var0.player);
             }
          }
       }

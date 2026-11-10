@@ -4,7 +4,7 @@ package sg.ec;
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
@@ -69,7 +69,7 @@ public class FireWorkESP extends ClientModule {
       int var6 = ColorUtils.method04597(30, 30, 30, 150);
       float var7 = (float)this.field27951.method03022().longValue();
       boolean var8 = this.field27952.method03022();
-      GuiGraphicsExtractor var9 = var1.method05424();
+      GuiGraphics var9 = var1.method05424();
       PoseStack var10 = var1.method05425();
       ItemRenderUtils.method08410();
       GuiRenderBatch.method05194();

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.CharacterEvent;
@@ -263,7 +263,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       }
    }
 
-   private void drawToggle(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private void drawToggle(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       ProxyManager var6 = ProxyManager.INSTANCE;
       boolean var7 = var6.method05240();
       float var8 = field02962;
@@ -324,7 +324,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       return new TextInputWidget[]{this.field02817, this.field02818, this.field02819, this.field02820, this.field02821};
    }
 
-   private void drawTypeChip(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private void drawTypeChip(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       ProxyScreen.Nested39 var7 = new ProxyScreen.Nested39(var4, var5, var6, field02953);
       float var8 = this.ease(field02954, var7.has(var2, var3));
       RoundedRectRenderer.method01272(
@@ -343,7 +343,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       );
    }
 
-   private void drawRow(GuiGraphicsExtractor var1, float var2, float var3, ProxyConfig var4, float var5, float var6, float var7, boolean var8) {
+   private void drawRow(GuiGraphics var1, float var2, float var3, ProxyConfig var4, float var5, float var6, float var7, boolean var8) {
       FontRenderer var9 = Fonts.field00110;
       boolean var10 = var4.method03913().equals(this.field02823);
       float var11 = this.state("active:" + var4.method03913(), ProxyManager.INSTANCE.method05229(var4.method03913()));
@@ -469,7 +469,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       return super.mouseClicked(var1, var2);
    }
 
-   private void drawList(GuiGraphicsExtractor var1, float var2, float var3, List<ProxyConfig> var4, float var5, float var6, float var7, int var8) {
+   private void drawList(GuiGraphics var1, float var2, float var3, List<ProxyConfig> var4, float var5, float var6, float var7, int var8) {
       FontRenderer var9 = Fonts.field00110;
       if (var4.isEmpty()) {
          RoundedRectRenderer.method01272(var1, var5, var6, var7, field02889, field02890, 1.0F, this.col(inactiveField(), field02891));
@@ -505,7 +505,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractRenderState(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
       super.extractRenderState(var1, var2, var3, var4);
       this.field02815.clear();
       this.field02816.clear();
@@ -586,7 +586,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       return ColorUtils.method04631(var0, var1, var2);
    }
 
-   private void drawField(GuiGraphicsExtractor var1, float var2, String var3, TextInputWidget var4, float var5, float var6, float var7) {
+   private void drawField(GuiGraphics var1, float var2, String var3, TextInputWidget var4, float var5, float var6, float var7) {
       float var8 = this.ease(var3, var4.method06726());
       RoundedRectRenderer.method01272(
          var1, var5, var6, var7, field02948, field02949, 1.0F, mix(this.col(inactiveField(), field02950), this.col(field(), field02951), var8)
@@ -698,7 +698,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       return var2 || super.charTyped(var1);
    }
 
-   private void drawButtons(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private void drawButtons(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       String var7 = this.field02823.isEmpty() ? field02982 : field02983;
       float var8 = field02984;
       float var9 = (var6 - var8 * field02985) / field02986;
@@ -734,7 +734,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
       this.field02809 = var1;
    }
 
-   private void chip(GuiGraphicsExtractor var1, float var2, float var3, String var4, String var5, float var6, float var7, float var8, boolean var9) {
+   private void chip(GuiGraphics var1, float var2, float var3, String var4, String var5, float var6, float var7, float var8, boolean var9) {
       ProxyScreen.Nested39 var10 = new ProxyScreen.Nested39(var6, var7, var8, field03000);
       float var11 = this.ease(var4, var10.has(var2, var3));
       int var12 = var9 ? this.col(switcher(), field03001) : this.col(inactiveField(), field03002);

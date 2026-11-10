@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Hud;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -49,7 +49,7 @@ public class PotionsHud extends HudElement {
    private static final float field10025 = 0.001F;
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       this.method06465(this.field09995.method02685());
       this.method06453(this.field09995.method02669());

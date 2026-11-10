@@ -9,7 +9,7 @@ import com.mojang.blaze3d.platform.Window;
 import java.util.ArrayList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -82,7 +82,7 @@ public class ContainerHelper extends ClientModule {
             }
          }
 
-         var7.forEach(var1x -> mc.gameMode.handleContainerInput(var2.getMenu().containerId, var1x, 1, ContainerInput.THROW, mc.player));
+         var7.forEach(var1x -> mc.gameMode.handleContainerInput(var2.getMenu().containerId, var1x, 1, ClickType.THROW, mc.player));
          var3.setReturnValue(true);
       }
    }
@@ -104,7 +104,7 @@ public class ContainerHelper extends ClientModule {
                if (var8.isActive() && var8.hasItem() && this.method03215(var4, var8, var2, var3)) {
                   int var9 = this.field07047.method03022();
                   if (var9 == 0 || this.field07050.method04690(var9)) {
-                     ((AbstractContainerScreenMixin)(Object)var4).IonMouseClick(var8, var8.index, 0, ContainerInput.QUICK_MOVE);
+                     ((AbstractContainerScreenMixin)(Object)var4).IonMouseClick(var8, var8.index, 0, ClickType.QUICK_MOVE);
                      this.field07050.method04694();
                   }
                }

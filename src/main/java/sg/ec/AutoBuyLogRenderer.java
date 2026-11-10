@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BooleanSupplier;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 
@@ -329,7 +329,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
          this.field08922.method03375(this.method04044(var5, var6) ? 1.0 : 0.0);
          this.field08924.method03375(this.field08929.ordinal());
          this.field08947 = null;
-         GuiGraphicsExtractor var7 = var1.method10118();
+         GuiGraphics var7 = var1.method10118();
          var7.pose().pushMatrix();
          var7.pose().translate((1.0F - var4) * field08958 * this.method04022(var1), 0.0F);
          ItemRenderUtils.method08410();
@@ -382,7 +382,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       }
    }
 
-   private void method04025(GuiGraphicsExtractor var1, float var2) {
+   private void method04025(GuiGraphics var1, float var2) {
       ThemeSettings var3 = ThemeManager.INSTANCE.method09611();
       FontRenderer var4 = Fonts.field00110;
       float var5 = this.field08931 + this.field08933 - field09124;
@@ -446,7 +446,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
          : AuctionSaleHistory.field07563.method03356(AutoBuyItemRegistry.INSTANCE.method10998()).size();
    }
 
-   private void method04030(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, PurchaseHistory.Nested87 var6, float var7) {
+   private void method04030(GuiGraphics var1, float var2, float var3, float var4, float var5, PurchaseHistory.Nested87 var6, float var7) {
       ThemeSettings var8 = ThemeManager.INSTANCE.method09611();
       this.method04033(
          var1,
@@ -466,7 +466,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       );
    }
 
-   private void method04031(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method04031(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.field08935 - this.field08934;
       if (var5 <= 1.0F) {
          this.method04051();
@@ -540,7 +540,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       }
    }
 
-   private void method04032(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method04032(GuiGraphics var1, int var2, int var3, float var4) {
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       float var6 = this.field08931 + field09015;
       float var7 = this.field08930 + field09016;
@@ -566,7 +566,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
    }
 
    private void method04033(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -645,7 +645,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       return AutoBuyManager.INSTANCE.method09774().method09139();
    }
 
-   private void method04036(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method04036(GuiGraphics var1, int var2, int var3, float var4) {
       this.field08918.method04065(var1, var2, var3, var4, field09012);
       this.field08919.method04065(var1, var2, var3, var4, field09013);
       this.field08920.method04065(var1, var2, var3, var4, field09014);
@@ -692,7 +692,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
    }
 
    private float method04039(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, AutoBuyLogRenderer.Nested120 var6, boolean var7, boolean var8
+      GuiGraphics var1, float var2, float var3, float var4, float var5, AutoBuyLogRenderer.Nested120 var6, boolean var7, boolean var8
    ) {
       ThemeSettings var9 = ThemeManager.INSTANCE.method09611();
       var6.field09167.method03375(var8 ? 1.0 : 0.0);
@@ -723,7 +723,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       return var10;
    }
 
-   private void method04040(GuiGraphicsExtractor var1, float var2) {
+   private void method04040(GuiGraphics var1, float var2) {
       ThemeSettings var3 = ThemeManager.INSTANCE.method09611();
       GuiClipStack.method00341(var1, this.field08930, this.field08931, this.field08932, this.field08933, field09005, 1.0F, field09006, var2);
       RoundedRectRenderer.method01272(
@@ -748,7 +748,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       );
    }
 
-   private void method04041(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method04041(GuiGraphics var1, int var2, int var3, float var4) {
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       FontRenderer var6 = Fonts.field00110;
       float var7 = this.field08938 / AutoBuyLogRenderer.Nested119.values().length;
@@ -814,7 +814,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       }
    }
 
-   private void method04048(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, AuctionSaleHistory.Nested94 var6, float var7) {
+   private void method04048(GuiGraphics var1, float var2, float var3, float var4, float var5, AuctionSaleHistory.Nested94 var6, float var7) {
       ThemeSettings var8 = ThemeManager.INSTANCE.method09611();
       boolean var9 = var6.isSold();
       this.method04033(
@@ -911,7 +911,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       }
    }
 
-   private void method04057(GuiGraphicsExtractor var1, float var2) {
+   private void method04057(GuiGraphics var1, float var2) {
       if (method04034()) {
          FontRenderer var3 = Fonts.field00110;
          float var4 = this.field08931 + this.field08933 - field09117 - field09118;
@@ -935,7 +935,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       return ColorUtils.method04583(ThemeManager.INSTANCE.method09611().field22119.method11676(), ColorUtils.field10170, field09164);
    }
 
-   private void method04060(GuiGraphicsExtractor var1, float var2) {
+   private void method04060(GuiGraphics var1, float var2) {
       float var3 = this.field08935 - this.field08934;
       float var4 = this.method04029() * field09139;
       this.field08943 = var3 > 1.0F && var4 > var3 + 1.0F;
@@ -964,7 +964,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
       }
    }
 
-   private void method04061(GuiGraphicsExtractor var1, float var2, float var3) {
+   private void method04061(GuiGraphics var1, float var2, float var3) {
       RoundedRectRenderer.method01272(
          var1,
          this.field08930 + field09135,
@@ -1055,7 +1055,7 @@ public final class AutoBuyLogRenderer implements MinecraftAccess {
          this.field09178 = var4;
       }
 
-      void method04065(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+      void method04065(GuiGraphics var1, float var2, float var3, float var4, float var5) {
          ThemeSettings var6 = ThemeManager.INSTANCE.method09611();
          FontRenderer var7 = Fonts.field00110;
          boolean var8 = this.field09172.getAsBoolean();

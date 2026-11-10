@@ -1,7 +1,7 @@
 // Original binary: sg/ec/ZhYyXlgAv4bMoTYq
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class ScrollbarRenderer {
@@ -13,7 +13,7 @@ public final class ScrollbarRenderer {
    private ScrollbarRenderer() {
    }
 
-   public static void method06911(GuiGraphicsExtractor var0, float var1, float var2, float var3) {
+   public static void method06911(GuiGraphics var0, float var1, float var2, float var3) {
       float var4 = var3 * var3 * (field15577 - 2.0F * var3);
       float var5 = field15578 + field15579 * var4;
       var0.pose().pushMatrix();

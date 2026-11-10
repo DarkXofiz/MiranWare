@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -171,7 +171,7 @@ public class ItemPickerWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method07268();
       this.method07269();
@@ -251,7 +251,7 @@ public class ItemPickerWindow extends FloatingWindow {
       this.field17694 = var2;
    }
 
-   private void method07274(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method07274(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.method07266();
       float var6 = this.method07272();
       boolean var7 = GuiHitTestUtils.method05624(var2, var3, var5, var6, field17718, this.field17701);

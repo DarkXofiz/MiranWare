@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ThemeTabBar extends GuiComponent {
@@ -26,7 +26,7 @@ public class ThemeTabBar extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       int var5 = ColorUtils.method04611(ThemeManager.INSTANCE.method09611().field22117.method11676(), var4 * field00407);
       GuiShapeRenderer.method09703(var1, this.method09780(), this.method09782(), this.method09784(), this.method09785(), field00408, 1.0F, var5);
       FontRenderer var6 = Fonts.field00109;

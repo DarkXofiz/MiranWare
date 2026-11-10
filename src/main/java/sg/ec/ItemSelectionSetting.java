@@ -1,7 +1,7 @@
 // Original binary: sg/ec/Gfl81bYOibVzR5gB
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ItemSelectionSetting extends Setting<Object> {
@@ -74,7 +74,7 @@ public class ItemSelectionSetting extends Setting<Object> {
 
    // $VF: Compiled from s
    public interface Nested108 {
-      void method03687(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8);
+      void method03687(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8);
    }
 
    // $VF: Compiled from s

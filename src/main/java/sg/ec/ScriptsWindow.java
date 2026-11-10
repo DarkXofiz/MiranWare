@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ScriptsWindow extends FloatingWindow {
@@ -57,7 +57,7 @@ public class ScriptsWindow extends FloatingWindow {
    private static final float field02189 = 0.5F;
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       float var5 = this.method09573().method06173() * GuiHitTestUtils.method05621(var4);
       GuiRenderBatch.method05183();
@@ -82,7 +82,7 @@ public class ScriptsWindow extends FloatingWindow {
       }
    }
 
-   private void method00952(GuiGraphicsExtractor var1, ScriptsWindow.Nested34 var2, SmoothAnimation var3, float var4, int var5, int var6, float var7) {
+   private void method00952(GuiGraphics var1, ScriptsWindow.Nested34 var2, SmoothAnimation var3, float var4, int var5, int var6, float var7) {
       float var8 = this.method09576() + field02170;
       float var9 = this.method09568() - field02171;
       var3.method06162();

@@ -1,7 +1,7 @@
 // Original binary: sg/ec/6kqkTDEv8eocCMBF
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public abstract class ClientScreen implements MinecraftAccess {
@@ -31,7 +31,7 @@ public abstract class ClientScreen implements MinecraftAccess {
    protected void method01466() {
    }
 
-   protected final void method01467(GuiGraphicsExtractor var1, float var2, float var3) {
+   protected final void method01467(GuiGraphics var1, float var2, float var3) {
       float var4 = GuiHitTestUtils.method05621(this.method01470());
       float var5 = var4 * var4 * (field03574 - 2.0F * var4);
       float var6 = field03575 + field03576 * var5;
@@ -64,7 +64,7 @@ public abstract class ClientScreen implements MinecraftAccess {
       return false;
    }
 
-   protected abstract void method01472(GuiGraphicsExtractor var1, int var2, int var3, float var4);
+   protected abstract void method01472(GuiGraphics var1, int var2, int var3, float var4);
 
    boolean method01473() {
       return this.field03573 && !this.field03571.method06171();
@@ -87,7 +87,7 @@ public abstract class ClientScreen implements MinecraftAccess {
       return false;
    }
 
-   void method01478(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   void method01478(GuiGraphics var1, int var2, int var3, float var4) {
       this.field03571.method06162();
       if (!this.field03573 || !this.field03571.method06171()) {
          GuiScaleUtils.method06750(var1);

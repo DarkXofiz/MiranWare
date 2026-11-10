@@ -14,7 +14,7 @@ import java.util.function.DoubleSupplier;
 import java.util.function.IntConsumer;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
@@ -47,7 +47,7 @@ public abstract class SettingsListWindow extends FloatingWindow {
    private static final String field15368 = "field15368";
    protected final FontRenderer field15369 = GuiThemeStyle.field03544;
    protected final GuiClickRegions field15370 = new GuiClickRegions();
-   protected GuiGraphicsExtractor field15371;
+   protected GuiGraphics field15371;
    protected float field15372;
    protected float field15373;
    protected float field15374;
@@ -152,7 +152,7 @@ public abstract class SettingsListWindow extends FloatingWindow {
    private static final float field15473 = 0.5F;
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.field15371 = var1;
       this.field15372 = var2;

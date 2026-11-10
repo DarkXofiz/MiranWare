@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 
 // $VF: Compiled from s
 public final class AutoBuyRefreshController implements MinecraftAccess {
@@ -33,7 +33,7 @@ public final class AutoBuyRefreshController implements MinecraftAccess {
                this.field21321++;
                this.field21319 = true;
                this.field21322 = var1 + field21324;
-               AuctionContainerUtils.method02614(sx, sxx, ContainerInput.PICKUP);
+               AuctionContainerUtils.method02614(sx, sxx, ClickType.PICKUP);
             }
          }
       } else {

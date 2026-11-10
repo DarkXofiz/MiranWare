@@ -20,7 +20,7 @@ import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.HashOps;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -134,7 +134,7 @@ public final class BotContainerController {
       }
    }
 
-   public void method03053(int var1, int var2, ContainerInput var3) {
+   public void method03053(int var1, int var2, ClickType var3) {
       BotLocalPlayer var4 = this.field06843.method00090().method07688();
       if (var4 != null) {
          AbstractContainerMenu var5 = this.field06844 != null ? this.field06844 : var4.inventoryMenu;

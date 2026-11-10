@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import ru.dreamix.protection.api.impl.profile.ProfileAPI;
 
 // $VF: Compiled from s
@@ -106,7 +106,7 @@ public class WaterMarkHud extends HudElement {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       float var2 = 0.0F;
 

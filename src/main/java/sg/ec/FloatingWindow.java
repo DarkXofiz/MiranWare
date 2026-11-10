@@ -1,7 +1,7 @@
 // Original binary: sg/ec/mp1fBGOUC2gEZuq5
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class FloatingWindow implements MinecraftAccess {
@@ -41,7 +41,7 @@ public class FloatingWindow implements MinecraftAccess {
       return this.field21777;
    }
 
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       this.field21766.method06162();
       this.field21767.method06162();
       this.field21766.method06168(this.field21774 ? 1.0 : field21783, field21784, Easings.field19412, true);

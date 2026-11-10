@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import org.joml.Vector2f;
 
 // $VF: Compiled from s
@@ -144,7 +144,7 @@ public enum WaypointManager {
 
       if (!this.field22155.isEmpty()) {
          PoseStack var2 = var1.method05425();
-         GuiGraphicsExtractor var3 = var1.method05424();
+         GuiGraphics var3 = var1.method05424();
          long var4 = System.currentTimeMillis();
          FontRenderer.method09475();
 

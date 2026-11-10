@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.function.Consumer;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class TextInputWidget implements MinecraftAccess {
@@ -53,7 +53,7 @@ public class TextInputWidget implements MinecraftAccess {
       this.field15009 = var1;
    }
 
-   public void method06670(GuiGraphicsExtractor var1, double var2, float var4) {
+   public void method06670(GuiGraphics var1, double var2, float var4) {
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       this.method06725(
          var1,
@@ -126,7 +126,7 @@ public class TextInputWidget implements MinecraftAccess {
       return this.field15008;
    }
 
-   private void method06683(GuiGraphicsExtractor var1, float var2, int var3) {
+   private void method06683(GuiGraphics var1, float var2, int var3) {
       if (this.method06690()) {
          int var4 = Math.min(Math.min(this.field15003, this.field15004), this.field15001.length());
          int var5 = Math.min(Math.max(this.field15003, this.field15004), this.field15001.length());
@@ -425,7 +425,7 @@ public class TextInputWidget implements MinecraftAccess {
       this.field15023 = field15026;
    }
 
-   public void method06725(GuiGraphicsExtractor var1, double var2, int var4, int var5, int var6) {
+   public void method06725(GuiGraphics var1, double var2, int var4, int var5, int var6) {
       this.field15023 = FrameClock.method09542();
       this.field15000.method06162();
       float var7 = this.field15018 + this.field15012 + this.method06668();

@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ScriptConsoleWindow extends ScrollableWindow {
@@ -71,7 +71,7 @@ public class ScriptConsoleWindow extends ScrollableWindow {
       );
    }
 
-   private void method08349(GuiGraphicsExtractor var1, ScriptLogManager.Nested233 var2, float var3) {
+   private void method08349(GuiGraphics var1, ScriptLogManager.Nested233 var2, float var3) {
       float var4 = this.field21185.method02809() + 1.0F;
       int var5 = GuiThemeStyle.method01443(method08350(var2.level()), this.field21186);
       var4 = this.method08351(var1, var2.stamp(), var4, var3, GuiThemeStyle.method01445(field19217 * this.field21186));
@@ -93,13 +93,13 @@ public class ScriptConsoleWindow extends ScrollableWindow {
       };
    }
 
-   private float method08351(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5) {
+   private float method08351(GuiGraphics var1, String var2, float var3, float var4, int var5) {
       this.field19199.method09480(var1, var2, var3, var4, var5, field19219);
       return var3 + this.field19199.method09486(var2, field19220) + field19221;
    }
 
    @Override
-   protected void method01894(GuiGraphicsExtractor var1, int var2, int var3) {
+   protected void method01894(GuiGraphics var1, int var2, int var3) {
       var var4 = ScriptLogManager.INSTANCE.method08084();
       float var5 = var4.size() * field19211;
       this.method08348(var5);

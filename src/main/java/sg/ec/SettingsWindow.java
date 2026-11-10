@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -97,7 +97,7 @@ public class SettingsWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method08971(this.method04689());
       this.field10262.method01145();

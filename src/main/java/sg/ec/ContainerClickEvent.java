@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // $VF: Compiled from s
@@ -12,7 +12,7 @@ public class ContainerClickEvent extends Event {
    private int field08469;
    private int field08470;
    private int field08471;
-   private ContainerInput field08472;
+   private ClickType field08472;
 
    public Player method03767() {
       return this.field08468;
@@ -22,7 +22,7 @@ public class ContainerClickEvent extends Event {
       this.field08469 = var1;
    }
 
-   public void method03769(int var1, int var2, int var3, ContainerInput var4, Player var5, CallbackInfo var6) {
+   public void method03769(int var1, int var2, int var3, ClickType var4, Player var5, CallbackInfo var6) {
       this.field08469 = var1;
       this.field08470 = var2;
       this.field08471 = var3;
@@ -38,7 +38,7 @@ public class ContainerClickEvent extends Event {
       this.field08468 = var1;
    }
 
-   public ContainerInput method03771() {
+   public ClickType method03771() {
       return this.field08472;
    }
 
@@ -50,7 +50,7 @@ public class ContainerClickEvent extends Event {
       return this.field08471;
    }
 
-   public void method03774(ContainerInput var1) {
+   public void method03774(ClickType var1) {
       this.field08472 = var1;
    }
 

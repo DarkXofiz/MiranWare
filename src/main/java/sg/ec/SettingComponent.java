@@ -1,7 +1,7 @@
 // Original binary: sg/ec/uz9cGZtmohYdno5L
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public abstract class SettingComponent<T extends Setting<?>> extends GuiComponent {
@@ -38,7 +38,7 @@ public abstract class SettingComponent<T extends Setting<?>> extends GuiComponen
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.field24629.method06162();
       this.field24629.method06168(this.field24628.method03019() ? 1.0 : 0.0, field24630, Easings.field19400, false);
    }

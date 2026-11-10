@@ -12,7 +12,7 @@ import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.network.protocol.game.ClientboundContainerClosePacket;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 
 // $VF: Compiled from s
@@ -73,7 +73,7 @@ public class InventoryMove extends ClientModule {
       }
    }
 
-   private void method03545(int var1, int var2, int var3, ContainerInput var4) {
+   private void method03545(int var1, int var2, int var3, ClickType var4) {
       if (mc.player != null) {
          if (this.field07862.isEmpty()) {
             this.method03553();
@@ -190,6 +190,6 @@ public class InventoryMove extends ClientModule {
    }
 
    // $VF: Compiled from s
-   private record Nested102(int containerId, int slotNum, int buttonNum, ContainerInput input) {
+   private record Nested102(int containerId, int slotNum, int buttonNum, ClickType input) {
    }
 }

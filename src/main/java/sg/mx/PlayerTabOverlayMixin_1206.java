@@ -4,7 +4,7 @@ package sg.mx;
 import com.llamalad7.mixinextras.sugar.Local;
 import java.util.List;
 import lombok.Generated;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.world.scores.Objective;
@@ -37,18 +37,18 @@ public class PlayerTabOverlayMixin_1206 implements AnimationAccess {
    }
 
    @Inject(method = "extractRenderState", at = @At("HEAD"))
-   private void startRender(GuiGraphicsExtractor var1, int var2, Scoreboard var3, Objective var4, CallbackInfo var5) {
+   private void startRender(GuiGraphics var1, int var2, Scoreboard var3, Objective var4, CallbackInfo var5) {
       PlayerListRenderEvent.field09335.method04118(var1, PlayerListRenderEvent.Nested125.START, this.anim().method03377());
    }
 
    @Inject(method = "extractRenderState", at = @At("TAIL"))
-   private void endRender(GuiGraphicsExtractor var1, int var2, Scoreboard var3, Objective var4, CallbackInfo var5) {
+   private void endRender(GuiGraphics var1, int var2, Scoreboard var3, Objective var4, CallbackInfo var5) {
       PlayerListRenderEvent.field09335.method04118(var1, PlayerListRenderEvent.Nested125.END, this.anim().method03377());
    }
 
    @ModifyArg(
       method = "extractRenderState",
-      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(IIIII)V", ordinal = 2),
+      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;fill(IIIII)V", ordinal = 2),
       index = 4
    )
    private int onFillRowBackground(int var1, @Local(ordinal = 0) List<PlayerInfo> var2, @Local(ordinal = 4) int var3) {

@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class HudElement implements GuiElement, SettingsContainer {
@@ -90,7 +90,7 @@ public class HudElement implements GuiElement, SettingsContainer {
       this.field14612 = var1;
    }
 
-   public void method06439(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
+   public void method06439(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
       Hud var9 = ModuleManager.INSTANCE.method08274();
       if (var9.method04948()) {
          GuiClipStack.method00341(var1, var2, var3, var4, var5, var6, var7, field14641, var8);
@@ -102,7 +102,7 @@ public class HudElement implements GuiElement, SettingsContainer {
       return var2 == 0.0F ? var1 : var1 / var2;
    }
 
-   public void method06441(GuiGraphicsExtractor var1, String var2) {
+   public void method06441(GuiGraphics var1, String var2) {
       boolean var3 = this.method06447();
       int var4 = ColorUtils.method04611(this.method06460(), this.method06455());
       int var5 = this.method06438();

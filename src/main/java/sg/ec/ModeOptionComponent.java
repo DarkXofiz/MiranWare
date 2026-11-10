@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModeOptionComponent extends GuiComponent {
@@ -28,7 +28,7 @@ public class ModeOptionComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.field21830.method06162();
       this.field21830.method06158(this.field21828.method05600(this.field21829) ? 1.0 : 0.0, field21832, Easings.field19400);
       int var5 = ColorUtils.method04583(

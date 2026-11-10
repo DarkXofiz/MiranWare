@@ -1,7 +1,7 @@
 // Original binary: sg/ec/5FBbAaRpWO7t6O5M
 package sg.ec;
 
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 
 // $VF: Compiled from s
@@ -46,7 +46,7 @@ public class MaceHelper extends ClientModule {
    }
 
    private void method00934() {
-      InventoryUtils.method06137(this.field02121, this.field02119, this.field02120, ContainerInput.SWAP, mc.player);
+      InventoryUtils.method06137(this.field02121, this.field02119, this.field02120, ClickType.SWAP, mc.player);
    }
 
    private void method00935() {
@@ -125,7 +125,7 @@ public class MaceHelper extends ClientModule {
                int var1 = this.field02121;
                int var2 = this.field02119;
                int var3 = this.field02120;
-               InventoryActionManager.INSTANCE.method10470(() -> InventoryUtils.method06137(var1, var2, var3, ContainerInput.SWAP, mc.player), 1, false);
+               InventoryActionManager.INSTANCE.method10470(() -> InventoryUtils.method06137(var1, var2, var3, ClickType.SWAP, mc.player), 1, false);
             }
          }
       }

@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ThemeTabComponent extends GuiComponent {
@@ -173,7 +173,7 @@ public class ThemeTabComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.field23923.method06162();
       this.field23923.method06168(ThemeManager.INSTANCE.method09611() == this.field23922 ? 1.0 : 0.0, field23933, Easings.field19400, false);
       FontRenderer var5 = Fonts.field00109;

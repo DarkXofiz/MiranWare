@@ -1,7 +1,7 @@
 // Original binary: sg/ec/UMqUv4z9uvn0al77
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ColorSettingComponent extends SettingComponent<ColorSetting> {
@@ -19,7 +19,7 @@ public class ColorSettingComponent extends SettingComponent<ColorSetting> {
    private static final float field12488 = 4.0F;
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       float var5 = this.method09780();
       float sx = this.method09782();

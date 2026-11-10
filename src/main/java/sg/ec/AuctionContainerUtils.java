@@ -5,7 +5,7 @@ import java.util.Locale;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
@@ -62,7 +62,7 @@ public final class AuctionContainerUtils implements MinecraftAccess {
       return -1;
    }
 
-   public static void method02614(AbstractContainerMenu var0, int var1, ContainerInput var2) {
+   public static void method02614(AbstractContainerMenu var0, int var1, ClickType var2) {
       if (var0 != null && mc.player != null && mc.gameMode != null && var1 >= 0 && var1 < var0.slots.size()) {
          mc.gameMode.handleContainerInput(var0.containerId, var1, 0, var2, mc.player);
       }

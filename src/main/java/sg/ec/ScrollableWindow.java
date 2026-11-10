@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BooleanSupplier;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -87,7 +87,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
    private static final float field21239 = 10.0F;
    private static final float field21240 = 0.5F;
 
-   private void method09302(GuiGraphicsExtractor var1, int var2, int var3) {
+   private void method09302(GuiGraphics var1, int var2, int var3) {
       float var4 = this.method09304(var1, var2, var3);
       float sx = this.method09576() + field21200;
       float sxx = var4 - field21201 - sx;
@@ -121,7 +121,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
    protected void method01901(double var1, double var3, int var5) {
    }
 
-   private float method09304(GuiGraphicsExtractor var1, int var2, int var3) {
+   private float method09304(GuiGraphics var1, int var2, int var3) {
       var var4 = this.method01897();
       float var5 = this.method09560() + field21208 - field21209;
       float var6 = this.method09576() + this.method09568() - field21210 - field21211;
@@ -224,7 +224,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
    protected void method01899(double var1, double var3, double var5) {
    }
 
-   private void method09309(GuiGraphicsExtractor var1) {
+   private void method09309(GuiGraphics var1) {
       int var2 = GuiThemeStyle.method01445(field21223 * this.field21186);
       float var3 = this.method09576() + this.method09568() - field21224;
       float var4 = this.method09560() + this.method09574() - field21225;
@@ -261,7 +261,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.field21186 = this.method09573().method06173() * GuiHitTestUtils.method05621(var4);
       this.method09306(var2, var3);
@@ -281,7 +281,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
       var1.pose().popMatrix();
    }
 
-   protected abstract void method01894(GuiGraphicsExtractor var1, int var2, int var3);
+   protected abstract void method01894(GuiGraphics var1, int var2, int var3);
 
    @Override
    public boolean method01686() {
@@ -290,7 +290,7 @@ public abstract class ScrollableWindow extends FloatingWindow {
 
    // $VF: Compiled from s
    protected interface Nested256 {
-      void method09317(GuiGraphicsExtractor var1, float var2, float var3, int var4);
+      void method09317(GuiGraphics var1, float var2, float var3, int var4);
    }
 
    // $VF: Compiled from s

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import org.joml.Matrix3x2fStack;
 
 // $VF: Compiled from s
@@ -134,7 +134,7 @@ public class HudManager implements HudRenderComponent {
       }
    }
 
-   public void method00022(GuiGraphicsExtractor var1, float var2, float var3) {
+   public void method00022(GuiGraphics var1, float var2, float var3) {
       Matrix3x2fStack var4 = var1.pose();
       ItemRenderUtils.method08410();
       GuiRenderBatch.method05194();
@@ -200,7 +200,7 @@ public class HudManager implements HudRenderComponent {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       float var2 = (float)(mc.mouseHandler.xpos() / mc.getWindow().getGuiScale());
       float var3 = (float)(mc.mouseHandler.ypos() / mc.getWindow().getGuiScale());
       this.method00022(var1, var2, var3);

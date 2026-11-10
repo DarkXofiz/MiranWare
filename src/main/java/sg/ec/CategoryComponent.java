@@ -1,7 +1,7 @@
 // Original binary: sg/ec/n1tu7djxSdKgQlEG
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class CategoryComponent extends GuiComponent {
@@ -45,7 +45,7 @@ public class CategoryComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       FontRenderer var5 = Fonts.field00109;
       float var6 = field21806;
       this.field21805.method06162();

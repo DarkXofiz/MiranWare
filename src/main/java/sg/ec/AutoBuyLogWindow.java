@@ -5,7 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
@@ -173,7 +173,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
       this.field22303.method01134(var2, this.field22305.method02802());
    }
 
-   private void method09902(GuiGraphicsExtractor var1) {
+   private void method09902(GuiGraphics var1) {
       ThemeSettings var2 = GuiThemeStyle.method01441();
       float var3 = this.method09560() + (field22337 - this.field22301.method09485(field22338)) / 2.0F;
       this.field22301
@@ -192,7 +192,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
          );
    }
 
-   private float method09903(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private float method09903(GuiGraphics var1, float var2, float var3, float var4) {
       for (PurchaseHistory.Nested87 var6 : PurchaseHistory.field06969.method03142(AutoBuyItemRegistry.INSTANCE.method10998())) {
          if (var2 + field22352 >= var3 && var2 <= var4) {
             String var7 = var6.seller().isBlank() ? field22353 : var6.seller();
@@ -237,7 +237,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
    }
 
    private void method09904(
-      GuiGraphicsExtractor var1, float var2, ItemStack var3, String var4, String var5, String var6, String var7, String var8, boolean var9
+      GuiGraphics var1, float var2, ItemStack var3, String var4, String var5, String var6, String var7, String var8, boolean var9
    ) {
       ThemeSettings var10 = GuiThemeStyle.method01441();
       float var11 = this.method09576() + field22360;
@@ -286,7 +286,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
          );
    }
 
-   private void method09905(GuiGraphicsExtractor var1, float var2) {
+   private void method09905(GuiGraphics var1, float var2) {
       float var3 = var2 * var2 * (field22317 - 2.0F * var2);
       float var4 = field22318 + field22319 * var3;
       float var5 = this.method09576() + this.method09568() / 2.0F;
@@ -323,7 +323,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.field22308 = this.method09573().method06173() * GuiHitTestUtils.method05621(var4);
       this.method09906(var2, var3);
@@ -337,7 +337,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
       var1.pose().popMatrix();
    }
 
-   private void method09907(GuiGraphicsExtractor var1) {
+   private void method09907(GuiGraphics var1) {
       float var2 = this.field22305.method02808();
       float var3 = var2 + this.field22305.method02802();
       var1.enableScissor(
@@ -379,7 +379,7 @@ public class AutoBuyLogWindow extends FloatingWindow {
       this.method09561(field22315);
    }
 
-   private float method09909(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private float method09909(GuiGraphics var1, float var2, float var3, float var4) {
       for (AuctionSaleHistory.Nested94 var6 : AuctionSaleHistory.field07563.method03356(AutoBuyItemRegistry.INSTANCE.method10998())) {
          if (var2 + field22355 >= var3 && var2 <= var4) {
             boolean var7 = var6.isSold();

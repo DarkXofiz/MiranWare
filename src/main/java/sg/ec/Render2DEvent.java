@@ -2,12 +2,12 @@
 package sg.ec;
 
 import com.mojang.blaze3d.platform.Window;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class Render2DEvent extends Event {
    public static final Render2DEvent field07060 = new Render2DEvent();
-   private GuiGraphicsExtractor field07061;
+   private GuiGraphics field07061;
    private Window field07062;
    private int field07063;
    private int field07064;
@@ -28,7 +28,7 @@ public class Render2DEvent extends Event {
       return this.field07062;
    }
 
-   public void method03223(GuiGraphicsExtractor var1, Window var2, int var3, int var4) {
+   public void method03223(GuiGraphics var1, Window var2, int var3, int var4) {
       this.field07061 = var1;
       this.field07062 = var2;
       this.field07063 = var3;
@@ -36,7 +36,7 @@ public class Render2DEvent extends Event {
       super.method03208();
    }
 
-   public void method03224(GuiGraphicsExtractor var1) {
+   public void method03224(GuiGraphics var1) {
       this.field07061 = var1;
    }
 
@@ -44,7 +44,7 @@ public class Render2DEvent extends Event {
       this.field07062 = var1;
    }
 
-   public GuiGraphicsExtractor method03226() {
+   public GuiGraphics method03226() {
       return this.field07061;
    }
 

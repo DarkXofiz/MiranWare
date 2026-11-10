@@ -1,7 +1,7 @@
 // Original binary: sg/ec/6fbCuvdHA6l4xYSq
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class GuiThemeStyle {
@@ -57,7 +57,7 @@ public final class GuiThemeStyle {
    }
 
    public static void method01444(
-      GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, String var5, float var6, GuiThemeStyle.Nested40 var7, float var8
+      GuiGraphics var0, float var1, float var2, float var3, float var4, String var5, float var6, GuiThemeStyle.Nested40 var7, float var8
    ) {
       String var9 = method01438(field03544, var5, field03557, var3 - field03558);
       if (var7 == GuiThemeStyle.Nested40.NORMAL) {
@@ -81,11 +81,11 @@ public final class GuiThemeStyle {
       return method01443(method01441().field22113.method11676(), var0);
    }
 
-   public static void method01447(GuiGraphicsExtractor var0, float var1, float var2, float var3, int var4, float var5) {
+   public static void method01447(GuiGraphics var0, float var1, float var2, float var3, int var4, float var5) {
       RoundedRectRenderer.method01272(var0, var1 - var3, var2 - var3, var3 * 2.0F, var3 * 2.0F, var3, 1.0F, method01443(var4, var5));
    }
 
-   public static void method01448(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public static void method01448(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       if (var6 > field03555) {
          RoundedRectRenderer.method01272(var0, var1, var2, var3, var4, var5, 1.0F, method01437(field03556 * var6 * var7));
       }

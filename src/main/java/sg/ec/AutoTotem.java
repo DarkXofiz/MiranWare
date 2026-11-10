@@ -24,7 +24,7 @@ import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.vehicle.minecart.MinecartTNT;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -211,7 +211,7 @@ public class AutoTotem extends ClientModule {
          this.field19758.method07548(45, var1);
       }
 
-      InventoryUtils.method06137(mc.player.containerMenu.containerId, var1, 40, ContainerInput.SWAP, mc.player);
+      InventoryUtils.method06137(mc.player.containerMenu.containerId, var1, 40, ClickType.SWAP, mc.player);
    }
 
    private float method08635() {

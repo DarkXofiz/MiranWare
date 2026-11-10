@@ -1,11 +1,11 @@
 // Original binary: sg/ec/TqIc2R1vkf9aiEgL
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public interface GuiOverlay {
-   void method02847(GuiGraphicsExtractor var1, int var2, int var3, float var4);
+   void method02847(GuiGraphics var1, int var2, int var3, float var4);
 
    void method02852();
 

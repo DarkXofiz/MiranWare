@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.Locale;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class GuiInputRenderer {
@@ -69,7 +69,7 @@ public final class GuiInputRenderer {
       return var0 + field20081 - GuiThemeStyle.field03544.method09485(field20082) / 2.0F - field20083;
    }
 
-   public static void method08816(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6) {
+   public static void method08816(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6) {
       ThemeSettings var7 = GuiThemeStyle.method01441();
       int var8 = GuiThemeStyle.method01440(
          GuiThemeStyle.method01443(var7.field22120.method11679(), var6), GuiThemeStyle.method01443(var7.field22119.method11679(), var6), var5
@@ -78,7 +78,7 @@ public final class GuiInputRenderer {
    }
 
    public static void method08817(
-      GuiGraphicsExtractor var0, String var1, GuiThemeStyle.Nested40 var2, float var3, float var4, float var5, float var6, float var7
+      GuiGraphics var0, String var1, GuiThemeStyle.Nested40 var2, float var3, float var4, float var5, float var6, float var7
    ) {
       GuiThemeStyle.method01444(var0, var3, var4, var5, field20101, var1, var6, var2, var7);
    }
@@ -91,7 +91,7 @@ public final class GuiInputRenderer {
       return GuiThemeStyle.field03544.method09486(var0, field20097) + field20098;
    }
 
-   public static float method08820(GuiGraphicsExtractor var0, String var1, float var2, float var3, float var4) {
+   public static float method08820(GuiGraphics var0, String var1, float var2, float var3, float var4) {
       ThemeSettings var5 = GuiThemeStyle.method01441();
       String var6 = FontFallbackManager.method07179(var1.toUpperCase(Locale.ROOT), var5.method09800(), var5.method09809());
       GuiThemeStyle.field03543.method09480(var0, var6, var2 + field20073, var3, ColorUtils.method04611(-1, var4), field20074);
@@ -99,7 +99,7 @@ public final class GuiInputRenderer {
    }
 
    public static void method08821(
-      GuiGraphicsExtractor var0, TextInputWidget var1, String var2, float var3, float var4, float var5, float var6, float var7, float var8
+      GuiGraphics var0, TextInputWidget var1, String var2, float var3, float var4, float var5, float var6, float var7, float var8
    ) {
       float var9 = method08818(var2, var3);
       float var10 = var3 + var4 - field20092 - var9;
@@ -108,7 +108,7 @@ public final class GuiInputRenderer {
       var1.method06700(var9, var11, var10, field20096).method06670(var0, var6, var8);
    }
 
-   public static void method08822(GuiGraphicsExtractor var0, String var1, boolean var2, float var3, float var4, float var5, float var6, float var7) {
+   public static void method08822(GuiGraphics var0, String var1, boolean var2, float var3, float var4, float var5, float var6, float var7) {
       GuiThemeStyle.method01444(
          var0,
          var3 + field20102,
@@ -122,17 +122,17 @@ public final class GuiInputRenderer {
       );
    }
 
-   public static void method08823(GuiGraphicsExtractor var0, String var1, float var2, float var3, float var4) {
+   public static void method08823(GuiGraphics var0, String var1, float var2, float var3, float var4) {
       GuiThemeStyle.field03544.method09480(var0, var1, var2 + field20084, method08815(var3), GuiThemeStyle.method01437(var4), field20085);
    }
 
-   public static void method08824(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5) {
+   public static void method08824(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5) {
       RoundedRectRenderer.method01272(
          var0, var1, var2, var3, var4, field20077, 1.0F, GuiThemeStyle.method01443(GuiThemeStyle.method01439(), field20078 * var5)
       );
    }
 
-   public static void method08825(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4) {
+   public static void method08825(GuiGraphics var0, float var1, float var2, float var3, float var4) {
       RoundedRectRenderer.method01272(
          var0,
          var1 + 1.0F,
@@ -145,7 +145,7 @@ public final class GuiInputRenderer {
       );
    }
 
-   public static void method08826(GuiGraphicsExtractor var0, String var1, float var2, float var3, float var4, int var5) {
+   public static void method08826(GuiGraphics var0, String var1, float var2, float var3, float var4, int var5) {
       float var6 = GuiThemeStyle.field03544.method09486(var1, field20086);
       GuiThemeStyle.field03544.method09480(var0, var1, var2 + var3 - field20087 - var6, method08815(var4), var5, field20088);
    }

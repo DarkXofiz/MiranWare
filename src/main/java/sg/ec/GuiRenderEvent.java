@@ -2,13 +2,13 @@
 package sg.ec;
 
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class GuiRenderEvent extends Event {
    public static final GuiRenderEvent field19167 = new GuiRenderEvent();
    private DeltaTracker field19168;
-   private GuiGraphicsExtractor field19169;
+   private GuiGraphics field19169;
    private int field19170;
    private int field19171;
 
@@ -16,7 +16,7 @@ public class GuiRenderEvent extends Event {
       return this.field19170;
    }
 
-   public void method08308(DeltaTracker var1, GuiGraphicsExtractor var2, int var3, int var4) {
+   public void method08308(DeltaTracker var1, GuiGraphics var2, int var3, int var4) {
       this.field19168 = var1;
       this.field19169 = var2;
       this.field19170 = var3;
@@ -28,11 +28,11 @@ public class GuiRenderEvent extends Event {
       this.field19170 = var1;
    }
 
-   public void method08310(GuiGraphicsExtractor var1) {
+   public void method08310(GuiGraphics var1) {
       this.field19169 = var1;
    }
 
-   public GuiGraphicsExtractor method08311() {
+   public GuiGraphics method08311() {
       return this.field19169;
    }
 

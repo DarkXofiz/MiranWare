@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,7 +26,7 @@ public final class AutoBuyLocalExecutor implements AutoBuyExecutor, MinecraftAcc
    }
 
    @Override
-   public void method02863(AbstractContainerMenu var1, int var2, ContainerInput var3) {
+   public void method02863(AbstractContainerMenu var1, int var2, ClickType var3) {
       AuctionContainerUtils.method02614(var1, var2, var3);
    }
 

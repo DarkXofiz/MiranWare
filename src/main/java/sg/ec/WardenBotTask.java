@@ -7,7 +7,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.phys.BlockHitResult;
 
 // $VF: Compiled from s
@@ -188,7 +188,7 @@ public final class WardenBotTask extends AbstractBotTask {
    }
 
    @Override
-   public void method01776(int var1, int var2, ContainerInput var3) {
+   public void method01776(int var1, int var2, ClickType var3) {
       this.method01758().method01776(var1, var2, var3);
    }
 

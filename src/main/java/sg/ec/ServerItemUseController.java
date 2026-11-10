@@ -4,7 +4,7 @@ package sg.ec;
 import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 
 // $VF: Compiled from s
@@ -166,7 +166,7 @@ public final class ServerItemUseController implements MinecraftAccess {
    private void method11658() {
       if (mc.player != null && mc.player.containerMenu != null && mc.gameMode != null) {
          int var1 = mc.player.containerMenu.containerId;
-         mc.gameMode.handleContainerInput(var1, this.field26500, this.field26502, ContainerInput.SWAP, mc.player);
+         mc.gameMode.handleContainerInput(var1, this.field26500, this.field26502, ClickType.SWAP, mc.player);
       }
    }
 

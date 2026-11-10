@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -192,7 +192,7 @@ public class ThemeEditorWindow extends FloatingWindow {
       }
    }
 
-   private void method06772(GuiGraphicsExtractor var1, ThemeSettings var2, float var3) {
+   private void method06772(GuiGraphics var1, ThemeSettings var2, float var3) {
       if (this.field15058) {
          this.field15063.method06162();
          this.field15063.method06168(this.field15059 ? 0.0 : 1.0, field15156, Easings.field19400, true);
@@ -324,7 +324,7 @@ public class ThemeEditorWindow extends FloatingWindow {
       this.method09557(this.field15054.method06726());
    }
 
-   private void method06775(GuiGraphicsExtractor var1, ThemeSettings var2, float var3) {
+   private void method06775(GuiGraphics var1, ThemeSettings var2, float var3) {
       float var4 = this.method09576() + field15088;
       float var5 = this.method09560() + field15089;
       float var6 = field15090;
@@ -371,7 +371,7 @@ public class ThemeEditorWindow extends FloatingWindow {
       this.method09561(field15069);
    }
 
-   private void method06776(GuiGraphicsExtractor var1, ThemeSettings var2, ThemeSettings var3, float var4, float var5, float var6) {
+   private void method06776(GuiGraphics var1, ThemeSettings var2, ThemeSettings var3, float var4, float var5, float var6) {
       FontRenderer var7 = Fonts.field00111;
       float var8 = field15142;
       String var9 = var3.method09815();
@@ -411,7 +411,7 @@ public class ThemeEditorWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       float var6 = this.method09573().method06173();
@@ -453,7 +453,7 @@ public class ThemeEditorWindow extends FloatingWindow {
       this.method09557(false);
    }
 
-   private void method06779(GuiGraphicsExtractor var1, int var2, float var3, ThemeSettings var4) {
+   private void method06779(GuiGraphics var1, int var2, float var3, ThemeSettings var4) {
       float var5 = this.method09576() + field15081;
       float var6 = this.method09560() + field15082;
       float var7 = field15083;
@@ -471,7 +471,7 @@ public class ThemeEditorWindow extends FloatingWindow {
          );
    }
 
-   private void method06780(GuiGraphicsExtractor var1, int var2, int var3, ThemeSettings var4, float var5) {
+   private void method06780(GuiGraphics var1, int var2, int var3, ThemeSettings var4, float var5) {
       var var6 = ThemeManager.INSTANCE.method09636();
       ThemeSettings var7 = ThemeManager.INSTANCE.method09611();
       float var8 = this.method09576() + field15121;
@@ -601,7 +601,7 @@ public class ThemeEditorWindow extends FloatingWindow {
       return this.field15058;
    }
 
-   private void method06787(GuiGraphicsExtractor var1, int var2, int var3, ThemeSettings var4, float var5, float var6, float var7) {
+   private void method06787(GuiGraphics var1, int var2, int var3, ThemeSettings var4, float var5, float var6, float var7) {
       float var8 = this.method09576();
       float var9 = this.method09560();
       float var10 = this.method09568();

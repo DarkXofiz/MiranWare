@@ -3,7 +3,7 @@ package sg.ec;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -88,7 +88,7 @@ public class EntityESP extends ClientModule {
    private static final float field20908 = 1.0E-4F;
 
    private void method09203(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -256,7 +256,7 @@ public class EntityESP extends ClientModule {
       return var1 & field20890 | var3 << 24;
    }
 
-   private void method09214(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, CornerColors var6) {
+   private void method09214(GuiGraphics var1, float var2, float var3, float var4, float var5, CornerColors var6) {
       RoundedRectRenderer.method01275(var1, var2, var3, var4, var5, 0.0F, field20904, var6);
    }
 
@@ -282,7 +282,7 @@ public class EntityESP extends ClientModule {
       }
    }
 
-   private void method09216(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6) {
+   private void method09216(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6) {
       this.method09214(var1, var2, var3, var4, var5, new CornerColors(var6));
    }
 
@@ -305,7 +305,7 @@ public class EntityESP extends ClientModule {
       }
    }
 
-   public void method09218(GuiGraphicsExtractor var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8) {
+   public void method09218(GuiGraphics var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8) {
       int var9 = ColorUtils.Nested138.method04638(80);
       int var10 = ColorUtils.Nested138.method04638(260);
       float var11 = 1.0F;
@@ -340,7 +340,7 @@ public class EntityESP extends ClientModule {
       return this.field20854.length;
    }
 
-   private void method09220(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
+   private void method09220(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
       this.method09214(var1, var2 - var8, var3 - var8, var4 + var8 * 2.0F, var5 + var8 * 2.0F, new CornerColors(var6, var7, var7, var6));
    }
 
@@ -395,7 +395,7 @@ public class EntityESP extends ClientModule {
       };
    }
 
-   private void method09226(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
+   private void method09226(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
       float var9 = var2 - field20897;
       float var10 = var3;
       float var11 = Math.max(1.0F, var4 - var3);
@@ -410,7 +410,7 @@ public class EntityESP extends ClientModule {
    @Subscribe(0)
    private void method09227(HudRenderEvent var1) {
       if (mc.player != null && mc.level != null) {
-         GuiGraphicsExtractor var2 = var1.method05424();
+         GuiGraphics var2 = var1.method05424();
          PoseStack var3 = var1.method05425();
          float var4 = var1.method05421().getGameTimeDeltaPartialTick(true);
          this.field20860 = ColorUtils.Nested138.method04638(80);
@@ -424,7 +424,7 @@ public class EntityESP extends ClientModule {
       return var3 > field20907 ? var3 : 0.0F;
    }
 
-   public void method09229(GuiGraphicsExtractor var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7) {
+   public void method09229(GuiGraphics var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7) {
       this.field20857.method10354(var1, var2, var3, var4, var5, var6, var7);
    }
 
@@ -434,7 +434,7 @@ public class EntityESP extends ClientModule {
       this.field20857.method10338();
    }
 
-   private void method09230(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
+   private void method09230(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
       float var9 = var4 - var2;
       float var10 = var5 - var3;
       if (!(var9 < 2.0F) && !(var10 < 2.0F)) {
@@ -459,7 +459,7 @@ public class EntityESP extends ClientModule {
       return var2 > field20908 ? var2 : 0.0F;
    }
 
-   private void method09232(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
+   private void method09232(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7, float var8) {
       float var9 = var4 - var2;
       float var10 = var5 - var3;
       if (!(var9 < 2.0F) && !(var10 < 2.0F)) {
@@ -496,7 +496,7 @@ public class EntityESP extends ClientModule {
    }
 
    private void method09238(
-      GuiGraphicsExtractor var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8, float var9
+      GuiGraphics var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8, float var9
    ) {
       if (var3.method07129() || var3.method07122()) {
          this.method09203(var1, var4, var5, var6, var7, var2, var3, this.field20860, this.field20861, var8, var9);

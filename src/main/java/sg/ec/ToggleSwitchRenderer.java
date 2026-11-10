@@ -1,7 +1,7 @@
 // Original binary: sg/ec/F4kU8J9OGljCF5YK
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class ToggleSwitchRenderer {
@@ -22,7 +22,7 @@ public final class ToggleSwitchRenderer {
    private static final float field07255 = 1.5F;
    private static final float field07256 = 0.8F;
 
-   public static void method03323(GuiGraphicsExtractor var0, GuiBounds var1, float var2, float var3) {
+   public static void method03323(GuiGraphics var0, GuiBounds var1, float var2, float var3) {
       ThemeSettings var4 = ThemeManager.INSTANCE.method09611();
       int sx = ColorUtils.method04631(
          ColorUtils.method04611(var4.field22114.method11679(), var3), ColorUtils.method04611(var4.field22113.method11679(), var3), var2

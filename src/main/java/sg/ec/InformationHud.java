@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class InformationHud extends HudElement {
@@ -116,7 +116,7 @@ public class InformationHud extends HudElement {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       this.method09877();
       float var2 = this.method06455();

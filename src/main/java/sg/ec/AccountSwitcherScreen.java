@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import net.minecraft.client.User;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
@@ -162,7 +162,7 @@ public class AccountSwitcherScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+   public void extractRenderState(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
       super.extractRenderState(graphics, mouseX, mouseY, delta);
       int cx = this.width / 2;
       graphics.centeredText(this.font, "Аккаунты", cx, 14, -1);

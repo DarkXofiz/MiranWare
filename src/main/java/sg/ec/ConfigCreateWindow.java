@@ -1,7 +1,7 @@
 // Original binary: sg/ec/ZRIjZCXUBtLrJSyx
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ConfigCreateWindow extends FloatingWindow {
@@ -73,7 +73,7 @@ public class ConfigCreateWindow extends FloatingWindow {
       return field15491 + (var0 ? field15492 : field15493) + 1.0F;
    }
 
-   private void method06866(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method06866(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       if (!(var7 <= field15524)) {
          RoundedRectRenderer.method01272(
             var1, var3 + field15525, var4 + 1.0F, var5 - field15526, var6 - 2.0F, 2.0F, 1.0F, method06867(method06870(), field15527 * var7 * var2)
@@ -116,7 +116,7 @@ public class ConfigCreateWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method08971(field15494);
       this.method09561(method06865(this.field15483));

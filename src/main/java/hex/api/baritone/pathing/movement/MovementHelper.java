@@ -48,7 +48,7 @@ import net.minecraft.world.level.block.FrostedIceBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.InfestedBlock;
 import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.LilyPadBlock;
+import net.minecraft.world.level.block.WaterlilyBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.PointedDripstoneBlock;
 import net.minecraft.world.level.block.ScaffoldingBlock;
@@ -522,7 +522,7 @@ public interface MovementHelper extends ActionCosts, Helper {
             }
 
             BlockState sxx = var0.get0(var1, var2 + 1, var3);
-            return sxx.getFluidState().isEmpty() && !(sxx.getBlock() instanceof LilyPadBlock) ? sx.getType() instanceof WaterFluid : false;
+            return sxx.getFluidState().isEmpty() && !(sxx.getBlock() instanceof WaterlilyBlock) ? sx.getType() instanceof WaterFluid : false;
          } else {
             return var4.isPathfindable(PathComputationType.LAND);
          }

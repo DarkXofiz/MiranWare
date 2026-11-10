@@ -3,7 +3,7 @@ package sg.mx;
 
 import sg.ec.InputCompat;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.Screen;
@@ -84,10 +84,10 @@ public abstract class ChatScreenMixin extends Screen {
       method = "extractRenderState",
       at = @At(
          value = "INVOKE",
-         target = "Lnet/minecraft/client/gui/components/CommandSuggestions;extractRenderState(Lnet/minecraft/client/gui/GuiGraphicsExtractor;II)V"
+         target = "Lnet/minecraft/client/gui/components/CommandSuggestions;extractRenderState(Lnet/minecraft/client/gui/GuiGraphics;II)V"
       )
    )
-   public void render(GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5) {
+   public void render(GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5) {
       Render2DEvent.field07060.method03223(var1, this.minecraft.getWindow(), var2, var3);
    }
 

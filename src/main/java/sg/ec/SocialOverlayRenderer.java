@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class SocialOverlayRenderer {
@@ -97,7 +97,7 @@ public class SocialOverlayRenderer {
    private static final float field23222 = 5.5F;
    private static final long field23223 = 150L;
 
-   private float method10277(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, SocialNotificationSounds.Nested169 var7) {
+   private float method10277(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, SocialNotificationSounds.Nested169 var7) {
       FontRenderer var8 = Fonts.field00110;
       float sx = field23153;
       GuiClipStack.method00341(var1, var5, var6, field23154, sx, field23155, 1.0F, field23156, var4);
@@ -165,7 +165,7 @@ public class SocialOverlayRenderer {
       return var4 + "…";
    }
 
-   private float method10283(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, SocialNotificationSounds.Nested169 var7) {
+   private float method10283(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, SocialNotificationSounds.Nested169 var7) {
       FontRenderer var8 = Fonts.field00110;
       float var9 = field23182;
       GuiClipStack.method00341(var1, var5, var6, field23183, var9, field23184, 1.0F, field23185, var4);
@@ -222,7 +222,7 @@ public class SocialOverlayRenderer {
       this.field23147.add(var2);
    }
 
-   public void method10287(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   public void method10287(GuiGraphics var1, float var2, float var3, float var4) {
       this.field23147.clear();
       this.field23148.clear();
       if (!(var4 <= field23149)) {
@@ -261,7 +261,7 @@ public class SocialOverlayRenderer {
       this.field23145 = var1;
    }
 
-   private void method10292(GuiGraphicsExtractor var1, SocialOverlayRenderer.Nested292 var2, String var3, float var4, int var5, float var6) {
+   private void method10292(GuiGraphics var1, SocialOverlayRenderer.Nested292 var2, String var3, float var4, int var5, float var6) {
       RoundedRectRenderer.method01272(
          var1,
          var2.field23224(),

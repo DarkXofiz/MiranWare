@@ -1,7 +1,7 @@
 // Original binary: sg/ec/RaUCiQpxGNgXYgxH
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 
 // $VF: Compiled from s
@@ -76,7 +76,7 @@ public class ItemFilterSettingComponent extends SettingComponent<ItemFilterSetti
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       ItemFilterSetting var6 = this.method10977();

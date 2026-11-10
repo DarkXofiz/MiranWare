@@ -4,7 +4,7 @@ package sg.ec;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.CharacterEvent;
 import net.minecraft.client.input.KeyEvent;
@@ -34,7 +34,7 @@ public final class KeyboardInputUtils {
    private KeyboardInputUtils() {
    }
 
-   public static void method00910(GuiGraphicsExtractor var0, float var1) {
+   public static void method00910(GuiGraphics var0, float var1) {
       if (ClientScreenManager.INSTANCE.method08318()) {
          Minecraft var2 = Minecraft.getInstance();
          Window var3 = var2.getWindow();

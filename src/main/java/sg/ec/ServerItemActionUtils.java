@@ -8,7 +8,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.protocol.game.ServerboundSelectBundleItemPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BundleItem;
 import net.minecraft.world.item.Item;
@@ -368,7 +368,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
    private static void method05501(int var0, int var1, int var2) {
       if (mc.player != null && mc.gameMode != null) {
          if (mc.player.containerMenu.containerId == var0) {
-            mc.gameMode.handleContainerInput(var0, var1, var2, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var0, var1, var2, ClickType.PICKUP, mc.player);
          }
       }
    }

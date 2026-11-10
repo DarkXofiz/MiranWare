@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 
 // $VF: Compiled from s
@@ -29,7 +29,7 @@ public class ItemHelperHud extends HudElement {
    private static final float field10258 = 6.0F;
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       float var2 = field10247;
       var sx = ModuleManager.INSTANCE.method08184().method05776();
       float sxx = 0.0F;

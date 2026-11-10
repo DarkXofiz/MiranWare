@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModeSettingComponent extends SettingComponent<ModeSetting> {
@@ -33,7 +33,7 @@ public class ModeSettingComponent extends SettingComponent<ModeSetting> {
    private static final float field10846 = 7.0F;
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       this.method04886();
       this.field10824

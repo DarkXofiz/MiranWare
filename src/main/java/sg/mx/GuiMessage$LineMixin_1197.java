@@ -1,7 +1,7 @@
 // Original binary: sg/mx/OmqPFQAcDGgs4OcL
 package sg.mx;
 
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage.Line;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

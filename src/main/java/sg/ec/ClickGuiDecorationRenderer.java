@@ -1,7 +1,7 @@
 // Original binary: sg/ec/g7LHIcPJxX4kYs5b
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class ClickGuiDecorationRenderer {
@@ -27,7 +27,7 @@ public final class ClickGuiDecorationRenderer {
    private static final float field19376 = 0.75F;
    private static final float field19377 = 9.0F;
 
-   public static void method08404(GuiGraphicsExtractor var0, float var1, float var2, String var3, float var4, float var5) {
+   public static void method08404(GuiGraphics var0, float var1, float var2, String var3, float var4, float var5) {
       ThemeSettings var6 = ThemeManager.INSTANCE.method09611();
       Fonts.field00107
          .method09487(
@@ -42,7 +42,7 @@ public final class ClickGuiDecorationRenderer {
          );
    }
 
-   public static void method08405(GuiGraphicsExtractor var0, float var1, float var2, float var3) {
+   public static void method08405(GuiGraphics var0, float var1, float var2, float var3) {
       int var4 = ColorUtils.method04605(ThemeManager.INSTANCE.method09611().field22118.method11676(), field19372 * var3);
       RoundedRectRenderer.method01272(var0, var1 + field19373 - field19374, var2 + field19375, field19376, field19377, 0.0F, 0.0F, var4);
    }
@@ -50,7 +50,7 @@ public final class ClickGuiDecorationRenderer {
    private ClickGuiDecorationRenderer() {
    }
 
-   public static void method08406(GuiGraphicsExtractor var0, float var1, float var2, int var3, float var4) {
+   public static void method08406(GuiGraphics var0, float var1, float var2, int var3, float var4) {
       RoundedRectRenderer.method01272(var0, var1, var2, var3 * field19369, field19370, field19371, 1.0F, method08407(var4));
    }
 

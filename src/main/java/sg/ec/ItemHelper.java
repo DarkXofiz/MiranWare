@@ -8,7 +8,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -101,10 +101,10 @@ public class ItemHelper extends ClientModule {
       this.field18706 = var2;
       InventoryActionManager.INSTANCE.method10469(() -> {
          if (var3 != -1) {
-            InventoryUtils.method06123(var3, var4, ContainerInput.SWAP, false);
+            InventoryUtils.method06123(var3, var4, ClickType.SWAP, false);
          }
 
-         InventoryUtils.method06123(var1, var2, ContainerInput.SWAP, false);
+         InventoryUtils.method06123(var1, var2, ClickType.SWAP, false);
       });
    }
 
@@ -397,7 +397,7 @@ public class ItemHelper extends ClientModule {
          int var2 = this.field18706;
          this.field18705 = -1;
          this.field18706 = -1;
-         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06123(var1, var2, ContainerInput.SWAP, false));
+         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06123(var1, var2, ClickType.SWAP, false));
       }
    }
 

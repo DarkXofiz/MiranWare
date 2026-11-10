@@ -1,7 +1,7 @@
 // Original binary: sg/ec/hbghSWcb4mOcy1Y0
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ThemeColorComponent extends GuiComponent {
@@ -20,7 +20,7 @@ public class ThemeColorComponent extends GuiComponent {
    private static final float field19875 = 14.0F;
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       Fonts.field00111
          .method09480(
             var1,

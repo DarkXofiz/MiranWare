@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.Identifier;
@@ -84,7 +84,7 @@ public class Arrows extends ClientModule {
    private static final String field10146 = "Друзья";
    private static final String field10147 = "Игроки";
 
-   private void method04541(GuiGraphicsExtractor var1, Vec3 var2, String var3, boolean var4) {
+   private void method04541(GuiGraphics var1, Vec3 var2, String var3, boolean var4) {
       double var5 = var2.x - mc.getEntityRenderDispatcher().camera.position().x;
       double sx = var2.z - mc.getEntityRenderDispatcher().camera.position().z;
       double sxx = Math.toRadians(this.field10094.method06159());
@@ -144,7 +144,7 @@ public class Arrows extends ClientModule {
       return this.field10087;
    }
 
-   private void method04543(GuiGraphicsExtractor var1, PartyMember var2, float var3) {
+   private void method04543(GuiGraphics var1, PartyMember var2, float var3) {
       Vec3 var4 = new Vec3(var2.method07607().field03984, var2.method07607().field03985, var2.method07607().field03986);
       Vec3 var5 = new Vec3(var2.method07582().field03984, var2.method07582().field03985, var2.method07582().field03986);
       Vec3 var6 = var4.add(var5.subtract(var4).scale(var3));
@@ -246,11 +246,11 @@ public class Arrows extends ClientModule {
       return var1 instanceof Villager || var1 instanceof WanderingTrader;
    }
 
-   private void method04550(GuiGraphicsExtractor var1, Entity var2, float var3) {
+   private void method04550(GuiGraphics var1, Entity var2, float var3) {
       this.method04541(var1, var2.getPosition(var3), var2.getName().getString(), false);
    }
 
-   private void method04551(GuiGraphicsExtractor var1, Player var2, float var3) {
+   private void method04551(GuiGraphics var1, Player var2, float var3) {
       this.method04541(var1, var2.getPosition(var3), var2.getName().getString(), FriendManager.INSTANCE.method00172(var2));
    }
 

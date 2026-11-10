@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
@@ -346,11 +346,11 @@ public class AutoBuyScreen extends ClientScreen {
       return GuiThemeStyle.field03545.method09486(var0, field04405) + field04406;
    }
 
-   private static void method01704(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4) {
+   private static void method01704(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4) {
       ItemRenderUtils.method08416(var0, var1, var2 + field04358, var3 + field04359, 1.0F, var4);
    }
 
-   private void method01705(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private void method01705(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       int var7 = GuiThemeStyle.method01441().field22120.method11676();
       int var8 = GuiThemeStyle.method01443(var7, field04338 * var6);
       int var9 = GuiThemeStyle.method01443(ColorUtils.method04583(var7, ColorUtils.field10169, field04339), var6);
@@ -370,7 +370,7 @@ public class AutoBuyScreen extends ClientScreen {
       GuiThemeStyle.method01448(var1, var2, var3, field04355, field04356, field04357, var5, var6);
    }
 
-   private void method01706(GuiGraphicsExtractor var1, AutoBuyItem var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method01706(GuiGraphics var1, AutoBuyItem var2, float var3, float var4, float var5, float var6, float var7) {
       boolean var8 = this.method01734(var3, var4, var5, var6);
       float var9 = this.method01727(var2, var8);
       float var10 = method01719(this.field04191, var2, var2.method10672());
@@ -444,7 +444,7 @@ public class AutoBuyScreen extends ClientScreen {
       return var0 + var1 / 10 * field04312;
    }
 
-   private float method01710(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private float method01710(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       var var6 = this.field04189.method09032();
       var var7 = this.field04189.method09035();
       if (var6.isEmpty() && var7.isEmpty()) {
@@ -513,7 +513,7 @@ public class AutoBuyScreen extends ClientScreen {
       AutoBuyItemRegistry.INSTANCE.method10994();
    }
 
-   private void method01714(GuiGraphicsExtractor var1, AutoBuyItemSearch.Nested251 var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method01714(GuiGraphics var1, AutoBuyItemSearch.Nested251 var2, float var3, float var4, float var5, float var6, float var7) {
       boolean var8 = this.method01734(var3, var4, var5, var6);
       float var9 = this.method01727(var2.item(), var8);
       this.method01705(var1, var3, var4, 0.0F, var9, var7);
@@ -531,7 +531,7 @@ public class AutoBuyScreen extends ClientScreen {
    }
 
    @Override
-   protected void method01472(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   protected void method01472(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.method01470();
       Vec2 var6 = GuiScaleUtils.method06746(var2, var3);
       boolean var7 = this.field04188.method09668(var6.x, var6.y);
@@ -580,7 +580,7 @@ public class AutoBuyScreen extends ClientScreen {
       return this.field04198 + field04310 + var1 % 10 * field04311;
    }
 
-   private static float method01716(GuiGraphicsExtractor var0, String var1, int var2, float var3, float var4, float var5) {
+   private static float method01716(GuiGraphics var0, String var1, int var2, float var3, float var4, float var5) {
       float var6 = method01703(var1);
       RoundedRectRenderer.method01272(var0, var3, var4, var6, field04407, field04408, 1.0F, GuiThemeStyle.method01443(var2, field04409 * var5));
       GuiThemeStyle.field03545
@@ -604,7 +604,7 @@ public class AutoBuyScreen extends ClientScreen {
       }
    }
 
-   private void method01718(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method01718(GuiGraphics var1, float var2, float var3, float var4) {
       float var5 = this.field04199 + field04290 + field04291;
       float var6 = this.field04199 + field04292 - field04293 - var5;
       this.field04196.method02801(this.field04198 + field04294);
@@ -640,7 +640,7 @@ public class AutoBuyScreen extends ClientScreen {
       return var3.method06173();
    }
 
-   private void method01720(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method01720(GuiGraphics var1, float var2, float var3, float var4) {
       ThemeSettings var5 = GuiThemeStyle.method01441();
       float var6 = this.field04199 + field04240;
       float var7 = var6 - GuiThemeStyle.field03543.method09485(field04241) / 2.0F;
@@ -707,7 +707,7 @@ public class AutoBuyScreen extends ClientScreen {
       return this.field04188.method09665() ? true : this.field04197.method06726() && this.field04197.method06730(var1);
    }
 
-   private static void method01723(GuiGraphicsExtractor var0, float var1, float var2, float var3) {
+   private static void method01723(GuiGraphics var0, float var1, float var2, float var3) {
       var0.pose().pushMatrix();
       var0.pose().translate(var1, var2);
       var0.pose().scale(var3, var3);
@@ -767,7 +767,7 @@ public class AutoBuyScreen extends ClientScreen {
       return method01719(this.field04190, var1, var2);
    }
 
-   private void method01729(GuiGraphicsExtractor var1, float var2) {
+   private void method01729(GuiGraphics var1, float var2) {
       this.field04207.method06162();
       this.field04207.method06158(this.field04205 == null && this.field04206 == null ? 0.0 : 1.0, field04360, Easings.field19400);
       float var3 = this.field04207.method06173();
@@ -870,7 +870,7 @@ public class AutoBuyScreen extends ClientScreen {
       }
    }
 
-   private void method01736(GuiGraphicsExtractor var1, float var2) {
+   private void method01736(GuiGraphics var1, float var2) {
       int var3 = GuiThemeStyle.method01443(GuiThemeStyle.method01441().field22119.method11676(), field04222 * var2);
       GuiClipStack.method00341(var1, this.field04198, this.field04199, field04223, field04224, field04225, 1.0F, field04226, var2);
       RoundedRectRenderer.method01272(var1, this.field04198, this.field04199, field04227, field04228, field04229, 1.0F, var3);

@@ -4,7 +4,7 @@ package sg.ec;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -154,7 +154,7 @@ public class AutoTool extends ClientModule {
 
    private void method08982(int var1, int var2) {
       int var3 = mc.player.containerMenu.containerId;
-      InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleContainerInput(var3, var1, var2, ContainerInput.SWAP, mc.player));
+      InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleContainerInput(var3, var1, var2, ClickType.SWAP, mc.player));
    }
 
    private void method08983() {

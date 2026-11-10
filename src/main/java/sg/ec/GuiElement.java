@@ -1,7 +1,7 @@
 // Original binary: sg/ec/egCe74PuzWZuZEPo
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public interface GuiElement extends MinecraftAccess {
@@ -20,7 +20,7 @@ public interface GuiElement extends MinecraftAccess {
    default void method00018() {
    }
 
-   default void method00027(GuiGraphicsExtractor var1) {
+   default void method00027(GuiGraphics var1) {
    }
 
    default void method00030(double var1, double var3, double var5) {

@@ -2,7 +2,7 @@
 package sg.mx;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.multiplayer.ServerSelectionList;
 import net.minecraft.client.gui.screens.multiplayer.ServerSelectionList.Entry;
 import net.minecraft.client.gui.screens.multiplayer.ServerSelectionList.OnlineServerEntry;
@@ -37,7 +37,7 @@ public class ServerSelectionList$OnlineServerEntryMixin implements MultiplayerSe
    }
 
    @Inject(method = "extractContent", at = @At("HEAD"))
-   private void hex$promotedBackground(GuiGraphicsExtractor var1, int var2, int var3, boolean var4, float var5, CallbackInfo var6) {
+   private void hex$promotedBackground(GuiGraphics var1, int var2, int var3, boolean var4, float var5, CallbackInfo var6) {
       if (this.hex$promoted()) {
          Entry var7 = (Entry)(Object)this;
          var1.fill(

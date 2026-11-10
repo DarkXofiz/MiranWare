@@ -1,7 +1,7 @@
 // Original binary: sg/ec/bL1KynLeXDwrSXzq
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -94,7 +94,7 @@ public class TargetHealthAnimation {
       this.method07093();
    }
 
-   public void method07108(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   public void method07108(GuiGraphics var1, float var2, float var3, float var4) {
       this.method07093();
       float var5 = PlayerUtils.method11802();
       float var6 = Mth.lerp(var5, this.method07103(), this.method07104());

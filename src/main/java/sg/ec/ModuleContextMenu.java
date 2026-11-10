@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModuleContextMenu {
@@ -25,7 +25,7 @@ public class ModuleContextMenu {
    private static final String field21955 = "autobuy.log";
    private static final String field21956 = "Журнал";
 
-   public void method09649(GuiGraphicsExtractor var1, int var2, int var3, float var4, boolean var5, boolean var6) {
+   public void method09649(GuiGraphics var1, int var2, int var3, float var4, boolean var5, boolean var6) {
       for (FloatingWindow var8 : this.field21942) {
          if (var8.method01682() == var5) {
             var8.method09567(var6 && var8.method09559());
@@ -87,7 +87,7 @@ public class ModuleContextMenu {
       }
    }
 
-   public void method09659(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method09659(GuiGraphics var1, int var2, int var3, float var4) {
       for (FloatingWindow var6 : this.field21942) {
          var6.method00612(var1, var2, var3, var4);
       }

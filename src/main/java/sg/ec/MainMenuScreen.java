@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
 import net.minecraft.client.gui.screens.multiplayer.SafetyScreen;
@@ -126,7 +126,7 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
       return a << 24 | rgb & 0xFFFFFF;
    }
 
-   private void drawAnimatedLogo(GuiGraphicsExtractor g) {
+   private void drawAnimatedLogo(GuiGraphics g) {
       float t = (System.nanoTime() - miranLogoStart) / 1.0E9F;
       float fade = Math.min(1.0F, t / 1.4F);
       fade = fade * fade * (3.0F - 2.0F * fade);
@@ -155,7 +155,7 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
       GuiTextureRenderer.method10259(g, miranLogo, cx - w / 2.0F, cy - h / 2.0F, w, h, tint(rgb, fade));
    }
 
-   private void drawLogo(GuiGraphicsExtractor var1) {
+   private void drawLogo(GuiGraphics var1) {
       ensureMiranLogo();
       if (miranLogo != null) {
          this.drawAnimatedLogo(var1);
@@ -198,7 +198,7 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
       }
    }
 
-   private void drawPanel(GuiGraphicsExtractor var1) {
+   private void drawPanel(GuiGraphics var1) {
       int var2 = ColorUtils.method04604(20, 20, 24);
       int var3 = ColorUtils.method04604(10, 10, 13);
       GuiClipStack.method00341(var1, this.field21852, this.field21853, field21872, this.field21854, field21873, field21874, field21875, 1.0F);
@@ -224,7 +224,7 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
       return false;
    }
 
-   private void drawButton(GuiGraphicsExtractor var1, MainMenuScreen.Nested267 var2, int var3, int var4) {
+   private void drawButton(GuiGraphics var1, MainMenuScreen.Nested267 var2, int var3, int var4) {
       float var5 = this.field21852 + field21893;
       float var6 = var2.field21911;
       boolean var7 = var3 >= var5 && var3 <= var5 + field21894 && var4 >= var6 && var4 <= var6 + field21895;
@@ -310,11 +310,11 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractBackground(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractBackground(GuiGraphics var1, int var2, int var3, float var4) {
    }
 
    @Override
-   public void extractRenderState(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
       Vec2 var5 = GuiScaleUtils.method06746(var2, var3);
       var2 = (int)var5.x;
       var3 = (int)var5.y;

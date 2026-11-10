@@ -1,7 +1,7 @@
 // Original binary: sg/ec/Nmdhen1nBW9UYhU0
 package sg.ec;
 
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage.Line;
 
 // $VF: Compiled from s
 public final class ChatComponentHooks {

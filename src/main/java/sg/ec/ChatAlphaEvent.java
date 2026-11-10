@@ -2,7 +2,7 @@
 package sg.ec;
 
 import hex.api.extensions.GuiMessage$LineExtensions;
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage.Line;
 
 // $VF: Compiled from s
 public class ChatAlphaEvent extends Event {

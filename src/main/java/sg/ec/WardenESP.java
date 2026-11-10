@@ -3,7 +3,7 @@ package sg.ec;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.AABB;
 import org.joml.Vector2f;
@@ -91,7 +91,7 @@ public class WardenESP extends ClientModule {
       }
    }
 
-   private static void method01482(GuiGraphicsExtractor var0, float var1, float var2, float var3, WardenESP.Nested42 var4) {
+   private static void method01482(GuiGraphics var0, float var1, float var2, float var3, WardenESP.Nested42 var4) {
       float var5 = 2.0F * var3;
       float var6 = var5 / 2.0F;
       float var7 = 1.0F * var3;
@@ -124,7 +124,7 @@ public class WardenESP extends ClientModule {
       return this.field03600.append(var1);
    }
 
-   private void method01485(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, WardenESP.Nested42 var8) {
+   private void method01485(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, WardenESP.Nested42 var8) {
       float var9 = var2 + var4 - var6;
       float var10 = var3 + var5 - var6;
       float var11 = var2 + var4 / 2.0F;
@@ -152,7 +152,7 @@ public class WardenESP extends ClientModule {
    }
 
    private static void method01487(
-      GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, WardenESP.Nested42 var7
+      GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, WardenESP.Nested42 var7
    ) {
       int var8 = ColorUtils.method04611(var7.accentStart, field03625 * var6);
       GuiShadowRenderer.method10984(var0, var1, var2, var3, var4, 0.0F, 1.0F, field03626 * var5, var8);
@@ -170,7 +170,7 @@ public class WardenESP extends ClientModule {
       var var2 = this.method01480();
       if (!var2.isEmpty()) {
          WorldProjectionUtils.method09450();
-         GuiGraphicsExtractor var3 = var1.method05424();
+         GuiGraphics var3 = var1.method05424();
          PoseStack var4 = var1.method05425();
          FontRenderer var5 = Fonts.field00109;
          WardenESP.Nested42 var6 = WardenESP.Nested42.method01491(ThemeManager.INSTANCE.method09611());
@@ -235,7 +235,7 @@ public class WardenESP extends ClientModule {
 
    // $VF: Compiled from s
    private static final class Nested43 {
-      private GuiGraphicsExtractor field03641;
+      private GuiGraphics field03641;
       private WardenESP.Nested42 field03642;
       private float field03643;
       private float field03644;
@@ -244,7 +244,7 @@ public class WardenESP extends ClientModule {
       private static final float field03647 = -2.0F;
       private static final float field03648 = -2.0F;
 
-      void method01492(GuiGraphicsExtractor var1, float var2, float var3, float var4, WardenESP.Nested42 var5) {
+      void method01492(GuiGraphics var1, float var2, float var3, float var4, WardenESP.Nested42 var5) {
          this.field03641 = var1;
          this.field03643 = var2;
          this.field03645 = var3;

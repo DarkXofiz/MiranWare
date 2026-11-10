@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.phys.Vec2;
 import ru.dreamix.protection.api.impl.profile.ProfileAPI;
@@ -282,7 +282,7 @@ public class ClickGuiScreen extends ClientScreen {
       return !this.field22447 ? false : GuiHitTestUtils.method05609(var1, var3, this.field22449, this.field22450, this.field22451, this.field22452);
    }
 
-   private void method09913(GuiGraphicsExtractor var1, int var2, int var3) {
+   private void method09913(GuiGraphics var1, int var2, int var3) {
       this.field22456 = this.field22466 > this.field22465 + 1.0F;
       this.field22436.method06162();
       if (!this.field22456) {
@@ -363,7 +363,7 @@ public class ClickGuiScreen extends ClientScreen {
    }
 
    private float method09918(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       int var2,
       int var3,
       List<ModuleCategoryColumn> var4,
@@ -509,7 +509,7 @@ public class ClickGuiScreen extends ClientScreen {
       return this.field22489;
    }
 
-   private void method09921(GuiGraphicsExtractor var1, int var2, int var3) {
+   private void method09921(GuiGraphics var1, int var2, int var3) {
       this.field22440 = field22515;
       this.field22441 = field22516;
       this.field22467 = this.field22444 + this.field22440;
@@ -659,7 +659,7 @@ public class ClickGuiScreen extends ClientScreen {
       return var2 || var1.method03963() == this.field22413;
    }
 
-   private void method09925(GuiGraphicsExtractor var1, FontRenderer var2, String var3, float var4, float var5, float var6) {
+   private void method09925(GuiGraphics var1, FontRenderer var2, String var3, float var4, float var5, float var6) {
       float var7 = field22571;
       float var8 = field22572;
       float var9 = var7 - field22573;
@@ -721,7 +721,7 @@ public class ClickGuiScreen extends ClientScreen {
    }
 
    @Override
-   protected void method01472(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   protected void method01472(GuiGraphics var1, int var2, int var3, float var4) {
       this.field22490 = this.method01470();
       float var5 = field22502;
       float var6 = field22503 * this.field22490;
@@ -792,7 +792,7 @@ public class ClickGuiScreen extends ClientScreen {
       return this.field22471;
    }
 
-   private void method09937(GuiGraphicsExtractor var1, int var2, int var3) {
+   private void method09937(GuiGraphics var1, int var2, int var3) {
       this.field22464 = this.field22445 + field22548;
       this.field22465 = field22549 - (this.field22464 - this.field22445) - field22550;
       this.field22434.method01152(true);
@@ -1136,7 +1136,7 @@ public class ClickGuiScreen extends ClientScreen {
       return this.field22448;
    }
 
-   private float method09982(GuiGraphicsExtractor var1, float var2, float var3, boolean var4, float var5, float var6) {
+   private float method09982(GuiGraphics var1, float var2, float var3, boolean var4, float var5, float var6) {
       this.field22483.method06162();
       if (!var4) {
          this.field22476 = 0.0F;
@@ -1437,7 +1437,7 @@ public class ClickGuiScreen extends ClientScreen {
       return this.field22459;
    }
 
-   private void method10000(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method10000(GuiGraphics var1, float var2, float var3, float var4) {
       boolean var5 = this.field22413 == ModuleCategory.Scripts;
       float var6 = this.field22445 + this.field22441 / 2.0F - field22580;
       int var7 = this.field22416.size() + (var5 ? 2 : 1);
@@ -1664,7 +1664,7 @@ public class ClickGuiScreen extends ClientScreen {
       return GuiHitTestUtils.method05609(var1, var3, this.field22444, this.field22445, this.field22440, field22570);
    }
 
-   private void method10029(GuiGraphicsExtractor var1, int var2, int var3) {
+   private void method10029(GuiGraphics var1, int var2, int var3) {
       this.field22447 = this.field22439 > this.field22470 + 1.0F;
       if (!this.field22447) {
          this.field22446 = false;

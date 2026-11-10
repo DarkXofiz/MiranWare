@@ -1,7 +1,7 @@
 // Original binary: sg/ec/YmJ7Zwk7sl70XFlx
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.phys.Vec2;
 
 // $VF: Compiled from s
@@ -38,7 +38,7 @@ public final class GuiScaleUtils implements MinecraftAccess {
       field15038 = var0;
    }
 
-   public static void method06748(GuiGraphicsExtractor var0) {
+   public static void method06748(GuiGraphics var0) {
       if (field15039 > 0) {
          field15039--;
          if (field15039 == 0) {
@@ -52,7 +52,7 @@ public final class GuiScaleUtils implements MinecraftAccess {
       return var0 * method06751();
    }
 
-   public static void method06750(GuiGraphicsExtractor var0) {
+   public static void method06750(GuiGraphics var0) {
       if (field15039 == 0) {
          method06747(mc.getWindow().getGuiScale());
          mc.getWindow().setGuiScale(2);

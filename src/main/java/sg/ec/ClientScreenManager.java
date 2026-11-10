@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.KeyMapping;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public enum ClientScreenManager implements MinecraftAccess {
@@ -60,7 +60,7 @@ public enum ClientScreenManager implements MinecraftAccess {
       }
    }
 
-   public void method08323(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method08323(GuiGraphics var1, int var2, int var3, float var4) {
       for (int var5 = this.field19172.size() - 1; var5 >= 0; var5--) {
          if (!this.field19172.get(var5).method01473()) {
             this.field19172.remove(var5);

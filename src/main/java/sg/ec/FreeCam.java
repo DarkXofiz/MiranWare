@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.client.CameraType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector2f;
@@ -179,7 +179,7 @@ public class FreeCam extends ClientModule {
          float var3 = field22050;
          Vec3 var4 = mc.player.position();
          Vec3 var5 = mc.getEntityRenderDispatcher().camera.position();
-         GuiGraphicsExtractor var6 = var1.method05424();
+         GuiGraphics var6 = var1.method05424();
          float var7 = mc.getWindow().getGuiScaledWidth() / 2.0F;
          float var8 = mc.getWindow().getGuiScaledHeight() / 2.0F;
          String var9 = "Позиция игрока: x" + (int)var4.x() + " y" + (int)var4.y() + " z" + (int)var4.z();

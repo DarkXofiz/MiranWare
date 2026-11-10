@@ -4,7 +4,7 @@ package sg.ec;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 
@@ -34,7 +34,7 @@ public final class TextRenderUtils {
    private static final String field01569 = "This is a utility class and cannot be instantiated";
 
    public static void method00666(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       SmoothAnimation var1,
       FontRenderer var2,
       String var3,
@@ -99,7 +99,7 @@ public final class TextRenderUtils {
    }
 
    public static void method00668(
-      GuiGraphicsExtractor var0, FontRenderer var1, String var2, String var3, float var4, float var5, float var6, int var7, float var8, boolean var9
+      GuiGraphics var0, FontRenderer var1, String var2, String var3, float var4, float var5, float var6, int var7, float var8, boolean var9
    ) {
       if (var3 != null && !var3.isEmpty()) {
          float var10 = var1.method09486(var3, var8);
@@ -158,7 +158,7 @@ public final class TextRenderUtils {
    }
 
    public static void method00669(
-      GuiGraphicsExtractor var0, FontRenderer var1, String var2, float var3, float var4, float var5, int var6, float var7, float var8, float var9
+      GuiGraphics var0, FontRenderer var1, String var2, float var3, float var4, float var5, int var6, float var7, float var8, float var9
    ) {
       if (var2 != null && !var2.isEmpty()) {
          FontFace var10 = var1.field21527;
@@ -222,7 +222,7 @@ public final class TextRenderUtils {
    }
 
    public static void method00671(
-      GuiGraphicsExtractor var0, FontRenderer var1, String var2, String var3, float var4, float var5, float var6, float var7, int var8, float var9
+      GuiGraphics var0, FontRenderer var1, String var2, String var3, float var4, float var5, float var6, float var7, int var8, float var9
    ) {
       float var10 = Mth.clamp(var4, 0.0F, 1.0F);
       if (!(var10 >= 1.0F) && var2 != null && !var2.equals(var3)) {
@@ -287,7 +287,7 @@ public final class TextRenderUtils {
    }
 
    private static void method00676(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       FontRenderer var1,
       String var2,
       float var3,

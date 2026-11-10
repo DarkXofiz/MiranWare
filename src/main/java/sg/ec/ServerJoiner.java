@@ -10,7 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -210,7 +210,7 @@ public class ServerJoiner extends ClientModule {
             Component var6 = ServerJoinTextUtils.method08518(field11044, var5, true);
             MutableComponent var7 = Component.literal("Захожу на '" + var1 + "' гриф ").append(var6 != null ? var6 : var5.getHoverName());
             NotificationManager.method08617(this.field11029, var7);
-            mc.gameMode.handleContainerInput(var3.containerId, var4.index, 0, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var3.containerId, var4.index, 0, ClickType.PICKUP, mc.player);
          }
 
          return false;
@@ -358,7 +358,7 @@ public class ServerJoiner extends ClientModule {
       if (mc.player != null && mc.gameMode != null) {
          AbstractContainerMenu var2 = mc.player.containerMenu;
          if (var2 != null && var1 >= 0 && var1 < var2.slots.size()) {
-            mc.gameMode.handleContainerInput(var2.containerId, var1, 0, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var2.containerId, var1, 0, ClickType.PICKUP, mc.player);
             return true;
          } else {
             return false;

@@ -4,7 +4,7 @@ package sg.ec;
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
@@ -222,7 +222,7 @@ public class ProjectileHelper extends ClientModule {
       if (this.field10513.method03022() && mc.level != null) {
          var var2 = ProjectileTrajectoryTracker.field00265.method00199();
          if (!var2.isEmpty()) {
-            GuiGraphicsExtractor var3 = var1.method05424();
+            GuiGraphics var3 = var1.method05424();
             FontRenderer.method09475();
             ItemRenderUtils.method08410();
             float var4 = field10537;

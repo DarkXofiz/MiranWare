@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
 import net.minecraft.client.multiplayer.PlayerInfo;
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage.Line;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;

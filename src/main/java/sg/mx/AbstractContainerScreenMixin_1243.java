@@ -3,7 +3,7 @@ package sg.mx;
 
 import java.awt.Color;
 import java.util.Locale;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -104,14 +104,14 @@ public abstract class AbstractContainerScreenMixin_1243 extends Screen {
    }
 
    @Inject(method = "extractContents", at = @At("HEAD"))
-   private void hex$updateSearchState(GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5) {
+   private void hex$updateSearchState(GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5) {
       if (this.hex$isChestScreen()) {
          this.hex$updateSearchVisibility();
       }
    }
 
    @Inject(method = "extractSlots", at = @At("TAIL"))
-   private void hex$highlightSearchResults(GuiGraphicsExtractor var1, int var2, int var3, CallbackInfo var4) {
+   private void hex$highlightSearchResults(GuiGraphics var1, int var2, int var3, CallbackInfo var4) {
       if (this.hex$isChestScreen() && !this.hex$searchHidden && !this.hex$normalizedSearch().isEmpty()) {
          long var5 = System.currentTimeMillis();
          this.hex$highlightAnimation().method03375(var5 % field28027 > field28028 ? field28029 : 0.0);

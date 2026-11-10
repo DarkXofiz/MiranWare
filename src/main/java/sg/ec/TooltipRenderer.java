@@ -1,7 +1,7 @@
 // Original binary: sg/ec/B4ffxTDK2EKzkKPp
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class TooltipRenderer {
@@ -16,7 +16,7 @@ public final class TooltipRenderer {
       return this.field06203.method02799(var1, var3);
    }
 
-   public void method02646(GuiGraphicsExtractor var1, FontRenderer var2, float var3, int var4, float var5) {
+   public void method02646(GuiGraphics var1, FontRenderer var2, float var3, int var4, float var5) {
       this.field06204.method06162();
       this.field06204.method06158(var4, field06206, Easings.field19412);
       float var6 = this.field06204.method06173();

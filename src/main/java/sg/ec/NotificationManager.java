@@ -1,7 +1,7 @@
 // Original binary: sg/ec/gtt0ou1LqwQGMXeu
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -189,7 +189,7 @@ public final class NotificationManager implements MinecraftAccess {
       method08610(Component.literal(var0), var1, var3, var4);
    }
 
-   public static Vector4f method08616(GuiGraphicsExtractor var0, HudElement var1, float var2) {
+   public static Vector4f method08616(GuiGraphics var0, HudElement var1, float var2) {
       if (field19667.isEmpty()) {
          return new Vector4f(0.0F, 0.0F, 0.0F, 0.0F);
       }

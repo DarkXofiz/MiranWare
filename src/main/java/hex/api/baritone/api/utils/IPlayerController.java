@@ -8,7 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -29,7 +29,7 @@ public interface IPlayerController {
 
    boolean clickBlock(BlockPos var1, Direction var2);
 
-   void windowClick(int var1, int var2, int var3, ContainerInput var4, Player var5);
+   void windowClick(int var1, int var2, int var3, ClickType var4, Player var5);
 
    void resetBlockRemoving();
 

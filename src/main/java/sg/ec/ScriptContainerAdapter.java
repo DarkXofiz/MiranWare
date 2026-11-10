@@ -6,7 +6,7 @@ import hex.script.api.Item;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 
 // $VF: Compiled from s
@@ -29,11 +29,11 @@ public final class ScriptContainerAdapter implements MinecraftAccess {
 
          int var6 = this.method02429(var1, var3);
          if (var6 >= 0 && var2 >= 0 && var2 < var4.slots.size()) {
-            ContainerInput var7 = switch (var1) {
-               case 1 -> ContainerInput.QUICK_MOVE;
-               case 2 -> ContainerInput.SWAP;
-               case 3 -> ContainerInput.THROW;
-               default -> ContainerInput.PICKUP;
+            ClickType var7 = switch (var1) {
+               case 1 -> ClickType.QUICK_MOVE;
+               case 2 -> ClickType.SWAP;
+               case 3 -> ClickType.THROW;
+               default -> ClickType.PICKUP;
             };
             InventoryActionManager.INSTANCE.method10470(() -> InventoryUtils.method06127(var5, var2, var6, var7, false), 1, false);
             return true;

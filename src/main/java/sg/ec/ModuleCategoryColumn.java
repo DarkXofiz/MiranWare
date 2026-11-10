@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModuleCategoryColumn extends GuiComponent {
@@ -57,7 +57,7 @@ public class ModuleCategoryColumn extends GuiComponent {
    public void method00040(double var1, double var3, int var5) {
    }
 
-   public void method03948(GuiGraphicsExtractor var1, float var2) {
+   public void method03948(GuiGraphics var1, float var2) {
       this.method09783(var2);
       FontRenderer var3 = Fonts.field00109;
       float var4 = field08802;
@@ -152,7 +152,7 @@ public class ModuleCategoryColumn extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.method09786(this.method03962(this.field08791.method09960()));
       this.method03948(var1, var4);
       this.method03959(var1, var2, var3, var4);
@@ -197,7 +197,7 @@ public class ModuleCategoryColumn extends GuiComponent {
       return false;
    }
 
-   public void method03959(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method03959(GuiGraphics var1, int var2, int var3, float var4) {
       this.method09783(var4);
       FontRenderer var5 = Fonts.field00109;
       float var6 = field08810;

@@ -13,7 +13,7 @@ import hex.api.baritone.api.utils.Helper;
 import java.awt.Color;
 import java.util.Collections;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.player.LocalPlayer;
@@ -44,7 +44,7 @@ public class GuiClick extends Screen implements Helper {
    private static final double бУЬ = 0;
 
    @Override
-   public void extractRenderState(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
       double var5 = mc.mouseHandler.xpos();
       double sx = mc.mouseHandler.ypos();
       sx = mc.getWindow().getScreenHeight() - sx;
@@ -96,7 +96,7 @@ public class GuiClick extends Screen implements Helper {
    }
 
    @Override
-   public void extractBackground(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractBackground(GuiGraphics var1, int var2, int var3, float var4) {
    }
 
    public void onRender(PoseStack var1, Matrix4f var2) {

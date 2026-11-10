@@ -15,7 +15,7 @@ import hex.script.api.Slider;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class ScriptModule extends ClientModule {
@@ -92,7 +92,7 @@ public final class ScriptModule extends ClientModule {
       ItemSelectionSetting var2 = new ItemSelectionSetting(var1.name()).method03683(var1.height());
       var2.method03676((var1x, var2x, var3, var4, var5, var6, var7, var8) -> {
          ScriptRender2DAdapter var9 = ScriptRuntime.INSTANCE.method06230().method11765();
-         GuiGraphicsExtractor var10 = var9.method04298();
+         GuiGraphics var10 = var9.method04298();
          var9.method04307(var1x);
 
          try {

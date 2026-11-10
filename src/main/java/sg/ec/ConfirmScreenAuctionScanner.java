@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -36,7 +36,7 @@ public final class ConfirmScreenAuctionScanner extends AbstractAuctionScanner {
    private void method04336(AbstractContainerMenu var1, long var2) {
       int var4 = AuctionContainerUtils.method02621(var1) ? 47 : AuctionContainerUtils.method02615(var1);
       if (var4 >= 0) {
-         this.field13487.method02863(var1, var4, ContainerInput.PICKUP);
+         this.field13487.method02863(var1, var4, ClickType.PICKUP);
          this.field09744 = var2 + field09746;
       }
 
@@ -157,7 +157,7 @@ public final class ConfirmScreenAuctionScanner extends AbstractAuctionScanner {
                this.method05968(var3.entry(), var3.stack());
             }
 
-            this.field13487.method02863(var1, var4, ContainerInput.PICKUP);
+            this.field13487.method02863(var1, var4, ClickType.PICKUP);
             return;
          }
       }
@@ -169,7 +169,7 @@ public final class ConfirmScreenAuctionScanner extends AbstractAuctionScanner {
       } else if (var2 < this.field09742) {
          return true;
       } else if (var1.containerId == this.field09741 && this.field09740 < var1.slots.size()) {
-         this.field13487.method02863(var1, this.field09740, ContainerInput.PICKUP);
+         this.field13487.method02863(var1, this.field09740, ClickType.PICKUP);
          this.method04338();
          return true;
       } else {
@@ -201,7 +201,7 @@ public final class ConfirmScreenAuctionScanner extends AbstractAuctionScanner {
       }
 
       if (var2 >= this.field09738) {
-         this.field13487.method02863(var1, 52, ContainerInput.PICKUP);
+         this.field13487.method02863(var1, 52, ClickType.PICKUP);
          this.field09738 = var2 + field09748;
       }
 

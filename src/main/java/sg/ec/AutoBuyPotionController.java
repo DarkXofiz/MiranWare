@@ -13,7 +13,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -145,7 +145,7 @@ public final class AutoBuyPotionController implements MinecraftAccess {
    private void method05108(long var1) {
       AbstractContainerMenu var3 = mc.player.containerMenu;
       if (var3 != null && mc.gameMode != null) {
-         mc.gameMode.handleContainerInput(var3.containerId, method05107(this.field11170), this.field11171, ContainerInput.SWAP, mc.player);
+         mc.gameMode.handleContainerInput(var3.containerId, method05107(this.field11170), this.field11171, ClickType.SWAP, mc.player);
          this.field11173 = false;
          this.field11176 = var1 + field11185;
          this.field11169 = AutoBuyPotionController.Nested152.WAIT_AFTER_RESTORE;
@@ -246,7 +246,7 @@ public final class AutoBuyPotionController implements MinecraftAccess {
          AbstractContainerMenu var4 = mc.player.containerMenu;
          if (var4 != null && mc.gameMode != null) {
             this.field11171 = this.field11172;
-            mc.gameMode.handleContainerInput(var4.containerId, method05107(this.field11170), this.field11171, ContainerInput.SWAP, mc.player);
+            mc.gameMode.handleContainerInput(var4.containerId, method05107(this.field11170), this.field11171, ClickType.SWAP, mc.player);
             this.field11173 = true;
             this.field11176 = var1 + field11181;
             this.field11169 = AutoBuyPotionController.Nested152.WAIT_AFTER_SWAP;

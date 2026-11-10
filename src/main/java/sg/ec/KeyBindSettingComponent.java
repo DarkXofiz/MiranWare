@@ -1,7 +1,7 @@
 // Original binary: sg/ec/vQbM57UyihbTKULb
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class KeyBindSettingComponent extends SettingComponent<KeyBindSetting> {
@@ -101,7 +101,7 @@ public class KeyBindSettingComponent extends SettingComponent<KeyBindSetting> {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       float var5 = field24653;
       float var6 = field24654;

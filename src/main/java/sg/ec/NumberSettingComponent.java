@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -108,7 +108,7 @@ public class NumberSettingComponent extends SettingComponent<NumberSetting<?>> {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       if (this.field10047) {
          if (this.method04529() && this.method04532()) {

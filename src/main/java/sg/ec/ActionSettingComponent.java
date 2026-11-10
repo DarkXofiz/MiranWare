@@ -1,7 +1,7 @@
 // Original binary: sg/ec/IJDYf7qgHkTwqCLA
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ActionSettingComponent extends SettingComponent<ActionSetting> {
@@ -49,7 +49,7 @@ public class ActionSettingComponent extends SettingComponent<ActionSetting> {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       if (this.field08692 != null && this.field08693 != null) {
          this.field08697.method06162();

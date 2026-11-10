@@ -1,7 +1,7 @@
 // Original binary: sg/ec/17BDJkMB16Yp74Ev
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ToggleSettingComponent extends SettingComponent<ToggleSetting> {
@@ -87,7 +87,7 @@ public class ToggleSettingComponent extends SettingComponent<ToggleSetting> {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       this.method10977().method05998().method03375(this.method10977().method03022() ? 1.0 : 0.0);
       this.field00519.method02803(field00523);

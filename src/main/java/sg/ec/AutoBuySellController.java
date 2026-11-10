@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 
 // $VF: Compiled from s
 public final class AutoBuySellController implements MinecraftAccess {
@@ -91,7 +91,7 @@ public final class AutoBuySellController implements MinecraftAccess {
          AbstractContainerMenu var3 = AuctionContainerUtils.method02612();
          int var4 = AuctionContainerUtils.method02622(var3, field24710);
          if (var4 >= 0) {
-            AuctionContainerUtils.method02614(var3, var4, ContainerInput.PICKUP);
+            AuctionContainerUtils.method02614(var3, var4, ClickType.PICKUP);
             this.field24699 = false;
          } else {
             this.method11008(field24711);
@@ -133,7 +133,7 @@ public final class AutoBuySellController implements MinecraftAccess {
          AbstractContainerMenu var3 = AuctionContainerUtils.method02612();
          int var4 = AuctionContainerUtils.method02622(var3, field24715);
          if (var4 >= 0) {
-            AuctionContainerUtils.method02614(var3, var4, ContainerInput.PICKUP);
+            AuctionContainerUtils.method02614(var3, var4, ClickType.PICKUP);
          } else {
             AuctionContainerUtils.method02623();
          }
@@ -196,7 +196,7 @@ public final class AutoBuySellController implements MinecraftAccess {
             }
          } else {
             this.field24697 = var3.containerId;
-            AuctionContainerUtils.method02614(var3, var4, ContainerInput.PICKUP);
+            AuctionContainerUtils.method02614(var3, var4, ClickType.PICKUP);
             this.field24693 = AutoBuySellController.Nested317.WAIT_STORAGE;
             this.field24696 = var1 + field24708;
          }

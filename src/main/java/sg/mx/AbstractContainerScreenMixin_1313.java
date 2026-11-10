@@ -4,7 +4,7 @@ package sg.mx;
 import sg.ec.InputCompat;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -80,7 +80,7 @@ public abstract class AbstractContainerScreenMixin_1313 {
    }
 
    @Inject(method = "extractContents", at = @At("TAIL"))
-   public void render(GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5) {
+   public void render(GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5) {
       ContainerRenderEvent.field22775
          .method10113((AbstractContainerScreen<?>)(Object)this, var1, this.leftPos, this.topPos, var2, var3, this.imageWidth, this.imageHeight);
    }
@@ -89,18 +89,18 @@ public abstract class AbstractContainerScreenMixin_1313 {
       method = "extractContents",
       at = @At(
          value = "INVOKE",
-         target = "Lnet/minecraft/client/gui/screens/Screen;extractRenderState(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V",
+         target = "Lnet/minecraft/client/gui/screens/Screen;extractRenderState(Lnet/minecraft/client/gui/GuiGraphics;IIF)V",
          shift = Shift.AFTER
       )
    )
    private void renderStart(
-      GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5, @Local(ordinal = 2) int var6, @Local(ordinal = 3) int var7
+      GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5, @Local(ordinal = 2) int var6, @Local(ordinal = 3) int var7
    ) {
       ContainerAnimationEvent.field11706.method05385(var6, var7, (AbstractContainerScreen)(Object)this, var1, this.anim());
    }
 
    @Inject(method = "extractContents", at = @At("TAIL"))
-   private void renderEnd(GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5) {
+   private void renderEnd(GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5) {
       ContainerAnimationEvent.field11706.method05382((AbstractContainerScreen)(Object)this, var1, this.anim());
    }
 

@@ -1,7 +1,7 @@
 // Original binary: sg/ec/3i0xKxsmy4FcJXgu
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class GuiPanelRenderer {
@@ -38,13 +38,13 @@ public final class GuiPanelRenderer {
    private static final float field01746 = 5.5F;
 
    public static void method00760(
-      GuiGraphicsExtractor var0, FontRenderer var1, float var2, float var3, float var4, float var5, String var6, float var7, int var8, int var9
+      GuiGraphics var0, FontRenderer var1, float var2, float var3, float var4, float var5, String var6, float var7, int var8, int var9
    ) {
       RoundedRectRenderer.method01272(var0, var2, var3, var4, var5, 2.0F, 1.0F, var8);
       var1.method09473(var0, var6, var2 + var4 / 2.0F, var3 + var5 / 2.0F - var1.method09485(var7) / 2.0F, var9, var7);
    }
 
-   public static void method00761(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5) {
+   public static void method00761(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5) {
       GuiIcon.DOTS
          .method01190(
             var0,
@@ -74,11 +74,11 @@ public final class GuiPanelRenderer {
       );
    }
 
-   public static float method00764(GuiGraphicsExtractor var0, float var1, float var2, float var3, GuiIcon var4, String var5, float var6, float var7) {
+   public static float method00764(GuiGraphics var0, float var1, float var2, float var3, GuiIcon var4, String var5, float var6, float var7) {
       return method00767(var0, var1, var2, var3, var4, var5, method00762(var6, var7), method00763(var6, var7));
    }
 
-   public static void method00765(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6) {
+   public static void method00765(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6) {
       RoundedRectRenderer.method01272(
          var0, var1, var2, var3, var4, 2.0F, 1.0F, GuiThemeStyle.method01443(GuiThemeStyle.method01439(), field01728 * var6)
       );
@@ -91,7 +91,7 @@ public final class GuiPanelRenderer {
       return field01737 + Fonts.field00110.method09486(var0, field01738) + 1.0F;
    }
 
-   private static float method00767(GuiGraphicsExtractor var0, float var1, float var2, float var3, GuiIcon var4, String var5, int var6, int var7) {
+   private static float method00767(GuiGraphics var0, float var1, float var2, float var3, GuiIcon var4, String var5, int var6, int var7) {
       FontRenderer var8 = Fonts.field00110;
       float var9 = method00766(var5);
       RoundedRectRenderer.method01272(var0, var1, var2, var9, var3, 2.0F, 1.0F, var6);
@@ -104,7 +104,7 @@ public final class GuiPanelRenderer {
       return GuiThemeStyle.method01443(var0, field01736 * var1);
    }
 
-   public static float method00769(GuiGraphicsExtractor var0, float var1, float var2, float var3, GuiIcon var4, String var5, int var6, float var7) {
+   public static float method00769(GuiGraphics var0, float var1, float var2, float var3, GuiIcon var4, String var5, int var6, float var7) {
       return method00767(var0, var1, var2, var3, var4, var5, method00768(var6, var7), GuiThemeStyle.method01443(var6, var7));
    }
 }

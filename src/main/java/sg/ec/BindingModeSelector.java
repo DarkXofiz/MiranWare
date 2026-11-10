@@ -1,7 +1,7 @@
 // Original binary: sg/ec/8UaONV2ZzfzA7FaE
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class BindingModeSelector {
@@ -15,7 +15,7 @@ public final class BindingModeSelector {
    private static final float field04610 = 5.5F;
    private static final float field04611 = 5.5F;
 
-   private void method01903(GuiGraphicsExtractor var1, FontRenderer var2, String var3, float var4, float var5, int var6) {
+   private void method01903(GuiGraphics var1, FontRenderer var2, String var3, float var4, float var5, int var6) {
       float var7 = var2.method09486(var3, field04609);
       float sx = this.field04606.method02808() + (this.field04606.method02802() - var2.method09485(field04610)) / 2.0F;
       var2.method09480(var1, var3, var4 + (var5 - var7) / 2.0F, sx, var6, field04611);
@@ -41,7 +41,7 @@ public final class BindingModeSelector {
       return var1 >= this.field04606.method02809() + this.field04606.method02804() / 2.0F ? KeyBindingMode.Hold : KeyBindingMode.Toggle;
    }
 
-   public void method01908(GuiGraphicsExtractor var1, FontRenderer var2, KeyBindingMode var3, float var4) {
+   public void method01908(GuiGraphics var1, FontRenderer var2, KeyBindingMode var3, float var4) {
       this.field04607.method06162();
       this.field04607.method06158(method01906(var3), field04608, Easings.field19412);
       float var5 = this.field04607.method06173();

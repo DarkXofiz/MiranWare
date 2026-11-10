@@ -15,7 +15,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -45,7 +45,7 @@ public final class InventoryBehavior extends Behavior implements Helper {
       } else {
          this.ctx
             .playerController()
-            .windowClick(this.ctx.player().inventoryMenu.containerId, var1 < 9 ? var1 + 36 : var1, var2, ContainerInput.SWAP, this.ctx.player());
+            .windowClick(this.ctx.player().inventoryMenu.containerId, var1 < 9 ? var1 + 36 : var1, var2, ClickType.SWAP, this.ctx.player());
          this.ticksSinceLastInventoryMove = 0;
          this.lastTickRequestedMove = null;
          return true;

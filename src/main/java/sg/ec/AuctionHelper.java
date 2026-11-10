@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -226,7 +226,7 @@ public class AuctionHelper extends ClientModule {
       } else if (!this.method06641()) {
          this.method06640();
       } else {
-         GuiGraphicsExtractor var2 = var1.method10118();
+         GuiGraphics var2 = var1.method10118();
          int var3 = var1.method10120();
          int var4 = var1.method10115();
          long var5 = System.currentTimeMillis();

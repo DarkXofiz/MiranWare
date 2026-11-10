@@ -1,7 +1,7 @@
 // Original binary: sg/ec/D1DEN5pZceuF4YQH
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class WindowFrameRenderer {
@@ -17,19 +17,19 @@ public final class WindowFrameRenderer {
    private WindowFrameRenderer() {
    }
 
-   public static void method03055(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6) {
+   public static void method03055(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6) {
       method03058(var0, var1, var2, var3, var4, var5, var6, true);
    }
 
-   public static void method03056(GuiGraphicsExtractor var0, FloatingWindow var1, float var2) {
+   public static void method03056(GuiGraphics var0, FloatingWindow var1, float var2) {
       method03057(var0, var1, var2, var1.method09573().method06173());
    }
 
-   public static void method03057(GuiGraphicsExtractor var0, FloatingWindow var1, float var2, float var3) {
+   public static void method03057(GuiGraphics var0, FloatingWindow var1, float var2, float var3) {
       method03058(var0, var1.method09576(), var1.method09560(), var1.method09568(), var1.method09574(), var2, var3, var1.method09579());
    }
 
-   private static void method03058(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
+   private static void method03058(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
       if (var7) {
          GuiBlurBarrierHooks.method03410(var0.guiRenderState);
          GuiClipStack.method00341(var0, var1, var2, var3, var4, var5, 1.0F, field06853, var6);

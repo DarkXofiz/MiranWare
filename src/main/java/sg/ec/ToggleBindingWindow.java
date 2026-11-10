@@ -1,7 +1,7 @@
 // Original binary: sg/ec/35wrCbrlnERprk0j
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ToggleBindingWindow extends FloatingWindow {
@@ -39,7 +39,7 @@ public class ToggleBindingWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method09557(this.method09569());
       GuiRenderBatch.method05183();

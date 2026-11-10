@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -228,7 +228,7 @@ public class EntityEspSettingsPanel extends GuiPanel implements GuiOverlay {
    }
 
    @Override
-   public void method02847(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method02847(GuiGraphics var1, int var2, int var3, float var4) {
       EntityESP var5 = ModuleManager.INSTANCE.method08235();
       if (var5 != null) {
          float var6 = this.field06570.method09986();
@@ -256,7 +256,7 @@ public class EntityEspSettingsPanel extends GuiPanel implements GuiOverlay {
       return this.field06573.method10246();
    }
 
-   private void method02849(GuiGraphicsExtractor var1, int var2, int var3, float var4, EntityESP var5, boolean var6, boolean var7) {
+   private void method02849(GuiGraphics var1, int var2, int var3, float var4, EntityESP var5, boolean var6, boolean var7) {
       RoundedRectRenderer.method01272(
          var1, this.field06582, this.field06583, this.field06584, this.field06585, field06614, 1.0F, method10227(method10186(), field06615 * var4)
       );
@@ -338,7 +338,7 @@ public class EntityEspSettingsPanel extends GuiPanel implements GuiOverlay {
       this.method10194(var1, var2, var3, var4, this.field06573, field06558, var10, this.field06583 + field06642 + field06643 + field06644, var9);
    }
 
-   private void method02850(GuiGraphicsExtractor var1, int var2, int var3, float var4, EntityESP var5) {
+   private void method02850(GuiGraphics var1, int var2, int var3, float var4, EntityESP var5) {
       if (var5 != null) {
          RoundedRectRenderer.method01272(
             var1, this.field06578, this.field06579, this.field06580, this.field06581, field06594, 1.0F, method10227(method10186(), field06595 * var4)

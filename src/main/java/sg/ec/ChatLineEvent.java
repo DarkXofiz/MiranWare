@@ -1,7 +1,7 @@
 // Original binary: sg/ec/TbCHfmX45QdO3EYj
 package sg.ec;
 
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage.Line;
 import net.minecraft.network.chat.Component;
 
 // $VF: Compiled from s

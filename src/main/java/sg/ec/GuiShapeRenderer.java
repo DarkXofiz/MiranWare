@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.navigation.ScreenRectangle;
 import net.minecraft.util.Mth;
 import org.joml.Matrix3x2f;
@@ -17,22 +17,22 @@ public final class GuiShapeRenderer {
    }
 
    public static void method09700(
-      GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, float var7, CornerColors var8
+      GuiGraphics var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, float var7, CornerColors var8
    ) {
       method09705(var0, var1, var2, var3, var4, var6, var7, var5, var8);
    }
 
-   public static void method09701(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, int var7) {
+   public static void method09701(GuiGraphics var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, int var7) {
       method09705(var0, var1, var2, var3, var4, var6, var6, var5, new CornerColors(var7));
    }
 
    public static void method09702(
-      GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, CornerColors var7
+      GuiGraphics var0, float var1, float var2, float var3, float var4, CornerRadii var5, float var6, CornerColors var7
    ) {
       method09705(var0, var1, var2, var3, var4, 1.0F, var6, var5, var7);
    }
 
-   public static void method09703(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, int var7) {
+   public static void method09703(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, int var7) {
       method09705(var0, var1, var2, var3, var4, var6, var6, new CornerRadii(var5), new CornerColors(var7));
    }
 
@@ -45,7 +45,7 @@ public final class GuiShapeRenderer {
    }
 
    public static void method09705(
-      GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, CornerRadii var7, CornerColors var8
+      GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, CornerRadii var7, CornerColors var8
    ) {
       GuiRenderBatch.method05186(
          var0.guiRenderState, new RoundedRectRenderState(var1, var2, var3, var4, var7, var5, var6, var8, var0.scissorStack.peek(), new Matrix3x2f(var0.pose()))
@@ -61,7 +61,7 @@ public final class GuiShapeRenderer {
       private static final float field21978 = -1.0F;
 
       private static void method09706(
-         GuiGraphicsExtractor var0,
+         GuiGraphics var0,
          float var1,
          float var2,
          float var3,
@@ -169,13 +169,13 @@ public final class GuiShapeRenderer {
       }
 
       public static void method09707(
-         GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8, int var9
+         GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8, int var9
       ) {
          method09706(var0, var1, var2, var3, var4, var5, var6, var7, false, ColorUtils.method04611(var9, var8), 0, 0, 0, -1, 0, 0);
       }
 
       public static void method09708(
-         GuiGraphicsExtractor var0,
+         GuiGraphics var0,
          float var1,
          float var2,
          float var3,
@@ -209,7 +209,7 @@ public final class GuiShapeRenderer {
       }
 
       public static void method09709(
-         GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8
+         GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8
       ) {
          method09706(
             var0,
@@ -232,13 +232,13 @@ public final class GuiShapeRenderer {
       }
 
       public static void method09710(
-         GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8, int var9, int var10
+         GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7, float var8, int var9, int var10
       ) {
          method09708(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, 4);
       }
 
       public static void method09711(
-         GuiGraphicsExtractor var0,
+         GuiGraphics var0,
          float var1,
          float var2,
          float var3,

@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ScriptSettingsWindow extends ScrollableWindow {
@@ -29,7 +29,7 @@ public class ScriptSettingsWindow extends ScrollableWindow {
    private static final float field04601 = 0.01F;
 
    @Override
-   protected void method01894(GuiGraphicsExtractor var1, int var2, int var3) {
+   protected void method01894(GuiGraphics var1, int var2, int var3) {
       this.field04590.method01152(this.field04591 > this.field21185.method02802());
       this.field04590.method01145();
       this.field04590.method01134(this.field04591, this.field21185.method02802());

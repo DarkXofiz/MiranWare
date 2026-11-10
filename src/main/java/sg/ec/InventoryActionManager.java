@@ -9,7 +9,7 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket;
 import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -654,7 +654,7 @@ public enum InventoryActionManager implements MinecraftAccess {
          InventoryMenu var1 = mc.player.inventoryMenu;
          if (mc.player.containerMenu == var1 && var1.getCarried().isEmpty()) {
             var1.stateId = this.field23474;
-            mc.gameMode.handleContainerInput(var1.containerId, -999, 0, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var1.containerId, -999, 0, ClickType.PICKUP, mc.player);
             PlayerUtils.method11812(new ServerboundContainerClosePacket(var1.containerId));
          }
 

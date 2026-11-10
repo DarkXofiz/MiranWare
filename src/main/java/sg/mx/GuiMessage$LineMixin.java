@@ -2,8 +2,8 @@
 package sg.mx;
 
 import hex.api.extensions.GuiMessage$LineExtensions;
-import net.minecraft.client.multiplayer.chat.GuiMessage;
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessage;
+import net.minecraft.client.GuiMessage.Line;
 import net.minecraft.util.FormattedCharSequence;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

@@ -3,7 +3,7 @@ package sg.ec;
 
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Hud;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -13,7 +13,7 @@ public class HotbarRenderEvent extends Event {
    private DeltaTracker field20797;
    private Minecraft field20798;
    private Hud field20799;
-   private GuiGraphicsExtractor field20800;
+   private GuiGraphics field20800;
    private HotbarRenderEvent.Nested254 field20801;
    private CallbackInfo field20802;
 
@@ -21,7 +21,7 @@ public class HotbarRenderEvent extends Event {
       this.field20802 = var1;
    }
 
-   public GuiGraphicsExtractor method09170() {
+   public GuiGraphics method09170() {
       return this.field20800;
    }
 
@@ -29,7 +29,7 @@ public class HotbarRenderEvent extends Event {
       return this.field20802;
    }
 
-   public void method09172(HotbarRenderEvent.Nested254 var1, DeltaTracker var2, Minecraft var3, Hud var4, GuiGraphicsExtractor var5, CallbackInfo var6) {
+   public void method09172(HotbarRenderEvent.Nested254 var1, DeltaTracker var2, Minecraft var3, Hud var4, GuiGraphics var5, CallbackInfo var6) {
       this.field20801 = var1;
       this.field20797 = var2;
       this.field20798 = var3;
@@ -62,7 +62,7 @@ public class HotbarRenderEvent extends Event {
       this.field20799 = var1;
    }
 
-   public void method09178(GuiGraphicsExtractor var1) {
+   public void method09178(GuiGraphics var1) {
       this.field20800 = var1;
    }
 

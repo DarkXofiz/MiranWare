@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.LerpingBossEvent;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
@@ -129,7 +129,7 @@ public class WorldHelper extends ClientModule {
    @Subscribe
    private void method01155(HudRenderEvent var1) {
       if (!this.field02426.isEmpty()) {
-         GuiGraphicsExtractor var2 = var1.method05424();
+         GuiGraphics var2 = var1.method05424();
          PoseStack var3 = var1.method05425();
          float var4 = field02467;
          float var5 = field02468;

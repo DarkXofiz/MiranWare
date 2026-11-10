@@ -8,7 +8,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -38,7 +38,7 @@ public abstract class MultiPlayerGameModeMixin {
    }
 
    @Inject(method = "handleContainerInput", at = @At("HEAD"), cancellable = true)
-   private void onClickSlot(int var1, int var2, int var3, ContainerInput var4, Player var5, CallbackInfo var6) {
+   private void onClickSlot(int var1, int var2, int var3, ClickType var4, Player var5, CallbackInfo var6) {
       ContainerClickEvent.field08467.method03769(var1, var2, var3, var4, var5, var6);
    }
 

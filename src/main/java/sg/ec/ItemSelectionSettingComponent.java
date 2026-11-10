@@ -1,7 +1,7 @@
 // Original binary: sg/ec/Ayb3R22TIL7Pi0vI
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ItemSelectionSettingComponent extends SettingComponent<ItemSelectionSetting> {
@@ -22,7 +22,7 @@ public class ItemSelectionSettingComponent extends SettingComponent<ItemSelectio
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       this.method09786(this.method10977().method03684());
       ItemSelectionSetting.Nested108 var5 = this.method10977().method03685();

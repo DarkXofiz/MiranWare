@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.Mth;
@@ -239,7 +239,7 @@ public class FriendsWindow extends FloatingWindow {
    private static final String field09658 = "Заявки";
    private static final String field09659 = "Опции";
 
-   private float method04202(GuiGraphicsExtractor var1, float var2, float var3, Runnable var4) {
+   private float method04202(GuiGraphics var1, float var2, float var3, Runnable var4) {
       float var5 = var2 - field09591;
       float var6 = this.field09512 + 2.0F;
       GuiBounds var7 = new GuiBounds();
@@ -279,7 +279,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private void method04208(GuiGraphicsExtractor var1, float var2) {
+   private void method04208(GuiGraphics var1, float var2) {
       float var3 = this.method04227(var1, var2);
       GuiBounds var4 = this.field09499.method02647();
       float var5 = this.field09499.method02649(this.field09497, field09602, field09603);
@@ -301,7 +301,7 @@ public class FriendsWindow extends FloatingWindow {
       return true;
    }
 
-   private void method04209(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04209(GuiGraphics var1, float var2, float var3, float var4) {
       for (FriendsWindow.Nested128 var6 : method04256()) {
          this.field09508.add(() -> {
             float var6x = this.method04227(var1, var4);
@@ -318,7 +318,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private void method04210(GuiGraphicsExtractor var1, String var2, String var3, int var4, float var5, float var6) {
+   private void method04210(GuiGraphics var1, String var2, String var3, int var4, float var5, float var6) {
       float var7 = this.method09576() + field09569 + field09570;
       GuiThemeStyle.method01447(var1, var7 + field09571, this.field09512 + field09572, field09573, var4, var6);
       float var8 = var7 + field09574 + field09575;
@@ -347,7 +347,7 @@ public class FriendsWindow extends FloatingWindow {
       return var1;
    }
 
-   private void method04216(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04216(GuiGraphics var1, float var2, float var3, float var4) {
       for (Friend var6 : this.method04214()) {
          int var7 = this.method04204(var6);
          this.field09508.add(() -> {
@@ -396,7 +396,7 @@ public class FriendsWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method09557(this.method09569() && this.field09507.method06726());
       this.method04206(var2, var3);
@@ -469,7 +469,7 @@ public class FriendsWindow extends FloatingWindow {
       return var1;
    }
 
-   private void method04222(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04222(GuiGraphics var1, float var2, float var3, float var4) {
       float var5 = this.method09560() + this.method09574() - field09615 - field09616;
       float var6 = this.method09576() + field09617;
       float var7 = this.method09576() + this.method09568() - field09618 - field09619;
@@ -486,7 +486,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private void method04224(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04224(GuiGraphics var1, float var2, float var3, float var4) {
       FriendRequestState var5 = FriendRequestState.field11201;
       this.field09508.add(() -> this.method04231(var1, field09638, var5.field11203, var4, () -> {
          var5.field11203 = !var5.field11203;
@@ -506,7 +506,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private float method04227(GuiGraphicsExtractor var1, float var2) {
+   private float method04227(GuiGraphics var1, float var2) {
       ThemeSettings var3 = GuiThemeStyle.method01441();
       int var4 = ColorUtils.method04611(
          ColorUtils.method04583(var3.field22121.method11676(), ColorUtils.field10170, field09561), field09562 * var2
@@ -524,7 +524,7 @@ public class FriendsWindow extends FloatingWindow {
       });
    }
 
-   private void method04230(GuiGraphicsExtractor var1, float var2) {
+   private void method04230(GuiGraphics var1, float var2) {
       float var3 = var2 * var2 * (field09522 - 2.0F * var2);
       float var4 = field09523 + field09524 * var3;
       float var5 = this.method09576() + this.method09568() / 2.0F;
@@ -534,7 +534,7 @@ public class FriendsWindow extends FloatingWindow {
       var1.pose().translate(-var5, -this.method09560());
    }
 
-   private void method04231(GuiGraphicsExtractor var1, String var2, boolean var3, float var4, Runnable var5) {
+   private void method04231(GuiGraphics var1, String var2, boolean var3, float var4, Runnable var5) {
       float var6 = this.method04227(var1, var4);
       this.field09504.method02803(field09597);
       this.field09504.method02798(field09598);
@@ -555,7 +555,7 @@ public class FriendsWindow extends FloatingWindow {
       return var1 > 0 ? var0.substring(0, var1) : var0;
    }
 
-   private void method04236(GuiGraphicsExtractor var1) {
+   private void method04236(GuiGraphics var1) {
       float var2 = this.field09503.method02808();
       float var3 = var2 + this.field09503.method02802();
       var1.enableScissor(
@@ -593,7 +593,7 @@ public class FriendsWindow extends FloatingWindow {
       return true;
    }
 
-   private void method04239(GuiGraphicsExtractor var1, GuiBounds var2, float var3) {
+   private void method04239(GuiGraphics var1, GuiBounds var2, float var3) {
       float var4 = var2.method02808() + (var2.method02802() - this.field09497.method09485(field09552)) / 2.0F;
       this.field09497
          .method09473(var1, field09553, var2.method02809() + var2.method02804() / 2.0F, var4, ColorUtils.method04611(field09554, var3), field09555);
@@ -607,7 +607,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private float method04243(GuiGraphicsExtractor var1, String var2, float var3, float var4, float var5, float var6, Runnable var7) {
+   private float method04243(GuiGraphics var1, String var2, float var3, float var4, float var5, float var6, Runnable var7) {
       float var8 = GuiInputRenderer.method08819(var2);
       float var9 = var3 - var8;
       float var10 = this.field09512 + field09587;
@@ -631,7 +631,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private void method04246(GuiGraphicsExtractor var1, String var2, float var3, float var4) {
+   private void method04246(GuiGraphics var1, String var2, float var3, float var4) {
       float var5 = this.method09576() + field09609 + field09610;
       String var6 = GuiThemeStyle.method01438(this.field09497, var2, field09611, var3 - var5);
       this.field09497
@@ -667,7 +667,7 @@ public class FriendsWindow extends FloatingWindow {
       this.field09500.method01134(var2, this.field09503.method02802());
    }
 
-   private void method04250(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04250(GuiGraphics var1, float var2, float var3, float var4) {
       for (SocialS2CPacket.Nested57 var6 : method04221()) {
          boolean var7 = var6.online() && var6.server() != null && !var6.server().isBlank();
          this.field09508
@@ -696,7 +696,7 @@ public class FriendsWindow extends FloatingWindow {
       }
    }
 
-   private void method04252(GuiGraphicsExtractor var1, float var2) {
+   private void method04252(GuiGraphics var1, float var2) {
       ThemeSettings var3 = GuiThemeStyle.method01441();
       float var4 = this.method09560() + (field09549 - this.field09497.method09485(field09550)) / 2.0F;
       this.field09497
@@ -716,7 +716,7 @@ public class FriendsWindow extends FloatingWindow {
          && !this.field09502.method02799(var1, var3);
    }
 
-   private void method04255(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method04255(GuiGraphics var1, float var2, float var3, float var4) {
       this.field09508.clear();
       switch (this.field09509) {
          case CLIENT:

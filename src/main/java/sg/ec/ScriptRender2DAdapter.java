@@ -7,7 +7,7 @@ import hex.script.api.Render2D;
 import hex.script.api.Text;
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.navigation.ScreenRectangle;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
@@ -56,7 +56,7 @@ public final class ScriptRender2DAdapter implements MinecraftAccess {
       this::method04293
    );
    private final List<ScriptRender2DAdapter.Nested129> field09675 = new ArrayList<>();
-   private GuiGraphicsExtractor field09676;
+   private GuiGraphics field09676;
    private boolean field09677;
    private int field09678;
    private int field09679;
@@ -350,7 +350,7 @@ public final class ScriptRender2DAdapter implements MinecraftAccess {
       return (float)(System.nanoTime() % field09688) / field09689;
    }
 
-   GuiGraphicsExtractor method04298() {
+   GuiGraphics method04298() {
       return this.field09676;
    }
 
@@ -433,7 +433,7 @@ public final class ScriptRender2DAdapter implements MinecraftAccess {
       return ColorUtils.method04621(var1);
    }
 
-   void method04307(GuiGraphicsExtractor var1) {
+   void method04307(GuiGraphics var1) {
       this.method04303();
       this.field09676 = var1;
       this.field09677 = !GuiRenderBatch.method05191();
@@ -590,8 +590,8 @@ public final class ScriptRender2DAdapter implements MinecraftAccess {
       var2.popMatrix();
    }
 
-   private GuiGraphicsExtractor method04322() {
-      GuiGraphicsExtractor var1 = this.field09676;
+   private GuiGraphics method04322() {
+      GuiGraphics var1 = this.field09676;
       if (var1 == null) {
          throw new IllegalStateException(field09690);
       } else {

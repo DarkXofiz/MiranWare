@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModuleSettingsComponent extends GuiComponent {
@@ -259,7 +259,7 @@ public class ModuleSettingsComponent extends GuiComponent {
       }
    }
 
-   private void method06612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method06612(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = GuiHitTestUtils.method05621(this.field14839.method06173());
       float var6 = var5;
       if (!(var5 <= field14883) && !(this.field14846 <= field14884)) {
@@ -313,7 +313,7 @@ public class ModuleSettingsComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.field14849.method02800(this.method06604());
       this.method06611();
       this.field14838.method06162();

@@ -1,7 +1,7 @@
 // Original binary: sg/ec/DTvgPvpug2F4E8xz
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class ConfigPanelRenderer {
@@ -79,7 +79,7 @@ public final class ConfigPanelRenderer {
       return method03127(method03114().field22110.method11679(), var0);
    }
 
-   public static void method03105(GuiGraphicsExtractor var0, float var1, float var2, float var3) {
+   public static void method03105(GuiGraphics var0, float var1, float var2, float var3) {
       int var4 = method03104(field06917 * var3);
       float var5 = field06918;
 
@@ -95,7 +95,7 @@ public final class ConfigPanelRenderer {
    }
 
    public static void method03107(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       FontRenderer var1,
       float var2,
       float var3,
@@ -116,16 +116,16 @@ public final class ConfigPanelRenderer {
       return var0 + field06923 + field06924;
    }
 
-   public static void method03109(GuiGraphicsExtractor var0, float var1, float var2, float var3, GuiIcon var4, int var5, float var6, float var7) {
+   public static void method03109(GuiGraphics var0, float var1, float var2, float var3, GuiIcon var4, int var5, float var6, float var7) {
       method03116(var0, var1, var2, var3, var3, field06935, var6, 0.0F, var7);
       var4.method01190(var0, var1 + var3 / 2.0F, var2 + var3 / 2.0F, var3 * field06936, var5);
    }
 
-   public static void method03110(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4) {
+   public static void method03110(GuiGraphics var0, float var1, float var2, float var3, float var4) {
       RoundedRectRenderer.method01272(var0, var1, var2, var3, field06915, 0.0F, 0.0F, method03112(field06916 * var4));
    }
 
-   public static void method03111(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, int var6, int var7) {
+   public static void method03111(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, int var6, int var7) {
       RoundedRectRenderer.method01272(var0, var1, var2, var3, var4, var5, 1.0F, var6);
       GuiShapeRenderer.method09703(var0, var1, var2, var3, var4, var5, field06904, var7);
    }
@@ -134,7 +134,7 @@ public final class ConfigPanelRenderer {
       return method03127(ColorUtils.field10169, var0);
    }
 
-   public static void method03113(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5) {
+   public static void method03113(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5) {
       GuiIcon.CLOSE.method01190(var0, var1, var2, var3, method03120(var4, var5));
    }
 
@@ -146,14 +146,14 @@ public final class ConfigPanelRenderer {
       return method03127(method03114().method09800() | field06900, var0);
    }
 
-   public static void method03116(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
+   public static void method03116(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
       int var9 = method03122(method03122(method03112(field06909 * var8), method03112(field06910 * var8), var6), method03115(field06911 * var8), var7);
       int var10 = method03122(method03122(method03112(field06912 * var8), method03112(field06913 * var8), var6), method03115(field06914 * var8), var7);
       method03111(var0, var1, var2, var3, var4, var5, var9, var10);
    }
 
    public static void method03117(
-      GuiGraphicsExtractor var0, FontRenderer var1, float var2, float var3, float var4, float var5, String[] var6, float var7, float var8, float var9
+      GuiGraphics var0, FontRenderer var1, float var2, float var3, float var4, float var5, String[] var6, float var7, float var8, float var9
    ) {
       method03116(var0, var2, var3, var4, var5, field06937, 0.0F, 0.0F, var9);
       float var10 = var4 / var6.length;
@@ -188,7 +188,7 @@ public final class ConfigPanelRenderer {
    }
 
    public static void method03121(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       FontRenderer var1,
       float var2,
       float var3,
@@ -217,7 +217,7 @@ public final class ConfigPanelRenderer {
       return field06928 + var0.method09486(var1, var2);
    }
 
-   public static void method03124(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
+   public static void method03124(GuiGraphics var0, float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
       if (var7) {
          GuiBlurBarrierHooks.method03410(var0.guiRenderState);
          GuiClipStack.method00341(var0, var1, var2, var3, var4, var5, 1.0F, field06905, var6);
@@ -229,7 +229,7 @@ public final class ConfigPanelRenderer {
    }
 
    public static void method03125(
-      GuiGraphicsExtractor var0, FontRenderer var1, float var2, float var3, float var4, float var5, String var6, float var7, float var8, float var9
+      GuiGraphics var0, FontRenderer var1, float var2, float var3, float var4, float var5, String var6, float var7, float var8, float var9
    ) {
       method03107(var0, var1, var2, var3, var4, var5, var6, var7, method03120(var8, var9), var8, var9);
    }

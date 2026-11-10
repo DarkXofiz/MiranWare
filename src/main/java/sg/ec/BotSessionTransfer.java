@@ -13,7 +13,7 @@ import net.minecraft.client.multiplayer.CommonListenerCookie;
 import net.minecraft.client.multiplayer.LevelLoadTracker;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerData.Type;
-import net.minecraft.client.multiplayer.chat.GuiMessage;
+import net.minecraft.client.GuiMessage;
 import net.minecraft.client.multiplayer.chat.GuiMessageSource;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.client.resources.server.ServerPackManager.PackPromptStatus;

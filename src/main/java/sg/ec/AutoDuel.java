@@ -11,7 +11,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.network.protocol.game.ClientboundSystemChatPacket;
 import net.minecraft.world.inventory.ChestMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 
 // $VF: Compiled from s
 public class AutoDuel extends ClientModule {
@@ -153,12 +153,12 @@ public class AutoDuel extends ClientModule {
 
                int var19 = (Integer)var16.getFirst();
                if (this.field05068.method04699(field05089)) {
-                  mc.gameMode.handleContainerInput(var13.containerId, var19, 0, ContainerInput.PICKUP, mc.player);
+                  mc.gameMode.handleContainerInput(var13.containerId, var19, 0, ClickType.PICKUP, mc.player);
                   this.field05068.method04694();
                }
             }
          } else if (var11.getTitle().getString().contains(field05090) && this.field05069.method04699(field05091) && var11.getMenu() instanceof ChestMenu var14) {
-            mc.gameMode.handleContainerInput(var14.containerId, 0, 0, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleContainerInput(var14.containerId, 0, 0, ClickType.PICKUP, mc.player);
             this.field05069.method04694();
          }
       }

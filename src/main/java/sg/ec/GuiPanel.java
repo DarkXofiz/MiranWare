@@ -13,7 +13,7 @@ import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
 import java.util.function.DoubleSupplier;
 import java.util.function.IntFunction;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public abstract class GuiPanel implements MinecraftAccess {
@@ -185,7 +185,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return method10221().field22120.method11676();
    }
 
-   private void method10163(GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, String var3, float var4, float var5) {
+   private void method10163(GuiGraphics var1, GuiPanel.Nested283 var2, String var3, float var4, float var5) {
       FontRenderer var6 = Fonts.field00110;
       RoundedRectRenderer.method01272(
          var1,
@@ -207,7 +207,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       );
    }
 
-   protected void method10164(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, Object var7, String var8, boolean var9) {
+   protected void method10164(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, Object var7, String var8, boolean var9) {
       float var10 = this.method10168(var7, var9);
       if (!(var10 <= field23002)) {
          this.method10218(var1, var2 * var10, var3, var4, var5, var6, var8);
@@ -231,7 +231,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return new AnimationUtils(AnimationUtils.Nested95.EASE_OUT_CUBIC, var0);
    }
 
-   protected float method10167(GuiGraphicsExtractor var1, float var2, float var3, float var4, GuiIcon var5, String var6, float var7, float var8) {
+   protected float method10167(GuiGraphics var1, float var2, float var3, float var4, GuiIcon var5, String var6, float var7, float var8) {
       return GuiPanelRenderer.method00764(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
@@ -241,7 +241,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return var3.method03377();
    }
 
-   protected void method10169(GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, float var3, float var4) {
+   protected void method10169(GuiGraphics var1, GuiPanel.Nested283 var2, float var3, float var4) {
       RoundedRectRenderer.method01272(
          var1,
          var2.field23010(),
@@ -343,7 +343,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return GuiPanelRenderer.method00766(var0);
    }
 
-   protected void method10178(GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, float var3, float var4, float var5) {
+   protected void method10178(GuiGraphics var1, GuiPanel.Nested283 var2, float var3, float var4, float var5) {
       GuiPanelRenderer.method00761(var1, var2.field23010() + var2.field23012() / 2.0F, var2.field23011() + var2.field23013() / 2.0F, var4, var3, var5);
    }
 
@@ -351,7 +351,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return var0 != null && var0.has(var1, var2);
    }
 
-   protected void method10180(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   protected void method10180(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       int var8 = ColorUtils.method04631(
          ColorUtils.method04611(method10221().field22114.method11679(), var7),
          ColorUtils.method04611(method10221().field22113.method11679(), var7),
@@ -380,7 +380,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       method10205(var0, 0.0F);
    }
 
-   protected void method10183(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   protected void method10183(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       RoundedRectRenderer.method01272(var1, var3, var4, var5, var6, field22956, 1.0F, method10227(method10186(), field22957 * var2));
    }
 
@@ -394,7 +394,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return -1;
    }
 
-   protected void method10185(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   protected void method10185(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       for (GuiPanel.Nested291 var8 : this.field22874.values()) {
          if (!var8.field23076 && var8.field23078 != null) {
             var8.field23069.method03375(0.0);
@@ -434,7 +434,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return var1;
    }
 
-   protected void method10190(GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, String var3, float var4, int var5, float var6) {
+   protected void method10190(GuiGraphics var1, GuiPanel.Nested283 var2, String var3, float var4, int var5, float var6) {
       FontRenderer var7 = Fonts.field00110;
       float var8 = Math.min(field22961, var2.field23013() / 2.0F);
       RoundedRectRenderer.method01272(
@@ -457,13 +457,13 @@ public abstract class GuiPanel implements MinecraftAccess {
       );
    }
 
-   protected void method10191(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   protected void method10191(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       RoundedRectRenderer.method01272(var1, var2, var3, var4, var5, field22940, 1.0F, method10227(method10221().field22121.method11676(), field22941 * var6));
       GuiShapeRenderer.method09703(var1, var2, var3, var4, var5, field22942, 1.0F, method10227(method10223(), field22943 * var6));
    }
 
    protected boolean method10192(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -528,7 +528,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected void method10193(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, List<GuiPanel.Nested288> var9
+      GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, List<GuiPanel.Nested288> var9
    ) {
       float var10 = var7 + var8;
 
@@ -539,7 +539,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected void method10194(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, GuiPanel.Nested290 var5, String[] var6, float var7, float var8, boolean var9
+      GuiGraphics var1, float var2, float var3, float var4, GuiPanel.Nested290 var5, String[] var6, float var7, float var8, boolean var9
    ) {
       var5.field23020.method03375(var9 ? 1.0 : 0.0);
       float var10 = var5.field23020.method03377();
@@ -593,7 +593,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected void method10195(
-      GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, String var3, float var4, float var5, float var6, Runnable var7, Runnable var8
+      GuiGraphics var1, GuiPanel.Nested283 var2, String var3, float var4, float var5, float var6, Runnable var7, Runnable var8
    ) {
       this.method10212(var1, var2, var3, var4, var5, var6, var7, var8, null);
    }
@@ -603,7 +603,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       method10182(this.field22876);
    }
 
-   protected void method10197(GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, float var3, float var4) {
+   protected void method10197(GuiGraphics var1, GuiPanel.Nested283 var2, float var3, float var4) {
       float var5 = field22987;
       float var6 = 2.0F;
       float var7 = var5 * field22988 + var6 * 2.0F;
@@ -629,7 +629,7 @@ public abstract class GuiPanel implements MinecraftAccess {
          private static final float field23009 = 6.0F;
 
          @Override
-         public void method10229(GuiGraphicsExtractor var1x, float var2, float var3, float var4, float var5, float var6, float var7) {
+         public void method10229(GuiGraphics var1x, float var2, float var3, float var4, float var5, float var6, float var7) {
             Fonts.field00110
                .method09480(
                   var1x, var1, var5 + 1.0F, var7 + field23007, GuiPanel.method10227(GuiPanel.method10213(), field23008 * var4), field23009
@@ -644,7 +644,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected final void method10200(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10
+      GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10
    ) {
       this.method10216(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, null);
    }
@@ -676,7 +676,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       this.field22879 = false;
    }
 
-   protected float method10204(GuiGraphicsExtractor var1, float var2, float var3, float var4, GuiIcon var5, String var6, int var7, float var8) {
+   protected float method10204(GuiGraphics var1, float var2, float var3, float var4, GuiIcon var5, String var6, int var7, float var8) {
       return GuiPanelRenderer.method00769(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
@@ -686,7 +686,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       var0.method03363();
    }
 
-   protected void method10206(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   protected void method10206(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       RoundedRectRenderer.method01272(var1, var3, var4, var5, var6, field22951, 1.0F, method10227(method10186(), field22952 * var2));
       if (var7 > field22953) {
          RoundedRectRenderer.method01272(var1, var3, var4, var5, var6, field22954, 1.0F, method10227(method10175(), field22955 * var7 * var2));
@@ -722,7 +722,7 @@ public abstract class GuiPanel implements MinecraftAccess {
          private static final float field23067 = 6.0F;
 
          @Override
-         public void method10229(GuiGraphicsExtractor var1x, float var2x, float var3, float var4x, float var5, float var6x, float var7) {
+         public void method10229(GuiGraphics var1x, float var2x, float var3, float var4x, float var5, float var6x, float var7) {
             FontRenderer var8x = Fonts.field00110;
             float var9x = field23053;
             float var10x = field23054;
@@ -799,7 +799,7 @@ public abstract class GuiPanel implements MinecraftAccess {
          }
 
          @Override
-         public void method10229(GuiGraphicsExtractor var1x, float var2x, float var3, float var4, float var5, float var6, float var7) {
+         public void method10229(GuiGraphics var1x, float var2x, float var3, float var4, float var5, float var6, float var7) {
             FontRenderer var8 = Fonts.field00110;
             float var9 = field23037;
             var8.method09480(
@@ -822,7 +822,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       };
    }
 
-   protected void method10210(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   protected void method10210(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       if (!(var4 <= 0.0F)) {
          int var6 = method10227(method10198(), var5);
          int var7 = method10227(method10198(), 0.0F);
@@ -834,7 +834,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected final void method10211(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, int var7, float var8, GuiPanel.Nested285 var9
+      GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, int var7, float var8, GuiPanel.Nested285 var9
    ) {
       if (this.field22875.method10235()) {
          this.method02351(var7);
@@ -872,7 +872,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected void method10212(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       GuiPanel.Nested283 var2,
       String var3,
       float var4,
@@ -969,7 +969,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected final void method10216(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10, boolean[] var11
+      GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10, boolean[] var11
    ) {
       if (this.field22883.length != var9.length) {
          this.field22883 = new GuiPanel.Nested283[var9.length];
@@ -979,7 +979,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected void method10217(
-      GuiGraphicsExtractor var1, FontRenderer var2, GuiPanel.Nested283 var3, String var4, float var5, float var6, float var7, float var8
+      GuiGraphics var1, FontRenderer var2, GuiPanel.Nested283 var3, String var4, float var5, float var6, float var7, float var8
    ) {
       RoundedRectRenderer.method01272(
          var1,
@@ -1011,7 +1011,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       );
    }
 
-   protected void method10218(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, String var7) {
+   protected void method10218(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, String var7) {
       Fonts.field00110
          .method09473(
             var1,
@@ -1024,7 +1024,7 @@ public abstract class GuiPanel implements MinecraftAccess {
    }
 
    protected boolean method10219(
-      GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10, boolean[] var11
+      GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, String[] var9, int var10, boolean[] var11
    ) {
       FontRenderer var12 = Fonts.field00110;
       float var13 = field22903;
@@ -1126,7 +1126,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return method10221().field22117.method11676();
    }
 
-   protected void method10224(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   protected void method10224(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       GuiPanelRenderer.method00765(var1, var3, var4, var5, var6, var7, var2);
    }
 
@@ -1148,7 +1148,7 @@ public abstract class GuiPanel implements MinecraftAccess {
       return ColorUtils.method04611(var0, var1);
    }
 
-   protected void method10228(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   protected void method10228(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       RoundedRectRenderer.method01272(var1, var3, var4, var5, field22958, 0.0F, 0.0F, method10227(method10223(), field22959 * var2));
    }
 
@@ -1250,14 +1250,14 @@ public abstract class GuiPanel implements MinecraftAccess {
 
    // $VF: Compiled from s
    protected interface Nested288 {
-      void method10229(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7);
+      void method10229(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7);
 
       float method10230();
    }
 
    // $VF: Compiled from s
    protected interface Nested289 {
-      void method10242(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6);
+      void method10242(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6);
    }
 
    // $VF: Compiled from s

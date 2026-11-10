@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.function.DoubleFunction;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -42,7 +42,7 @@ public final class GuiListRenderer {
    private static final float field25148 = 2.7F;
 
    public static double method11179(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       String var1,
       double var2,
       double var4,

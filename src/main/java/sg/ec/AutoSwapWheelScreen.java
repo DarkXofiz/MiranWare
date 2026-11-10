@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
@@ -50,7 +50,7 @@ public final class AutoSwapWheelScreen extends Screen {
       }
    }
 
-   private void renderWheel(GuiGraphicsExtractor var1, float var2, float var3, int var4) {
+   private void renderWheel(GuiGraphics var1, float var2, float var3, int var4) {
       if (var4 > 0) {
          float var5 = field08589 / var4;
          float var6 = 1.0F;
@@ -106,7 +106,7 @@ public final class AutoSwapWheelScreen extends Screen {
    }
 
    @Override
-   public void extractBackground(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractBackground(GuiGraphics var1, int var2, int var3, float var4) {
    }
 
    private void drawSector(List<WheelSectorRenderState.Nested280> var1, float var2, float var3, float var4, float var5, float var6, float var7, int var8) {
@@ -142,7 +142,7 @@ public final class AutoSwapWheelScreen extends Screen {
    }
 
    @Override
-   public void extractRenderState(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.width / 2.0F;
       float var6 = this.height / 2.0F;
       int var7 = this.field08586.method01516();
@@ -150,7 +150,7 @@ public final class AutoSwapWheelScreen extends Screen {
       this.renderWheel(var1, var5, var6, var7);
    }
 
-   private void renderWheelItems(GuiGraphicsExtractor var1, float var2, float var3, float var4, int var5) {
+   private void renderWheelItems(GuiGraphics var1, float var2, float var3, float var4, int var5) {
       for (int var6 = 0; var6 < var5; var6++) {
          float var7 = (float)Math.toRadians(field08598 + var6 * var4 + var4 / 2.0F);
          float var8 = field08599;

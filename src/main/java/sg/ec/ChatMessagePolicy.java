@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.client.multiplayer.chat.GuiMessage;
+import net.minecraft.client.GuiMessage;
 import net.minecraft.network.chat.Component;
 import sg.mx.ChatComponentMixin_1182;
 

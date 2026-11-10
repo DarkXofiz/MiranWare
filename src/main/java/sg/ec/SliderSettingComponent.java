@@ -1,7 +1,7 @@
 // Original binary: sg/ec/0cXzYHeceQDjpNsS
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -45,7 +45,7 @@ public class SliderSettingComponent extends SettingComponent<SliderSetting> {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       float var5 = this.method09780();
       float var6 = this.method09782();

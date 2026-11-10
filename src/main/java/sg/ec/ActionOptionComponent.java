@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.Collections;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ActionOptionComponent extends GuiComponent {
@@ -41,7 +41,7 @@ public class ActionOptionComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       this.field03529.method06162();
       this.field03529.method06158(this.method09787(var2, var3) ? 1.0 : 0.0, field03534, Easings.field19400);
       int var5 = ColorUtils.method04611(ThemeManager.INSTANCE.method09611().field22114.method11676(), this.method09790());

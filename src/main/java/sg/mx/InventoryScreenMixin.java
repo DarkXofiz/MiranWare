@@ -2,7 +2,7 @@
 package sg.mx;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
@@ -46,11 +46,11 @@ public abstract class InventoryScreenMixin extends AbstractRecipeBookScreen<Inve
       method = "extractBackground",
       at = @At(
          value = "INVOKE",
-         target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blit(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIFFIIII)V"
+         target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIFFIIII)V"
       )
    )
    private void renderStart(
-      GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5, @Local(ordinal = 2) int var6, @Local(ordinal = 3) int var7
+      GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5, @Local(ordinal = 2) int var6, @Local(ordinal = 3) int var7
    ) {
       ContainerAnimationEvent.field11706.method05385(var6, var7, this, var1, this.anim());
    }
@@ -59,17 +59,17 @@ public abstract class InventoryScreenMixin extends AbstractRecipeBookScreen<Inve
       method = "extractBackground",
       at = @At(
          value = "INVOKE",
-         target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;extractEntityInInventoryFollowsMouse(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIIIIFFFLnet/minecraft/world/entity/LivingEntity;)V"
+         target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;extractEntityInInventoryFollowsMouse(Lnet/minecraft/client/gui/GuiGraphics;IIIIIFFFLnet/minecraft/world/entity/LivingEntity;)V"
       )
    )
    private void redirectDrawEntity(
-      GuiGraphicsExtractor var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, LivingEntity var10
+      GuiGraphics var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, LivingEntity var10
    ) {
       InventoryEntityRenderHook.method00748(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
    @Inject(method = "extractRenderState", at = @At("TAIL"))
-   private void renderEnd(GuiGraphicsExtractor var1, int var2, int var3, float var4, CallbackInfo var5) {
+   private void renderEnd(GuiGraphics var1, int var2, int var3, float var4, CallbackInfo var5) {
       ContainerAnimationEvent.field11706.method05382(this, var1, this.anim());
    }
 

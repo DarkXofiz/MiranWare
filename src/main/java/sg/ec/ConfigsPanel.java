@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import ru.dreamix.protection.api.impl.profile.ProfileAPI;
 
 // $VF: Compiled from s
@@ -329,7 +329,7 @@ public class ConfigsPanel extends GuiPanel {
       this.method02359(new ConfigKeyWindow(var1), field05707, field05708);
    }
 
-   private float method02287(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5) {
+   private float method02287(GuiGraphics var1, String var2, float var3, float var4, int var5) {
       FontRenderer var6 = Fonts.field00110;
       var6.method09480(var1, var2, var3 + field05521, var4 + field05522, var5, field05523);
       return var3 + field05524 + var6.method09486(var2, field05525) + field05526;
@@ -373,7 +373,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private static void method02292(
-      GuiGraphicsExtractor var0, FontRenderer var1, ConfigsPanel.Nested65 var2, float var3, float var4, double var5, float var7
+      GuiGraphics var0, FontRenderer var1, ConfigsPanel.Nested65 var2, float var3, float var4, double var5, float var7
    ) {
       float var8 = field05653 + field05654 * (field05655 + field05656 * (float)Math.sin(var5 * field05657));
       float var9 = var3 - var1.method09486(var2.field05734, field05658) / 2.0F;
@@ -441,7 +441,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private GuiPanel.Nested283 method02297(
-      GuiGraphicsExtractor var1, float var2, float var3, AnimationUtils var4, float var5, float var6, float var7
+      GuiGraphics var1, float var2, float var3, AnimationUtils var4, float var5, float var6, float var7
    ) {
       GuiPanel.Nested283 var8 = new GuiPanel.Nested283(var2 - field05547, var3, field05548, field05549);
       ConfigPanelRenderer.method03109(
@@ -470,7 +470,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02299(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -509,7 +509,7 @@ public class ConfigsPanel extends GuiPanel {
       return var1 > 0L ? this.field05495.format(new Date(var1)) : field05540;
    }
 
-   private void method02303(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method02303(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       FontRenderer var8 = Fonts.field00110;
       this.method10224(var1, var7, var3, var4, var5, var6, 1.0F);
       this.field05506.method06700(var3, var4, var5, var6).method06670(var1, var2, var7);
@@ -535,7 +535,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02305(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -615,7 +615,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02310(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -679,7 +679,7 @@ public class ConfigsPanel extends GuiPanel {
       this.field05506.method06733(var1);
    }
 
-   private void method02320(GuiGraphicsExtractor var1, float var2, float var3, float var4, String... var5) {
+   private void method02320(GuiGraphics var1, float var2, float var3, float var4, String... var5) {
       FontRenderer var6 = Fonts.field00111;
       float var7 = var2;
 
@@ -721,7 +721,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private GuiPanel.Nested283 method02324(
-      GuiGraphicsExtractor var1, float var2, float var3, String var4, GuiIcon var5, AnimationUtils var6, float var7, float var8, float var9
+      GuiGraphics var1, float var2, float var3, String var4, GuiIcon var5, AnimationUtils var6, float var7, float var8, float var9
    ) {
       FontRenderer var10 = Fonts.field00111;
       float var11 = ConfigPanelRenderer.method03106(var10, var4, field05543, field05544);
@@ -756,7 +756,7 @@ public class ConfigsPanel extends GuiPanel {
       GlobalRequestSender.method09378(var1x -> var1x.method01864(StorageCategory.CONFIG, var1));
    }
 
-   private void method02329(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method02329(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       FontRenderer var8 = Fonts.field00111;
       float var9 = field05616;
       float var10 = var6 + field05617;
@@ -815,7 +815,7 @@ public class ConfigsPanel extends GuiPanel {
       );
    }
 
-   private void method02330(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
+   private void method02330(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
       this.field05515 = new GuiPanel.Nested283(var5, var7, var6 - var5, var8);
       boolean var9 = this.field05494.method09983().method09669(field05643) != null && this.field05503;
       float var10 = this.method10168(field05644, this.field05515.has(var2, var3) || var9);
@@ -864,7 +864,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02335(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -952,7 +952,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02340(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -1017,7 +1017,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02342(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -1050,7 +1050,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02343(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -1097,7 +1097,7 @@ public class ConfigsPanel extends GuiPanel {
       this.field05503 = true;
    }
 
-   public void method02346(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method02346(GuiGraphics var1, int var2, int var3, float var4) {
       this.field05507.clear();
       this.field05508.clear();
       this.field05509.clear();
@@ -1129,7 +1129,7 @@ public class ConfigsPanel extends GuiPanel {
       );
    }
 
-   private void method02347(GuiGraphicsExtractor var1, String var2, float var3, float var4, float var5) {
+   private void method02347(GuiGraphics var1, String var2, float var3, float var4, float var5) {
       FontRenderer var6 = Fonts.field00111;
       float var7 = var6.method09486(var2, field05527) + field05528;
       ConfigPanelRenderer.method03111(
@@ -1191,7 +1191,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02362(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -1350,7 +1350,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02374(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       float var2,
       float var3,
       float var4,
@@ -1399,7 +1399,7 @@ public class ConfigsPanel extends GuiPanel {
    }
 
    private void method02377(
-      GuiGraphicsExtractor var1, GuiPanel.Nested283 var2, String var3, GuiIcon var4, Object var5, float var6, float var7, float var8
+      GuiGraphics var1, GuiPanel.Nested283 var2, String var3, GuiIcon var4, Object var5, float var6, float var7, float var8
    ) {
       float var9 = this.method10168(var5, var2.has(var6, var7));
       ConfigPanelRenderer.method03121(

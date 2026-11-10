@@ -1,7 +1,7 @@
 // Original binary: sg/ec/AaO7VrwqMb0fTTg3
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class KeyLabelRenderer {
@@ -24,7 +24,7 @@ public final class KeyLabelRenderer {
       return var0.method09485(var1) + field06134;
    }
 
-   public static void method02578(GuiGraphicsExtractor var0, FontRenderer var1, float var2, float var3, String var4, float var5, float var6, float var7) {
+   public static void method02578(GuiGraphics var0, FontRenderer var1, float var2, float var3, String var4, float var5, float var6, float var7) {
       ThemeSettings var8 = ThemeManager.INSTANCE.method09611();
       int var9 = ColorUtils.method04631(
          ColorUtils.method04611(var8.field22120.method11679(), var7), ColorUtils.method04611(var8.field22113.method11679(), var7), var6

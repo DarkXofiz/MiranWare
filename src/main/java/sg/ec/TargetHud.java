@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
@@ -256,7 +256,7 @@ public class TargetHud extends HudElement {
       }
    }
 
-   private void method06972(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, boolean var6) {
+   private void method06972(GuiGraphics var1, float var2, float var3, float var4, float var5, boolean var6) {
       if (this.field15688.method05999()) {
          float var7 = field15818 * var5;
          float var8 = var7 + var5;
@@ -304,7 +304,7 @@ public class TargetHud extends HudElement {
       }
    }
 
-   private void method06973(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private void method06973(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       this.method06972(var1, var2, var3, var4, var5, true);
    }
 
@@ -336,7 +336,7 @@ public class TargetHud extends HudElement {
       }
    }
 
-   private void method06975(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06975(GuiGraphics var1, float var2, float var3, float var4) {
       this.field15708.method06162();
       float var5 = this.field15708.method06173();
       if (!(var5 < field15812) && !this.field15703.isEmpty()) {
@@ -411,7 +411,7 @@ public class TargetHud extends HudElement {
       var1.translate(-var7, -var8);
    }
 
-   private void method06982(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method06982(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       if (this.field15696 != null) {
          int var8 = ColorUtils.method04611(ColorUtils.method04627(ColorUtils.method04604(255, 50, 50), -1, var6), var7);
          GuiTextureRenderer.method10260(
@@ -498,7 +498,7 @@ public class TargetHud extends HudElement {
       this.field15719 = this.method06449(this, 0.0F, 0.0F);
    }
 
-   private void method06985(GuiGraphicsExtractor var1) {
+   private void method06985(GuiGraphics var1) {
       float var2 = field15739;
       float var3 = field15740;
       float var4 = field15741;
@@ -633,7 +633,7 @@ public class TargetHud extends HudElement {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       this.field15710.method06162();
       this.field15692.method03375(this.field15684.method05600(field15736) ? 1.0 : 0.0);
@@ -646,13 +646,13 @@ public class TargetHud extends HudElement {
       }
    }
 
-   private void method06987(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06987(GuiGraphics var1, float var2, float var3, float var4) {
       for (TargetHealthAnimation var6 : this.field15699) {
          var6.method07108(var1, var2, var3, var4);
       }
    }
 
-   private void method06988(GuiGraphicsExtractor var1) {
+   private void method06988(GuiGraphics var1) {
       float var2 = field15768;
       float var3 = field15769;
       this.method06465(this.field15719.method02685());

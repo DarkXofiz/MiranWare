@@ -6,7 +6,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix3x2fStack;
@@ -188,7 +188,7 @@ public class Ambience extends ClientModule {
    @Subscribe(1)
    private void method03251(HudRenderEvent var1) {
       if (!this.field07118.isEmpty()) {
-         GuiGraphicsExtractor var2 = var1.method05424();
+         GuiGraphics var2 = var1.method05424();
          PoseStack var3 = var1.method05425();
          float var4 = var1.method05421().getGameTimeDeltaPartialTick(false);
          float var5 = this.field07100.method03022() * field07175;

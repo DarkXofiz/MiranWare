@@ -3,10 +3,10 @@ package sg.mx;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.client.multiplayer.chat.GuiMessage;
+import net.minecraft.client.GuiMessage;
 import net.minecraft.client.multiplayer.chat.GuiMessageSource;
-import net.minecraft.client.multiplayer.chat.GuiMessageTag;
-import net.minecraft.client.multiplayer.chat.GuiMessage.Line;
+import net.minecraft.client.GuiMessageTag;
+import net.minecraft.client.GuiMessage.Line;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MessageSignature;
 import org.spongepowered.asm.mixin.Mixin;

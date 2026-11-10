@@ -1,7 +1,7 @@
 // Original binary: sg/ec/t0VDngeIe6Zr6erA
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class BindingSettingsWindow extends FloatingWindow {
@@ -147,7 +147,7 @@ public class BindingSettingsWindow extends FloatingWindow {
       return this.field23796;
    }
 
-   private void method10787(GuiGraphicsExtractor var1, float var2) {
+   private void method10787(GuiGraphics var1, float var2) {
       int var3 = ColorUtils.method04611(ThemeManager.INSTANCE.method09611().field22108.method11679(), var2);
       float var4 = this.field23796.method02808() + (this.field23796.method02802() - this.field23787.method09485(field23823)) / 2.0F;
       this.field23787.method09480(var1, field23824, this.method09576() + field23825, var4, var3, field23826);
@@ -184,18 +184,18 @@ public class BindingSettingsWindow extends FloatingWindow {
       this.method09580().method09654(this);
    }
 
-   private void method10794(GuiGraphicsExtractor var1, float var2) {
+   private void method10794(GuiGraphics var1, float var2) {
       GuiBounds var3 = this.field23797;
       KeyBadgeRenderer.method03191(
          var1, var3.method02809(), var3.method02808(), var3.method02804(), var3.method02802(), field23827, this.field23793.method06173(), var2
       );
    }
 
-   private void method10795(GuiGraphicsExtractor var1) {
+   private void method10795(GuiGraphics var1) {
       WindowFrameRenderer.method03056(var1, this, field23782);
    }
 
-   private void method10796(GuiGraphicsExtractor var1, float var2) {
+   private void method10796(GuiGraphics var1, float var2) {
       ThemeSettings var3 = ThemeManager.INSTANCE.method09611();
       float var4 = this.field23795.method02808() + (this.field23795.method02802() - this.field23787.method09485(field23816)) / 2.0F;
       this.field23787
@@ -222,7 +222,7 @@ public class BindingSettingsWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method09557(this.method09569());
       this.method10792(var2, var3);

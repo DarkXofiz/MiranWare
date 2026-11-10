@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.Objects;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class MultiToggleOptionComponent extends GuiComponent {
@@ -55,7 +55,7 @@ public class MultiToggleOptionComponent extends GuiComponent {
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       if (this.field01761.method08075()) {
          this.field01762.method06162();
          this.field01762.method06158(this.field01761.method08074() ? 1.0 : 0.0, field01764, Easings.field19400);

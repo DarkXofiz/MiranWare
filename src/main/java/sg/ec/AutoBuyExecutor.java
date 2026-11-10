@@ -3,7 +3,7 @@ package sg.ec;
 
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -44,7 +44,7 @@ public interface AutoBuyExecutor {
 
    boolean method02872();
 
-   void method02863(AbstractContainerMenu var1, int var2, ContainerInput var3);
+   void method02863(AbstractContainerMenu var1, int var2, ClickType var3);
 
    Long method02871();
 

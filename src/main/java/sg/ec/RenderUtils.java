@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.function.Supplier;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.RemotePlayer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -184,7 +184,7 @@ public class RenderUtils implements MinecraftAccess {
    }
 
    public void method02212(
-      GuiGraphicsExtractor var1, int var2, Supplier<Entity> var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10
+      GuiGraphics var1, int var2, Supplier<Entity> var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10
    ) {
       this.field05188 = var4;
       this.field05189 = var5;

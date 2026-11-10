@@ -1,7 +1,7 @@
 // Original binary: sg/ec/ittBiiWxAIJEtyIn
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class TextAreaSettingComponent extends SettingComponent<TextAreaSetting> {
@@ -69,7 +69,7 @@ public class TextAreaSettingComponent extends SettingComponent<TextAreaSetting> 
    }
 
    @Override
-   public void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00042(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00042(var1, var2, var3, var4);
       this.field20134 = true;
       int var5 = ColorUtils.method04611(ThemeManager.INSTANCE.method09611().field22108.method11679(), this.method09790());

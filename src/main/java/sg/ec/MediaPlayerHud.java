@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -245,7 +245,7 @@ public class MediaPlayerHud extends HudElement {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       FontRenderer var2 = Fonts.field00109;
       boolean var3 = WindowsMediaManager.field06035;

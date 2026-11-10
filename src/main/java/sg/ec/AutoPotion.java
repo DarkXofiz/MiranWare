@@ -8,7 +8,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ThrowablePotionItem;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -151,9 +151,9 @@ public class AutoPotion extends ClientModule {
          mc.getConnection().send(new ServerboundSetCarriedItemPacket(mc.player.getInventory().getSelectedSlot()));
          return false;
       } else {
-         InventoryUtils.method06123(var1, 40, ContainerInput.SWAP, false);
+         InventoryUtils.method06123(var1, 40, ClickType.SWAP, false);
          InventoryUtils.method06142(InteractionHand.OFF_HAND, mc.player.getYRot(), mc.player.getXRot(), false);
-         InventoryUtils.method06123(var1, 40, ContainerInput.SWAP, false);
+         InventoryUtils.method06123(var1, 40, ClickType.SWAP, false);
          return true;
       }
    }

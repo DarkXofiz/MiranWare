@@ -1,7 +1,7 @@
 // Original binary: sg/ec/E5MP2XvwE7LScp35
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public final class KeyBadgeRenderer {
@@ -15,7 +15,7 @@ public final class KeyBadgeRenderer {
    private static final float field07010 = 6.5F;
    private static final float field07011 = 6.5F;
 
-   public static void method03191(GuiGraphicsExtractor var0, float var1, float var2, float var3, float var4, String var5, float var6, float var7) {
+   public static void method03191(GuiGraphics var0, float var1, float var2, float var3, float var4, String var5, float var6, float var7) {
       ThemeSettings var8 = ThemeManager.INSTANCE.method09611();
       int sx = ColorUtils.method04611(var8.field22113.method11679(), var7);
       int sxx = ColorUtils.method04631(ColorUtils.method04611(sx, field07008), sx, var6);

@@ -1,7 +1,7 @@
 // Original binary: sg/ec/xabzW0bo0T5I3b0o
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -81,7 +81,7 @@ public class DiagramWindow extends FloatingWindow {
    private static final float field25984 = 15.0F;
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.method11323();
       if (this.field25923) {
@@ -222,7 +222,7 @@ public class DiagramWindow extends FloatingWindow {
       }
    }
 
-   private void method11322(GuiGraphicsExtractor var1, float var2, int var3) {
+   private void method11322(GuiGraphics var1, float var2, int var3) {
       int var4 = ColorUtils.Nested138.method04636();
       int var5 = ColorUtils.Nested138.method04637();
       float var6 = this.field25919.method00359();

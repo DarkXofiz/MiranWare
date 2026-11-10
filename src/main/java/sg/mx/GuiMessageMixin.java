@@ -1,9 +1,9 @@
 // Original binary: sg/mx/Nc8dIb1CpynHkApQ
 package sg.mx;
 
-import net.minecraft.client.multiplayer.chat.GuiMessage;
+import net.minecraft.client.GuiMessage;
 import net.minecraft.client.multiplayer.chat.GuiMessageSource;
-import net.minecraft.client.multiplayer.chat.GuiMessageTag;
+import net.minecraft.client.GuiMessageTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MessageSignature;

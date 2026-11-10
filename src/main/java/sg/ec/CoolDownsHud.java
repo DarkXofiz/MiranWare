@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemCooldowns;
@@ -109,7 +109,7 @@ public class CoolDownsHud extends HudElement {
    }
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       this.method06465(this.field27820.method02685());
       this.method06453(this.field27820.method02669());

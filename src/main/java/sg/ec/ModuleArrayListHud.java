@@ -2,7 +2,7 @@
 package sg.ec;
 
 import java.util.Arrays;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ModuleArrayListHud extends HudElement {
@@ -72,7 +72,7 @@ public class ModuleArrayListHud extends HudElement {
    private static final float field20553 = 5.0F;
 
    @Override
-   public void method00027(GuiGraphicsExtractor var1) {
+   public void method00027(GuiGraphics var1) {
       super.method00027(var1);
       float var2 = this.field20512;
       float sx = 0.0F;

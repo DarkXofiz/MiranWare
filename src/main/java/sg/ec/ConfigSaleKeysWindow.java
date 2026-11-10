@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class ConfigSaleKeysWindow extends FloatingWindow {
@@ -151,7 +151,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
       }
    }
 
-   private void method05895(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   private void method05895(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.method09576() + field12648;
       float var6 = this.method09560() + this.method09574() - field12649 - field12650;
       float var7 = this.method09568() - field12651;
@@ -191,7 +191,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       this.field12568.clear();
       float var5 = this.method09573().method06173();
@@ -224,7 +224,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
       }
    }
 
-   private void method05901(GuiGraphicsExtractor var1, List<SaleKeyListS2CPacket.Nested163> var2, int var3, int var4, float var5) {
+   private void method05901(GuiGraphics var1, List<SaleKeyListS2CPacket.Nested163> var2, int var3, int var4, float var5) {
       float var6 = this.method09576() + field12608;
       float var7 = this.method09568() - field12609;
       float var8 = this.method09560() + field12610 + field12611;
@@ -276,7 +276,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
    }
 
    private void method05906(
-      GuiGraphicsExtractor var1, SaleKeyListS2CPacket.Nested163 var2, float var3, float var4, float var5, int var6, int var7, boolean var8, float var9
+      GuiGraphics var1, SaleKeyListS2CPacket.Nested163 var2, float var3, float var4, float var5, int var6, int var7, boolean var8, float var9
    ) {
       float var10 = this.method05896(var2.key(), var8 && GuiHitTestUtils.method05624(var6, var7, var3, var4, var5, field12623));
       ConfigPanelRenderer.method03116(var1, var3, var4, var5, field12624, field12625, var10, 0.0F, var9);
@@ -319,7 +319,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
    }
 
    private float method05907(
-      GuiGraphicsExtractor var1, String var2, int var3, float var4, float var5, Object var6, int var7, int var8, boolean var9, float var10, Runnable var11
+      GuiGraphics var1, String var2, int var3, float var4, float var5, Object var6, int var7, int var8, boolean var9, float var10, Runnable var11
    ) {
       float var12 = ConfigPanelRenderer.method03123(this.field12570, var2, field12643);
       float var13 = var4 - var12;
@@ -349,7 +349,7 @@ public class ConfigSaleKeysWindow extends FloatingWindow {
       return "Активировано " + var1 + " из " + var0.size();
    }
 
-   private void method05909(GuiGraphicsExtractor var1, List<SaleKeyListS2CPacket.Nested163> var2, int var3, int var4, float var5) {
+   private void method05909(GuiGraphics var1, List<SaleKeyListS2CPacket.Nested163> var2, int var3, int var4, float var5) {
       float var6 = this.method09576() + this.method09568() - field12585 - field12586;
       float var7 = this.method09560() + field12587;
       float var8 = var6 - field12588 - (this.method09576() + field12589);

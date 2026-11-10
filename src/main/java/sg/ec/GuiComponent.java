@@ -1,7 +1,7 @@
 // Original binary: sg/ec/oJWyjsjqEAzbnOn3
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public abstract class GuiComponent implements MinecraftAccess {
@@ -36,7 +36,7 @@ public abstract class GuiComponent implements MinecraftAccess {
       return this.field22096;
    }
 
-   public abstract void method00042(GuiGraphicsExtractor var1, int var2, int var3, float var4);
+   public abstract void method00042(GuiGraphics var1, int var2, int var3, float var4);
 
    public float method09785() {
       return this.field22097;

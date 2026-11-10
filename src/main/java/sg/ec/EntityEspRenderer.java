@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import net.minecraft.client.CameraType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -126,7 +126,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
    private static final String field23340 = " ";
    private static final float field23341 = 10.0F;
 
-   private void method10333(GuiGraphicsExtractor var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
+   private void method10333(GuiGraphics var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
       Entity var7 = var2.method10402();
       String sx = var2.method10394();
       if (sx != null) {
@@ -159,7 +159,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
       }
    }
 
-   private void method10335(GuiGraphicsExtractor var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
+   private void method10335(GuiGraphics var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
       EntityEspRenderer.Nested294 var7 = var2.method10389();
       var var8 = var7.method10364();
       var var9 = var7.method10362();
@@ -243,7 +243,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
       }
    }
 
-   private void method10339(GuiGraphicsExtractor var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, float var6) {
+   private void method10339(GuiGraphics var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, float var6) {
       EntityEspStyle var7 = var2.method10416();
       if (var7 != null) {
          float var8 = field23280 * var6;
@@ -422,7 +422,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
          : null;
    }
 
-   public void method10348(GuiGraphicsExtractor var1, PoseStack var2, float var3, EntityEspRenderer.Nested296 var4) {
+   public void method10348(GuiGraphics var1, PoseStack var2, float var3, EntityEspRenderer.Nested296 var4) {
       if (!this.field23266.isEmpty()) {
          if (this.field23267 == null) {
             this.field23267 = Fonts.field00109;
@@ -568,7 +568,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
       }
    }
 
-   public void method10354(GuiGraphicsExtractor var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7) {
+   public void method10354(GuiGraphics var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7) {
       if (this.field23267 == null) {
          this.field23267 = Fonts.field00109;
       }
@@ -604,7 +604,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
       this.method10334(this.field23268, var1);
    }
 
-   private void method10357(GuiGraphicsExtractor var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
+   private void method10357(GuiGraphics var1, EntityEspRenderer.Nested298 var2, float var3, float var4, float var5, int var6) {
       float var7 = field23286 * var5;
       var var8 = var2.method10378();
       if (var8 != null && !var8.isEmpty()) {
@@ -768,7 +768,7 @@ public final class EntityEspRenderer implements MinecraftAccess {
 
    // $VF: Compiled from s
    public interface Nested296 {
-      void method10373(GuiGraphicsExtractor var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8, float var9);
+      void method10373(GuiGraphics var1, Entity var2, EntityEspStyle var3, float var4, float var5, float var6, float var7, float var8, float var9);
    }
 
    // $VF: Compiled from s

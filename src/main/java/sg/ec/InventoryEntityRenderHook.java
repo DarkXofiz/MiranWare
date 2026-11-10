@@ -1,14 +1,14 @@
 // Original binary: sg/ec/3h0tzXqVb61jXZbm
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.world.entity.LivingEntity;
 
 // $VF: Compiled from s
 public final class InventoryEntityRenderHook {
    public static void method00748(
-      GuiGraphicsExtractor var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, LivingEntity var9
+      GuiGraphics var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, LivingEntity var9
    ) {
       float var10 = ContainerAnimationEvent.field11706.method05372();
       if (var10 < 1.0F) {

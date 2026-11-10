@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleFunction;
 import java.util.function.IntConsumer;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec2;
@@ -608,7 +608,7 @@ public class BotManagerScreen extends ClientScreen {
    private static final String field14543 = "Средний";
    private static final String field14544 = "Высокий";
 
-   private void method06292(GuiGraphicsExtractor var1, String var2, boolean var3, boolean var4, float var5, float var6, float var7, Runnable var8) {
+   private void method06292(GuiGraphics var1, String var2, boolean var3, boolean var4, float var5, float var6, float var7, Runnable var8) {
       GuiInputRenderer.method08827(this.field14115, var5, field14509, var6);
       float var9 = method06399(this.field14105, var2, var3);
       ToggleSwitchRenderer.method03323(var1, this.field14115, var9, var4 ? var7 : var7 * field14510);
@@ -617,7 +617,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06293(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06293(GuiGraphics var1, float var2, float var3, float var4) {
       float var5 = this.field14140 + field14285 + field14286;
       float var6 = var5 + field14287 + field14288;
       float var7 = this.field14141 + field14289 + field14290;
@@ -649,7 +649,7 @@ public class BotManagerScreen extends ClientScreen {
    }
 
    @Override
-   protected void method01472(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   protected void method01472(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.method01470();
       Vec2 var6 = GuiScaleUtils.method06746(var2, var3);
       this.method06372();
@@ -735,7 +735,7 @@ public class BotManagerScreen extends ClientScreen {
       this.field14126.method06689(this::method06393);
    }
 
-   private void method06297(GuiGraphicsExtractor var1, BotClient var2, float var3, float var4, float var5, float var6, float var7, float var8) {
+   private void method06297(GuiGraphics var1, BotClient var2, float var3, float var4, float var5, float var6, float var7, float var8) {
       float var9 = Math.max(var4, this.field14142);
       float var10 = Math.min(var4 + field14234, this.field14143) - var9;
       boolean var11 = GuiHitTestUtils.method05625(var6, var7, var3, var9, var5, var10);
@@ -783,7 +783,7 @@ public class BotManagerScreen extends ClientScreen {
       );
    }
 
-   private float method06305(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06305(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       float var7 = this.method06402(var1, field14397, GuiIcon.PLUS, var2, var3, var6);
       float var8 = GuiThemeStyle.field03545.method09485(field14398);
       float var9 = field14399 + var8 + field14400;
@@ -834,7 +834,7 @@ public class BotManagerScreen extends ClientScreen {
       return List.copyOf(var0);
    }
 
-   private float method06309(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06309(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       float var7 = this.method06402(var1, field14383, GuiIcon.COPY, var2, var3, var6);
       float var8 = field14384;
       this.method06359(var1, var2, var7, var8, var6);
@@ -871,7 +871,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06318(GuiGraphicsExtractor var1, float var2) {
+   private void method06318(GuiGraphics var1, float var2) {
       int var3 = GuiThemeStyle.method01443(GuiThemeStyle.method01441().field22119.method11676(), field14186 * var2);
       GuiClipStack.method00341(var1, this.field14140, this.field14141, field14187, field14188, field14189, 1.0F, field14190, var2);
       RoundedRectRenderer.method01272(var1, this.field14140, this.field14141, field14191, field14192, field14193, 1.0F, var3);
@@ -898,7 +898,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06320(GuiGraphicsExtractor var1, String var2, float var3, float var4, float var5) {
+   private void method06320(GuiGraphics var1, String var2, float var3, float var4, float var5) {
       GuiInputRenderer.method08823(var1, var2, var3, var4, var5);
    }
 
@@ -919,7 +919,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06325(GuiGraphicsExtractor var1, String var2, boolean var3, float var4, float var5, float var6, float var7, float var8, Runnable var9) {
+   private void method06325(GuiGraphics var1, String var2, boolean var3, float var4, float var5, float var6, float var7, float var8, Runnable var9) {
       float var10 = var4 + field14499;
       float var11 = field14500;
       float var12 = this.method06313(var2, var3 && GuiHitTestUtils.method05625(var6, var7, var10, var5, var11, field14501));
@@ -930,7 +930,7 @@ public class BotManagerScreen extends ClientScreen {
    }
 
    private float method06328(
-      GuiGraphicsExtractor var1,
+      GuiGraphics var1,
       String var2,
       double var3,
       double var5,
@@ -981,7 +981,7 @@ public class BotManagerScreen extends ClientScreen {
       return 1;
    }
 
-   private float method06332(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private float method06332(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       if (this.field14152 == null) {
          GuiThemeStyle.field03545.method09480(var1, field14296, var2, var4 + 2.0F, GuiThemeStyle.method01445(var7), field14297);
          return var4 + field14298;
@@ -993,7 +993,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private float method06334(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private float method06334(GuiGraphics var1, float var2, float var3, float var4) {
       WardenBotSettings var5 = WardenBotSettings.INSTANCE;
       float var6 = this.method06402(var1, field14451, GuiIcon.GEAR, var2, var3, var4);
       this.method06359(var1, var2, var6, field14452, var4);
@@ -1012,7 +1012,7 @@ public class BotManagerScreen extends ClientScreen {
       return var6 + field14457 + field14458;
    }
 
-   private void method06335(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5) {
+   private void method06335(GuiGraphics var1, String var2, float var3, float var4, int var5) {
       GuiInputRenderer.method08826(var1, var2, var3, field14507, var4, var5);
    }
 
@@ -1093,7 +1093,7 @@ public class BotManagerScreen extends ClientScreen {
    }
 
    private void method06340(
-      GuiGraphicsExtractor var1, String var2, boolean var3, float var4, float var5, float var6, float var7, float var8, float var9, Runnable var10
+      GuiGraphics var1, String var2, boolean var3, float var4, float var5, float var6, float var7, float var8, float var9, Runnable var10
    ) {
       float var11 = this.method06313(var2, GuiHitTestUtils.method05625(var7, var8, var4, var5, var6, field14242));
       float var12 = method06399(this.field14105, var2, var3);
@@ -1102,12 +1102,12 @@ public class BotManagerScreen extends ClientScreen {
       this.method06310(var4, var5, var6, field14245, var10);
    }
 
-   private float method06341(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private float method06341(GuiGraphics var1, float var2, float var3, float var4) {
       this.method06381(var1, var2, var3 + field14504, var4);
       return var3 + field14505;
    }
 
-   private float method06342(GuiGraphicsExtractor var1, BotClient var2, float var3, float var4, float var5, float var6, float var7) {
+   private float method06342(GuiGraphics var1, BotClient var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = this.method06402(var1, field14370, GuiIcon.PLAY, var3, var4, var7);
       this.method06359(var1, var3, var8, field14371, var7);
       BotSessionManager var9 = BotSessionManager.INSTANCE;
@@ -1150,11 +1150,11 @@ public class BotManagerScreen extends ClientScreen {
       return var8 + field14381 + field14382;
    }
 
-   private void method06343(GuiGraphicsExtractor var1, TextInputWidget var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method06343(GuiGraphics var1, TextInputWidget var2, float var3, float var4, float var5, float var6, float var7) {
       GuiInputRenderer.method08816(var1, var3, var4, var5, var6, this.method06313(var2, var2.method06726()), var7);
    }
 
-   private float method06344(GuiGraphicsExtractor var1, BotClient var2, float var3, float var4, float var5, float var6, float var7) {
+   private float method06344(GuiGraphics var1, BotClient var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = this.method06402(var1, field14299, GuiIcon.CHECK, var3, var4, var7);
       BotConnectionState var9 = var2.method00146();
       String var10 = var9 == BotConnectionState.FAILED ? var2.method00159() : "";
@@ -1277,7 +1277,7 @@ public class BotManagerScreen extends ClientScreen {
       return var8 + field14335 * var16 + field14336;
    }
 
-   private void method06347(GuiGraphicsExtractor var1, String var2, float var3, float var4, float var5) {
+   private void method06347(GuiGraphics var1, String var2, float var3, float var4, float var5) {
       this.method06335(var1, var2, var3, var4, GuiThemeStyle.method01445(var5));
    }
 
@@ -1332,7 +1332,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06351(GuiGraphicsExtractor var1, BotClient var2, float var3, float var4, float var5, float var6) {
+   private void method06351(GuiGraphics var1, BotClient var2, float var3, float var4, float var5, float var6) {
       this.method06320(var1, field14337, var3, var4, var6);
       if (this.field14149 == var2) {
          this.method06386(var1, this.field14118, field14338, var3, var4, var5, var6);
@@ -1380,7 +1380,7 @@ public class BotManagerScreen extends ClientScreen {
    }
 
    private static void method06354(
-      GuiGraphicsExtractor var0, String var1, GuiThemeStyle.Nested40 var2, float var3, float var4, float var5, float var6, float var7
+      GuiGraphics var0, String var1, GuiThemeStyle.Nested40 var2, float var3, float var4, float var5, float var6, float var7
    ) {
       int var8 = switch (var2) {
          case NORMAL -> GuiPanelRenderer.method00762(var6, var7);
@@ -1401,7 +1401,7 @@ public class BotManagerScreen extends ClientScreen {
       return GuiInputRenderer.method08815(var0);
    }
 
-   private void method06359(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private void method06359(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       GuiPanelRenderer.method00765(var1, var2, var3, field14498, var4, 0.0F, var5);
    }
 
@@ -1410,11 +1410,11 @@ public class BotManagerScreen extends ClientScreen {
       return var1 == null ? field14532 : var1.method03914();
    }
 
-   private void method06361(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private void method06361(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       GuiPanelRenderer.method00765(var1, var2, var3, var4, field14246, Math.max(var6, var5), var7);
    }
 
-   private float method06363(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private float method06363(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       AutoBuySettings var6 = AutoBuySettings.field19624;
       float var7 = this.method06402(var1, field14442, GuiIcon.CART, var2, var3, var5);
       this.method06359(var1, var2, var7, field14443, var5);
@@ -1461,7 +1461,7 @@ public class BotManagerScreen extends ClientScreen {
    }
 
    private void method06364(
-      GuiGraphicsExtractor var1, String var2, GuiThemeStyle.Nested40 var3, float var4, float var5, float var6, float var7, float var8, Runnable var9
+      GuiGraphics var1, String var2, GuiThemeStyle.Nested40 var3, float var4, float var5, float var6, float var7, float var8, Runnable var9
    ) {
       float var10 = GuiInputRenderer.method08819(var2);
       float var11 = var4 + field14511 - field14512 - var10;
@@ -1474,7 +1474,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private void method06368(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06368(GuiGraphics var1, float var2, float var3, float var4) {
       GuiThemeStyle.field03543
          .method09480(var1, field14208, this.field14140 + field14209, this.field14141 + field14210, GuiThemeStyle.method01437(var4), field14211);
       String var5 = BotManager.INSTANCE.method03078() + " в сети · " + BotManager.INSTANCE.method03092().size() + " всего";
@@ -1513,7 +1513,7 @@ public class BotManagerScreen extends ClientScreen {
       );
    }
 
-   private void method06370(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06370(GuiGraphics var1, float var2, float var3, float var4) {
       GuiBounds var5 = this.field14136.method02647();
       var5.method02801(var2 - field14281);
       var5.method02806(var3);
@@ -1522,7 +1522,7 @@ public class BotManagerScreen extends ClientScreen {
       this.field14136.method02646(var1, GuiThemeStyle.field03544, field14284, this.field14152.method00137().method00475().ordinal(), var4);
    }
 
-   private void method06371(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06371(GuiGraphics var1, float var2, float var3, float var4) {
       float var5 = this.field14141 + field14250;
       float var6 = this.field14140 + field14251 + field14252;
       float var7 = var5 - field14253;
@@ -1561,7 +1561,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private float method06373(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06373(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       WardenBotSettings var7 = WardenBotSettings.INSTANCE;
       float var8 = this.method06402(var1, field14431, GuiIcon.ALERT, var2, var3, var6);
       this.method06359(var1, var2, var8, field14432, var6);
@@ -1583,7 +1583,7 @@ public class BotManagerScreen extends ClientScreen {
       return var8 + field14440 + field14441;
    }
 
-   private void method06374(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private void method06374(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       float var7 = this.field14110.size() * field14226;
       float var8 = this.field14143 - this.field14142;
       this.field14111.method01152(var7 > var8);
@@ -1608,7 +1608,7 @@ public class BotManagerScreen extends ClientScreen {
       var1.disableScissor();
    }
 
-   private void method06375(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private void method06375(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       this.field14102.method06162();
       this.field14102.method06158(Mth.clamp(var4, 0.0F, 1.0F), field14345, Easings.field19400);
       int var6 = GuiThemeStyle.method01443(ColorUtils.Nested138.method04638(0), var5);
@@ -1622,7 +1622,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private float method06376(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06376(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       float var7 = this.method06402(var1, field14459, GuiIcon.SHARE, var2, var3, var6);
       this.method06359(var1, var2, var7, field14460, var6);
       float var8 = var7;
@@ -1658,7 +1658,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private float method06379(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private float method06379(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = this.method06384(var1, var2, var4, var5, var6, var7);
       var8 = this.method06373(var1, var2, var8, var5, var6, var7);
       var8 = this.method06363(var1, var2, var8, var5, var7);
@@ -1680,7 +1680,7 @@ public class BotManagerScreen extends ClientScreen {
       };
    }
 
-   private void method06381(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+   private void method06381(GuiGraphics var1, float var2, float var3, float var4) {
       GuiInputRenderer.method08825(var1, var2, field14506, var3, var4);
    }
 
@@ -1696,7 +1696,7 @@ public class BotManagerScreen extends ClientScreen {
       }
    }
 
-   private float method06384(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06384(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       BotManager var7 = BotManager.INSTANCE;
       float var8 = this.method06402(var1, field14416, GuiIcon.RELOAD, var2, var3, var6);
       this.method06359(var1, var2, var8, field14417, var6);
@@ -1746,7 +1746,7 @@ public class BotManagerScreen extends ClientScreen {
       this.field14125.method06722();
    }
 
-   private void method06386(GuiGraphicsExtractor var1, TextInputWidget var2, String var3, float var4, float var5, float var6, float var7) {
+   private void method06386(GuiGraphics var1, TextInputWidget var2, String var3, float var4, float var5, float var6, float var7) {
       GuiInputRenderer.method08821(var1, var2, var3, var4, field14508, var5, var6, this.method06313(var2, var2.method06726()), var7);
    }
 
@@ -1826,7 +1826,7 @@ public class BotManagerScreen extends ClientScreen {
       this.field14141 = Mth.clamp(this.field14141, 0.0F, Math.max(0.0F, var4 - field14180));
    }
 
-   private float method06398(GuiGraphicsExtractor var1, BotClient var2, float var3, float var4, float var5) {
+   private float method06398(GuiGraphics var1, BotClient var2, float var3, float var4, float var5) {
       float var6 = this.method06402(var1, field14353, GuiIcon.FOLDER, var3, var4, var5);
       float var7 = field14354;
       float var8 = field14355 * var7 + field14356;
@@ -1870,7 +1870,7 @@ public class BotManagerScreen extends ClientScreen {
       AutoBuyItemRegistry.INSTANCE.method10994();
    }
 
-   private float method06401(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6) {
+   private float method06401(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6) {
       var var7 = ProxyManager.INSTANCE.method05237();
       float var8 = this.method06402(var1, field14467, GuiIcon.PIN, var2, var3, var6);
       int var9 = Math.max(1, var7.size());
@@ -1929,7 +1929,7 @@ public class BotManagerScreen extends ClientScreen {
       return var8 + var10 + field14487;
    }
 
-   private float method06402(GuiGraphicsExtractor var1, String var2, GuiIcon var3, float var4, float var5, float var6) {
+   private float method06402(GuiGraphics var1, String var2, GuiIcon var3, float var4, float var5, float var6) {
       float var7 = GuiThemeStyle.field03543.method09485(field14488);
       float var8 = var5 + var7 / 2.0F;
       var3.method01190(var1, var4 + field14489 + field14490, var8, field14491, GuiThemeStyle.method01445(var6));
@@ -2045,7 +2045,7 @@ public class BotManagerScreen extends ClientScreen {
          this.field14548.method01144();
       }
 
-      private void method06419(GuiGraphicsExtractor var1, int var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9) {
+      private void method06419(GuiGraphics var1, int var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9) {
          float var10 = Math.max(var4, var5);
          float var11 = Math.min(var4 + field14577, var5 + var6) - var10;
          String var12 = this.field14549.get(var2);
@@ -2071,7 +2071,7 @@ public class BotManagerScreen extends ClientScreen {
       }
 
       void method06421(
-         GuiGraphicsExtractor var1, String var2, List<String> var3, int var4, IntConsumer var5, float var6, float var7, float var8, float var9, float var10
+         GuiGraphics var1, String var2, List<String> var3, int var4, IntConsumer var5, float var6, float var7, float var8, float var9, float var10
       ) {
          this.field14549 = var3;
          this.field14550 = var4;
@@ -2102,7 +2102,7 @@ public class BotManagerScreen extends ClientScreen {
          BotManagerScreen.this.method06310(this.field14546.method02809(), this.field14546.method02808(), var13, var14, this::method06418);
       }
 
-      void method06422(GuiGraphicsExtractor var1, float var2, float var3, float var4) {
+      void method06422(GuiGraphics var1, float var2, float var3, float var4) {
          int var5 = this.field14549.size();
          int var6 = Math.min(var5, 8);
          float var7 = var6 * field14563 + field14564;

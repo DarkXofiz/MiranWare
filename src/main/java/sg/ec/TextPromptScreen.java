@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.phys.Vec2;
 
 // $VF: Compiled from s
@@ -189,14 +189,14 @@ public class TextPromptScreen extends ClientScreen {
       }
    }
 
-   private void method07224(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5) {
+   private void method07224(GuiGraphics var1, float var2, float var3, float var4, float var5) {
       int var6 = GuiThemeStyle.method01443(GuiThemeStyle.method01441().field22119.method11676(), field17576 * var5);
       GuiClipStack.method00341(var1, var2, var3, field17577, var4, field17578, 1.0F, field17579, var5);
       RoundedRectRenderer.method01272(var1, var2, var3, field17580, var4, field17581, 1.0F, var6);
       GuiShadowRenderer.method10984(var1, var2, var3, field17582, var4, field17583, 1.0F, field17584, GuiThemeStyle.method01443(var6, field17585));
    }
 
-   private void method07225(GuiGraphicsExtractor var1, float var2, float var3, float var4, List<String> var5, float var6) {
+   private void method07225(GuiGraphics var1, float var2, float var3, float var4, List<String> var5, float var6) {
       FontRenderer var7 = GuiThemeStyle.field03544;
       FontRenderer var8 = GuiThemeStyle.field03545;
       float var9 = var2 + field17586;
@@ -244,7 +244,7 @@ public class TextPromptScreen extends ClientScreen {
    }
 
    @Override
-   protected void method01472(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   protected void method01472(GuiGraphics var1, int var2, int var3, float var4) {
       if (this.field17536 == null) {
          ClientScreenManager.INSTANCE.method08321();
       } else {
@@ -303,7 +303,7 @@ public class TextPromptScreen extends ClientScreen {
       }
    }
 
-   private void method07226(GuiGraphicsExtractor var1, float var2, float var3, Vec2 var4, float var5) {
+   private void method07226(GuiGraphics var1, float var2, float var3, Vec2 var4, float var5) {
       float var6 = field17610;
       float var7 = var2 + field17611;
       float var8 = var7 + var6 + field17612;

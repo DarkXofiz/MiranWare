@@ -1,7 +1,7 @@
 // Original binary: sg/ec/RsE5ySDtYq7f70KZ
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 
 // $VF: Compiled from s
@@ -10,7 +10,7 @@ public class ContainerAnimationEvent extends Event {
    private float field11707;
    private float field11708;
    private Screen field11709;
-   private GuiGraphicsExtractor field11710;
+   private GuiGraphics field11710;
    private AnimationUtils field11711;
    private ContainerAnimationEvent.Nested164 field11712;
    private float field11713 = 1.0F;
@@ -47,7 +47,7 @@ public class ContainerAnimationEvent extends Event {
       return this.field11708;
    }
 
-   public GuiGraphicsExtractor method05378() {
+   public GuiGraphics method05378() {
       return this.field11710;
    }
 
@@ -59,11 +59,11 @@ public class ContainerAnimationEvent extends Event {
       this.field11713 = var1;
    }
 
-   public void method05381(GuiGraphicsExtractor var1) {
+   public void method05381(GuiGraphics var1) {
       this.field11710 = var1;
    }
 
-   public void method05382(Screen var1, GuiGraphicsExtractor var2, AnimationUtils var3) {
+   public void method05382(Screen var1, GuiGraphics var2, AnimationUtils var3) {
       this.field11709 = var1;
       this.field11710 = var2;
       this.field11711 = var3;
@@ -79,7 +79,7 @@ public class ContainerAnimationEvent extends Event {
       this.field11712 = var1;
    }
 
-   public void method05385(float var1, float var2, Screen var3, GuiGraphicsExtractor var4, AnimationUtils var5) {
+   public void method05385(float var1, float var2, Screen var3, GuiGraphics var4, AnimationUtils var5) {
       this.field11707 = var1;
       this.field11708 = var2;
       this.field11709 = var3;

@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
@@ -57,7 +57,7 @@ public class SoundsVisualization extends ClientModule {
    private void method02589(HudRenderEvent var1) {
       if (!this.field06145.isEmpty()) {
          Identifier var2 = ClientTextures.INSTANCE.method04564();
-         GuiGraphicsExtractor var3 = var1.method05424();
+         GuiGraphics var3 = var1.method05424();
          Matrix3x2fStack var4 = var3.pose();
          EntityRenderDispatcher var5 = mc.getEntityRenderDispatcher();
          float var6 = var5.camera.yRot() * field06149;

@@ -6,7 +6,7 @@ import java.util.Deque;
 import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 
 // $VF: Compiled from s
@@ -315,7 +315,7 @@ public final class AuctionSellingController implements MinecraftAccess {
          AbstractContainerMenu var4 = mc.player.containerMenu;
          if (var4 != null && mc.gameMode != null) {
             this.field10988 = this.field10989;
-            mc.gameMode.handleContainerInput(var4.containerId, method05006(var3), this.field10988, ContainerInput.SWAP, mc.player);
+            mc.gameMode.handleContainerInput(var4.containerId, method05006(var3), this.field10988, ClickType.SWAP, mc.player);
             this.field10990 = var1 + field11004;
             this.field10984 = AuctionSellingController.Nested150.WAIT_SWAP;
          } else {

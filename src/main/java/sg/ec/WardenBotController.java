@@ -33,7 +33,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.BannerItem;
@@ -459,7 +459,7 @@ public final class WardenBotController {
             return;
          }
 
-         this.method02003(var1, var5, 0, ContainerInput.QUICK_MOVE);
+         this.method02003(var1, var5, 0, ClickType.QUICK_MOVE);
       }
    }
 
@@ -859,7 +859,7 @@ public final class WardenBotController {
          if (!var2.isEmpty()) {
             Predicate<ItemStack> var3 = var1x -> var1x.isEmpty() || ItemStack.isSameItemSameComponents(var1x, var2);
             Slot var4 = this.method02007(var1, false, var3);
-            this.method02003(var1, var4 != null ? var4 : this.method02007(var1, true, var3), 0, ContainerInput.PICKUP);
+            this.method02003(var1, var4 != null ? var4 : this.method02007(var1, true, var3), 0, ClickType.PICKUP);
          }
       });
    }
@@ -1223,7 +1223,7 @@ public final class WardenBotController {
          && this.field04797.method01747().getZ() <= this.field04831.maxZ;
    }
 
-   private void method02003(AbstractContainerMenu var1, Slot var2, int var3, ContainerInput var4) {
+   private void method02003(AbstractContainerMenu var1, Slot var2, int var3, ClickType var4) {
       if (var2 != null) {
          this.field04797.method01776(var2.index, var3, var4);
       }
@@ -1277,7 +1277,7 @@ public final class WardenBotController {
    private boolean method02006() {
       return this.method01987(var1 -> {
          if (!var1.getCarried().isEmpty()) {
-            this.field04797.method01776(-999, 0, ContainerInput.PICKUP);
+            this.field04797.method01776(-999, 0, ClickType.PICKUP);
          }
       });
    }
@@ -2085,7 +2085,7 @@ public final class WardenBotController {
       if (!var3.isEmpty()) {
          var var4 = method01977(var3);
          Slot var5 = var2 != null && var4.test(var2.getItem()) ? var2 : this.method02007(var1, false, var4);
-         this.method02003(var1, var5 != null ? var5 : this.method02007(var1, true, var4), 0, ContainerInput.PICKUP);
+         this.method02003(var1, var5 != null ? var5 : this.method02007(var1, true, var4), 0, ClickType.PICKUP);
       }
    }
 
@@ -2101,7 +2101,7 @@ public final class WardenBotController {
                   return;
                }
 
-               this.method02003(var1x, var2, 0, ContainerInput.PICKUP);
+               this.method02003(var1x, var2, 0, ClickType.PICKUP);
             }
 
             this.method02071(var1x);
@@ -2298,7 +2298,7 @@ public final class WardenBotController {
             return;
          }
 
-         this.method02003(var1, var4, 1, ContainerInput.PICKUP);
+         this.method02003(var1, var4, 1, ClickType.PICKUP);
          if (var1.getCarried().getCount() >= var3) {
             return;
          }
@@ -2563,7 +2563,7 @@ public final class WardenBotController {
                this.method01987(var2x -> {
                   int var3x = this.method01976(var2);
                   if (var3x >= 0) {
-                     this.field04797.method01776(var3x, this.field04797.method01747().getInventory().getSelectedSlot(), ContainerInput.SWAP);
+                     this.field04797.method01776(var3x, this.field04797.method01747().getInventory().getSelectedSlot(), ClickType.SWAP);
                   }
                });
                return;
@@ -2849,7 +2849,7 @@ public final class WardenBotController {
                   int var1 = WardenBotController.this.method01976(this.field05052);
                   if (var1 >= 0) {
                      WardenBotController.this.field04797
-                        .method01776(var1, WardenBotController.this.field04797.method01747().getInventory().getSelectedSlot(), ContainerInput.SWAP);
+                        .method01776(var1, WardenBotController.this.field04797.method01747().getInventory().getSelectedSlot(), ClickType.SWAP);
                   }
                }
             );

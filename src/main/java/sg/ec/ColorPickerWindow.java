@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.awt.Color;
 import java.util.Locale;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 // $VF: Compiled from s
@@ -219,7 +219,7 @@ public class ColorPickerWindow extends FloatingWindow {
    }
 
    @Override
-   public void method00612(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00612(GuiGraphics var1, int var2, int var3, float var4) {
       super.method00612(var1, var2, var3, var4);
       ThemeSettings var5 = ThemeManager.INSTANCE.method09611();
       float var6 = this.method09573().method06173();
@@ -347,7 +347,7 @@ public class ColorPickerWindow extends FloatingWindow {
          );
    }
 
-   private void method11314(GuiGraphicsExtractor var1, ThemeSettings var2, String var3, float var4, float var5, float var6, float var7, float var8) {
+   private void method11314(GuiGraphics var1, ThemeSettings var2, String var3, float var4, float var5, float var6, float var7, float var8) {
       int var9 = ColorUtils.method04631(var2.field22116.method11676(), var2.field22115.method11676(), var7);
       int var10 = ColorUtils.method04631(var2.field22110.method11676(), var2.field22109.method11676(), var7);
       RoundedRectRenderer.method01272(var1, var4, var5, var6, field25834, field25835, 1.0F, ColorUtils.method04611(var9, var8));

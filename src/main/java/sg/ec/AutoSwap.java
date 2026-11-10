@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.ToIntFunction;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -198,7 +198,7 @@ public class AutoSwap extends ClientModule {
             if (var2 != -1) {
                InventoryUtils.method06116(var2, 5);
             } else {
-               InventoryUtils.method06123(5, 0, ContainerInput.QUICK_MOVE, false);
+               InventoryUtils.method06123(5, 0, ClickType.QUICK_MOVE, false);
             }
          } else {
             Slot var1 = this.method01522(this.field03669::method00864);
@@ -316,7 +316,7 @@ public class AutoSwap extends ClientModule {
 
    private void method01536(Slot var1) {
       if (var1 != null) {
-         InventoryUtils.method06137(mc.player.containerMenu.containerId, var1.index, 40, ContainerInput.SWAP, mc.player);
+         InventoryUtils.method06137(mc.player.containerMenu.containerId, var1.index, 40, ClickType.SWAP, mc.player);
       }
    }
 

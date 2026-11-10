@@ -1,7 +1,7 @@
 // Original binary: sg/ec/5iP37YiB8MRtNA9w
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public enum GuiIcon {
@@ -32,7 +32,7 @@ public enum GuiIcon {
       this.field02519 = var4;
    }
 
-   public void method01190(GuiGraphicsExtractor var1, float var2, float var3, float var4, int var5) {
+   public void method01190(GuiGraphics var1, float var2, float var3, float var4, int var5) {
       this.method01191().method09487(var1, this.field02519, var2, var3 - var4 + 0.5F, var4, var5);
    }
 

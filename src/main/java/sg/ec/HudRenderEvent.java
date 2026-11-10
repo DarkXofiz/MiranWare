@@ -3,20 +3,20 @@ package sg.ec;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 // $VF: Compiled from s
 public class HudRenderEvent extends Event {
    public static final HudRenderEvent field11740 = new HudRenderEvent();
    private PoseStack field11741;
-   private GuiGraphicsExtractor field11742;
+   private GuiGraphics field11742;
    private DeltaTracker field11743;
 
    public DeltaTracker method05421() {
       return this.field11743;
    }
 
-   public void method05422(GuiGraphicsExtractor var1, DeltaTracker var2) {
+   public void method05422(GuiGraphics var1, DeltaTracker var2) {
       this.field11741 = new PoseStack();
       this.field11742 = var1;
       this.field11743 = var2;
@@ -29,11 +29,11 @@ public class HudRenderEvent extends Event {
       }
    }
 
-   public void method05423(GuiGraphicsExtractor var1) {
+   public void method05423(GuiGraphics var1) {
       this.field11742 = var1;
    }
 
-   public GuiGraphicsExtractor method05424() {
+   public GuiGraphics method05424() {
       return this.field11742;
    }
 

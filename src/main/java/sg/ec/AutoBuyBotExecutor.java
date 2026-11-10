@@ -2,7 +2,7 @@
 package sg.ec;
 
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -94,7 +94,7 @@ public final class AutoBuyBotExecutor implements AutoBuyExecutor {
    }
 
    @Override
-   public void method02863(AbstractContainerMenu var1, int var2, ContainerInput var3) {
+   public void method02863(AbstractContainerMenu var1, int var2, ClickType var3) {
       if (var1 != null && var2 >= 0 && var2 < var1.slots.size()) {
          this.field24977.method00135().method03053(var2, 0, var3);
       }

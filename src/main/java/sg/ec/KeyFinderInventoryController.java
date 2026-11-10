@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -80,7 +80,7 @@ public final class KeyFinderInventoryController implements MinecraftAccess {
       if (var2 == -1) {
          int var4 = InventoryUtils.method06129();
          var2 = var4 >= 0 && var4 <= 8 ? var4 : this.field23246;
-         InventoryUtils.method06123(var3, var2, ContainerInput.SWAP, false);
+         InventoryUtils.method06123(var3, var2, ClickType.SWAP, false);
          this.field23247 = var3;
          this.field23248 = var2;
       }
@@ -157,7 +157,7 @@ public final class KeyFinderInventoryController implements MinecraftAccess {
    public void method10332() {
       if (this.field23242 != KeyFinderInventoryController.Nested293.IDLE) {
          if (this.field23247 != -1) {
-            InventoryUtils.method06123(this.field23247, this.field23248, ContainerInput.SWAP, false);
+            InventoryUtils.method06123(this.field23247, this.field23248, ClickType.SWAP, false);
          }
 
          this.method10322(this.field23246);

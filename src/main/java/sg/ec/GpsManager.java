@@ -1,7 +1,7 @@
 // Original binary: sg/ec/eXJZkiA3DGdG99Vh
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.Identifier;
 import org.joml.Matrix3x2fStack;
 import org.joml.Vector2f;
@@ -30,7 +30,7 @@ public final class GpsManager implements MinecraftAccess {
    private static final String field18670 = "This is a utility class and cannot be instantiated";
    private static final String field18671 = "GpsManager()";
 
-   public static void method07826(GuiGraphicsExtractor var0) {
+   public static void method07826(GuiGraphics var0) {
       if (field18655 != null && mc.player != null) {
          field18651.method06162();
          field18651.method06168(mc.gameRenderer.mainCamera().yaw(), field18656, Easings.field19421, true);

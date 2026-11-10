@@ -10,7 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -20,7 +20,7 @@ public final class BaritonePlayerController implements IPlayerController {
    private final Minecraft mc;
 
    @Override
-   public void windowClick(int var1, int var2, int var3, ContainerInput var4, Player var5) {
+   public void windowClick(int var1, int var2, int var3, ClickType var4, Player var5) {
       this.mc.gameMode.handleContainerInput(var1, var2, var3, var4, var5);
    }
 

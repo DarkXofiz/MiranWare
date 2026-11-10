@@ -27,7 +27,7 @@ import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.minecart.MinecartChest;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -1111,7 +1111,7 @@ public class AutoKeyFinder extends ClientModule {
 
       this.field24844 = var1.index;
       this.field24845 = var2.getCount();
-      InventoryUtils.method06137(this.field24843, var1.index, 0, ContainerInput.QUICK_MOVE, mc.player);
+      InventoryUtils.method06137(this.field24843, var1.index, 0, ClickType.QUICK_MOVE, mc.player);
       this.field24846 = this.field24791.method03022() - 1;
       return true;
    }

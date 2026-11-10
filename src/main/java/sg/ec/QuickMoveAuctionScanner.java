@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
@@ -41,7 +41,7 @@ public final class QuickMoveAuctionScanner extends AbstractAuctionScanner {
       }
 
       this.method05968(sxx.entry(), sxx.stack());
-      this.field13487.method02863(var1, sxx.slot(), ContainerInput.QUICK_MOVE);
+      this.field13487.method02863(var1, sxx.slot(), ClickType.QUICK_MOVE);
       this.field22832 = var2 + AutoBuyDelayUtils.method07073(field22838, field22839);
       return AbstractAuctionScanner.Nested180.CLICKED;
    }
@@ -79,7 +79,7 @@ public final class QuickMoveAuctionScanner extends AbstractAuctionScanner {
    private void method10154(AbstractContainerMenu var1) {
       int var2 = AuctionContainerUtils.method02615(var1);
       if (var2 >= 0) {
-         this.field13487.method02863(var1, var2, ContainerInput.PICKUP);
+         this.field13487.method02863(var1, var2, ClickType.PICKUP);
       }
    }
 
@@ -102,7 +102,7 @@ public final class QuickMoveAuctionScanner extends AbstractAuctionScanner {
                   this.method05968((AutoBuyItem)var6.get(), var4);
                }
 
-               this.field13487.method02863(var3, var8, ContainerInput.PICKUP);
+               this.field13487.method02863(var3, var8, ClickType.PICKUP);
             }
          }
       }

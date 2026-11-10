@@ -8,7 +8,7 @@ import net.minecraft.CrashReport;
 import net.minecraft.CrashReportCategory;
 import net.minecraft.ReportedException;
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.item.TrackingItemStackRenderState;
 import net.minecraft.client.renderer.state.gui.GuiItemRenderState;
 import net.minecraft.client.renderer.state.gui.GuiRenderState;
@@ -36,7 +36,7 @@ public final class ItemRenderUtils implements MinecraftAccess {
    private static final String field19388 = "This is a utility class and cannot be instantiated";
 
    private static void method08408(
-      GuiGraphicsExtractor var0,
+      GuiGraphics var0,
       @Nullable LivingEntity var1,
       @Nullable Level var2,
       ItemStack var3,
@@ -77,7 +77,7 @@ public final class ItemRenderUtils implements MinecraftAccess {
       }
    }
 
-   public static void method08409(GuiGraphicsExtractor var0, int var1, int var2, DeltaTracker var3, Player var4, ItemStack var5, int var6) {
+   public static void method08409(GuiGraphics var0, int var1, int var2, DeltaTracker var3, Player var4, ItemStack var5, int var6) {
       if (!var5.isEmpty()) {
          float var7 = var5.getPopTime() - var3.getGameTimeDeltaPartialTick(true);
          if (var7 > 0.0F) {
@@ -120,7 +120,7 @@ public final class ItemRenderUtils implements MinecraftAccess {
       }
    }
 
-   public static void method08413(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4) {
+   public static void method08413(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4) {
       method08418(var0, var1, var2, var3, var4, 1.0F, 1.0F);
    }
 
@@ -130,11 +130,11 @@ public final class ItemRenderUtils implements MinecraftAccess {
       var0.scale(var3, var3);
    }
 
-   public static void method08415(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4, float var5, float var6) {
+   public static void method08415(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4, float var5, float var6) {
       method08408(var0, mc.player, mc.level, var1, var2, var3, var4, 0, var5, var6);
    }
 
-   public static void method08416(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4, float var5) {
+   public static void method08416(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4, float var5) {
       method08415(var0, var1, var2, var3, var4, var5, 1.0F);
    }
 
@@ -142,12 +142,12 @@ public final class ItemRenderUtils implements MinecraftAccess {
       throw new UnsupportedOperationException(field19388);
    }
 
-   public static void method08418(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4, float var5, float var6) {
+   public static void method08418(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4, float var5, float var6) {
       float var7 = field19381 * var6 * var4;
       method08415(var0, var1, var2 - var7, var3 - var7, var4, var5, var6);
    }
 
-   public static void method08419(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3, float var4) {
+   public static void method08419(GuiGraphics var0, ItemStack var1, float var2, float var3, float var4) {
       method08415(var0, var1, var2, var3, var4, 1.0F, 1.0F);
    }
 
@@ -159,7 +159,7 @@ public final class ItemRenderUtils implements MinecraftAccess {
       }
    }
 
-   public static void method08422(GuiGraphicsExtractor var0, ItemStack var1, float var2, float var3) {
+   public static void method08422(GuiGraphics var0, ItemStack var1, float var2, float var3) {
       method08415(var0, var1, var2, var3, 1.0F, 1.0F, 1.0F);
    }
 }

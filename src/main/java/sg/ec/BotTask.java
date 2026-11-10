@@ -7,7 +7,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.phys.BlockHitResult;
 
 // $VF: Compiled from s
@@ -85,7 +85,7 @@ public interface BotTask {
 
    LocalPlayer method01747();
 
-   void method01776(int var1, int var2, ContainerInput var3);
+   void method01776(int var1, int var2, ClickType var3);
 
    boolean method01773();
 

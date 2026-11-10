@@ -4,7 +4,7 @@ package sg.mx;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -33,9 +33,9 @@ public class GuiMixin_1255 {
 
    @Inject(
       method = "extractRenderState",
-      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;applyCursor(Lcom/mojang/blaze3d/platform/Window;)V")
+      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;applyCursor(Lcom/mojang/blaze3d/platform/Window;)V")
    )
-   private void hex$renderClientScreen(DeltaTracker var1, boolean var2, boolean var3, CallbackInfo var4, @Local GuiGraphicsExtractor var5) {
+   private void hex$renderClientScreen(DeltaTracker var1, boolean var2, boolean var3, CallbackInfo var4, @Local GuiGraphics var5) {
       KeyboardInputUtils.method00910(var5, var1.getGameTimeDeltaTicks());
    }
 
@@ -43,11 +43,11 @@ public class GuiMixin_1255 {
       method = "extractRenderState",
       at = @At(
          value = "INVOKE",
-         target = "Lnet/minecraft/client/gui/Hud;extractRenderState(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V",
+         target = "Lnet/minecraft/client/gui/Hud;extractRenderState(Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/client/DeltaTracker;)V",
          shift = Shift.AFTER
       )
    )
-   private void renderHud(DeltaTracker var1, boolean var2, boolean var3, CallbackInfo var4, @Local GuiGraphicsExtractor var5) {
+   private void renderHud(DeltaTracker var1, boolean var2, boolean var3, CallbackInfo var4, @Local GuiGraphics var5) {
       HudRenderEvent.field11740.method05422(var5, var1);
    }
 
@@ -60,7 +60,7 @@ public class GuiMixin_1255 {
       boolean var2,
       boolean var3,
       CallbackInfo var4,
-      @Local GuiGraphicsExtractor var5,
+      @Local GuiGraphics var5,
       @Local(ordinal = 0) int var6,
       @Local(ordinal = 1) int var7
    ) {

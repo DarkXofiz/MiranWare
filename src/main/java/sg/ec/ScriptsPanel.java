@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Util;
 
 // $VF: Compiled from s
@@ -157,7 +157,7 @@ public class ScriptsPanel extends GuiPanel {
       this.field01909 = var1.method03400();
    }
 
-   public void method00811(GuiGraphicsExtractor var1, int var2, int var3, float var4) {
+   public void method00811(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.field01907.method09986() + field01910;
       float var6 = this.field01907.method09963() + field01911;
       float var7 = this.field01907.method10015() - field01912;
@@ -189,7 +189,7 @@ public class ScriptsPanel extends GuiPanel {
       return this.method10181(var1);
    }
 
-   private void method00814(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, float var6, float var7, LoadedScript var8) {
+   private void method00814(GuiGraphics var1, float var2, float var3, float var4, float var5, float var6, float var7, LoadedScript var8) {
       ScriptModule var9 = var8.method03398();
       FontRenderer var10 = Fonts.field00110;
       float var11 = this.method10168("scripts:row:" + var8.method03400(), GuiHitTestUtils.method05625(var2, var3, var5, var6, var7, field01921));

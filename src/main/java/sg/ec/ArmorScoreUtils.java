@@ -8,7 +8,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -98,7 +98,7 @@ public final class ArmorScoreUtils implements MinecraftAccess {
       }
 
       int var1 = mc.player.containerMenu.containerId;
-      InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var1, var0, 0, ContainerInput.QUICK_MOVE, false));
+      InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var1, var0, 0, ClickType.QUICK_MOVE, false));
       return true;
    }
 
@@ -114,22 +114,22 @@ public final class ArmorScoreUtils implements MinecraftAccess {
    public static boolean method05919(int var0, int var1, boolean var2) {
       int var3 = mc.player.containerMenu.containerId;
       if (!var2) {
-         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var3, var1, 0, ContainerInput.QUICK_MOVE, false));
+         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var3, var1, 0, ClickType.QUICK_MOVE, false));
          return true;
       }
 
       if (var1 >= 36) {
          int var5 = var1 - 36;
-         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var3, var0, var5, ContainerInput.SWAP, false));
+         InventoryActionManager.INSTANCE.method10469(() -> InventoryUtils.method06127(var3, var0, var5, ClickType.SWAP, false));
          return true;
       }
 
       int var4 = InventoryUtils.method06094(-1);
       if (var4 != -1) {
          InventoryActionManager.INSTANCE.method10469(() -> {
-            InventoryUtils.method06127(var3, var1, var4, ContainerInput.SWAP, false);
-            InventoryUtils.method06127(var3, var0, var4, ContainerInput.SWAP, false);
-            InventoryUtils.method06127(var3, var1, var4, ContainerInput.SWAP, false);
+            InventoryUtils.method06127(var3, var1, var4, ClickType.SWAP, false);
+            InventoryUtils.method06127(var3, var0, var4, ClickType.SWAP, false);
+            InventoryUtils.method06127(var3, var1, var4, ClickType.SWAP, false);
          });
          return true;
       }
@@ -139,8 +139,8 @@ public final class ArmorScoreUtils implements MinecraftAccess {
       }
 
       InventoryActionManager.INSTANCE.method10469(() -> {
-         InventoryUtils.method06127(var3, var0, 0, ContainerInput.QUICK_MOVE, false);
-         InventoryUtils.method06127(var3, var1, 0, ContainerInput.QUICK_MOVE, false);
+         InventoryUtils.method06127(var3, var0, 0, ClickType.QUICK_MOVE, false);
+         InventoryUtils.method06127(var3, var1, 0, ClickType.QUICK_MOVE, false);
       });
       return true;
    }

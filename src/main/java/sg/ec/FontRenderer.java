@@ -1,7 +1,7 @@
 // Original binary: sg/ec/mO9Xg2UrXI8v00q8
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -14,15 +14,15 @@ public class FontRenderer {
    private static final int field21528 = 16777215;
    private static final float field21529 = 0.5F;
 
-   public float method09471(GuiGraphicsExtractor var1, Component var2, float var3, float var4, int var5, float var6) {
+   public float method09471(GuiGraphics var1, Component var2, float var3, float var4, int var5, float var6) {
       return this.method09477(var1, var2, var3, var4, var5, var6, 0.0F);
    }
 
-   public float method09472(GuiGraphicsExtractor var1, Component var2, float var3, float var4, int var5, float var6, float var7, int var8) {
+   public float method09472(GuiGraphics var1, Component var2, float var3, float var4, int var5, float var6, float var7, int var8) {
       return this.method09477(var1, var2, var3, var4, ColorUtils.method04616(var5, var8), var6, var7);
    }
 
-   public float method09473(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5, float var6) {
+   public float method09473(GuiGraphics var1, String var2, float var3, float var4, int var5, float var6) {
       float var7 = this.method09486(var2, var6);
       this.method09480(var1, var2, var3 - var7 / 2.0F, var4, var5, var6);
       return var7;
@@ -84,7 +84,7 @@ public class FontRenderer {
       return var1 == null ? 0.0F : this.method09478(method09483(var1), var2, var3);
    }
 
-   public float method09477(GuiGraphicsExtractor var1, Component var2, float var3, float var4, int var5, float var6, float var7) {
+   public float method09477(GuiGraphics var1, Component var2, float var3, float var4, int var5, float var6, float var7) {
       return this.method09490(var1, method09474(var2, var5), var3, var4, var5, var6, var7);
    }
 
@@ -96,11 +96,11 @@ public class FontRenderer {
       return FontFace.method07010().method07017(var1).method07020(var1).method07018();
    }
 
-   public float method09480(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5, float var6) {
+   public float method09480(GuiGraphics var1, String var2, float var3, float var4, int var5, float var6) {
       return this.method09490(var1, var2, var3, var4, var5, var6, 0.0F);
    }
 
-   public float method09481(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5, int var6, float var7, float var8) {
+   public float method09481(GuiGraphics var1, String var2, float var3, float var4, int var5, int var6, float var7, float var8) {
       if (var2 == null) {
          return 0.0F;
       }
@@ -123,7 +123,7 @@ public class FontRenderer {
       this.field21527 = this.method09479(var1);
    }
 
-   public float method09482(GuiGraphicsExtractor var1, String var2, float var3, float var4, CornerColors var5, float var6, float var7) {
+   public float method09482(GuiGraphics var1, String var2, float var3, float var4, CornerColors var5, float var6, float var7) {
       if (var2 != null && !var2.isEmpty()) {
          FontTextRenderState var8 = new FontTextRenderState(
             var2, this.field21527, var3, var4, field21529, var6, var5, var7, var1.scissorStack.peek(), GuiPoseCache.method00056(var1.pose())
@@ -151,7 +151,7 @@ public class FontRenderer {
       return this.method09478(var1, var2, 0.0F);
    }
 
-   public void method09487(GuiGraphicsExtractor var1, String var2, float var3, float var4, float var5, int var6) {
+   public void method09487(GuiGraphics var1, String var2, float var3, float var4, float var5, int var6) {
       if (var2 != null && !var2.isEmpty()) {
          FontGlyph var7 = this.field21527.method07009(var2.charAt(0));
          if (var7 != null && var7.method03695()) {
@@ -166,7 +166,7 @@ public class FontRenderer {
       }
    }
 
-   public float method09488(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5, float var6, float var7) {
+   public float method09488(GuiGraphics var1, String var2, float var3, float var4, int var5, float var6, float var7) {
       float var8 = this.method09478(var2, var6, var7);
       this.method09490(var1, var2, var3 - var8 / 2.0F, var4, var5, var6, var7);
       return var8;
@@ -176,7 +176,7 @@ public class FontRenderer {
       return this.method09476(var1, var2, 0.0F);
    }
 
-   public float method09490(GuiGraphicsExtractor var1, String var2, float var3, float var4, int var5, float var6, float var7) {
+   public float method09490(GuiGraphics var1, String var2, float var3, float var4, int var5, float var6, float var7) {
       return this.method09482(var1, var2, var3, var4, new CornerColors(var5), var6, var7);
    }
 }

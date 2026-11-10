@@ -3,7 +3,7 @@ package sg.ec;
 
 import java.awt.Color;
 import net.minecraft.client.CameraType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.phys.EntityHitResult;
 
 // $VF: Compiled from s
@@ -81,7 +81,7 @@ public class Crosshair extends ClientModule {
       this.method03935(field05147);
    }
 
-   private void method02152(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6, int var7) {
+   private void method02152(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6, int var7) {
       this.method02155(var1, var2 - field05151, var3 - field05152, var4 + 1.0F, var5 + 1.0F, var7);
       this.method02155(var1, var2, var3, var4, var5, var6);
    }
@@ -94,7 +94,7 @@ public class Crosshair extends ClientModule {
    private void method02154(CrosshairRenderEvent var1) {
       if (mc.options.getCameraType() == CameraType.FIRST_PERSON) {
          if (mc.player != null) {
-            GuiGraphicsExtractor var2 = var1.method08629();
+            GuiGraphics var2 = var1.method08629();
             this.field05130.method06162();
             this.field05130.method06166(this.field05129 ? 1.0 : 0.0, field05148);
             float var3 = this.field05123.method03022();
@@ -118,7 +118,7 @@ public class Crosshair extends ClientModule {
       }
    }
 
-   public void method02155(GuiGraphicsExtractor var1, float var2, float var3, float var4, float var5, int var6) {
+   public void method02155(GuiGraphics var1, float var2, float var3, float var4, float var5, int var6) {
       RoundedRectRenderer.method01272(var1, var2, var3, var4, var5, 0.0F, 0.0F, var6);
    }
 

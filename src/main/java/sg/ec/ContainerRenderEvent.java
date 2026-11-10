@@ -1,7 +1,7 @@
 // Original binary: sg/ec/pVkG2oq3660gAjM8
 package sg.ec;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
 // $VF: Compiled from s
@@ -14,7 +14,7 @@ public class ContainerRenderEvent extends Event {
    private int field22780;
    private int field22781;
    private int field22782;
-   private GuiGraphicsExtractor field22783;
+   private GuiGraphics field22783;
 
    public int method10104() {
       return this.field22780;
@@ -36,7 +36,7 @@ public class ContainerRenderEvent extends Event {
       return this.field22781;
    }
 
-   public void method10109(GuiGraphicsExtractor var1) {
+   public void method10109(GuiGraphics var1) {
       this.field22783 = var1;
    }
 
@@ -52,7 +52,7 @@ public class ContainerRenderEvent extends Event {
       this.field22780 = var1;
    }
 
-   public void method10113(AbstractContainerScreen<?> var1, GuiGraphicsExtractor var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public void method10113(AbstractContainerScreen<?> var1, GuiGraphics var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       this.field22776 = var1;
       this.field22783 = var2;
       this.field22777 = var3;
@@ -80,7 +80,7 @@ public class ContainerRenderEvent extends Event {
       return this.field22779;
    }
 
-   public GuiGraphicsExtractor method10118() {
+   public GuiGraphics method10118() {
       return this.field22783;
    }
 

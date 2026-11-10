@@ -11,7 +11,7 @@ import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -67,7 +67,7 @@ public final class InventoryUtils implements MinecraftAccess {
       }
    }
 
-   public static void method06084(Slot var0, int var1, ContainerInput var2, boolean var3) {
+   public static void method06084(Slot var0, int var1, ClickType var2, boolean var3) {
       if (var0 != null) {
          method06123(var0.index, var1, var2, var3);
       }
@@ -77,9 +77,9 @@ public final class InventoryUtils implements MinecraftAccess {
       if (var0 != -1) {
          int var3 = var1.equals(InteractionHand.MAIN_HAND) ? mc.player.getInventory().getSelectedSlot() : 40;
          if (var2) {
-            TickTaskScheduler.method03510(() -> method06123(var0, var3, ContainerInput.SWAP, false), 1);
+            TickTaskScheduler.method03510(() -> method06123(var0, var3, ClickType.SWAP, false), 1);
          } else {
-            method06123(var0, var3, ContainerInput.SWAP, false);
+            method06123(var0, var3, ClickType.SWAP, false);
          }
       }
    }
@@ -132,7 +132,7 @@ public final class InventoryUtils implements MinecraftAccess {
       return true;
    }
 
-   public static boolean method06092(int var0, int var1, ContainerInput var2) {
+   public static boolean method06092(int var0, int var1, ClickType var2) {
       return switch (var2) {
          case PICKUP, QUICK_MOVE, CLONE -> var1 >= 0 && var1 <= 2;
          case SWAP -> var0 >= 0 && (var1 >= 0 && var1 < 9 || var1 == 40);
@@ -224,7 +224,7 @@ public final class InventoryUtils implements MinecraftAccess {
             if (var2 != null) {
                int var3 = var2.index;
                if (var3 >= 0) {
-                  method06137(mc.player.containerMenu.containerId, var3, 40, ContainerInput.SWAP, mc.player);
+                  method06137(mc.player.containerMenu.containerId, var3, 40, ClickType.SWAP, mc.player);
                   method06142(InteractionHand.OFF_HAND, field13860, field13861, false);
                   if (var1 && field13856 == -1) {
                      field13856 = var3;
@@ -236,7 +236,7 @@ public final class InventoryUtils implements MinecraftAccess {
                      return;
                   }
 
-                  method06137(mc.player.containerMenu.containerId, field13856, 40, ContainerInput.SWAP, mc.player);
+                  method06137(mc.player.containerMenu.containerId, field13856, 40, ClickType.SWAP, mc.player);
                   field13856 = -1;
                }
             }
@@ -326,21 +326,21 @@ public final class InventoryUtils implements MinecraftAccess {
 
    public static void method06116(int var0, int var1) {
       if (var0 < 9) {
-         method06123(var1, var0, ContainerInput.SWAP, false);
+         method06123(var1, var0, ClickType.SWAP, false);
       } else if (var0 >= 36 && var0 < 45) {
-         method06123(var1, var0 - 36, ContainerInput.SWAP, false);
+         method06123(var1, var0 - 36, ClickType.SWAP, false);
       } else {
          int var2 = method06129();
          if (var2 == -1) {
-            method06123(var0, 0, ContainerInput.PICKUP, false);
-            method06123(var1, 0, ContainerInput.PICKUP, false);
+            method06123(var0, 0, ClickType.PICKUP, false);
+            method06123(var1, 0, ClickType.PICKUP, false);
             if (!mc.player.containerMenu.getCarried().isEmpty()) {
-               method06123(var0, 0, ContainerInput.PICKUP, false);
+               method06123(var0, 0, ClickType.PICKUP, false);
             }
          } else {
-            method06123(var0, var2, ContainerInput.SWAP, false);
-            method06123(var1, var2, ContainerInput.SWAP, false);
-            method06123(var0, var2, ContainerInput.SWAP, false);
+            method06123(var0, var2, ClickType.SWAP, false);
+            method06123(var1, var2, ClickType.SWAP, false);
+            method06123(var0, var2, ClickType.SWAP, false);
          }
       }
    }
@@ -375,7 +375,7 @@ public final class InventoryUtils implements MinecraftAccess {
          InventoryActionManager.INSTANCE.method10470(() -> {
             for (int var1x = 0; var1x < 36; var1x++) {
                if (mc.player.getInventory().getItem(var1x).getItem() == var1) {
-                  method06137(0, var1x, 8, ContainerInput.SWAP, mc.player);
+                  method06137(0, var1x, 8, ClickType.SWAP, mc.player);
                   break;
                }
             }
@@ -433,7 +433,7 @@ public final class InventoryUtils implements MinecraftAccess {
       }
    }
 
-   public static void method06123(int var0, int var1, ContainerInput var2, boolean var3) {
+   public static void method06123(int var0, int var1, ClickType var2, boolean var3) {
       method06127(0, var0, var1, var2, var3);
    }
 
@@ -442,7 +442,7 @@ public final class InventoryUtils implements MinecraftAccess {
       return new ArrayList<>(var0.stream().filter(var1 -> var1.index > var0.size() - 10).toList());
    }
 
-   public static void method06127(int var0, int var1, int var2, ContainerInput var3, boolean var4) {
+   public static void method06127(int var0, int var1, int var2, ClickType var3, boolean var4) {
       if (mc.player != null) {
          method06137(var0, var1, var2, var3, mc.player);
       }
@@ -492,7 +492,7 @@ public final class InventoryUtils implements MinecraftAccess {
       return method06096(var1 -> var1.getItem() == var0, false);
    }
 
-   public static void method06137(int var0, int var1, int var2, ContainerInput var3, Player var4) {
+   public static void method06137(int var0, int var1, int var2, ClickType var3, Player var4) {
       if (mc.gameMode != null && method06092(var1, var2, var3)) {
          mc.gameMode.handleContainerInput(var0, var1, var2, var3, var4);
       }
