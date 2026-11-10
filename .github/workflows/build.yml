@@ -22,10 +22,14 @@ jobs:
             head -40 build.log | cut -c1-250
             echo "== EN COK HATALI DOSYALAR"
             grep 'error:' build.log | sed -E 's#^(.*/)?([^/:]+\.java):.*#\2#' | sort | uniq -c | sort -rn | head -40
+            echo "== EKSIK SEMBOLLER"
+            grep -E '^symbol:' build.log | sed -E 's/^symbol: +//' | sort | uniq -c | sort -rn | head -150 | cut -c1-160
+            echo "== EKSIK PAKETLER"
+            grep -E '^location: package' build.log | sort | uniq -c | sort -rn | head -30
             echo "== HATA TURLERI"
             grep 'error:' build.log | sed -E 's#^.*error: ##' | sort | uniq -c | sort -rn | head -40 | cut -c1-200
           } > summary.txt
-          head -120 summary.txt >> "$GITHUB_STEP_SUMMARY"
+          head -400 summary.txt >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
