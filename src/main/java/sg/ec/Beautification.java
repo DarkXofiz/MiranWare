@@ -125,7 +125,7 @@ public class Beautification extends ClientModule {
                      && (!sxxxxx.isLocalServer() || sxxxxx.player.connection.getListedOnlinePlayers().size() > 1 || sxxxxxxx != null)
                );
                if (sxxxxxxxx > field07783) {
-                  sxxxx.extractRenderState(var2, var2.guiWidth(), sxxxxxx, sxxxxxxx);
+                  sxxxx.render(var2, var2.guiWidth(), sxxxxxx, sxxxxxxx);
                }
 
                var1.method05696();
@@ -197,7 +197,7 @@ public class Beautification extends ClientModule {
          var1.pose().translate(-var10, -var11);
       }
 
-      var1.item(var3, var7, var5, var6, var4.seed());
+      var1.renderItem(var3, var7, var5, var6, var4.seed());
       if (var8 > 0.0F) {
          var1.pose().popMatrix();
       }

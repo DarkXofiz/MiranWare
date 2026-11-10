@@ -24,7 +24,7 @@ public final class InventoryEntityRenderHook {
          }
       }
 
-      InventoryScreen.extractEntityInInventoryFollowsMouse(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
+      InventoryScreen.renderEntityInInventoryFollowsMouse(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
    private InventoryEntityRenderHook() {

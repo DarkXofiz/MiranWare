@@ -86,7 +86,6 @@ public enum BotSessionManager implements MinecraftAccess {
             var2.showDeathScreen(),
             var2.doLimitedCrafting(),
             var1,
-            var2.onlineMode(),
             var2.enforcesSecureChat()
          );
       }

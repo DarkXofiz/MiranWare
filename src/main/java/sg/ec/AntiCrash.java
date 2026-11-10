@@ -17,11 +17,11 @@ public class AntiCrash extends ClientModule {
    @Subscribe
    private void method04334(PacketEvent var1) {
       if (var1.method10897() instanceof ClientboundLevelParticlesPacket var3) {
-         int sx = var3.count();
-         float sxx = var3.xDist();
-         float sxxx = var3.yDist();
-         float sxxxx = var3.zDist();
-         float sxxxxx = Math.max(var3.xMaxSpeed(), Math.max(var3.yMaxSpeed(), var3.zMaxSpeed()));
+         int sx = var3.getCount();
+         float sxx = var3.getXDist();
+         float sxxx = var3.getYDist();
+         float sxxxx = var3.getZDist();
+         float sxxxxx = var3.getMaxSpeed();
          if (method04335(sxx, sxxx, sxxxx, sx, sxxxxx)) {
             if (this.field09724.method05999()) {
                ChatTextUtils.method05086(field09727);

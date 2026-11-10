@@ -159,7 +159,6 @@
     "ScreenMixin",
     "ClientLevelMixin",
     "EntityTickListMixin",
-    "FogRendererMixin",
     "MobEffectFogEnvironmentMixin",
     "LevelMixin",
     "BlockStatePredictionHandlerMixin",

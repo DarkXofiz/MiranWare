@@ -146,7 +146,6 @@ public class RenderUtils implements MinecraftAccess {
       var2.shadowPieces.clear();
       var2.outlineColor = 0;
       var2.nameTag = null;
-      var2.scoreText = null;
       var2.ageInTicks = (float)((System.nanoTime() - field05181) / field05210);
       if (var2 instanceof LivingEntityRenderState var3) {
          var3.bodyRot = field05211 + this.field05185;
@@ -215,7 +214,7 @@ public class RenderUtils implements MinecraftAccess {
          }
 
          this.field05199.set(0.0F, var19 / 2.0F + field05209, 0.0F);
-         var1.entity(this.field05200, var21, this.field05199, this.field05197, this.field05198, var15, var16, var17, var18);
+         var1.submitEntityRenderState(this.field05200, var21, this.field05199, this.field05197, this.field05198, var15, var16, var17, var18);
          PictureInPictureRendererHooks.method07563(this.field05200, var10, false);
       }
    }

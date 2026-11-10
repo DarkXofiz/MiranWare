@@ -121,7 +121,7 @@ public class ScriptsPanel extends GuiPanel {
    }
 
    private static void method00807() {
-      com.mojang.blaze3d.Blaze3D.openPath(ScriptRuntime.INSTANCE.method06231().method05737().toPath());
+      net.minecraft.Util.getPlatform().openPath(ScriptRuntime.INSTANCE.method06231().method05737().toPath());
    }
 
    private void method00808(String var1) {

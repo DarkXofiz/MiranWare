@@ -228,7 +228,7 @@ public final class ConfirmScreenAuctionScanner extends AbstractAuctionScanner {
          } else if (var1 >= this.field09739) {
             ItemStack var4 = AuctionContainerUtils.method02618(var3, 13);
             ConfirmScreenAuctionScanner.Nested130 var5 = this.method04344(var3, var4, var1);
-            this.method04345(var3, Items.STAINED_GLASS_PANE.pick(var5.confirmed() ? DyeColor.LIME : DyeColor.RED), var5);
+            this.method04345(var3, (var5.confirmed() ? Items.LIME_STAINED_GLASS_PANE : Items.RED_STAINED_GLASS_PANE), var5);
             this.field09739 = var1 + AutoBuyDelayUtils.method07072();
          }
       }

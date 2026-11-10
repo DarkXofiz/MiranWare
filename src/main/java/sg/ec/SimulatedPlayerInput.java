@@ -334,7 +334,7 @@ public class SimulatedPlayerInput implements MinecraftAccess {
          FluidState var5 = this.field20215.level().getFluidState(var8);
          double var6 = var8.getY() + var5.getHeight(this.field20215.level(), var8);
          if (var6 > var1) {
-            this.field20236.addAll(var5.typeHolder().tags().toList());
+            this.field20236.addAll(var5.getType().builtInRegistryHolder().tags().toList());
          }
       }
    }

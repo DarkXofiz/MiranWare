@@ -165,7 +165,7 @@ public final class RaycastUtils implements MinecraftAccess {
          return null;
       }
 
-      Vec3 var4 = mc.gameRenderer.getMainCamera().getPosition();
+      Vec3 var4 = mc.gameRenderer.getMainCamera().position();
       Vec3 var5 = var4.add(method09509(var1, var0).scale(var2));
       BlockHitResult var6 = method09507(var4, var5);
       return var6.getType() == Type.BLOCK ? var6.getLocation() : null;

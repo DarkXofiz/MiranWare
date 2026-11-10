@@ -62,6 +62,6 @@ public final class EffectRenderPipelines {
       return null;
    }
 
-   public static final Object field11857 = null;
-   public static final Object field11856 = null;
+   public static final net.minecraft.client.renderer.rendertype.RenderType field11857 = null;
+   public static final net.minecraft.client.renderer.rendertype.RenderType field11856 = null;
 }

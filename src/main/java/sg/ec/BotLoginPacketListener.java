@@ -44,7 +44,6 @@ public final class BotLoginPacketListener implements ClientLoginPacketListener, 
    public void handleLoginFinished(ClientboundLoginFinishedPacket var1) {
       String.valueOf("профиль принят: " + var1.gameProfile().name());
       this.field00729.method00070().method08015(var1.gameProfile());
-      this.field00729.method00070().method07959(var1.sessionId());
       this.field00729.method00074(BotConnectionState.CONFIGURING);
       this.field00730.setupInboundProtocol(ConfigurationProtocols.CLIENTBOUND, new BotConfigurationPacketListener(this.field00729, this.field00730));
       this.field00730.send(ServerboundLoginAcknowledgedPacket.INSTANCE);

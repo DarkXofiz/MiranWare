@@ -306,7 +306,7 @@ public final class BotWorldState {
             try {
                Minecraft var5 = Minecraft.getInstance();
                WorldSessionTelemetryManager var6 = new WorldSessionTelemetryManager(
-                  TelemetryEventSender.DISABLED, false, null, null, var3.method00070().method08001()
+                  TelemetryEventSender.DISABLED, false, null, null
                );
                ClientPacketListener var7 = new ClientPacketListener(
                   var5,
@@ -845,7 +845,7 @@ public final class BotWorldState {
       synchronized (this.field18557) {
          BotClientLevel var3 = this.field18605;
          if (var3 != null) {
-            var3.applyLight(var1.getX(), var1.getZ(), var1.lightData());
+            var3.applyLight(var1.getX(), var1.getZ(), var1.getLightData());
          }
 
          if (this.field18601) {
@@ -902,7 +902,6 @@ public final class BotWorldState {
             var1.showDeathScreen(),
             var1.doLimitedCrafting(),
             var2,
-            var1.onlineMode(),
             var1.enforcesSecureChat()
          )
          : var1;
@@ -1756,8 +1755,8 @@ public final class BotWorldState {
       synchronized (this.field18557) {
          BotClientLevel var3 = this.field18605;
 
-         for (int var4 = 0; var4 < var1.entityIds().size(); var4++) {
-            int var5 = var1.entityIds().getInt(var4);
+         for (int var4 = 0; var4 < var1.getEntityIds().size(); var4++) {
+            int var5 = var1.getEntityIds().getInt(var4);
             this.field18561.remove(var5);
             if (var3 != null) {
                var3.entityStore().method07263(var5);

@@ -222,8 +222,8 @@ public final class ExploreProcess extends BaritoneProcessHelper implements IExpl
       private final ExploreProcess.IChunkFilter b;
 
       private EitherChunk(ExploreProcess var1, ExploreProcess.IChunkFilter var2, ExploreProcess.IChunkFilter var3) {
-         Objects.requireNonNull(var1);
          super();
+         Objects.requireNonNull(var1);
          this.a = var2;
          this.b = var3;
       }

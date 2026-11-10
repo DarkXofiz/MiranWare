@@ -30,7 +30,7 @@ public final class ChatMessageHooks {
                if (var4.equals(var8.getBaseText())) {
                   var3.setRepeats(var8.getRepeats() + 1);
                   var5.remove(var6);
-                  ((ChatComponentMixin_1182)(Object)var0).getVisibleMessages().removeIf(var1x -> var1x.parent() == var7);
+                  ((ChatComponentMixin_1182)(Object)var0).getVisibleMessages().removeIf(var1x -> false);
                   return;
                }
             }

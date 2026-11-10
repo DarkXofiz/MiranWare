@@ -91,7 +91,7 @@ public class InventoryMove extends ClientModule {
    private boolean method03547() {
       this.method03551();
       Window var1 = mc.getWindow();
-      return Arrays.stream(this.field07861).anyMatch(var1x -> InputConstants.isKeyDown(var1x.getDefaultKey().getValue()));
+      return Arrays.stream(this.field07861).anyMatch(var1x -> InputConstants.isKeyDown(net.minecraft.client.Minecraft.getInstance().getWindow(), var1x.getDefaultKey().getValue()));
    }
 
    @Subscribe
@@ -164,7 +164,7 @@ public class InventoryMove extends ClientModule {
    private void method03555() {
       this.method03551();
       Window var1 = mc.getWindow();
-      Arrays.stream(this.field07861).forEach(var1x -> var1x.setDown(InputConstants.isKeyDown(var1x.getDefaultKey().getValue())));
+      Arrays.stream(this.field07861).forEach(var1x -> var1x.setDown(InputConstants.isKeyDown(net.minecraft.client.Minecraft.getInstance().getWindow(), var1x.getDefaultKey().getValue())));
    }
 
    private void method03556() {

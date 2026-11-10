@@ -244,7 +244,7 @@ public final class ScriptEffectsAdapter implements MinecraftAccess {
       }
 
       ItemStack var4 = ScriptRenderResources.method08787(var2);
-      return var4.isEmpty() ? null : new ItemParticleOption(var3, var4.getItem());
+      return var4.isEmpty() ? null : new ItemParticleOption(var3, var4);
    }
 
    private ParticleOptions method02993(String var1, String var2) {

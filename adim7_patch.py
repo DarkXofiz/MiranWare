@@ -68,9 +68,9 @@ GLOBAL = [
     (r"\b([\w.]+)\.getCurrentSwing\(\) == null", r"!\1.swinging"),
     (r"\b([\w.]+)\.getCurrentSwing\(\) != null", r"\1.swinging"),
     (r",\s*net\.minecraft\.world\.level\.block\.BonemealSource\.INTERACTION\)", ")"),
-    (r"\.getMainCamera\(\)\.position\(\)", ".getMainCamera().getPosition()"),
-    (r"\.getMainCamera\(\)\.(?:yaw|yRot)\(\)", ".getMainCamera().getYRot()"),
-    (r"\.getMainCamera\(\)\.(?:pitch|xRot)\(\)", ".getMainCamera().getXRot()"),
+    (r"\.getMainCamera\(\)\.getPosition\(\)", ".getMainCamera().position()"),  # adim8: 1.21.11 Camera.position()
+    (r"\.getMainCamera\(\)\.(?:yaw|getYRot)\(\)", ".getMainCamera().yRot()"),
+    (r"\.getMainCamera\(\)\.(?:pitch|getXRot)\(\)", ".getMainCamera().xRot()"),
 ]
 for dp, dn, fn in os.walk(ROOT):
     for n in fn:

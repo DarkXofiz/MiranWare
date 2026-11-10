@@ -218,7 +218,7 @@ public enum AutoBuyManager implements MinecraftAccess {
    private static void method09772(PacketEvent var0) {
       if (AutoBuySessionHistory.field27854.method11705()) {
          if (var0.method10897() instanceof ServerboundCommandSuggestionPacket var3) {
-            AutoBuySessionHistory.field27854.method11708("  → подсказка: \"" + var3.command() + "\"");
+            AutoBuySessionHistory.field27854.method11708("  → подсказка: \"" + var3.getCommand() + "\"");
          } else {
             if (var0.method10897() instanceof ServerboundChatCommandPacket var1) {
                AutoBuySessionHistory.field27854.method11708("  → команда: /" + var1.command());

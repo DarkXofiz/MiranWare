@@ -99,8 +99,8 @@ final class ScriptWorldGenerator implements AutoCloseable {
    private static Frozen method06477(CloseableResourceManager var0) {
       LayeredRegistryAccess var1 = RegistryLayer.createRegistryAccess();
       var var2 = TagLoader.loadTagsForExistingRegistries(var0, var1.getLayer(RegistryLayer.STATIC));
-      var var3 = TagLoader.buildUpdatedLookups(var1.getAccessForLoading(RegistryLayer.WORLD), var2);
-      return RegistryDataLoader.load(var0, var3, RegistryDataLoader.WORLD_REGISTRIES, Runnable::run).join();
+      var var3 = TagLoader.buildUpdatedLookups(var1.getAccessForLoading(RegistryLayer.WORLDGEN), var2);
+      return RegistryDataLoader.load(var0, var3, RegistryDataLoader.WORLDGEN_REGISTRIES);
    }
 
    boolean method06478(Set<ResourceKey<Biome>> var1) {
@@ -134,7 +134,7 @@ final class ScriptWorldGenerator implements AutoCloseable {
 
    ScriptWorldGenerator(Path var1, Set<ResourceKey<Biome>> var2) throws IOException {
       this.field14665 = Set.copyOf(var2);
-      this.field14660 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource().fullResources()));
+      this.field14660 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource()));
       this.field14661 = method06477(this.field14660);
       this.field14662 = LevelStorageSource.createDefault(var1).createAccess(field14667);
       this.field14663 = new StructureTemplateManager(this.field14660, this.field14662, DataFixers.getDataFixer(), BuiltInRegistries.BLOCK);
@@ -198,7 +198,7 @@ final class ScriptWorldGenerator implements AutoCloseable {
          this.field14673 = var2;
          this.field14674 = var4;
          var var5 = ScriptWorldGenerator.this.field14661.lookupOrThrow(Registries.NOISE_SETTINGS).getOrThrow(var4.field14670);
-         this.field14675 = RandomState.create(ScriptWorldGenerator.this.field14661.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), var2, var5.value());
+         this.field14675 = RandomState.create(var5.value(), ScriptWorldGenerator.this.field14661.lookupOrThrow(net.minecraft.core.registries.Registries.NOISE), var2);
          this.field14676 = new NoiseBasedChunkGenerator(ScriptWorldGenerator.this.method06476(var4), var5);
          this.field14677 = this.field14676.createState(ScriptWorldGenerator.this.field14661.lookupOrThrow(Registries.STRUCTURE_SET), this.field14675, var2);
          DimensionType sx = ScriptWorldGenerator.this.field14661.lookupOrThrow(Registries.DIMENSION_TYPE).getOrThrow(var4.field14671).value();
@@ -279,7 +279,7 @@ final class ScriptWorldGenerator implements AutoCloseable {
             ScriptWorldGenerator.this.field14661,
             this.field14676,
             this.field14676.getBiomeSource(),
-            this.field14675.createClimateSampler(net.minecraft.world.level.levelgen.densityfunction.SamplerContext.builder().build()),
+            this.field14675.sampler(),
             this.field14675,
             ScriptWorldGenerator.this.field14663,
             this.field14673,

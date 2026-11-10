@@ -35,7 +35,7 @@ public class RenderCommand extends Command {
       var2.requireMax(0);
       BetterBlockPos var3 = this.ctx.playerFeet();
       int sx = (this.ctx.minecraft().options.renderDistance().get() + 1) * 16;
-      this.ctx.minecraft().levelRenderer.resetLevelRenderData();
+      this.ctx.minecraft().levelRenderer.allChanged();
       this.logDirect(Аич);
    }
 

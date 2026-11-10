@@ -256,6 +256,19 @@ public final class CrosshairRenderHooks {
    private CrosshairRenderHooks() {
    }
 
+   private static java.nio.ByteBuffer abgrToRgbaBuffer(NativeImage var0) {
+      java.nio.ByteBuffer var1 = java.nio.ByteBuffer.allocate(var0.getWidth() * var0.getHeight() * 4).order(java.nio.ByteOrder.LITTLE_ENDIAN);
+
+      for (int var2 = 0; var2 < var0.getHeight(); var2++) {
+         for (int var3 = 0; var3 < var0.getWidth(); var3++) {
+            var1.putInt(var0.getPixel(var3, var2));
+         }
+      }
+
+      var1.flip();
+      return var1;
+   }
+
    private static void method03754(Map<String, CrosshairRenderHooks.Nested110> var0, String var1, int var2, int var3, int var4) {
       for (int var5 = 0; var5 < var2; var5++) {
          method03752(var0, var1 + var5, var3 + var5 * 8, var4);
@@ -273,7 +286,7 @@ public final class CrosshairRenderHooks {
          if (var4 + var6 <= var2 && var5 + var7 <= var0.getHeight()) {
             try (NativeImage var8 = new NativeImage(var6, var7, false)) {
                var0.copyRect(var8, var4, var5, 0, 0, var6, var7, false, false);
-               return PngEncoder.method00661(var8.getPixelBytes(), var6, var7);
+               return PngEncoder.method00661(abgrToRgbaBuffer(var8), var6, var7);
             }
          } else {
             return null;

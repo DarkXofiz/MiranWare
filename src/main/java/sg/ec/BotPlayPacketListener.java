@@ -395,7 +395,7 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
 
    @Override
    public void handleSetEntityData(ClientboundSetEntityDataPacket var1) {
-      if (var1.getId() == this.field22812.method07965()) {
+      if (var1.id() == this.field22812.method07965()) {
          this.field22812.method07975(var1.packedItems());
       } else {
          this.field22813.method07805(var1);
@@ -641,8 +641,8 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
    @Override
    public void handleSetEntityMotion(ClientboundSetEntityMotionPacket var1) {
       if (var1.getId() == this.field22812.method07965()) {
-         String.format(Locale.ROOT, field22818, var1.getXa(), var1.getYa(), var1.getZa());
-         this.field22812.method07998(var1.getXa(), var1.getYa(), var1.getZa());
+         String.format(Locale.ROOT, field22818, var1.getMovement().x, var1.getMovement().y, var1.getMovement().z);
+         this.field22812.method07998(var1.getMovement().x, var1.getMovement().y, var1.getMovement().z);
       }
    }
 

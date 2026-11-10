@@ -24,7 +24,7 @@ public final class HudRenderTargetHooks {
          }
       }
 
-      return var0.mainRenderTarget();
+      return net.minecraft.client.Minecraft.getInstance().getMainRenderTarget();
    }
 
    public static void method06929() {

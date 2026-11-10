@@ -74,7 +74,7 @@ public enum ItemTextureAtlas implements MinecraftAccess {
          this.field13948[var2] = var1;
          this.field13949[var2] = ++this.field13952;
          this.field13947.put(var1, var2);
-         RenderSystem.getDevice().createCommandEncoder().writeToTexture(this.field13950.getTexture(), this.field13951, 0, 0, var2 % 16 * 16, var2 / 16 * 8);
+         RenderSystem.getDevice().createCommandEncoder().writeToTexture(this.field13950.getTexture(), this.field13951, 0, 0, var2 % 16 * 16, var2 / 16 * 8, this.field13951.getWidth(), this.field13951.getHeight(), 0, 0);
          return var2;
       } else {
          return -1;

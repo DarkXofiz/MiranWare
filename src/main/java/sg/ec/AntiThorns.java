@@ -34,7 +34,7 @@ public class AntiThorns extends ClientModule {
                this.field22403 = System.currentTimeMillis();
             }
          } else if (var1.method10897() instanceof ClientboundSetEntityMotionPacket var2) {
-            if (var2.id() == mc.player.getId()) {
+            if (var2.getId() == mc.player.getId()) {
                if (!this.field22402.method03022() || mc.player.isFallFlying()) {
                   if (System.currentTimeMillis() - this.field22403 <= field22406) {
                      this.field22403 = 0L;

@@ -15,7 +15,6 @@ public final class ScriptContextImpl implements Context {
       return false;
    }
 
-   @Override
    public boolean canUseCommandBlocks() {
       return false;
    }

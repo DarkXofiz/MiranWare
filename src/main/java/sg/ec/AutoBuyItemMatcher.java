@@ -154,12 +154,12 @@ public final class AutoBuyItemMatcher implements MinecraftAccess {
          long var2 = 0L;
          ItemContainerContents var4 = var1.get(DataComponents.CONTAINER);
          if (var4 != null) {
-            var2 += var4.nonEmptyItemCopyStream().mapToLong(var1x -> method11536(var0, var1x)).sum();
+            var2 += var4.nonEmptyStream().mapToLong(var1x -> method11536(var0, var1x)).sum();
          }
 
          BundleContents var5 = var1.get(DataComponents.BUNDLE_CONTENTS);
          if (var5 != null) {
-            var2 += var5.itemCopies().mapToLong(var1x -> method11536(var0, var1x)).sum();
+            var2 += var5.items().stream().mapToLong(var1x -> method11536(var0, var1x)).sum();
          }
 
          return var2;

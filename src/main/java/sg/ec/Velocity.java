@@ -48,7 +48,7 @@ public class Velocity extends ClientModule {
       if (mc.player != null) {
          Packet var2 = var1.method10897();
          if (var1.method10904()) {
-            if (var2 instanceof ClientboundSetEntityMotionPacket var3 && var3.id() != mc.player.getId()) {
+            if (var2 instanceof ClientboundSetEntityMotionPacket var3 && var3.getId() != mc.player.getId()) {
                return;
             }
 

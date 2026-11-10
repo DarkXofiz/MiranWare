@@ -77,7 +77,7 @@ public class PanicController {
 
    private static boolean method05866() {
       try {
-         return Minecraft.getInstance().getWindow().isExclusiveFullscreen();
+         return Minecraft.getInstance().getWindow().isFullscreen();
       } catch (Throwable var1) {
          return false;
       }

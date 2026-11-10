@@ -318,7 +318,7 @@ public class AutoKeyFinder extends ClientModule {
             Vec3 var3 = this.field24809.getBoundingBox().getCenter();
             this.method11047(var3);
             if (this.field24846-- <= 0) {
-               InteractionResult var4 = mc.gameMode.interact(mc.player, this.field24809, new EntityHitResult(this.field24809, var3), InteractionHand.MAIN_HAND);
+               InteractionResult var4 = mc.gameMode.interactAt(mc.player, this.field24809, new EntityHitResult(this.field24809, var3), InteractionHand.MAIN_HAND);
                mc.player.swing(InteractionHand.MAIN_HAND);
                this.field24846 = 20;
             }

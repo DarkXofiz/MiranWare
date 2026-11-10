@@ -185,7 +185,7 @@ public enum SplashPotionTracker implements MinecraftAccess {
 
       for (MobEffectInstance var6 : var0.getAllEffects()) {
          MobEffect var7 = var6.getEffect().value();
-         if (var7.isInstantaneous()) {
+         if (var7.isInstantenous()) {
             var4.add(var6);
          } else {
             int var8 = var6.mapDuration(var3x -> (int)(var1 * var3 * var3x + 0.5));

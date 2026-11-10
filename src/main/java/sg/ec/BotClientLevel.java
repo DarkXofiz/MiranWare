@@ -71,7 +71,6 @@ public final class BotClientLevel extends ClientLevel {
    public void tickBookkeeping() {
       ClientChunkCache var1 = this.getChunkSource();
       var1.getLightEngine().runLightUpdates();
-      var1.flipUpdateTrackingSets();
       this.getWorldBorder().tick();
       this.field05964.method07256();
    }
@@ -119,7 +118,7 @@ public final class BotClientLevel extends ClientLevel {
          var3.dimensionType(),
          var4,
          var5,
-         Minecraft.getInstance().levelExtractor,
+         Minecraft.getInstance().levelRenderer,
          var3.isDebug(),
          var3.seed(),
          var3.seaLevel()
@@ -169,9 +168,9 @@ public final class BotClientLevel extends ClientLevel {
    public void loadChunk(ClientboundLevelChunkWithLightPacket var1) {
       int var2 = var1.getX();
       int var3 = var1.getZ();
-      ClientboundLevelChunkPacketData var4 = var1.chunkData();
-      this.getChunkSource().replaceWithPacketData(var2, var3, var4);
-      this.applyLight(var2, var3, var1.lightData());
+      ClientboundLevelChunkPacketData var4 = var1.getChunkData();
+      this.getChunkSource().replaceWithPacketData(var2, var3, var4.getReadBuffer(), var4.getHeightmaps(), var4.getBlockEntitiesTagsConsumer(var2, var3));
+      this.applyLight(var2, var3, var1.getLightData());
       LevelChunk var5 = this.getChunkSource().getChunk(var2, var3, false);
       if (var5 != null) {
          this.enableChunkLight(var5);
@@ -274,8 +273,8 @@ public final class BotClientLevel extends ClientLevel {
 
    public void applyLight(int var1, int var2, ClientboundLightUpdatePacketData var3) {
       LevelLightEngine var4 = this.getChunkSource().getLightEngine();
-      this.readSectionList(var1, var2, var4, LightLayer.SKY, var3.skyYMask(), var3.emptySkyYMask(), var3.skyUpdates().iterator());
-      this.readSectionList(var1, var2, var4, LightLayer.BLOCK, var3.blockYMask(), var3.emptyBlockYMask(), var3.blockUpdates().iterator());
+      this.readSectionList(var1, var2, var4, LightLayer.SKY, var3.getSkyYMask(), var3.getEmptySkyYMask(), var3.getSkyUpdates().iterator());
+      this.readSectionList(var1, var2, var4, LightLayer.BLOCK, var3.getBlockYMask(), var3.getEmptyBlockYMask(), var3.getBlockUpdates().iterator());
       var4.setLightEnabled(new ChunkPos(var1, var2), true);
    }
 

@@ -74,13 +74,13 @@ public final class ScriptManager implements MinecraftAccess {
       ResourcesSupplier sxxx = new ResourcesSupplier()      // $VF: Compiled from s
  {
          @Override
-         public net.minecraft.server.packs.PackMetadataResources openMetadata(PackLocationInfo var1) {
+         public PackResources openPrimary(PackLocationInfo var1) {
             return new PathPackResources(var1, var0);
          }
 
          @Override
-         public java.util.stream.Stream<PackResources> openResources(PackLocationInfo var1, Metadata var2) {
-            return java.util.stream.Stream.of(new PathPackResources(var1, var0));
+         public PackResources openFull(PackLocationInfo var1, Metadata var2) {
+            return new PathPackResources(var1, var0);
          }
       };
       return new Pack(sx, sxxx, sxx, new PackSelectionConfig(true, Position.TOP, true));

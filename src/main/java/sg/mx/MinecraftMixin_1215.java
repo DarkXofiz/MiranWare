@@ -22,9 +22,9 @@ public abstract class MinecraftMixin_1215 {
 
    @Inject(
       method = "startAttack",
-      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;swing(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/component/SwingAnimation;Z)Z")
+      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;swing(Lnet/minecraft/world/InteractionHand;)V")
    )
-   private void hmiDoAttack(CallbackInfoReturnable<Boolean> var1) {
+   private void hmiDoAttack(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<Boolean> var1) {
       if (this.player instanceof PlayerAnimationAccess var2) {
          var2.hMI5_0$resetMainHandSwing(false);
       }
@@ -32,9 +32,9 @@ public abstract class MinecraftMixin_1215 {
 
    @Redirect(
       method = "startUseItem",
-      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;swing(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/component/SwingAnimation;Z)Z")
+      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;swing(Lnet/minecraft/world/InteractionHand;)V")
    )
-   private boolean hmiDoItemUse(LocalPlayer var1, InteractionHand var2, net.minecraft.world.item.component.SwingAnimation var4, boolean var5) {
+   private void hmiDoItemUse(LocalPlayer var1, InteractionHand var2) {
       if (var1 instanceof PlayerAnimationAccess var3) {
          if (var2 == InteractionHand.MAIN_HAND) {
             var3.hMI5_0$resetMainHandSwing(true);
@@ -43,6 +43,6 @@ public abstract class MinecraftMixin_1215 {
          }
       }
 
-      return var1.swing(var2, var4, var5);
+      var1.swing(var2);
    }
 }

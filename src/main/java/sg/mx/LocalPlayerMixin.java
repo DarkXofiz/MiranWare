@@ -194,10 +194,10 @@ public abstract class LocalPlayerMixin {
 
    @Redirect(
       method = {"aiStep", "handlePortalTransitionEffect"},
-      at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;screen()Lnet/minecraft/client/gui/screens/Screen;")
+      at = @At(value = "FIELD", target = "Lnet/minecraft/client/Minecraft;screen:Lnet/minecraft/client/gui/screens/Screen;", opcode = 180)
    )
-   private Screen isolateBotScreen(Gui var1) {
-      return this.owner() ? var1.screen() : null;
+   private Screen isolateBotScreen(net.minecraft.client.Minecraft var1) {
+      return this.owner() ? var1.screen : null;
    }
 
    @Redirect(

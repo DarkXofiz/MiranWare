@@ -18,7 +18,7 @@ public final class TexturePixelReader implements MinecraftAccess {
    public static boolean method09639(Identifier var0, Predicate<NativeImage> var1) {
       if (mc.getTextureManager().getTexture(var0) instanceof DynamicTexture var12) {
          NativeImage sx = var12.getPixels();
-         return !sx.isClosed() && var1.test(sx);
+         return var1.test(sx);
       } else {
          var var2 = mc.getResourceManager().getResource(var0);
          if (var2.isEmpty()) {

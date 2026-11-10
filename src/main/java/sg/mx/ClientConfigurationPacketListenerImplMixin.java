@@ -14,6 +14,6 @@ import sg.ec.BotRegistrySnapshot;
 public abstract class ClientConfigurationPacketListenerImplMixin {
    @Inject(method = "handleUpdateTags", at = @At("RETURN"))
    private void onUpdateTags(ClientboundUpdateTagsPacket var1, CallbackInfo var2) {
-      BotRegistrySnapshot.INSTANCE.method03167(var1.tags());
+      BotRegistrySnapshot.INSTANCE.method03167(var1.getTags());
    }
 }

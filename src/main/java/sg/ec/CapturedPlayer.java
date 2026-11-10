@@ -68,7 +68,7 @@ public class CapturedPlayer extends RemotePlayer implements MinecraftAccess {
       this.field06965 = var1.getSkin().body().texturePath();
       this.walkAnimation.setSpeed(var1.walkAnimation.speed());
       this.field06964 = (AvatarRenderState)mc.getEntityRenderDispatcher().getRenderer(this).createRenderState(this, 0.0F);
-      this.field06964.swingAnimation = var1.getSwingAnimation(0.0F);
+      this.field06964.attackTime = var1.getAttackAnim(0.0F);
       this.field06964.isDiscrete = var1.isShiftKeyDown();
       this.field06964.fallFlyingTimeInTicks = var1.getFallFlyingTicks();
       this.field06962 = this.field06964.flyingYRot;

@@ -88,8 +88,8 @@ public final class ScriptNetworkAdapter implements MinecraftAccess {
          var0.put(field07667, var2.isOnGround());
          var0.put(field07668, var2.horizontalCollision());
       } else if (var1 instanceof ClientboundSetEntityMotionPacket var3) {
-         Vec3 sx = var3.movement();
-         var0.put(field07669, var3.id());
+         Vec3 sx = var3.getMovement();
+         var0.put(field07669, var3.getId());
          var0.put(field07670, sx.x);
          var0.put(field07671, sx.y);
          var0.put(field07672, sx.z);
@@ -113,7 +113,7 @@ public final class ScriptNetworkAdapter implements MinecraftAccess {
          var0.put(field07682, var9.content().getString());
          var0.put(field07683, var9.overlay());
       } else if (var1 instanceof ClientboundPlayerChatPacket var10) {
-         Component sx = var10.unsignedContent().orElse(null);
+         Component sx = var10.unsignedContent();
          var0.put(field07684, sx == null ? var10.body().content() : sx.getString());
          var0.put(field07685, false);
          var0.put(field07686, var10.sender().toString());

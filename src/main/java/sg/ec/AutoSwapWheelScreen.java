@@ -158,7 +158,7 @@ public final class AutoSwapWheelScreen extends Screen {
          float var10 = var3 + (float)Math.sin(var7) * var8;
          ItemStack var11 = this.field08586.method01537(var6);
          if (!var11.isEmpty()) {
-            var1.item(var11, (int)(var9 - field08600), (int)(var10 - field08601));
+            var1.renderItem(var11, (int)(var9 - field08600), (int)(var10 - field08601));
          }
       }
    }

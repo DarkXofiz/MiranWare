@@ -75,7 +75,7 @@ public final class RotationRenderHooks implements MinecraftAccess {
          var7 = field12048 < var9 && var9 < field12049 ? var8 - field12050 : var8;
       }
 
-      if (var0.getSwingAnimation(0.0F) > 0.0F) {
+      if (var0.getAttackAnim(0.0F) > 0.0F) {
          var7 = var2;
       }
 

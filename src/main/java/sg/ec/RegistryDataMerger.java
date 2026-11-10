@@ -243,10 +243,7 @@ public final class RegistryDataMerger {
             method08054(var0, var1),
             ResourceProvider.EMPTY,
             method08063(var2.getAccessForLoading(ClientRegistryLayer.REMOTE), var1),
-            RegistryDataLoader.SYNCHRONIZED_REGISTRIES,
-            Util.backgroundExecutor()
-         )
-         .join();
+            RegistryDataLoader.SYNCHRONIZED_REGISTRIES);
       // TODO(port 1.21.11): bindComponents 1.21.11'de yok
       return method08036(var2.replaceFrom(ClientRegistryLayer.REMOTE, var3).compositeAccess());
    }

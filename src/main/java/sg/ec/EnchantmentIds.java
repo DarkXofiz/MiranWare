@@ -360,13 +360,13 @@ public final class EnchantmentIds {
    }
 
    private static void method00646() {
-      var var0 = Items.DYED_SHULKER_BOX.asList();
+      var var0 = java.util.List.<net.minecraft.world.item.Item>of(Items.WHITE_SHULKER_BOX, Items.ORANGE_SHULKER_BOX, Items.MAGENTA_SHULKER_BOX, Items.LIGHT_BLUE_SHULKER_BOX, Items.YELLOW_SHULKER_BOX, Items.LIME_SHULKER_BOX, Items.PINK_SHULKER_BOX, Items.GRAY_SHULKER_BOX, Items.LIGHT_GRAY_SHULKER_BOX, Items.CYAN_SHULKER_BOX, Items.PURPLE_SHULKER_BOX, Items.BLUE_SHULKER_BOX, Items.BROWN_SHULKER_BOX, Items.GREEN_SHULKER_BOX, Items.RED_SHULKER_BOX, Items.BLACK_SHULKER_BOX);
       method00653(AutoBuyItem.method10730(field01207, Items.SHULKER_BOX).method10745(field01518).method10740().method10746(var0.toArray(new Item[0])));
       method00653(
          AutoBuyItem.method10730(field01207, Items.BUNDLE)
             .method10745(field01519)
             .method10740()
-            .method10746(Items.DYED_BUNDLE.asList().toArray(new Item[0]))
+            .method10746(java.util.List.<net.minecraft.world.item.Item>of(Items.WHITE_BUNDLE, Items.ORANGE_BUNDLE, Items.MAGENTA_BUNDLE, Items.LIGHT_BLUE_BUNDLE, Items.YELLOW_BUNDLE, Items.LIME_BUNDLE, Items.PINK_BUNDLE, Items.GRAY_BUNDLE, Items.LIGHT_GRAY_BUNDLE, Items.CYAN_BUNDLE, Items.PURPLE_BUNDLE, Items.BLUE_BUNDLE, Items.BROWN_BUNDLE, Items.GREEN_BUNDLE, Items.RED_BUNDLE, Items.BLACK_BUNDLE).toArray(new Item[0]))
       );
    }
 

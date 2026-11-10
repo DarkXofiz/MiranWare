@@ -258,8 +258,8 @@ public class BetterChat extends ClientModule {
       var2.setSelfMatch(false);
       var2.setFriendMatch(false);
       Component var3 = var2.getRawText();
-      if (var3 == null && var1.parent() != null) {
-         var3 = var1.parent().content();
+      if (var3 == null && false) {
+         var3 = null;
       }
 
       if (var3 != null) {
@@ -596,7 +596,7 @@ public class BetterChat extends ClientModule {
             }
 
             var1.method05696();
-            mc.execute(() -> mc.gui.getChat().addClientSystemMessage(var6));
+            mc.execute(() -> mc.gui.getChat().addMessage(var6));
          }
       }
    }

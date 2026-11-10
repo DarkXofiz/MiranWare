@@ -75,7 +75,7 @@ public final class PlayerUtils implements MinecraftAccess {
    public static void method11806(Minecraft var0) {
       if (var0 != null && var0.player != null && var0.gameMode != null && mc.player != null) {
          var0.gameMode
-            .handleContainerInput(var0.player.containerMenu.containerId, 36 + mc.player.getInventory().getSelectedSlot(), 1, ClickType.THROW, var0.player);
+            .handleInventoryMouseClick(var0.player.containerMenu.containerId, 36 + mc.player.getInventory().getSelectedSlot(), 1, ClickType.THROW, var0.player);
       }
    }
 

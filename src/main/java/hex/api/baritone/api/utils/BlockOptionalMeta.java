@@ -281,7 +281,7 @@ public final class BlockOptionalMeta {
          List<CustomSpawner> var10,
          boolean var11
       ) {
-         super(var1, var2, var3, var4, var5, var6, var7, var8, var10, var11);
+         super(var1, var2, var3, var4, var5, var6, var7, var8, var10, var11, null);
       }
 
 
@@ -301,12 +301,12 @@ public final class BlockOptionalMeta {
       }
 
       public static CompletableFuture<RegistryAccess> load() {
-         CloseableResourceManager var0 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource().fullResources()));
+         CloseableResourceManager var0 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource()));
          LayeredRegistryAccess<RegistryLayer> sx = RegistryLayer.createRegistryAccess();
          var sxx = TagLoader.loadTagsForExistingRegistries(var0, sx.getLayer(RegistryLayer.STATIC));
-         var sxxx = TagLoader.buildUpdatedLookups(sx.getAccessForLoading(RegistryLayer.WORLD), sxx);
+         var sxxx = TagLoader.buildUpdatedLookups(sx.getAccessForLoading(RegistryLayer.WORLDGEN), sxx);
          LayeredRegistryAccess<RegistryLayer> sxxxx = sx.replaceFrom(
-            RegistryLayer.WORLD, RegistryDataLoader.load(var0, sxxx, RegistryDataLoader.WORLD_REGISTRIES, ForkJoinPool.commonPool()).join()
+            RegistryLayer.WORLDGEN, RegistryDataLoader.load(var0, sxxx, RegistryDataLoader.WORLDGEN_REGISTRIES)
          );
          return ReloadableServerRegistries.reload(sxxxx, sxx, var0, ForkJoinPool.commonPool()).thenApply(var0x -> var0x.layers().compositeAccess());
       }

@@ -33,7 +33,7 @@ public class CrystalOptimizer extends ClientModule {
    @Subscribe
    private void method11554(PacketEvent var1) {
       if (var1.method10904() && var1.method10897() instanceof ClientboundRemoveEntitiesPacket var2) {
-         IntList var6 = var2.entityIds();
+         IntList var6 = var2.getEntityIds();
 
          for (int var4 = 0; var4 < var6.size(); var4++) {
             CrystalOptimizer.Nested323 sx = this.field26389.get(var6.getInt(var4));

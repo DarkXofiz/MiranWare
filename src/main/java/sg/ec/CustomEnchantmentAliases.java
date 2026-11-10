@@ -451,7 +451,7 @@ public final class CustomEnchantmentAliases {
       method11298(Items.NETHER_STAR, field25601, field25602, field25603);
       method11298(Items.SNOWBALL, field25604, field25605, field25606);
       method11298(Items.FIRE_CHARGE, field25607, field25608, field25609);
-      method11298(Items.DYE.pick(DyeColor.ORANGE), field25610, field25611, field25612);
+      method11298(Items.ORANGE_DYE, field25610, field25611, field25612);
       method11298(Items.SNOW_BLOCK, field25613, field25614, field25615);
       method11298(Items.SEA_LANTERN, field25616, field25617, field25618);
       method11298(Items.ENDER_PEARL, field25619, field25620, field25621);
@@ -704,7 +704,7 @@ public final class CustomEnchantmentAliases {
    }
 
    private static void method11296(String var0, DyeColor var1) {
-      method11298(Items.DYED_SHULKER_BOX.pick(var1), var0, field25694, field25695);
+      method11298(net.minecraft.world.level.block.ShulkerBoxBlock.getBlockByColor(var1).asItem(), var0, field25694, field25695);
    }
 
    private static void method11297(String var0, String var1, int var2) {
