@@ -159,7 +159,7 @@ public final class AutoBuyItemMatcher implements MinecraftAccess {
 
          BundleContents var5 = var1.get(DataComponents.BUNDLE_CONTENTS);
          if (var5 != null) {
-            var2 += var5.items().stream().mapToLong(var1x -> method11536(var0, var1x)).sum();
+            var2 += java.util.stream.StreamSupport.stream(var5.items().spliterator(), false).mapToLong(var1x -> method11536(var0, var1x)).sum();
          }
 
          return var2;

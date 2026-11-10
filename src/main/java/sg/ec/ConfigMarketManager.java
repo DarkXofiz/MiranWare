@@ -41,7 +41,7 @@ public final class ConfigMarketManager {
                return;
             }
 
-            net.minecraft.Util.getPlatform().openPath(sx.toPath());
+            net.minecraft.util.Util.getPlatform().openPath(sx.toPath());
             ChatTextUtils.method05101(field10233, "Ключей выгружено: " + var1.size());
          }
       } else {

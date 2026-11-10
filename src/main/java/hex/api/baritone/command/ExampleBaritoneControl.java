@@ -129,7 +129,7 @@ public class ExampleBaritoneControl extends Behavior implements Helper {
 
       if (var1.trim().equalsIgnoreCase(ФЫ)) {
          try {
-            net.minecraft.Util.getPlatform().openUri(java.net.URI.create(Фз));
+            net.minecraft.util.Util.getPlatform().openUri(java.net.URI.create(Фз));
          } catch (Exception var9) {
          }
 

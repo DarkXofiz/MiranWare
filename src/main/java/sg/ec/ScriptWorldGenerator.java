@@ -279,7 +279,6 @@ final class ScriptWorldGenerator implements AutoCloseable {
             ScriptWorldGenerator.this.field14661,
             this.field14676,
             this.field14676.getBiomeSource(),
-            this.field14675.sampler(),
             this.field14675,
             ScriptWorldGenerator.this.field14663,
             this.field14673,

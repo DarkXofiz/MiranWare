@@ -180,7 +180,6 @@ public enum BlockBreakManager implements MinecraftAccess {
          }
 
          if (mc.gameMode.continueDestroyBlock(var1.getBlockPos(), var1.getDirection())) {
-            mc.particleEngine.crack(var1.getBlockPos(), var1.getDirection());
             mc.player.swing(InteractionHand.MAIN_HAND);
          }
 
