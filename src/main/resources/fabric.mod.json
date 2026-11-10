@@ -21,9 +21,9 @@
     "miranware.scripts.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.3",
-    "minecraft": "~26.3-",
-    "java": ">=23",
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
     "fabric-api": "*"
   },
   "accessWidener": "miranware.accesswidener"
