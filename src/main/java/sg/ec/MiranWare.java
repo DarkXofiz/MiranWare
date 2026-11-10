@@ -76,7 +76,12 @@ public class MiranWare implements MinecraftAccess, ModInitializer {
       }
 
       public void onLoad(String var1) {
-         ScriptMixinManager.method08302();
+         try {
+            ScriptMixinManager.method08302();
+         } catch (Throwable var2) {
+            System.err.println("[MiranWare] script mixin yukleme hatasi");
+            var2.printStackTrace();
+         }
       }
 
       public void preApply(String var1, ClassNode var2, String var3, IMixinInfo var4) {
@@ -103,7 +108,12 @@ public class MiranWare implements MinecraftAccess, ModInitializer {
       private final IMixinConfigPlugin field01756 = new ViaBotGuardMixinPlugin();
 
       public void onLoad(String var1) {
-         this.field01756.onLoad(var1);
+         try {
+            this.field01756.onLoad(var1);
+         } catch (Throwable var2) {
+            System.err.println("[MiranWare] ViaBotGuard onLoad hatasi");
+            var2.printStackTrace();
+         }
       }
 
       public void preApply(String var1, ClassNode var2, String var3, IMixinInfo var4) {

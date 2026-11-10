@@ -81,13 +81,18 @@ public class ViaBotGuardMixinPlugin implements IMixinConfigPlugin {
    }
 
    private static String guardMethodName(String var0) {
+      if (field01834 == null) {
+         return null;
+      }
+
       MethodNode var1 = null;
 
       for (MethodNode var3 : field01834.methods) {
          byte var4 = 9;
          if ((var3.access & var4) == var4 && var3.desc.equals(var0)) {
             if (var1 != null) {
-               throw new IllegalStateException(field01845);
+               System.err.println("[MiranWare] " + field01845);
+               return null;
             }
 
             var1 = var3;
@@ -95,7 +100,8 @@ public class ViaBotGuardMixinPlugin implements IMixinConfigPlugin {
       }
 
       if (var1 == null) {
-         throw new IllegalStateException(field01846);
+         System.err.println("[MiranWare] " + field01846);
+         return null;
       } else {
          return var1.name;
       }
@@ -104,8 +110,10 @@ public class ViaBotGuardMixinPlugin implements IMixinConfigPlugin {
    private static ClassNode guardClass() {
       try {
          return MixinService.getService().getBytecodeProvider().getClassNode(field01833.replace('/', '.'), false);
-      } catch (Exception var1) {
-         throw new IllegalStateException(field01844, var1);
+      } catch (Throwable var1) {
+         System.err.println("[MiranWare] " + field01844);
+         var1.printStackTrace();
+         return null;
       }
    }
 
