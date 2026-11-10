@@ -16,7 +16,7 @@ public class AutoRespawn extends ClientModule {
    @Subscribe
    private void method05976(PlayerUpdateEvent var1) {
       if (mc.player != null) {
-         Screen var2 = mc.gui.screen();
+         Screen var2 = mc.screen;
          if (var2 instanceof DeathScreen && mc.player.deathTime > 0) {
             mc.player.respawn();
          }

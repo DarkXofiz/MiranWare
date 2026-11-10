@@ -255,7 +255,7 @@ public class Criticals extends ClientModule {
 
    private boolean method08132(Packet<?> var1) {
       return var1 instanceof ClientboundSetEntityMotionPacket var3
-         ? var3.id() == mc.player.getId()
+         ? var3.getId() == mc.player.getId()
          : var1 instanceof ClientboundExplodePacket var2 && var2.playerKnockback().isPresent();
    }
 

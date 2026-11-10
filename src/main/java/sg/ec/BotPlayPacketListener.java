@@ -318,7 +318,7 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
          this.field22812.method08004()
       );
       this.field22812.method08000(var2, var1.id());
-      this.deferOrSend(new ServerboundAcceptTeleportationPacket(var1.id(), var2.position().x, var2.position().y, var2.position().z, var2.yRot(), var2.xRot()));
+      this.deferOrSend(new ServerboundAcceptTeleportationPacket(var1.id()));
       this.deferOrSend(new PosRot(var2.position().x, var2.position().y, var2.position().z, var2.yRot(), var2.xRot(), false, false));
       this.field22810.method00093();
    }
@@ -395,7 +395,7 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
 
    @Override
    public void handleSetEntityData(ClientboundSetEntityDataPacket var1) {
-      if (var1.id() == this.field22812.method07965()) {
+      if (var1.getId() == this.field22812.method07965()) {
          this.field22812.method07975(var1.packedItems());
       } else {
          this.field22813.method07805(var1);
@@ -462,8 +462,8 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
       LastSeenMessagesTracker var2 = this.field22810.method00083();
       var var3 = var1.body().unpack(this.field22810.method00112());
       if (var3.isPresent()) {
-         this.field22810.method00112().push((SignedMessageBody)var3.get(), var1.signature().orElse(null));
-         if (var1.signature().isPresent() && var2.addPending(var1.signature().get(), true) && var2.offset() > 64) {
+         this.field22810.method00112().push((SignedMessageBody)var3.get(), var1.signature());
+         if (var1.signature() != null && var2.addPending(var1.signature(), true) && var2.offset() > 64) {
             this.sendChatAcknowledgement();
          }
       }
@@ -528,8 +528,8 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
 
    @Override
    public void handleUpdateTags(ClientboundUpdateTagsPacket var1) {
-      this.field22813.method07797(var1.tags());
-      RegistryDataMerger.method08047(this.field22813.method07758(), var1.tags());
+      this.field22813.method07797(var1.getTags());
+      RegistryDataMerger.method08047(this.field22813.method07758(), var1.getTags());
    }
 
    @Override
@@ -609,7 +609,7 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
 
    @Override
    public void handleEntityPositionSync(ClientboundEntityPositionSyncPacket var1) {
-      this.field22813.method07663(var1.id(), new net.minecraft.world.entity.PositionMoveRotation(var1.position().endPosition(), net.minecraft.world.phys.Vec3.ZERO, var1.yRot(), var1.xRot()), var1.onGround());
+      this.field22813.method07663(var1.id(), var1.values(), var1.onGround());
    }
 
    @Override
@@ -640,9 +640,9 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
 
    @Override
    public void handleSetEntityMotion(ClientboundSetEntityMotionPacket var1) {
-      if (var1.id() == this.field22812.method07965()) {
-         String.format(Locale.ROOT, field22818, var1.movement().x, var1.movement().y, var1.movement().z);
-         this.field22812.method07998(var1.movement().x, var1.movement().y, var1.movement().z);
+      if (var1.getId() == this.field22812.method07965()) {
+         String.format(Locale.ROOT, field22818, var1.getXa(), var1.getYa(), var1.getZa());
+         this.field22812.method07998(var1.getXa(), var1.getYa(), var1.getZa());
       }
    }
 
@@ -736,14 +736,14 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
       if (var2 != null) {
          Entity var3 = var2.getRootVehicle();
          if (var3 != var2 && var3.isLocalInstanceAuthoritative()) {
-            Vec3 var4 = var1.movingTo().position();
-            Vec3 var5 = var3.getClientPosition();
+            Vec3 var4 = var1.position();
+            Vec3 var5 = var3.position();
             if (var4.distanceTo(var5) > field22822) {
                if (var3.isInterpolating()) {
                   var3.getInterpolation().cancel();
                }
 
-               var3.absSnapTo(var4.x(), var4.y(), var4.z(), var1.movingTo().yRot(), var1.movingTo().xRot());
+               var3.absSnapTo(var4.x(), var4.y(), var4.z(), var1.yRot(), var1.xRot());
             }
 
             this.field22811.send(ServerboundMoveVehiclePacket.fromEntity(var3));
@@ -752,9 +752,8 @@ public final class BotPlayPacketListener extends AbstractBotPlayPacketListener {
    }
 
    private static double hexDelta(ClientboundMoveEntityPacket packet, int axis) {
-      if (packet.getPositionDelta() instanceof net.minecraft.network.protocol.game.VecDelta.Linear linear) {
-         return axis == 0 ? linear.xa() : axis == 1 ? linear.ya() : linear.za();
-      }
-      return 0.0;
+      // 1.21.11: delta short olarak (1/4096 blok) kodlanir
+      short raw = axis == 0 ? packet.getXa() : axis == 1 ? packet.getYa() : packet.getZa();
+      return raw / 4096.0;
    }
 }

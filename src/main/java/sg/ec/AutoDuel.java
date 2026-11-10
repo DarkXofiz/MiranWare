@@ -120,7 +120,7 @@ public class AutoDuel extends ClientModule {
          this.field05067.method04694();
       }
 
-      if (mc.gui.screen() == null) {
+      if (mc.screen == null) {
          for (String var6 : var2) {
             int var7 = this.field05070.nextInt(var2.size());
             String var8 = (String)var2.get(var7);
@@ -132,7 +132,7 @@ public class AutoDuel extends ClientModule {
          }
       }
 
-      if (mc.gui.screen() instanceof AbstractContainerScreen var11) {
+      if (mc.screen instanceof AbstractContainerScreen var11) {
          if (var11.getTitle().getString().contains(field05088)) {
             if (var11.getMenu() instanceof ChestMenu var13) {
                ArrayList var16 = new ArrayList();
@@ -153,12 +153,12 @@ public class AutoDuel extends ClientModule {
 
                int var19 = (Integer)var16.getFirst();
                if (this.field05068.method04699(field05089)) {
-                  mc.gameMode.handleContainerInput(var13.containerId, var19, 0, ClickType.PICKUP, mc.player);
+                  mc.gameMode.handleInventoryMouseClick(var13.containerId, var19, 0, ClickType.PICKUP, mc.player);
                   this.field05068.method04694();
                }
             }
          } else if (var11.getTitle().getString().contains(field05090) && this.field05069.method04699(field05091) && var11.getMenu() instanceof ChestMenu var14) {
-            mc.gameMode.handleContainerInput(var14.containerId, 0, 0, ClickType.PICKUP, mc.player);
+            mc.gameMode.handleInventoryMouseClick(var14.containerId, 0, 0, ClickType.PICKUP, mc.player);
             this.field05069.method04694();
          }
       }

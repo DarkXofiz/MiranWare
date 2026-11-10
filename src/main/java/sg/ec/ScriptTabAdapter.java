@@ -156,7 +156,7 @@ public final class ScriptTabAdapter implements MinecraftAccess {
             default -> this.method04815(var4.getDisplayName());
          };
       } else if (mc.gui != null && mc.getConnection() != null) {
-         PlayerTabOverlayMixin_1198 var3 = (PlayerTabOverlayMixin_1198)(Object)mc.gui.hud.getTabList();
+         PlayerTabOverlayMixin_1198 var3 = (PlayerTabOverlayMixin_1198)(Object)mc.gui.getTabList();
          return this.method04815(var1 == 1 ? var3.getTabFooter() : var3.getTabHeader());
       } else {
          return "";

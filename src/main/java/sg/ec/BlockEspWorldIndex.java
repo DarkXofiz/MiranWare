@@ -32,12 +32,12 @@ public final class BlockEspWorldIndex {
       field20485.clear();
       field20486 = 0;
       field20487 = true;
-      field20488 = SectionPos.sectionToBlockCoord(var0.x());
-      field20489 = SectionPos.sectionToBlockCoord(var0.z());
+      field20488 = SectionPos.sectionToBlockCoord(var0.x);
+      field20489 = SectionPos.sectionToBlockCoord(var0.z);
 
-      for (int sx = var0.x() - var1; sx <= var0.x() + var1; sx++) {
-         for (int sxx = var0.z() - var1; sxx <= var0.z() + var1; sxx++) {
-            field20484.add(ChunkPos.pack(sx, sxx));
+      for (int sx = var0.x - var1; sx <= var0.x + var1; sx++) {
+         for (int sxx = var0.z - var1; sxx <= var0.z + var1; sxx++) {
+            field20484.add(ChunkPos.asLong(sx, sxx));
          }
       }
    }

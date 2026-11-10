@@ -60,7 +60,7 @@ final class ScriptWorldgenTools implements MinecraftAccess {
                   return;
                }
 
-               ScriptWorldgenTools.Nested259 sxxxxx = new ScriptWorldgenTools.Nested259(var1.field21300, sxxxx.x(), sxxxx.z());
+               ScriptWorldgenTools.Nested259 sxxxxx = new ScriptWorldgenTools.Nested259(var1.field21300, sxxxx.x, sxxxx.z);
                var sxxxxxx = this.field21294.get(sxxxxx);
                if (sxxxxxx == null) {
                   sxxxxxx = sxx.method06490(sx.get(), sxxxx);

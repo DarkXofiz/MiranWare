@@ -225,11 +225,11 @@ final class ScriptWorldGenerator implements AutoCloseable {
 
          String var6 = var1.structure().unwrapKey().orElseThrow().identifier().toString();
          ChunkPos var7 = var2.getChunkPos();
-         return Optional.of(new FoundStructure(var6, var7.x(), var7.z(), ScriptWorldGenerator.method06479(var2.getBoundingBox()), var3));
+         return Optional.of(new FoundStructure(var6, var7.x, var7.z, ScriptWorldGenerator.method06479(var2.getBoundingBox()), var3));
       }
 
       private static boolean method06486(ChunkPos var0, int var1, int var2, int var3) {
-         return Math.abs(var0.x() - var1) <= var3 && Math.abs(var0.z() - var2) <= var3;
+         return Math.abs(var0.x - var1) <= var3 && Math.abs(var0.z - var2) <= var3;
       }
 
       List<ChunkPos> method06487(Holder<StructureSet> var1, int var2, int var3, int var4) {
@@ -245,7 +245,7 @@ final class ScriptWorldGenerator implements AutoCloseable {
             for (int var10 = Math.floorDiv(var2 - var4, var9); var10 <= Math.floorDiv(var2 + var4, var9); var10++) {
                for (int var11 = Math.floorDiv(var3 - var4, var9); var11 <= Math.floorDiv(var3 + var4, var9); var11++) {
                   ChunkPos var12 = var7.getPotentialStructureChunk(this.field14673, var10 * var9, var11 * var9);
-                  if (method06486(var12, var2, var3, var4) && var5.isStructureChunk(this.field14677, var12.x(), var12.z())) {
+                  if (method06486(var12, var2, var3, var4) && var5.isStructureChunk(this.field14677, var12.x, var12.z)) {
                      var6.add(var12);
                   }
                }
@@ -297,7 +297,7 @@ final class ScriptWorldGenerator implements AutoCloseable {
          }
 
          WorldgenRandom var4 = new WorldgenRandom(new LegacyRandomSource(0L));
-         var4.setLargeFeatureSeed(this.field14673, var2.x(), var2.z());
+         var4.setLargeFeatureSeed(this.field14673, var2.x, var2.z);
          int var5 = 0;
 
          for (StructureSelectionEntry var7 : var3) {

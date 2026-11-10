@@ -297,7 +297,7 @@ public final class PlayerUtils implements MinecraftAccess {
       if (var0 != null && var0.player != null && var0.gameMode != null) {
          for (int var1 = 0; var1 < var0.player.containerMenu.slots.size(); var1++) {
             if (!var0.player.containerMenu.slots.get(var1).getItem().isEmpty()) {
-               var0.gameMode.handleContainerInput(mc.player.containerMenu.containerId, var1, 1, ClickType.THROW, var0.player);
+               var0.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId, var1, 1, ClickType.THROW, var0.player);
             }
          }
       }

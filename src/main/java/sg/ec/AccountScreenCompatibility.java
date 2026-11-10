@@ -46,16 +46,16 @@ public final class AccountScreenCompatibility implements MinecraftAccess {
       method00791();
       var var1 = field01870;
       if (var1 == null) {
-         mc.gui.setScreen(new AccountSwitcherScreen(var0));
+         mc.setScreen(new AccountSwitcherScreen(var0));
          return true;
       }
 
       try {
          Screen var2 = (Screen)var1.newInstance(var0);
-         mc.gui.setScreen(var2);
+         mc.setScreen(var2);
          return true;
       } catch (Throwable var3) {
-         mc.gui.setScreen(new AccountSwitcherScreen(var0));
+         mc.setScreen(new AccountSwitcherScreen(var0));
          return true;
       }
    }

@@ -76,8 +76,8 @@ public class AutoSwap extends ClientModule {
    @Override
    public void method00245() {
       super.method00245();
-      if (mc.gui.screen() instanceof AutoSwapWheelScreen) {
-         mc.gui.setScreen(null);
+      if (mc.screen instanceof AutoSwapWheelScreen) {
+         mc.setScreen(null);
       }
 
       this.field03671 = null;
@@ -132,8 +132,8 @@ public class AutoSwap extends ClientModule {
             this.field03671 = new AutoSwapWheelScreen(this);
          }
 
-         if (mc.gui.screen() != this.field03671) {
-            mc.gui.setScreen(this.field03671);
+         if (mc.screen != this.field03671) {
+            mc.setScreen(this.field03671);
          }
       }
    }
@@ -243,9 +243,9 @@ public class AutoSwap extends ClientModule {
    }
 
    private void method01531() {
-      if (mc.gui.screen() instanceof AutoSwapWheelScreen var1) {
+      if (mc.screen instanceof AutoSwapWheelScreen var1) {
          int var3 = var1.getSelectedIndex();
-         mc.gui.setScreen(null);
+         mc.setScreen(null);
          this.field03671 = null;
          this.method01515(var3);
       }

@@ -82,7 +82,7 @@ public class ContainerHelper extends ClientModule {
             }
          }
 
-         var7.forEach(var1x -> mc.gameMode.handleContainerInput(var2.getMenu().containerId, var1x, 1, ClickType.THROW, mc.player));
+         var7.forEach(var1x -> mc.gameMode.handleInventoryMouseClick(var2.getMenu().containerId, var1x, 1, ClickType.THROW, mc.player));
          var3.setReturnValue(true);
       }
    }
@@ -98,7 +98,7 @@ public class ContainerHelper extends ClientModule {
       AbstractContainerScreen var4 = var1.method10114();
       if (this.field07046.method04520(field07056)) {
          Window var5 = mc.getWindow();
-         boolean var6 = mc.gui.screen() != null && InputCompat.isMouseDown(0) && InputCompat.isShiftDown();
+         boolean var6 = mc.screen != null && InputCompat.isMouseDown(0) && InputCompat.isShiftDown();
          if (var6) {
             for (Slot var8 : var4.getMenu().slots) {
                if (var8.isActive() && var8.hasItem() && this.method03215(var4, var8, var2, var3)) {

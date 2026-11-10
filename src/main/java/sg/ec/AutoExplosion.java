@@ -161,7 +161,7 @@ public class AutoExplosion extends ClientModule {
                      RotationManager.method06547(new Rotation(var14.x, var14.y), field07730, 1000, false);
                      if (BlockPlacementManager.method07909(var6, field07731)) {
                         mc.gameMode.attack(mc.player, var6);
-                        mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                        mc.player.swing(InteractionHand.MAIN_HAND);
                         this.method03466();
                      }
 
@@ -173,7 +173,7 @@ public class AutoExplosion extends ClientModule {
                   RotationManager.method06547(var8, field07733, 1000, false);
                   if (RaycastUtils.method09502(mc.player.getYRot(), mc.player.getXRot(), field07734, var6)) {
                      mc.gameMode.attack(mc.player, var6);
-                     mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                     mc.player.swing(InteractionHand.MAIN_HAND);
                      this.method03466();
                   }
 
@@ -213,7 +213,7 @@ public class AutoExplosion extends ClientModule {
                      if (var13 != null) {
                         if (mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var13) == InteractionResult.SUCCESS) {
                            RotationChangeTracker.method02903();
-                           mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                           mc.player.swing(InteractionHand.MAIN_HAND);
                            this.field07720 = true;
                         }
                      }

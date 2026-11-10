@@ -264,7 +264,7 @@ public class NumberSettingComponent extends SettingComponent<NumberSetting<?>> {
    }
 
    private boolean method04532() {
-      return ClientScreenManager.INSTANCE.method08316() || mc.gui.screen() != null;
+      return ClientScreenManager.INSTANCE.method08316() || mc.screen != null;
    }
 
    private String method04533(float var1) {

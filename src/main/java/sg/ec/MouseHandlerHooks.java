@@ -21,7 +21,7 @@ public final class MouseHandlerHooks {
          return true;
       }
 
-      if (var8 == 1 && var0.gui.screen() == null) {
+      if (var8 == 1 && var0.screen == null) {
          MouseButtonEvent.field15585.method06912(var1, var3, -100 + var9, InputAction.PRESS);
       } else if (var8 == 0) {
          MouseButtonEvent.field15585.method06912(var1, var3, -100 + var9, InputAction.RELEASE);

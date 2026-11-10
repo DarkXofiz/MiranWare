@@ -88,7 +88,7 @@ public final class RegistryDataMerger {
          if (method08050()) {
             field18903 = true;
          } else {
-            try (MultiPackResourceManager var0 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource().fullResources()))) {
+            try (MultiPackResourceManager var0 = new MultiPackResourceManager(PackType.SERVER_DATA, List.<net.minecraft.server.packs.PackResources>of(ServerPacksSource.createVanillaPackSource()))) {
                Frozen var1 = RegistryLayer.createRegistryAccess().getLayer(RegistryLayer.STATIC);
 
                for (PendingTags var3 : TagLoader.loadTagsForExistingRegistries(var0, var1)) {
@@ -247,7 +247,7 @@ public final class RegistryDataMerger {
             Util.backgroundExecutor()
          )
          .join();
-      var3.registries().forEach(var0x -> var0x.value().listElements().forEach(var0xx -> var0xx.bindComponents(DataComponentMap.EMPTY)));
+      // TODO(port 1.21.11): bindComponents 1.21.11'de yok
       return method08036(var2.replaceFrom(ClientRegistryLayer.REMOTE, var3).compositeAccess());
    }
 
@@ -257,7 +257,7 @@ public final class RegistryDataMerger {
 
    private static synchronized void method08065(RegistryAccess var0) {
       if (!field18905) {
-         if (Items.STONE.builtInRegistryHolder().areComponentsBound()) {
+         if (true) {
             field18905 = true;
          } else if (var0 != null) {
             try {

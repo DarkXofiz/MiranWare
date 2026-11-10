@@ -32,7 +32,7 @@ public final class GuiScreenRenderHooks {
    }
 
    public static void method04727() {
-      if (Minecraft.getInstance().gui.screen() instanceof MainMenuScreen) {
+      if (Minecraft.getInstance().screen instanceof MainMenuScreen) {
          MainMenuBlitRenderer.method00878(MainMenuScreen.backgroundTexture());
       }
 

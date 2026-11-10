@@ -169,7 +169,7 @@ public class AutoDropper extends ClientModule {
 
          for (Slot var6 : mc.player.containerMenu.slots) {
             if (var6.hasItem() && this.method04070(var6, var2, var3, var4) && this.method04068(var6.getItem())) {
-               mc.gameMode.handleContainerInput(mc.player.containerMenu.containerId, var6.index, 1, ClickType.THROW, mc.player);
+               mc.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId, var6.index, 1, ClickType.THROW, mc.player);
             }
          }
       }

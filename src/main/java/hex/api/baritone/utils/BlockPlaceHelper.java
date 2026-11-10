@@ -30,7 +30,7 @@ public class BlockPlaceHelper {
             for (InteractionHand sx : InteractionHand.values()) {
                if (this.ctx.playerController().processRightClickBlock(this.ctx.player(), this.ctx.world(), sx, (BlockHitResult)var2)
                   == InteractionResult.SUCCESS) {
-                  this.ctx.player().swing(sx, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                  this.ctx.player().swing(sx);
                   return;
                }
 

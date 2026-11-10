@@ -261,7 +261,7 @@ public class ParticleAnimationConfig {
          Vector3f var10 = new Vector3f();
          var8.getTranslation(var9);
          var8.getScale(var10);
-         Camera var11 = Minecraft.getInstance().gameRenderer.mainCamera();
+         Camera var11 = Minecraft.getInstance().gameRenderer.getMainCamera();
          var8.identity().translate(var9).scale(var10).rotate(var11.rotation());
          var8.rotate(new Quaternionf().rotateX((float)(this.field08015 * field08061)));
          var8.rotate(new Quaternionf().rotateY((float)(this.field08016 * field08062)));

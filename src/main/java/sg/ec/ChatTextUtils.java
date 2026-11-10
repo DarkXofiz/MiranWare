@@ -141,7 +141,7 @@ public final class ChatTextUtils implements MinecraftAccess {
          mc.execute(() -> method05092(var0));
       } else {
          ChatMessagePolicy.method04008(var0);
-         mc.gui.hud.getChat().addClientSystemMessage(var0);
+         mc.gui.getChat().addClientSystemMessage(var0);
       }
    }
 

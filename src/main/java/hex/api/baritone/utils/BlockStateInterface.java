@@ -68,7 +68,7 @@ public class BlockStateInterface {
 
    public boolean isLoaded(int var1, int var2) {
       LevelChunk var3 = this.prev;
-      if (var3 != null && var3.getPos().x() == var1 >> 4 && var3.getPos().z() == var2 >> 4) {
+      if (var3 != null && var3.getPos().x == var1 >> 4 && var3.getPos().z == var2 >> 4) {
          return true;
       }
 
@@ -109,7 +109,7 @@ public class BlockStateInterface {
       if (var2 >= 0 && var2 < this.world.dimensionType().height()) {
          if (this.useTheRealWorld) {
             LevelChunk var4 = this.prev;
-            if (var4 != null && var4.getPos().x() == var1 >> 4 && var4.getPos().z() == var3 >> 4) {
+            if (var4 != null && var4.getPos().x == var1 >> 4 && var4.getPos().z == var3 >> 4) {
                return getFromChunk(var4, var1, var2, var3);
             }
 

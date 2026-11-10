@@ -115,8 +115,8 @@ public final class BotConfigurationPacketListener implements ClientConfiguration
 
    @Override
    public void handleUpdateTags(ClientboundUpdateTagsPacket var1) {
-      this.field09985.putAll(var1.tags());
-      this.field09982.method00090().method07797(var1.tags());
+      this.field09985.putAll(var1.getTags());
+      this.field09982.method00090().method07797(var1.getTags());
    }
 
    @Override

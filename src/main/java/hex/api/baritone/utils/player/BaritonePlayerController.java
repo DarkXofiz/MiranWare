@@ -21,7 +21,7 @@ public final class BaritonePlayerController implements IPlayerController {
 
    @Override
    public void windowClick(int var1, int var2, int var3, ClickType var4, Player var5) {
-      this.mc.gameMode.handleContainerInput(var1, var2, var3, var4, var5);
+      this.mc.gameMode.handleInventoryMouseClick(var1, var2, var3, var4, var5);
    }
 
    public BaritonePlayerController(Minecraft var1) {

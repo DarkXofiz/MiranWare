@@ -159,7 +159,7 @@ public class AutoTotem extends ClientModule {
    private static final String field19833 = "Кристаллы";
 
    private boolean method08630() {
-      return mc.gui.screen() instanceof AbstractContainerScreen;
+      return mc.screen instanceof AbstractContainerScreen;
    }
 
    private boolean method08631() {

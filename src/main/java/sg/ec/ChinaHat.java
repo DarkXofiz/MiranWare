@@ -64,8 +64,8 @@ public class ChinaHat extends ClientModule {
             var2.pushPose();
             var4.translateAndRotate(var2);
             var2.translate(0.0F, -sxxxx, 0.0F);
-            var2.rotate(Axis.ZN.rotationDegrees(field11130));
-            var2.rotate(Axis.YP.rotationDegrees(field11131));
+            var2.mulPose(Axis.ZN.rotationDegrees(field11130));
+            var2.mulPose(Axis.YP.rotationDegrees(field11131));
             int sxxxxxxx = ColorUtils.method04599(sxxxxxx, field11132);
             this.method05073(sxxxxx, sxxxxxxx);
             this.method05072(sxxx);

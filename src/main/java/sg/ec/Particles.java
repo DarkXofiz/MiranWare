@@ -232,7 +232,7 @@ public class Particles extends ClientModule {
    }
 
    private void method03710() {
-      Vec3 var1 = mc.gameRenderer.mainCamera().position();
+      Vec3 var1 = mc.gameRenderer.getMainCamera().getPosition();
       double var2 = var1.x();
       double var4 = var1.y();
       double var6 = var1.z();

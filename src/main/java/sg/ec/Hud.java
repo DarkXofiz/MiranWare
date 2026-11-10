@@ -153,7 +153,7 @@ public class Hud extends ClientModule {
       } else {
          if (!var1.equals(this.field10887)) {
             this.field10887 = var1;
-            if ((mc.gui.screen() != null || ClientScreenManager.INSTANCE.method08316()) && this.field10878.method05999()) {
+            if ((mc.screen != null || ClientScreenManager.INSTANCE.method08316()) && this.field10878.method05999()) {
                ClientSoundManager.INSTANCE.method03827("enable" + this.method04952(), 1.0F);
                this.field10888 = 8;
             }

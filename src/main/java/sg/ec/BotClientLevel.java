@@ -167,8 +167,8 @@ public final class BotClientLevel extends ClientLevel {
    }
 
    public void loadChunk(ClientboundLevelChunkWithLightPacket var1) {
-      int var2 = var1.x();
-      int var3 = var1.z();
+      int var2 = var1.getX();
+      int var3 = var1.getZ();
       ClientboundLevelChunkPacketData var4 = var1.chunkData();
       this.getChunkSource().replaceWithPacketData(var2, var3, var4);
       this.applyLight(var2, var3, var1.lightData());

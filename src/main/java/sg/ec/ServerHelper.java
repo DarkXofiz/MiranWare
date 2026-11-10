@@ -423,7 +423,7 @@ public class ServerHelper extends ClientModule {
          if (this.field12169 >= 9) {
             int var1 = mc.player.containerMenu.containerId;
             int var2 = this.field12170;
-            TickTaskScheduler.method03507(() -> mc.gameMode.handleContainerInput(var1, var2, 40, ClickType.SWAP, mc.player));
+            TickTaskScheduler.method03507(() -> mc.gameMode.handleInventoryMouseClick(var1, var2, 40, ClickType.SWAP, mc.player));
             this.method05788();
             this.field12169 = -1;
             this.field12170 = -1;
@@ -853,7 +853,7 @@ public class ServerHelper extends ClientModule {
       if (this.field12169 < 0) {
          int var3 = mc.player.containerMenu.containerId;
          int var4 = var1.index;
-         TickTaskScheduler.method03507(() -> mc.gameMode.handleContainerInput(var3, var4, 40, ClickType.SWAP, mc.player));
+         TickTaskScheduler.method03507(() -> mc.gameMode.handleInventoryMouseClick(var3, var4, 40, ClickType.SWAP, mc.player));
          this.field12170 = var4;
          this.field12169 = 0;
          MutableComponent var5 = Component.literal(field12273).copy().append(field12274).append(var2.getStyledHoverName());

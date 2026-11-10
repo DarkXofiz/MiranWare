@@ -85,7 +85,7 @@ public final class ScriptContainerAdapter implements MinecraftAccess {
             return "";
          }
       } else {
-         return mc.gui.screen() instanceof AbstractContainerScreen var3 ? var3.getTitle().getString() : "";
+         return mc.screen instanceof AbstractContainerScreen var3 ? var3.getTitle().getString() : "";
       }
    }
 

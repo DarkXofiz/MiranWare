@@ -324,7 +324,7 @@ public class WorldHelper extends ClientModule {
    }
 
    private Map<UUID, LerpingBossEvent> method01163() {
-      return mc.gui != null && mc.gui.hud != null ? ((BossHealthOverlayMixin)(Object)mc.gui.hud.getBossOverlay()).events() : null;
+      return mc.gui != null && mc.gui != null ? ((BossHealthOverlayMixin)(Object)mc.gui.getBossOverlay()).events() : null;
    }
 
    private Vec3 method01164(List<fEEsjlIyg7aYDL47> var1) {

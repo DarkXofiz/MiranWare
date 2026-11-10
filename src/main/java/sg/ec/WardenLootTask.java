@@ -37,7 +37,7 @@ public final class WardenLootTask extends AbstractBotTask implements MinecraftAc
 
    @Override
    public AbstractContainerMenu method01765() {
-      return mc.gui.screen() instanceof AbstractContainerScreen var1 ? var1.getMenu() : null;
+      return mc.screen instanceof AbstractContainerScreen var1 ? var1.getMenu() : null;
    }
 
    @Override
@@ -97,7 +97,7 @@ public final class WardenLootTask extends AbstractBotTask implements MinecraftAc
    @Override
    public void method01748() {
       if (mc.player != null) {
-         mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+         mc.player.swing(InteractionHand.MAIN_HAND);
       }
    }
 

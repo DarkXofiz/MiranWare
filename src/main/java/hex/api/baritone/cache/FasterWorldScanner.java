@@ -128,14 +128,14 @@ public enum FasterWorldScanner implements IWorldScanner {
 
    private Stream<BlockPos> scanChunkInternal(IPlayerContext var1, BlockOptionalMetaLookup var2, ChunkPos var3) {
       ChunkSource var4 = var1.world().getChunkSource();
-      if (!var4.hasChunk(var3.x(), var3.z())) {
+      if (!var4.hasChunk(var3.x, var3.z)) {
          return Stream.empty();
       }
 
-      long sx = (long)var3.x() << 4;
-      long sxx = (long)var3.z() << 4;
+      long sx = (long)var3.x << 4;
+      long sxx = (long)var3.z << 4;
       int sxxx = var1.playerFeet().y - var1.world().getMinY() >> 4;
-      return this.collectChunkSections(var2, var4.getChunk(var3.x(), var3.z(), false), sx, sxx, sxxx).stream();
+      return this.collectChunkSections(var2, var4.getChunk(var3.x, var3.z, false), sx, sxx, sxxx).stream();
    }
 
    private List<BlockPos> collectChunkSections(BlockOptionalMetaLookup var1, LevelChunk var2, long var3, long var5, int var7) {

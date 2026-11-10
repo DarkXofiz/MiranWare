@@ -217,8 +217,8 @@ public final class PathRenderer implements IRenderer {
    public static void render(RenderEvent var0, PathingBehavior var1) {
       IPlayerContext var2 = var1.ctx;
       if (var2.world() != null) {
-         if (var2.minecraft().gui.screen() instanceof GuiClick) {
-            ((GuiClick)var2.minecraft().gui.screen()).onRender(var0.getModelViewStack(), var0.getProjectionMatrix());
+         if (var2.minecraft().screen instanceof GuiClick) {
+            ((GuiClick)var2.minecraft().screen).onRender(var0.getModelViewStack(), var0.getProjectionMatrix());
          }
 
          float sx = var0.getPartialTicks();

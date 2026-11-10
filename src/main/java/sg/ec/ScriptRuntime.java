@@ -44,9 +44,7 @@ public enum ScriptRuntime implements MinecraftAccess {
       }
 
       this.method06223();
-      if (ScriptShaderManager.method10929() || ScriptManager.method01293()) {
-         ScriptShaderManager.method10950();
-      }
+      // TODO(port 1.21.11): ScriptShaderManager render hattina tasinacak
 
       for (String var6 : this.field13892.method05743()) {
          ScriptLogManager.INSTANCE.method08091(2, "[script] " + var6);
@@ -94,7 +92,7 @@ public enum ScriptRuntime implements MinecraftAccess {
       }
 
       this.field13891.method11767().method01567();
-      ScriptShaderManager.method10940();
+      // TODO(port 1.21.11): ScriptShaderManager.method10940()
       FontRegistry.method02894();
       MeshBufferUtils.method07832();
       this.field13892.method05745();
@@ -421,7 +419,7 @@ public enum ScriptRuntime implements MinecraftAccess {
 
          if (this.field13891.method11770().method04791("render3d")) {
             Object[] var9 = new Object[]{
-               var1.method00996(), var1.method00985().method07407(EffectRenderPipelines.method05562()), var1.method00994(), var1.method00986()
+               var1.method00996(), null, var1.method00994(), var1.method00986()
             };
             this.field13891.method11770().method04782("render3d", var1, var9, false);
          }

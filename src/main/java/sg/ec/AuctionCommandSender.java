@@ -53,7 +53,7 @@ public final class AuctionCommandSender implements MinecraftAccess {
    }
 
    private void method03891(long var1) {
-      if (!this.field08746.isEmpty() && (mc.gui == null || !(mc.gui.screen() instanceof ChatScreen))) {
+      if (!this.field08746.isEmpty() && (mc.gui == null || !(mc.screen instanceof ChatScreen))) {
          this.field08748 = method03896(this.field08746.pollFirst());
          this.field08749 = method03890("/" + this.field08748);
          this.field08747 = AuctionCommandSender.Nested113.SUGGEST;

@@ -214,7 +214,7 @@ public class TargetESP extends ClientModule {
    private void method09258(Render3DEvent var1) {
       PoseStack var2 = var1.method00996();
       if (var1.method00985().method07407(EffectRenderPipelines.method05553(this.field20942.method05999())) instanceof BaritoneVertexConsumerAccess sx) {
-         Camera sxx = mc.gameRenderer.mainCamera();
+         Camera sxx = mc.gameRenderer.getMainCamera();
          Vec3 var6 = sxx.position();
          float var7 = field21006;
          var2.pushPose();
@@ -241,7 +241,7 @@ public class TargetESP extends ClientModule {
             );
             var2.pushPose();
             var2.translate(sxxx.method09287() - var6.x(), sxxx.method09283() - var6.y(), sxxx.method09284() - var6.z());
-            var2.rotate(sxx.rotation());
+            var2.mulPose(sxx.rotation());
             Matrix4f sxxxxxxxxx = var2.last().pose();
             float sxxxxxxxxxx = var7 * sxxxxxxx;
             this.method09265(sx, sxxxxxxxxx, sxxxxxxxxxx, sxxxxxxxx);
@@ -285,7 +285,7 @@ public class TargetESP extends ClientModule {
                   var8.y + field21048 + field21049 * Mth.sin(this.field20971 + var22 * field21050) + field21051 * var20,
                   var8.z + field21052 * Mth.cos(var24 - var21)
                );
-               var5.rotate(var9);
+               var5.mulPose(var9);
                Matrix4f var25 = var5.last().pose();
                this.method09273(var4, var25, var23, var15, var17, var18, var2);
                var5.popPose();
@@ -350,7 +350,7 @@ public class TargetESP extends ClientModule {
          byte var10 = 9;
          float var11 = field21017;
          float var12 = field21018;
-         Camera var13 = mc.gameRenderer.mainCamera();
+         Camera var13 = mc.gameRenderer.getMainCamera();
          Vec3 var14 = var13.position();
          Vec3 var15 = this.field20946.getPosition(var3).add(0.0, this.field20946.getBbHeight() / 2.0F, 0.0).subtract(var14);
          var2.translate(var15.x, var15.y, var15.z);
@@ -387,7 +387,7 @@ public class TargetESP extends ClientModule {
                float var35 = var24 * field21034;
                int var36 = ColorUtils.method04627(ColorUtils.Nested138.method04634(var22 * 25), -1, field21035);
                var36 = ColorUtils.method04616(var36, Math.round(ColorUtils.method04625(var36) * this.field20951.method03377()));
-               var2.rotate(var16);
+               var2.mulPose(var16);
                Matrix4f var37 = var2.last().pose();
                int var38 = ClientParticleRenderer.method10534(var36);
                int var39 = 0;
@@ -547,16 +547,16 @@ public class TargetESP extends ClientModule {
             this.field20972.method03375(var6 % field21062 > field21063 ? 1.0 : 0.0);
             float var11 = (float)(field21064 * this.field20951.method03384() - field21065);
             var4.pushPose();
-            Camera var12 = mc.gameRenderer.mainCamera();
+            Camera var12 = mc.gameRenderer.getMainCamera();
             Vec3 var13 = var12.position();
             Vec3 var14 = this.field20946.getPosition(var5);
             float var15 = (float)(var14.x - var13.x());
             float var16 = (float)(var14.y - var13.y() + this.field20946.getBbHeight() / 2.0F);
             float var17 = (float)(var14.z - var13.z());
             var4.translate(var15, var16, var17);
-            var4.rotate(var12.rotation());
+            var4.mulPose(var12.rotation());
             var4.scale(field21066, field21067, field21068);
-            var4.rotate(Axis.ZP.rotationDegrees(var8));
+            var4.mulPose(Axis.ZP.rotationDegrees(var8));
             float var18 = this.field20951.method03377();
             int var19 = ColorUtils.Nested138.method04636();
             int var20 = ColorUtils.Nested138.method04637();

@@ -86,7 +86,7 @@ public final class ChunkPacker {
          }
       }
 
-      return new CachedChunk(var0.getPos().x(), var0.getPos().z(), sx, sxx, sxxx, var1, System.currentTimeMillis());
+      return new CachedChunk(var0.getPos().x, var0.getPos().z, sx, sxx, sxxx, var1, System.currentTimeMillis());
    }
 
    public static BlockState pathingTypeToBlock(PathingBlockType var0, DimensionType var1, ResourceKey<Level> var2) {
@@ -128,7 +128,7 @@ public final class ChunkPacker {
                return PathingBlockType.WATER;
             }
 
-            Vec3 sxx = var0.getFluidState().getFlow(var1.getLevel(), new BlockPos(var2 + (var1.getPos().x() << 4), var3, var4 + (var1.getPos().z() << 4)));
+            Vec3 sxx = var0.getFluidState().getFlow(var1.getLevel(), new BlockPos(var2 + (var1.getPos().x << 4), var3, var4 + (var1.getPos().z << 4)));
             return sxx.x == 0.0 && sxx.z == 0.0 ? PathingBlockType.AVOID : PathingBlockType.WATER;
          } else {
             return PathingBlockType.AVOID;

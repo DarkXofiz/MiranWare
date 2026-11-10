@@ -156,7 +156,7 @@ public final class ServerItemUseController implements MinecraftAccess {
       if (mc.player != null && mc.gameMode != null) {
          InteractionHand var1 = InteractionHand.MAIN_HAND;
          mc.gameMode.useItem(mc.player, var1);
-         mc.player.swing(var1, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+         mc.player.swing(var1);
          this.field26507 = true;
          this.field26510 = 0;
          this.field26511 = Math.max(1, 2 + ServerLatencyTracker.INSTANCE.method01667() - 1);
@@ -166,7 +166,7 @@ public final class ServerItemUseController implements MinecraftAccess {
    private void method11658() {
       if (mc.player != null && mc.player.containerMenu != null && mc.gameMode != null) {
          int var1 = mc.player.containerMenu.containerId;
-         mc.gameMode.handleContainerInput(var1, this.field26500, this.field26502, ClickType.SWAP, mc.player);
+         mc.gameMode.handleInventoryMouseClick(var1, this.field26500, this.field26502, ClickType.SWAP, mc.player);
       }
    }
 

@@ -48,7 +48,7 @@ public enum ClientScreenManager implements MinecraftAccess {
          this.method08331();
          if (var1 != null) {
             this.method08330(var1, var1.method01468());
-         } else if (mc.gui.screen() == null) {
+         } else if (mc.screen == null) {
             mc.mouseHandler.grabMouse();
          }
       }

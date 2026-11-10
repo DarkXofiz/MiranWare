@@ -319,7 +319,7 @@ public class AutoKeyFinder extends ClientModule {
             this.method11047(var3);
             if (this.field24846-- <= 0) {
                InteractionResult var4 = mc.gameMode.interact(mc.player, this.field24809, new EntityHitResult(this.field24809, var3), InteractionHand.MAIN_HAND);
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
                this.field24846 = 20;
             }
          }
@@ -1444,7 +1444,7 @@ public class AutoKeyFinder extends ClientModule {
          this.method11047(var2);
          if (this.field24846-- <= 0) {
             mc.gameMode.attack(mc.player, this.field24809);
-            mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(InteractionHand.MAIN_HAND);
             this.field24849++;
             this.field24846 = this.field24792.method03022() - 1;
          }
@@ -1660,7 +1660,7 @@ public class AutoKeyFinder extends ClientModule {
    }
 
    private AbstractContainerMenu method11113() {
-      return mc.gui.screen() instanceof ContainerScreen var1 ? var1.getMenu() : null;
+      return mc.screen instanceof ContainerScreen var1 ? var1.getMenu() : null;
    }
 
    private boolean method11114() {

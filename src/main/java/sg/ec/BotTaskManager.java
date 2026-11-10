@@ -191,7 +191,7 @@ public enum BotTaskManager implements MinecraftAccess {
 
    private void method05443() {
       if (mc.player != null && mc.player.deathTime >= 5) {
-         if (mc.gui.screen() instanceof DeathScreen) {
+         if (mc.screen instanceof DeathScreen) {
             mc.player.respawn();
          }
       }

@@ -116,7 +116,7 @@ public final class ScriptInteractionAdapter implements MinecraftAccess {
       Entity var2 = ScriptEntitiesAdapter.method09073(var1);
       if (mc.player != null && mc.gameMode != null && var2 != null && var2.isAlive()) {
          mc.gameMode.attack(mc.player, var2);
-         mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+         mc.player.swing(InteractionHand.MAIN_HAND);
          return true;
       } else {
          return false;
@@ -146,7 +146,7 @@ public final class ScriptInteractionAdapter implements MinecraftAccess {
                }
 
                mc.gameMode.attack(mc.player, var6.getEntity());
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
                break;
             case 1:
                if (!(mc.hitResult instanceof BlockHitResult var4)) {
@@ -166,7 +166,7 @@ public final class ScriptInteractionAdapter implements MinecraftAccess {
                mc.getConnection().send(new ServerboundPlayerActionPacket(Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, Direction.DOWN));
                break;
             case 4:
-               mc.player.swing(var3, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(var3);
                break;
             case 5:
                mc.gameMode.useItem(mc.player, var3);

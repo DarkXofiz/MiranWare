@@ -68,8 +68,8 @@ public abstract class ClientChunkCache$StorageMixin implements IChunkArray {
          LevelChunk var4 = (LevelChunk) var2.get(var3);
          if (var4 != null) {
             ChunkPos var5 = var4.getPos();
-            if (this.inRange(var5.x(), var5.z())) {
-               int var6 = this.getIndex(var5.x(), var5.z());
+            if (this.inRange(var5.x, var5.z)) {
+               int var6 = this.getIndex(var5.x, var5.z);
                if (this.chunks.get(var6) != null) {
                   throw new IllegalStateException(field28034);
                }

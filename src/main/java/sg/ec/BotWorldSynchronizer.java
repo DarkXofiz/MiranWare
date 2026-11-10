@@ -51,7 +51,7 @@ public final class BotWorldSynchronizer implements MinecraftAccess {
    private static final int field09967 = 0;
 
    private static void method04458(BotWorldState var0) {
-      PlayerTabOverlayMixin_1198 var1 = (PlayerTabOverlayMixin_1198)(Object)mc.gui.hud.getTabList();
+      PlayerTabOverlayMixin_1198 var1 = (PlayerTabOverlayMixin_1198)(Object)mc.gui.getTabList();
       if (var1.getTabHeader() != null || var1.getTabFooter() != null) {
          var0.method07655(
             new ClientboundTabListPacket(
@@ -125,8 +125,8 @@ public final class BotWorldSynchronizer implements MinecraftAccess {
          int var7 = Math.max(var6.getServerChunkRadius(), var2.chunkRadius());
          int var8 = Math.min(Math.max(var7, 2), 24);
          int var9 = Math.min(Math.max(var8, mc.options.getEffectiveRenderDistance()) + 3, 24);
-         int var10 = var4.chunkPosition().x();
-         int var11 = var4.chunkPosition().z();
+         int var10 = var4.chunkPosition().x;
+         int var11 = var4.chunkPosition().z;
          var5.method07773(new ClientboundSetChunkCacheRadiusPacket(var8));
          var5.method07788(new ClientboundSetSimulationDistancePacket(var6.getServerSimulationDistance()));
          var5.method07723(new ClientboundSetChunkCacheCenterPacket(var10, var11));
@@ -214,7 +214,7 @@ public final class BotWorldSynchronizer implements MinecraftAccess {
    }
 
    private static void method04466(BotWorldState var0) {
-      for (LerpingBossEvent var2 : ((BossHealthOverlayMixin)(Object)mc.gui.hud.getBossOverlay()).events().values()) {
+      for (LerpingBossEvent var2 : ((BossHealthOverlayMixin)(Object)mc.gui.getBossOverlay()).events().values()) {
          var0.method07761(var2);
       }
    }

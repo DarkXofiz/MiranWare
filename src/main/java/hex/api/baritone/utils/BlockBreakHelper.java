@@ -42,10 +42,10 @@ public final class BlockBreakHelper {
             if (this.ctx.playerController().hasBrokenBlock()) {
                this.ctx.playerController().syncHeldItem();
                this.ctx.playerController().clickBlock(((BlockHitResult)var2).getBlockPos(), ((BlockHitResult)var2).getDirection());
-               this.ctx.player().swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               this.ctx.player().swing(InteractionHand.MAIN_HAND);
             } else {
                if (this.ctx.playerController().onPlayerDamageBlock(((BlockHitResult)var2).getBlockPos(), ((BlockHitResult)var2).getDirection())) {
-                  this.ctx.player().swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                  this.ctx.player().swing(InteractionHand.MAIN_HAND);
                }
 
                if (this.ctx.playerController().hasBrokenBlock()) {

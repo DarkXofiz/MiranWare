@@ -166,7 +166,7 @@ public enum BlockBreakManager implements MinecraftAccess {
    public boolean method04909() {
       if (!this.method04907() || mc.gameMode == null) {
          return false;
-      } else if (mc.gui.screen() == null && mc.gui.overlay() == null && mc.mouseHandler.isMouseGrabbed()) {
+      } else if (mc.screen == null && mc.gui.overlay() == null && mc.mouseHandler.isMouseGrabbed()) {
          return true;
       } else if (mc.player.isUsingItem()) {
          return true;
@@ -181,7 +181,7 @@ public enum BlockBreakManager implements MinecraftAccess {
 
          if (mc.gameMode.continueDestroyBlock(var1.getBlockPos(), var1.getDirection())) {
             mc.level.addBreakingBlockEffects(var1.getBlockPos(), var1.getDirection(), false);
-            mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(InteractionHand.MAIN_HAND);
          }
 
          return true;

@@ -300,9 +300,9 @@ public class SwingAnimations extends ClientModule {
    private static void method02739(PoseStack var0, float var1, float var2) {
       var0.translate(field06388, 0.0, field06389);
       var0.translate(field06390, field06391, field06392);
-      var0.rotate(Axis.YP.rotationDegrees(field06393));
-      var0.rotate(Axis.ZP.rotationDegrees(field06394));
-      var0.rotate(Axis.XP.rotationDegrees(field06395 - var1 * var2));
+      var0.mulPose(Axis.YP.rotationDegrees(field06393));
+      var0.mulPose(Axis.ZP.rotationDegrees(field06394));
+      var0.mulPose(Axis.XP.rotationDegrees(field06395 - var1 * var2));
    }
 
    public NumberSetting<Integer> method02740() {
@@ -337,7 +337,7 @@ public class SwingAnimations extends ClientModule {
    private static void method02742(PoseStack var0) {
       var0.translate(field06409, 0.0, field06410);
       var0.translate(field06411, field06412, field06413);
-      var0.rotate(Axis.XP.rotationDegrees(field06414));
+      var0.mulPose(Axis.XP.rotationDegrees(field06414));
    }
 
    public NumberSetting<Integer> method02743() {
@@ -356,14 +356,14 @@ public class SwingAnimations extends ClientModule {
       float var3 = var1 / field06415 / field06416 * field06417;
       var0.translate(field06418, 0.0, field06419);
       var0.translate(field06420, field06421, field06422);
-      var0.rotate(Axis.YP.rotationDegrees(field06423));
-      var0.rotate(Axis.YP.rotationDegrees(var2 * -(var3 / 2.0F)));
-      var0.rotate(Axis.ZP.rotationDegrees(var2 * -(var3 / 2.0F)));
-      var0.rotate(Axis.XP.rotationDegrees(var2 * -var3));
+      var0.mulPose(Axis.YP.rotationDegrees(field06423));
+      var0.mulPose(Axis.YP.rotationDegrees(var2 * -(var3 / 2.0F)));
+      var0.mulPose(Axis.ZP.rotationDegrees(var2 * -(var3 / 2.0F)));
+      var0.mulPose(Axis.XP.rotationDegrees(var2 * -var3));
       var0.translate(field06424, field06425, 0.0);
-      var0.rotate(Axis.YP.rotationDegrees(field06426));
-      var0.rotate(Axis.XP.rotationDegrees(field06427));
-      var0.rotate(Axis.YP.rotationDegrees(field06428));
+      var0.mulPose(Axis.YP.rotationDegrees(field06426));
+      var0.mulPose(Axis.XP.rotationDegrees(field06427));
+      var0.mulPose(Axis.YP.rotationDegrees(field06428));
    }
 
    private float method02748(float var1) {
@@ -397,10 +397,10 @@ public class SwingAnimations extends ClientModule {
 
    private static void method02755(PoseStack var0, float var1, float var2, float var3) {
       var0.translate(field06396, field06397, field06398);
-      var0.rotate(Axis.YP.rotationDegrees(field06399 + Mth.sin(var3 * var3 * field06400) / field06401 * field06402));
-      var0.rotate(Axis.ZP.rotationDegrees(Mth.sin(Mth.sqrt(var3) * field06403) * field06404));
-      var0.rotate(Axis.XP.rotationDegrees(var2 * -var1));
-      var0.rotate(Axis.YP.rotationDegrees(field06405));
+      var0.mulPose(Axis.YP.rotationDegrees(field06399 + Mth.sin(var3 * var3 * field06400) / field06401 * field06402));
+      var0.mulPose(Axis.ZP.rotationDegrees(Mth.sin(Mth.sqrt(var3) * field06403) * field06404));
+      var0.mulPose(Axis.XP.rotationDegrees(var2 * -var1));
+      var0.mulPose(Axis.YP.rotationDegrees(field06405));
    }
 
    @Subscribe
@@ -423,8 +423,8 @@ public class SwingAnimations extends ClientModule {
 
    private static void method02760(PoseStack var0, float var1, float var2) {
       method02742(var0);
-      var0.rotate(Axis.YP.rotationDegrees(-var2 * var1 + field06406));
-      var0.rotate(Axis.ZP.rotationDegrees(field06407));
+      var0.mulPose(Axis.YP.rotationDegrees(-var2 * var1 + field06406));
+      var0.mulPose(Axis.ZP.rotationDegrees(field06407));
    }
 
    private int method02761(LocalPlayer var1) {
@@ -443,8 +443,8 @@ public class SwingAnimations extends ClientModule {
 
    private static void method02763(PoseStack var0, float var1, float var2) {
       method02742(var0);
-      var0.rotate(Axis.YP.rotationDegrees(-var2 * var1));
-      var0.rotate(Axis.ZP.rotationDegrees(field06408));
+      var0.mulPose(Axis.YP.rotationDegrees(-var2 * var1));
+      var0.mulPose(Axis.ZP.rotationDegrees(field06408));
    }
 
    public SwingAnimations() {
@@ -570,9 +570,9 @@ public class SwingAnimations extends ClientModule {
 
    private void method02765(PoseStack var1, float var2, float var3, float var4) {
       var1.translate(0.0F, field06429, 0.0F);
-      var1.rotate(Axis.YP.rotationDegrees(field06430));
-      var1.rotate(Axis.ZP.rotationDegrees(field06431));
-      var1.rotate(Axis.YP.rotationDegrees(var2 * var3 * field06432 * var4));
+      var1.mulPose(Axis.YP.rotationDegrees(field06430));
+      var1.mulPose(Axis.ZP.rotationDegrees(field06431));
+      var1.mulPose(Axis.YP.rotationDegrees(var2 * var3 * field06432 * var4));
    }
 
    public ModeSetting method02766() {
@@ -638,64 +638,64 @@ public class SwingAnimations extends ClientModule {
          switch ((String)this.field06293.method03022()) {
             case field06444:
                var1.translate(0.0F, var6 * field06456 * var9 + field06457, 0.0F);
-               var1.rotate(Axis.YP.rotationDegrees(field06458));
+               var1.mulPose(Axis.YP.rotationDegrees(field06458));
                break;
             case field06445:
                var1.translate(0.0F, field06459, field06460);
-               var1.rotate(Axis.XP.rotationDegrees(field06461));
-               var1.rotate(Axis.ZP.rotationDegrees(field06462 + var5 * field06463 * this.field06299.method03022().intValue()));
-               var1.rotate(Axis.YP.rotationDegrees(field06464 + var5 * field06465 * this.field06299.method03022().intValue()));
+               var1.mulPose(Axis.XP.rotationDegrees(field06461));
+               var1.mulPose(Axis.ZP.rotationDegrees(field06462 + var5 * field06463 * this.field06299.method03022().intValue()));
+               var1.mulPose(Axis.YP.rotationDegrees(field06464 + var5 * field06465 * this.field06299.method03022().intValue()));
                break;
             case field06446:
                this.method02765(var1, var6, var7, var9);
-               var1.rotate(Axis.XP.rotationDegrees(var6 * var7 * field06466 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(field06467));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * var7 * field06466 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(field06467));
                break;
             case field06447:
                this.method02765(var1, var6, var7, var9);
-               var1.rotate(Axis.XP.rotationDegrees(var6 * var7 * field06468 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(field06469));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * var7 * field06468 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(field06469));
                break;
             case field06448:
                var1.translate(0.0F, field06470, 0.0F);
-               var1.rotate(Axis.YP.rotationDegrees(field06471));
-               var1.rotate(Axis.YP.rotationDegrees(var6 * field06472 * var9));
-               var1.rotate(Axis.XN.rotationDegrees(var6 * field06473 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(var6 * field06474 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(field06475));
+               var1.mulPose(Axis.YP.rotationDegrees(field06471));
+               var1.mulPose(Axis.YP.rotationDegrees(var6 * field06472 * var9));
+               var1.mulPose(Axis.XN.rotationDegrees(var6 * field06473 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * field06474 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(field06475));
                break;
             case field06449:
                var1.translate(0.0F, field06476, 0.0F);
-               var1.rotate(Axis.XP.rotationDegrees(var6 * field06477 * var9));
-               var1.rotate(Axis.ZP.rotationDegrees(var6 * field06478 * var9));
-               var1.rotate(Axis.YP.rotationDegrees(var6 * field06479 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * field06477 * var9));
+               var1.mulPose(Axis.ZP.rotationDegrees(var6 * field06478 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(var6 * field06479 * var9));
                var1.translate(0.0F, field06480, 0.0F);
                break;
             case field06450:
                var1.translate(0.0F, field06481, 0.0F);
                var1.translate(-var8 * var8 * var7 * var9, 0.0F, 0.0F);
-               var1.rotate(Axis.YP.rotationDegrees(field06482));
-               var1.rotate(Axis.ZP.rotationDegrees(var6 * var9));
-               var1.rotate(Axis.YP.rotationDegrees(var6 * var7 * field06483 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(var6 * var7 * field06484 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(field06485));
-               var1.rotate(Axis.XP.rotationDegrees(var8 * field06486 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(field06482));
+               var1.mulPose(Axis.ZP.rotationDegrees(var6 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(var6 * var7 * field06483 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * var7 * field06484 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(field06485));
+               var1.mulPose(Axis.XP.rotationDegrees(var8 * field06486 * var9));
                break;
             case field06451:
                var1.translate(0.0F, field06487, 0.0F);
-               var1.rotate(Axis.YP.rotationDegrees(field06488));
-               var1.rotate(Axis.YP.rotationDegrees(var6 * field06489 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(var6 * field06490 * var9));
-               var1.rotate(Axis.YP.rotationDegrees(field06491));
-               var1.rotate(Axis.XP.rotationDegrees(field06492));
-               var1.rotate(Axis.YP.rotationDegrees(field06493));
+               var1.mulPose(Axis.YP.rotationDegrees(field06488));
+               var1.mulPose(Axis.YP.rotationDegrees(var6 * field06489 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * field06490 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(field06491));
+               var1.mulPose(Axis.XP.rotationDegrees(field06492));
+               var1.mulPose(Axis.YP.rotationDegrees(field06493));
                break;
             case field06452:
                var1.translate(0.0F, field06494, 0.0F);
                this.method02765(var1, var6, var7, var9);
-               var1.rotate(Axis.YP.rotationDegrees(var6 * var7 * field06495 * var9));
-               var1.rotate(Axis.ZP.rotationDegrees(var6 * var7 * field06496 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(field06497));
+               var1.mulPose(Axis.YP.rotationDegrees(var6 * var7 * field06495 * var9));
+               var1.mulPose(Axis.ZP.rotationDegrees(var6 * var7 * field06496 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(field06497));
                break;
             case field06453:
                float var13 = this.field06299.method03022().intValue() * field06498;
@@ -703,26 +703,26 @@ public class SwingAnimations extends ClientModule {
                float var15 = this.field06310;
                var1.translate(field06502, field06503, field06504);
                var1.translate(field06505, field06506, field06507);
-               var1.rotate(Axis.YP.rotationDegrees(field06508));
-               var1.rotate(Axis.ZN.rotationDegrees(field06509));
-               var1.rotate(new Quaternionf().fromAxisAngleDeg(1.0F, var15, 0.0F, var14));
-               var1.rotate(Axis.XP.rotationDegrees(field06510));
+               var1.mulPose(Axis.YP.rotationDegrees(field06508));
+               var1.mulPose(Axis.ZN.rotationDegrees(field06509));
+               var1.mulPose(new Quaternionf().fromAxisAngleDeg(1.0F, var15, 0.0F, var14));
+               var1.mulPose(Axis.XP.rotationDegrees(field06510));
                var1.translate(field06511, field06512, 0.0F);
                var10 *= field06513;
                var1.scale(var10, var10, var10);
                break;
             case field06454:
-               var1.rotate(Axis.YP.rotationDegrees(field06514 + var5 * field06515 * var9));
-               var1.rotate(Axis.ZP.rotationDegrees(var6 * field06516 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(var6 * field06517 * var9));
-               var1.rotate(Axis.YP.rotationDegrees(field06518));
+               var1.mulPose(Axis.YP.rotationDegrees(field06514 + var5 * field06515 * var9));
+               var1.mulPose(Axis.ZP.rotationDegrees(var6 * field06516 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * field06517 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(field06518));
                var1.translate(0.0F, var6 * field06519 * var9, 0.0F);
                break;
             case field06455:
-               var1.rotate(Axis.YP.rotationDegrees(field06520 + var5 * field06521 * var9));
-               var1.rotate(Axis.ZP.rotationDegrees(var6 * field06522 * var9));
-               var1.rotate(Axis.XP.rotationDegrees(var6 * field06523 * var9));
-               var1.rotate(Axis.YP.rotationDegrees(field06524));
+               var1.mulPose(Axis.YP.rotationDegrees(field06520 + var5 * field06521 * var9));
+               var1.mulPose(Axis.ZP.rotationDegrees(var6 * field06522 * var9));
+               var1.mulPose(Axis.XP.rotationDegrees(var6 * field06523 * var9));
+               var1.mulPose(Axis.YP.rotationDegrees(field06524));
                var1.translate(0.0F, 0.0F, var6 * field06525 * var9);
                break;
             default:
@@ -743,7 +743,7 @@ public class SwingAnimations extends ClientModule {
       } else if (!this.field06304.method05600(field06369)) {
          return !this.field06304.method05600(field06370) ? false : AttackAura.method00456() == null;
       } else {
-         return mc.player == null || mc.player.getCurrentSwing() == null;
+         return mc.player == null || !mc.player.swinging;
       }
    }
 
@@ -864,9 +864,9 @@ public class SwingAnimations extends ClientModule {
          float var2 = this.field06306.method03022().intValue();
          float var3 = this.field06307.method03022().intValue();
          float var4 = this.field06308.method03022().intValue();
-         var1.rotate(Axis.XP.rotationDegrees(var2));
-         var1.rotate(Axis.YP.rotationDegrees(var3));
-         var1.rotate(Axis.ZP.rotationDegrees(var4));
+         var1.mulPose(Axis.XP.rotationDegrees(var2));
+         var1.mulPose(Axis.YP.rotationDegrees(var3));
+         var1.mulPose(Axis.ZP.rotationDegrees(var4));
       }
    }
 

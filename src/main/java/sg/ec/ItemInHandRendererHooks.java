@@ -167,7 +167,7 @@ public final class ItemInHandRendererHooks {
             if (var4.has(DataComponents.MAP_ID)) {
                var7.pushPose();
                var7.translate(field11329 * var2, field11330, field11331);
-               var7.rotate(Axis.YP.rotationDegrees(field11332 * var2));
+               var7.mulPose(Axis.YP.rotationDegrees(field11332 * var2));
                ((PlayerArmRenderAccess)var0).hmi$renderMap(var7, var1.field19840, var1.field19850, var4);
                var7.popPose();
             } else {
@@ -221,15 +221,15 @@ public final class ItemInHandRendererHooks {
       float var9 = field11337 * Mth.sin(var7 * field11338);
       float var10 = field11339 * Mth.sin(var3 * field11340);
       var0.translate(var6 * (var8 + field11341), var9 + field11342 + var2 * field11343, var10 + field11344);
-      var0.rotate(Axis.YP.rotationDegrees(var6 * field11345));
+      var0.mulPose(Axis.YP.rotationDegrees(var6 * field11345));
       float var11 = Mth.sin(var3 * var3 * field11346);
       float var12 = Mth.sin(var7 * field11347);
-      var0.rotate(Axis.YP.rotationDegrees(var6 * var12 * field11348));
-      var0.rotate(Axis.ZP.rotationDegrees(var6 * var11 * field11349));
+      var0.mulPose(Axis.YP.rotationDegrees(var6 * var12 * field11348));
+      var0.mulPose(Axis.ZP.rotationDegrees(var6 * var11 * field11349));
       var0.translate(var6 * field11350, field11351, field11352);
-      var0.rotate(Axis.ZP.rotationDegrees(var6 * field11353));
-      var0.rotate(Axis.XP.rotationDegrees(field11354));
-      var0.rotate(Axis.YP.rotationDegrees(var6 * field11355));
+      var0.mulPose(Axis.ZP.rotationDegrees(var6 * field11353));
+      var0.mulPose(Axis.XP.rotationDegrees(field11354));
+      var0.mulPose(Axis.YP.rotationDegrees(var6 * field11355));
       var0.translate(var6 * field11356, 0.0F, 0.0F);
    }
 

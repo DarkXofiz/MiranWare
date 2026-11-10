@@ -162,21 +162,21 @@ public class AccountSwitcherScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractRenderState(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-      super.extractRenderState(graphics, mouseX, mouseY, delta);
+   public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+      super.render(graphics, mouseX, mouseY, delta);
       int cx = this.width / 2;
-      graphics.centeredText(this.font, "Аккаунты", cx, 14, -1);
-      graphics.centeredText(this.font, "Текущий: " + mc.getUser().getName(), cx, 26, 0xFFAAAAAA);
+      graphics.drawCenteredString(this.font, "Аккаунты", cx, 14, -1);
+      graphics.drawCenteredString(this.font, "Текущий: " + mc.getUser().getName(), cx, 26, 0xFFAAAAAA);
       if (this.accounts.isEmpty()) {
-         graphics.centeredText(this.font, "Список пуст — введи ник и нажми «Добавить»", cx, 40 + ROW_HEIGHT * 2, 0xFF888888);
+         graphics.drawCenteredString(this.font, "Список пуст — введи ник и нажми «Добавить»", cx, 40 + ROW_HEIGHT * 2, 0xFF888888);
       }
       if (!this.status.isEmpty()) {
-         graphics.centeredText(this.font, this.status, cx, this.height - 16, 0xFF55FF55);
+         graphics.drawCenteredString(this.font, this.status, cx, this.height - 16, 0xFF55FF55);
       }
    }
 
    @Override
    public void onClose() {
-      mc.gui.setScreen(this.parent);
+      mc.setScreen(this.parent);
    }
 }

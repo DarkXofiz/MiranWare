@@ -682,8 +682,8 @@ public class AimBot extends ClientModule {
          VertexConsumer var17 = var1.method00985().method07407(EffectRenderPipelines.method05532(ClientTextures.INSTANCE.method04570()));
          var2.pushPose();
          var2.translate(var7, var8, var9);
-         var2.rotate(var3.rotation());
-         var2.rotate(Axis.ZP.rotationDegrees(var14));
+         var2.mulPose(var3.rotation());
+         var2.mulPose(Axis.ZP.rotationDegrees(var14));
          Matrix4f var18 = var2.last().pose();
          if (var17 instanceof BaritoneVertexConsumerAccess var19) {
             var19.texturedVertex(var18, -var6, -var6, 0.0F, 0.0F, 0.0F, var10.color1());

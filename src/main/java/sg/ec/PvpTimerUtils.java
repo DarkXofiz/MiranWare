@@ -90,12 +90,12 @@ public final class PvpTimerUtils implements MinecraftAccess {
    }
 
    private static Collection<LerpingBossEvent> method06502() {
-      return ((BossHealthOverlayMixin)(Object)mc.gui.hud.getBossOverlay()).events().values();
+      return ((BossHealthOverlayMixin)(Object)mc.gui.getBossOverlay()).events().values();
    }
 
    public static String method06503() {
       if (mc.player != null && mc.player.connection != null) {
-         Component var0 = ((PlayerTabOverlayMixin_1198)(Object)mc.gui.hud.getTabList()).getTabHeader();
+         Component var0 = ((PlayerTabOverlayMixin_1198)(Object)mc.gui.getTabList()).getTabHeader();
          return var0 == null ? "" : var0.getString();
       } else {
          return "";

@@ -46,7 +46,7 @@ public final class ChatMessagePolicy implements MinecraftAccess {
    }
 
    public static ChatComponent method04009() {
-      return mc.gui != null && mc.gui.hud != null ? mc.gui.hud.getChat() : null;
+      return mc.gui != null && mc.gui != null ? mc.gui.getChat() : null;
    }
 
    public static void method04010() {

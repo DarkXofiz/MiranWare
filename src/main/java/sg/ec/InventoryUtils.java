@@ -494,7 +494,7 @@ public final class InventoryUtils implements MinecraftAccess {
 
    public static void method06137(int var0, int var1, int var2, ClickType var3, Player var4) {
       if (mc.gameMode != null && method06092(var1, var2, var3)) {
-         mc.gameMode.handleContainerInput(var0, var1, var2, var3, var4);
+         mc.gameMode.handleInventoryMouseClick(var0, var1, var2, var3, var4);
       }
    }
 
@@ -510,7 +510,7 @@ public final class InventoryUtils implements MinecraftAccess {
 
          mc.gameMode.useItem(mc.player, var0);
          if (var3) {
-            mc.player.swing(var0, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(var0);
          }
 
          return false;

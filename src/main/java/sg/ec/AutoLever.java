@@ -93,7 +93,7 @@ public class AutoLever extends ClientModule {
    private void method10776(BlockHitResult var1) {
       if (mc.player != null && mc.gameMode != null) {
          if (mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var1) == InteractionResult.SUCCESS) {
-            mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(InteractionHand.MAIN_HAND);
          }
       }
    }

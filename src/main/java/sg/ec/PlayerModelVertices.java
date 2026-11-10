@@ -38,7 +38,7 @@ public final class PlayerModelVertices {
          float[] var6 = new float[]{0.0F};
          PoseStack var7 = new PoseStack();
          var7.translate(var0.getX(), var0.getY(), var0.getZ());
-         var7.rotate(Axis.YP.rotationDegrees(field06018 - var0.yBodyRot));
+         var7.mulPose(Axis.YP.rotationDegrees(field06018 - var0.yBodyRot));
          var7.scale(field06019, field06020, 1.0F);
          var7.scale(field06021, field06022, field06023);
          var7.translate(0.0F, field06024, 0.0F);

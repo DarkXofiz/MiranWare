@@ -30,7 +30,7 @@ public final class ScriptScreenAdapter implements MinecraftAccess {
    }
 
    public static void method10159(hex.script.api.Screen var0) {
-      Screen var1 = mc.gui == null ? null : mc.gui.screen();
+      Screen var1 = mc.gui == null ? null : mc.screen;
       if (var1 == null) {
          boolean var2 = ClientScreenManager.INSTANCE.method08316();
          var0.set(var2 ? 4 : 0, var2 ? field22840 : "", "");

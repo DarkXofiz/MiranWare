@@ -21,7 +21,7 @@ public class ContainerCloseEvent extends Event {
    }
 
    public void method08157(Minecraft var1, LocalPlayer var2, CallbackInfo var3) {
-      this.field19024 = var1.gui.screen();
+      this.field19024 = var1.screen;
       this.field19025 = var2.containerMenu.containerId;
       super.method03208();
       if (this.method05694()) {

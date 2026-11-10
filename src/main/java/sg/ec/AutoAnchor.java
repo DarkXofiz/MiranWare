@@ -281,7 +281,7 @@ public class AutoAnchor extends ClientModule {
                   && var9.getBlockPos().equals(var2.neighbor())
                   && var9.getBlockPos().relative(var9.getDirection()).equals(var1)
                   && mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var9) == InteractionResult.SUCCESS) {
-                  mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                  mc.player.swing(InteractionHand.MAIN_HAND);
                   RotationChangeTracker.method02903();
                   if (this.field21581.method05999()) {
                      RotationManager.method06555();
@@ -469,7 +469,7 @@ public class AutoAnchor extends ClientModule {
             double var8 = Math.min(mc.player.getEyePosition().distanceTo(var5) + 1.0, mc.player.blockInteractionRange());
             if (mc.player.pick(var8, 1.0F, false) instanceof BlockHitResult var11 && var11.getBlockPos().equals(var1)) {
                mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var11);
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
                RotationChangeTracker.method02903();
                if (this.field21581.method05999()) {
                   RotationManager.method06555();

@@ -57,8 +57,8 @@ public enum ItemAnimationState implements MinecraftAccess {
       }
 
       LocalPlayer var2 = mc.player;
-      boolean var3 = var2 != null && var2.getCurrentSwing() != null;
-      InteractionHand var4 = var2 == null || var2.getCurrentSwing() == null ? null : var2.getCurrentSwing().hand();
+      boolean var3 = var2 != null && var2.swinging;
+      InteractionHand var4 = var2 == null || !var2.swinging ? null : var2.swingingArm;
       boolean var5 = var3 && var4 == InteractionHand.MAIN_HAND;
       boolean var6 = var3 && var4 == InteractionHand.OFF_HAND;
       this.field07838 = var5 && !this.field07840;

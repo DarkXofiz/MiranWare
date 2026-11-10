@@ -85,7 +85,7 @@ public final class BotSessionTransfer implements MinecraftAccess {
       CommonListenerCookie var6 = new CommonListenerCookie(
          new LevelLoadTracker(),
          var3.method08012(),
-         mc.getTelemetryManager().createWorldSessionManager(false, null, null, var3.method08001()),
+         mc.getTelemetryManager().createWorldSessionManager(false, null, null),
          var2.method07758(),
          var2.method07816(),
          var2.method07815(),
@@ -204,22 +204,8 @@ public final class BotSessionTransfer implements MinecraftAccess {
    }
 
    private static ClientboundLoginPacket method02477(ClientboundLoginPacket var0, boolean var1) {
-      return var0.onlineMode() == var1
-         ? var0
-         : new ClientboundLoginPacket(
-            var0.playerId(),
-            var0.hardcore(),
-            var0.levels(),
-            var0.maxPlayers(),
-            var0.chunkRadius(),
-            var0.simulationDistance(),
-            var0.reducedDebugInfo(),
-            var0.showDeathScreen(),
-            var0.doLimitedCrafting(),
-            var0.commonPlayerSpawnInfo(),
-            var1,
-            var0.enforcesSecureChat()
-         );
+      // TODO(port 1.21.11): 1.21.11'de ClientboundLoginPacket'te onlineMode alani yok
+      return var0;
    }
 
    public static void method02478(BotClient var0, Connection var1) {

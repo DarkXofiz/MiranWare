@@ -29,7 +29,7 @@ public final class BlockEspWorldRenderer {
                int sxxxxxxxxxx = sxx.getInt(sxxxxxxxxx.getType());
                if (sxxxxxxxxxx != 0) {
                   ChunkPos sxxxxxxxxxxx = sxxxxxxxxx.chunkPosition();
-                  if (Math.abs(sxxxxxxxxxxx.x() - sxxxxxxx.x()) <= sxxxxxxxx && Math.abs(sxxxxxxxxxxx.z() - sxxxxxxx.z()) <= sxxxxxxxx) {
+                  if (Math.abs(sxxxxxxxxxxx.x - sxxxxxxx.x) <= sxxxxxxxx && Math.abs(sxxxxxxxxxxx.z - sxxxxxxx.z) <= sxxxxxxxx) {
                      Vec3 sxxxxxxxxxxxx = sxxxxxxxxx.getPosition(sxxxxxx).subtract(sxxxxxxxxx.position());
                      WorldLineRenderer.method06535(sxxx, sxxxx, sxxxxx, sxxxxxxxxx.getBoundingBox().move(sxxxxxxxxxxxx), sxxxxxxxxxx, 1.0F);
                   }

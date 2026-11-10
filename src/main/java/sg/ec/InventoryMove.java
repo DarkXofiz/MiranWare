@@ -45,7 +45,7 @@ public class InventoryMove extends ClientModule {
    @Subscribe
    public void method03541(ContainerClickEvent var1) {
       if (this.field07867.method05999()) {
-         if (mc.gui.screen() instanceof InventoryScreen) {
+         if (mc.screen instanceof InventoryScreen) {
             if (!this.field07866) {
                if (MovementUtils.method05733() || !this.field07862.isEmpty()) {
                   this.method03545(var1.method03776(), var1.method03777(), var1.method03773(), var1.method03771());
@@ -97,7 +97,7 @@ public class InventoryMove extends ClientModule {
    @Subscribe
    public void method03548(PacketEvent var1) {
       if (this.field07867.method05999()) {
-         if (mc.gui.screen() instanceof InventoryScreen && var1.method10897() instanceof ClientboundContainerClosePacket) {
+         if (mc.screen instanceof InventoryScreen && var1.method10897() instanceof ClientboundContainerClosePacket) {
             var1.method05695(true);
          }
       }
@@ -118,7 +118,7 @@ public class InventoryMove extends ClientModule {
                         try {
                            this.method03544();
                            this.field07862
-                              .forEach(var0 -> mc.gameMode.handleContainerInput(var0.containerId(), var0.slotNum(), var0.buttonNum(), var0.input(), mc.player));
+                              .forEach(var0 -> mc.gameMode.handleInventoryMouseClick(var0.containerId(), var0.slotNum(), var0.buttonNum(), var0.input(), mc.player));
                            this.method03556();
                         } finally {
                            this.field07866 = false;
@@ -180,8 +180,8 @@ public class InventoryMove extends ClientModule {
    @Subscribe
    private void method03559(PlayerUpdateEvent var1) {
       this.method03551();
-      if (mc.gui.screen() != null || ClientScreenManager.INSTANCE.method08316()) {
-         if (InventoryInputPolicy.method01915(mc.gui.screen())) {
+      if (mc.screen != null || ClientScreenManager.INSTANCE.method08316()) {
+         if (InventoryInputPolicy.method01915(mc.screen)) {
             this.method03552();
          } else {
             this.method03555();

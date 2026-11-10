@@ -282,13 +282,13 @@ public final class ExploreProcess extends BaritoneProcessHelper implements IExpl
          this.inFilter = new LongOpenHashSet();
 
          for (MyChunkPos sx : this.positions) {
-            this.inFilter.add(ChunkPos.pack(sx.x, sx.z));
+            this.inFilter.add(ChunkPos.asLong(sx.x, sx.z));
          }
       }
 
       @Override
       public ExploreProcess.Status isAlreadyExplored(int var1, int var2) {
-         return this.inFilter.contains(ChunkPos.pack(var1, var2)) ^ this.invert ? ExploreProcess.Status.EXPLORED : ExploreProcess.Status.UNKNOWN;
+         return this.inFilter.contains(ChunkPos.asLong(var1, var2)) ^ this.invert ? ExploreProcess.Status.EXPLORED : ExploreProcess.Status.UNKNOWN;
       }
    }
 

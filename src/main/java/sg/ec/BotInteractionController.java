@@ -33,7 +33,7 @@ public final class BotInteractionController {
    public void method06244(Entity var1, InteractionHand var2) {
       if (var1 != null) {
          this.method06259();
-         this.field13917.method00123(new ServerboundInteractPacket(var1.getId(), var2, Vec3.ZERO, this.method06256()));
+         this.field13917.method00123(ServerboundInteractPacket.createInteractionPacket(var1, this.method06256(), var2, Vec3.ZERO));
       }
    }
 
@@ -328,7 +328,7 @@ public final class BotInteractionController {
       if (var1 != null) {
          this.method06259();
          Vec3 var4 = var3.subtract(var1.getX(), var1.getY(), var1.getZ());
-         this.field13917.method00123(new ServerboundInteractPacket(var1.getId(), var2, var4, this.method06256()));
+         this.field13917.method00123(ServerboundInteractPacket.createInteractionPacket(var1, this.method06256(), var2, var4));
       }
    }
 }

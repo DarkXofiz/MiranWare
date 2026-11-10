@@ -1,14 +1,6 @@
-// Original binary: sg/ec/xKN6LXEUrOGijAmG
 package sg.ec;
 
-import net.minecraft.client.renderer.state.gui.GuiElementRenderState;
-import net.minecraft.client.renderer.state.gui.GuiItemRenderState;
-
-// $VF: Compiled from s
+// TODO(port 1.21.11): 26.x render API'sine bagli orijinal sinif cikarilmisti; derleme icin bos govde (gorsel ozellik calismaz).
 public interface GuiNodeAccess {
-   void IaddItem(GuiItemRenderState var1);
-
-   Object getParentLayer();
-
-   void IaddSimpleElement(GuiElementRenderState var1);
+   void IaddSimpleElement(Object element);
 }

@@ -233,7 +233,7 @@ public class Ambience extends ClientModule {
                var18.pushMatrix();
                var18.translate(var20.method03263(), var20.method03276());
                var18.scale(var5, var5);
-               var2.centeredText(mc.font, var20.method03273(), 0, -9 / 2, ColorUtils.method04611(var20.method03261(), var20.method03275()));
+               var2.drawCenteredString(mc.font, var20.method03273(), 0, -9 / 2, ColorUtils.method04611(var20.method03261(), var20.method03275()));
                var18.popMatrix();
             }
          }

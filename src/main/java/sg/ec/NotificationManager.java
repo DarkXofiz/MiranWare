@@ -82,7 +82,7 @@ public final class NotificationManager implements MinecraftAccess {
    }
 
    private static void method08599(long var0) {
-      boolean var2 = mc.gui.screen() instanceof ChatScreen;
+      boolean var2 = mc.screen instanceof ChatScreen;
       boolean var3 = method08602();
       if (var2 && !var3) {
          if (field19672 != null && field19667.contains(field19672)) {

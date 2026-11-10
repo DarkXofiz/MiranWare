@@ -513,7 +513,7 @@ public final class Settings {
       this.logger = new Settings.Setting<>(var1x -> {
          try {
             GuiMessageTag var2 = this.useMessageTag.value ? Helper.MESSAGE_TAG : null;
-            Minecraft.getInstance().gui.hud.getChat().addPlayerMessage(var1x, null, var2);
+            Minecraft.getInstance().gui.getChat().addPlayerMessage(var1x, null, var2);
          } catch (Throwable var3x) {
          }
       });

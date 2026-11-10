@@ -154,7 +154,7 @@ public class AutoTool extends ClientModule {
 
    private void method08982(int var1, int var2) {
       int var3 = mc.player.containerMenu.containerId;
-      InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleContainerInput(var3, var1, var2, ClickType.SWAP, mc.player));
+      InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleInventoryMouseClick(var3, var1, var2, ClickType.SWAP, mc.player));
    }
 
    private void method08983() {
@@ -170,7 +170,7 @@ public class AutoTool extends ClientModule {
       BlockBreakManager var1 = BlockBreakManager.INSTANCE;
       if (var1.method04905() && !mc.options.keyAttack.isDown()) {
          return var1.method04907() ? var1.method04912() : null;
-      } else if (mc.gui.screen() != null) {
+      } else if (mc.screen != null) {
          return null;
       } else if (mc.hitResult instanceof BlockHitResult var2 && var2.getType() == Type.BLOCK) {
          return mc.level.getBlockState(var2.getBlockPos()).isAir() ? null : var2.getBlockPos();

@@ -106,7 +106,7 @@ public final class AutoSwapWheelScreen extends Screen {
    }
 
    @Override
-   public void extractBackground(GuiGraphics var1, int var2, int var3, float var4) {
+   public void renderBackground(GuiGraphics var1, int var2, int var3, float var4) {
    }
 
    private void drawSector(List<WheelSectorRenderState.Nested280> var1, float var2, float var3, float var4, float var5, float var6, float var7, int var8) {
@@ -142,7 +142,7 @@ public final class AutoSwapWheelScreen extends Screen {
    }
 
    @Override
-   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
+   public void render(GuiGraphics var1, int var2, int var3, float var4) {
       float var5 = this.width / 2.0F;
       float var6 = this.height / 2.0F;
       int var7 = this.field08586.method01516();

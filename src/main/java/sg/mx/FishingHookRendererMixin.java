@@ -31,8 +31,8 @@ public abstract class FishingHookRendererMixin {
          Vector4f var11 = new Vector4f(0.0F, 0.0F, 0.0F, 1.0F);
          var11.mul(var10);
          Vec3 var12 = new Vec3(var11.x(), var11.y(), var11.z()).scale(var7);
-         Vec3 var13 = var5.gameRenderer.mainCamera().getNearPlane(var6).getPointOnPlane(var9 * 0.525F, -0.1F).scale(var7).add(var12);
-         var4.setReturnValue(var5.gameRenderer.mainCamera().position().add(var13));
+         Vec3 var13 = var5.gameRenderer.getMainCamera().getNearPlane(var6).getPointOnPlane(var9 * 0.525F, -0.1F).scale(var7).add(var12);
+         var4.setReturnValue(var5.gameRenderer.getMainCamera().getPosition().add(var13));
       }
    }
 

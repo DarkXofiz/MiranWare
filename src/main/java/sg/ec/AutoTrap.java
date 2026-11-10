@@ -230,7 +230,7 @@ public class AutoTrap extends ClientModule {
             && var11.getDirection() == var4.side()
             && var11.getBlockPos().relative(var11.getDirection()).equals(var1)
             && mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var11) == InteractionResult.SUCCESS) {
-            mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(InteractionHand.MAIN_HAND);
             RotationChangeTracker.method02903();
             if (this.field19895.method05999()) {
                RotationManager.method06555();

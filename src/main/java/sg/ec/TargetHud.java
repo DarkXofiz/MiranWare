@@ -391,7 +391,7 @@ public class TargetHud extends HudElement {
       if (AttackAura.method00456() instanceof LivingEntity) {
          var2 = AttackAura.method00456();
          this.field15718.method06168(1.0, field15831, Easings.field19394, true);
-      } else if (mc.gui.screen() instanceof ChatScreen) {
+      } else if (mc.screen instanceof ChatScreen) {
          var2 = mc.player;
          this.field15718.method06168(1.0, field15832, Easings.field19394, true);
       } else {

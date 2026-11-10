@@ -118,14 +118,14 @@ public class ElytraTargetRenderer implements MinecraftAccess {
    }
 
    private void method10077(PoseStack var1) {
-      var1.rotate(Axis.YP.rotationDegrees(field22754 - this.field22731.bodyRot));
+      var1.mulPose(Axis.YP.rotationDegrees(field22754 - this.field22731.bodyRot));
       if (this.field22731.isFallFlying) {
          if (!this.field22731.isAutoSpinAttack) {
-            var1.rotate(Axis.XP.rotationDegrees(this.field22731.fallFlyingScale() * (field22755 - this.field22731.xRot)));
+            var1.mulPose(Axis.XP.rotationDegrees(this.field22731.fallFlyingScale() * (field22755 - this.field22731.xRot)));
          }
 
          if (this.field22731.shouldApplyFlyingYRot) {
-            var1.rotate(Axis.YP.rotation(this.field22731.flyingYRot));
+            var1.mulPose(Axis.YP.rotation(this.field22731.flyingYRot));
          }
       }
    }

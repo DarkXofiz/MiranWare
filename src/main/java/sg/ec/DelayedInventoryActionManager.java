@@ -127,9 +127,9 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
                   } else {
                      int var7 = mc.player.containerMenu.containerId;
                      InventoryActionManager.INSTANCE.method10470(() -> {
-                        mc.gameMode.handleContainerInput(var7, var6, var4, ClickType.SWAP, mc.player);
+                        mc.gameMode.handleInventoryMouseClick(var7, var6, var4, ClickType.SWAP, mc.player);
                         InventoryUtils.method06110(InteractionHand.MAIN_HAND, var2, var3);
-                        mc.gameMode.handleContainerInput(var7, var6, var4, ClickType.SWAP, mc.player);
+                        mc.gameMode.handleInventoryMouseClick(var7, var6, var4, ClickType.SWAP, mc.player);
                      }, 1, true);
                   }
                }
@@ -187,7 +187,7 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
                   this.method10623(var7, var1, var3, var4);
                } else if (var16 == var5) {
                   if (InventoryUtils.method06110(var1, var3, var4)) {
-                     mc.player.swing(var1, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                     mc.player.swing(var1);
                   }
                } else {
                   boolean var10 = var1 == InteractionHand.OFF_HAND;
@@ -251,14 +251,14 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
 
    private void method10625(int var1, int var2, int var3, InteractionHand var4, float var5, float var6) {
       InventoryActionManager.INSTANCE
-         .method10470(() -> mc.gameMode.handleContainerInput(var1, var2, var3, ClickType.SWAP, mc.player), 1, true)
+         .method10470(() -> mc.gameMode.handleInventoryMouseClick(var1, var2, var3, ClickType.SWAP, mc.player), 1, true)
          .method07542(1, false)
          .method07536(() -> {
             InteractionResult var3x = InventoryUtils.method06128(var4, var5, var6);
-            mc.player.swing(var4, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(var4);
          }, 1, false)
          .method07542(1, false)
-         .method07534(() -> mc.gameMode.handleContainerInput(var1, var2, var3, ClickType.SWAP, mc.player), 1, true)
+         .method07534(() -> mc.gameMode.handleInventoryMouseClick(var1, var2, var3, ClickType.SWAP, mc.player), 1, true)
          .method07555(false);
    }
 
@@ -291,13 +291,13 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
       int var3 = mc.player.containerMenu.containerId;
       int var4 = mc.player.getInventory().getSelectedSlot() % 8 + 1;
       return var1 >= 36 && var1 < 45
-         ? InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleContainerInput(var3, var2, var1 - 36, ClickType.SWAP, mc.player))
+         ? InventoryActionManager.INSTANCE.method10469(() -> mc.gameMode.handleInventoryMouseClick(var3, var2, var1 - 36, ClickType.SWAP, mc.player))
          : InventoryActionManager.INSTANCE
-            .method10469(() -> mc.gameMode.handleContainerInput(var3, var1, var4, ClickType.SWAP, mc.player))
+            .method10469(() -> mc.gameMode.handleInventoryMouseClick(var3, var1, var4, ClickType.SWAP, mc.player))
             .method07545()
-            .method07556(() -> mc.gameMode.handleContainerInput(var3, var2, var4, ClickType.SWAP, mc.player))
+            .method07556(() -> mc.gameMode.handleInventoryMouseClick(var3, var2, var4, ClickType.SWAP, mc.player))
             .method07545()
-            .method07556(() -> mc.gameMode.handleContainerInput(var3, var1, var4, ClickType.SWAP, mc.player));
+            .method07556(() -> mc.gameMode.handleInventoryMouseClick(var3, var1, var4, ClickType.SWAP, mc.player));
    }
 
    private void method10627() {
@@ -378,7 +378,7 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
                this.method10633(var14, var5x.hotbarSlot());
                InteractionResult var6x = InventoryUtils.method06128(InteractionHand.MAIN_HAND, var5x.yaw(), var5x.pitch());
                if (var6x == InteractionResult.SUCCESS) {
-                  mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+                  mc.player.swing(InteractionHand.MAIN_HAND);
                }
             }
 
@@ -391,7 +391,7 @@ public enum DelayedInventoryActionManager implements MinecraftAccess, InventoryA
       if (mc.player != null && mc.gameMode != null) {
          if (!var2.isEmpty()) {
             for (int[] var4 : var2) {
-               mc.gameMode.handleContainerInput(var1, var4[0], var4[1], ClickType.SWAP, mc.player);
+               mc.gameMode.handleInventoryMouseClick(var1, var4[0], var4[1], ClickType.SWAP, mc.player);
             }
          }
       }

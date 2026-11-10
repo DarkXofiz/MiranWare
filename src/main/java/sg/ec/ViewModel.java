@@ -73,7 +73,7 @@ public class ViewModel extends ClientModule {
       } else if (!this.field18359.method05600(field18392)) {
          return !this.field18359.method05600(field18393) ? false : AttackAura.method00456() == null;
       } else {
-         return mc.player == null || mc.player.getCurrentSwing() == null;
+         return mc.player == null || !mc.player.swinging;
       }
    }
 

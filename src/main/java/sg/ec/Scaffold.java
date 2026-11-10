@@ -319,7 +319,7 @@ public class Scaffold extends ClientModule {
          return false;
       }
 
-      mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+      mc.player.swing(InteractionHand.MAIN_HAND);
       RotationChangeTracker.method02903();
       this.field10723++;
       this.method04861();

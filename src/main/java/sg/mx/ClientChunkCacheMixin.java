@@ -42,7 +42,7 @@ public class ClientChunkCacheMixin {
    )
    private void hex$fastGetChunk(int var1, int var2, ChunkStatus var3, boolean var4, CallbackInfoReturnable<LevelChunk> var5) {
       LevelChunk var6 = this.hex$lastChunk;
-      if (var6 != null && Minecraft.getInstance().isSameThread() && var6.getPos().x() == var1 && var6.getPos().z() == var2) {
+      if (var6 != null && Minecraft.getInstance().isSameThread() && var6.getPos().x == var1 && var6.getPos().z == var2) {
          var5.setReturnValue(var6);
       }
    }

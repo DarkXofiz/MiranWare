@@ -198,7 +198,7 @@ public class WallClimb extends ClientModule {
          BlockHitResult var5 = new BlockHitResult(var1.aim(), var1.face(), var1.support(), false);
          this.field06092 = true;
          if (mc.gameMode.useItemOn(mc.player, var1.hand(), var5) == InteractionResult.SUCCESS) {
-            mc.player.swing(var1.hand(), net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(var1.hand());
          }
       }
    }

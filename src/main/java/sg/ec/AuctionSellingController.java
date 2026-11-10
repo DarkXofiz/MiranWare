@@ -315,7 +315,7 @@ public final class AuctionSellingController implements MinecraftAccess {
          AbstractContainerMenu var4 = mc.player.containerMenu;
          if (var4 != null && mc.gameMode != null) {
             this.field10988 = this.field10989;
-            mc.gameMode.handleContainerInput(var4.containerId, method05006(var3), this.field10988, ClickType.SWAP, mc.player);
+            mc.gameMode.handleInventoryMouseClick(var4.containerId, method05006(var3), this.field10988, ClickType.SWAP, mc.player);
             this.field10990 = var1 + field11004;
             this.field10984 = AuctionSellingController.Nested150.WAIT_SWAP;
          } else {

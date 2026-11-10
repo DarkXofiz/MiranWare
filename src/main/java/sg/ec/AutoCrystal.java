@@ -81,14 +81,14 @@ public class AutoCrystal extends ClientModule {
    private void method09642(Entity var1, float var2) {
       if (RaycastUtils.method09502(mc.player.getYRot(), mc.player.getXRot(), var2, var1)) {
          mc.gameMode.attack(mc.player, var1);
-         mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+         mc.player.swing(InteractionHand.MAIN_HAND);
       } else {
          Vec3 var3 = mc.player.getEyePosition();
          Vector2f var4 = PlayerUtils.method11816(var3, ExplosionDamageUtils.method04404(var1, var3, var2));
          RotationManager.method06547(new Rotation(var4.x, var4.y), field21940, 2, false);
          if (RaycastUtils.method09502(mc.player.getYRot(), mc.player.getXRot(), var2, var1)) {
             mc.gameMode.attack(mc.player, var1);
-            mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+            mc.player.swing(InteractionHand.MAIN_HAND);
          }
       }
    }
@@ -129,7 +129,7 @@ public class AutoCrystal extends ClientModule {
                && !mc.level.getBlockState(var4.getBlockPos()).isAir()
                && mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var4) == InteractionResult.SUCCESS) {
                RotationChangeTracker.method02903();
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
             }
 
             this.method09648();
@@ -152,7 +152,7 @@ public class AutoCrystal extends ClientModule {
 
             if (mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var2) == InteractionResult.SUCCESS) {
                RotationChangeTracker.method02903();
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
             }
          }
       }

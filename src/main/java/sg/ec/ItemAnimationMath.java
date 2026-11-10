@@ -35,11 +35,11 @@ public final class ItemAnimationMath {
    }
 
    public static void method00512(PoseStack var0, double var1) {
-      var0.rotate(field01053.rotationY((float)var1 * field01055));
+      var0.mulPose(field01053.rotationY((float)var1 * field01055));
    }
 
    public static void method00513(PoseStack var0, double var1) {
-      var0.rotate(field01053.rotationX((float)var1 * field01054));
+      var0.mulPose(field01053.rotationX((float)var1 * field01054));
    }
 
    public static double method00514(double var0) {
@@ -89,7 +89,7 @@ public final class ItemAnimationMath {
    }
 
    public static void method00524(PoseStack var0, double var1) {
-      var0.rotate(field01053.rotationZ((float)var1 * field01056));
+      var0.mulPose(field01053.rotationZ((float)var1 * field01056));
    }
 
    public static double method00525(double var0) {

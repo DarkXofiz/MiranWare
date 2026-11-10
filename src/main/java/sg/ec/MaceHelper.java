@@ -107,7 +107,7 @@ public class MaceHelper extends ClientModule {
       } else if (this.method00951() && !this.method00936()) {
          return false;
       } else {
-         return AttackItemUtils.method05342() != -1 ? true : mc.gui.screen() == null && AttackItemUtils.method05344() != null;
+         return AttackItemUtils.method05342() != -1 ? true : mc.screen == null && AttackItemUtils.method05344() != null;
       }
    }
 
@@ -191,7 +191,7 @@ public class MaceHelper extends ClientModule {
                      InventoryUtils.method06091(var2);
                      this.field02118 = var2;
                      this.method00939();
-                  } else if (mc.gui.screen() == null) {
+                  } else if (mc.screen == null) {
                      Slot var3 = AttackItemUtils.method05344();
                      if (var3 != null) {
                         this.field02121 = mc.player.containerMenu.containerId;

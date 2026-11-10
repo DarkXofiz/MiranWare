@@ -360,7 +360,7 @@ public class CrystalAura extends ClientModule {
          return false;
       }
 
-      mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+      mc.player.swing(InteractionHand.MAIN_HAND);
       RotationChangeTracker.method02903();
       this.field18272 = mc.player.tickCount;
       return true;
@@ -930,7 +930,7 @@ public class CrystalAura extends ClientModule {
       }
 
       mc.gameMode.attack(mc.player, var1);
-      mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+      mc.player.swing(InteractionHand.MAIN_HAND);
       this.field18269 = mc.player.tickCount;
       this.method07453(ExplosionDamageUtils.method04368(var1.position(), mc.player));
       if (this.field18203.method05999()) {

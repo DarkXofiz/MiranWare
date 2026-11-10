@@ -326,7 +326,7 @@ final class ScriptMcpTools implements MinecraftAccess {
       JsonObject var1 = new JsonObject();
       ServerData var2 = mc.getCurrentServer();
       var1.addProperty(field03897, var2 == null ? null : var2.ip);
-      String var3 = mc.gui.screen() == null ? null : mc.gui.screen().getClass().getSimpleName();
+      String var3 = mc.screen == null ? null : mc.screen.getClass().getSimpleName();
       var1.addProperty(field03898, var3);
       if (mc.player != null) {
          Vec3 var4 = mc.player.position();

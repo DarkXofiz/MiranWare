@@ -25,7 +25,7 @@ public final class ScriptInputAdapter implements MinecraftAccess {
       return switch (var1) {
          case 1 -> mc.getWindow() != null && InputCompat.isMouseDown(var2);
          case 2 -> mc.mouseHandler.isMouseGrabbed();
-         case 3 -> mc.gui.screen() != null || ClientScreenManager.INSTANCE.method08316();
+         case 3 -> mc.screen != null || ClientScreenManager.INSTANCE.method08316();
          default -> KeyboardKey.method00362(var2);
       };
    }

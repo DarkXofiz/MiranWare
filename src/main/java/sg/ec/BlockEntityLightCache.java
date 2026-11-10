@@ -35,7 +35,7 @@ public final class BlockEntityLightCache {
          return var3.hex$lightCoords();
       }
 
-      int var4 = LevelRenderer.getLightColor(var0, var2.getBlockState(), var1);
+      int var4 = LevelRenderer.getLightColor(var0, var1);
       var3.hex$lightCoords(field12681, var4);
       return var4;
    }

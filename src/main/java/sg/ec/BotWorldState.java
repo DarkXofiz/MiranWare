@@ -601,7 +601,7 @@ public final class BotWorldState {
    public void method07648(ClientboundLevelChunkWithLightPacket var1) {
       if (this.field18601) {
          synchronized (this.field18557) {
-            BotWorldState.Nested226 var3 = this.method07699(var1.x(), var1.z(), true);
+            BotWorldState.Nested226 var3 = this.method07699(var1.getX(), var1.getZ(), true);
             var3.field18643 = var1;
             var3.field18644 = null;
             var3.field18645.clear();
@@ -612,7 +612,7 @@ public final class BotWorldState {
                try {
                   var4.loadChunk(var1);
                } catch (Throwable var7) {
-                  this.method07754("чанк " + var1.x() + " " + var1.z() + " не разобран", var7);
+                  this.method07754("чанк " + var1.getX() + " " + var1.getZ() + " не разобран", var7);
                }
             }
          }
@@ -845,11 +845,11 @@ public final class BotWorldState {
       synchronized (this.field18557) {
          BotClientLevel var3 = this.field18605;
          if (var3 != null) {
-            var3.applyLight(var1.x(), var1.z(), var1.lightData());
+            var3.applyLight(var1.getX(), var1.getZ(), var1.lightData());
          }
 
          if (this.field18601) {
-            BotWorldState.Nested226 var4 = this.method07699(var1.x(), var1.z(), false);
+            BotWorldState.Nested226 var4 = this.method07699(var1.getX(), var1.getZ(), false);
             if (var4 != null) {
                var4.field18644 = var1;
                this.method07806(var4);
@@ -1319,8 +1319,8 @@ public final class BotWorldState {
                try {
                   var2.loadChunk(var5);
                } catch (Throwable var8) {
-                  String.valueOf("чанк " + var5.x() + " " + var5.z() + " не встал: " + var8);
-                  this.field18558.remove(method07705(var5.x(), var5.z()));
+                  String.valueOf("чанк " + var5.getX() + " " + var5.getZ() + " не встал: " + var8);
+                  this.field18558.remove(method07705(var5.getX(), var5.getZ()));
                }
             }
          }
@@ -1829,13 +1829,13 @@ public final class BotWorldState {
    }
 
    public void method07804(ClientboundForgetLevelChunkPacket var1) {
-      int var2 = var1.pos().x();
-      int var3 = var1.pos().z();
+      int var2 = var1.pos().x;
+      int var3 = var1.pos().z;
       synchronized (this.field18557) {
          long var5 = method07705(var2, var3);
          this.field18558.remove(var5);
          this.field18559.remove(var5);
-         this.field18562.removeIf(var2x -> var2x.x() == var2 && var2x.z() == var3);
+         this.field18562.removeIf(var2x -> var2x.getX() == var2 && var2x.getZ() == var3);
          BotClientLevel var7 = this.field18605;
          if (var7 != null) {
             var7.dropChunk(var2, var3);

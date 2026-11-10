@@ -1189,7 +1189,7 @@ public class AttackAura extends ClientModule {
 
    private void method00461(LivingEntity var1) {
       mc.gameMode.attack(mc.player, var1);
-      mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+      mc.player.swing(InteractionHand.MAIN_HAND);
       long var2 = this.method00447();
       this.field00786.method09851(var2);
       this.field00798 = this.field00767.method05600(field00972) ? this.field00768.method03022() : 10;

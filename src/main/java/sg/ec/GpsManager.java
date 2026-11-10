@@ -33,7 +33,7 @@ public final class GpsManager implements MinecraftAccess {
    public static void method07826(GuiGraphics var0) {
       if (field18655 != null && mc.player != null) {
          field18651.method06162();
-         field18651.method06168(mc.gameRenderer.mainCamera().yaw(), field18656, Easings.field19421, true);
+         field18651.method06168(mc.gameRenderer.getMainCamera().getYRot(), field18656, Easings.field19421, true);
          double var1 = field18652.x - mc.getEntityRenderDispatcher().camera.position().x();
          double sx = field18652.y - mc.getEntityRenderDispatcher().camera.position().z();
          double sxx = Math.cos(Math.toRadians(field18651.method06159()));

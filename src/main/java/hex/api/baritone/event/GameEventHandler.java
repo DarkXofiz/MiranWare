@@ -130,7 +130,7 @@ public final class GameEventHandler implements Helper, IEventBus {
             if (sx != null) {
                this.baritone.getWorldProvider().ifWorldLoaded(var2x -> {
                   ChunkPos sxx = var1.getChunkPos();
-                  var2x.getCachedWorld().queueForPacking(sx.getChunk(sxx.x(), sxx.z()));
+                  var2x.getCachedWorld().queueForPacking(sx.getChunk(sxx.x, sxx.z));
                });
             }
          }

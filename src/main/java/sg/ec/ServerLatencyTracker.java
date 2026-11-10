@@ -74,7 +74,7 @@ public enum ServerLatencyTracker implements MinecraftAccess {
 
    private void method01669(Packet<?> var1) {
       if (var1 instanceof ServerboundUseItemOnPacket var2) {
-         BlockHitResult var5 = var2.hitResult();
+         BlockHitResult var5 = var2.getHitResult();
          BlockPos var6 = var5.getBlockPos();
          method01675(this.field03992, var6.asLong());
          method01675(this.field03992, var6.relative(var5.getDirection()).asLong());

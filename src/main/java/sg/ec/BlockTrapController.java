@@ -263,7 +263,7 @@ public class BlockTrapController implements MinecraftAccess {
          boolean var7 = mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, var1) == InteractionResult.SUCCESS;
          if (var7) {
             if (var5) {
-               mc.player.swing(InteractionHand.MAIN_HAND, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(InteractionHand.MAIN_HAND);
             }
 
             RotationChangeTracker.method02903();

@@ -505,8 +505,8 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
-      super.extractRenderState(var1, var2, var3, var4);
+   public void render(GuiGraphics var1, int var2, int var3, float var4) {
+      super.render(var1, var2, var3, var4);
       this.field02815.clear();
       this.field02816.clear();
       GuiScaleUtils.method06750(var1);
@@ -760,7 +760,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
    }
 
    public static Button createMenuButton(Screen var0) {
-      Button var1 = Button.builder(menuButtonText(), var1x -> mc.gui.setScreen(new ProxyScreen(var0))).bounds(5, 5, 120, 20).build();
+      Button var1 = Button.builder(menuButtonText(), var1x -> mc.setScreen(new ProxyScreen(var0))).bounds(5, 5, 120, 20).build();
       field02808 = var1;
       return var1;
    }
@@ -792,7 +792,7 @@ public class ProxyScreen extends Screen implements MinecraftAccess {
    @Override
    public void onClose() {
       refreshMenuButton();
-      mc.gui.setScreen(this.field02809);
+      mc.setScreen(this.field02809);
    }
 
    // $VF: Compiled from s

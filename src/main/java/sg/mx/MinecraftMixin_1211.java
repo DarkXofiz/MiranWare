@@ -52,6 +52,8 @@ public abstract class MinecraftMixin_1211 implements MinecraftInteractionAccess 
    public MultiPlayerGameMode gameMode;
    @Shadow
    public Gui gui;
+   @Shadow
+   public Screen screen;
 
    @Shadow
    public abstract Window getWindow();
@@ -64,7 +66,7 @@ public abstract class MinecraftMixin_1211 implements MinecraftInteractionAccess 
 
    @Override
    public boolean IdoAttack() {
-      if (this.gui.screen() != null) {
+      if (this.screen != null) {
          this.missTime = 0;
       }
 
@@ -73,7 +75,7 @@ public abstract class MinecraftMixin_1211 implements MinecraftInteractionAccess 
 
    @Override
    public void IdoItemUse() {
-      if (this.gui.screen() != null && this.gameMode != null && this.gameMode.isDestroying()) {
+      if (this.screen != null && this.gameMode != null && this.gameMode.isDestroying()) {
          this.gameMode.stopDestroyBlock();
       }
 

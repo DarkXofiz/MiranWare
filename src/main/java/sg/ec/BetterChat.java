@@ -596,7 +596,7 @@ public class BetterChat extends ClientModule {
             }
 
             var1.method05696();
-            mc.execute(() -> mc.gui.hud.getChat().addClientSystemMessage(var6));
+            mc.execute(() -> mc.gui.getChat().addClientSystemMessage(var6));
          }
       }
    }

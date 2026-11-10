@@ -205,7 +205,7 @@ public enum BotSessionManager implements MinecraftAccess {
       ((MinecraftMixin)(Object)mc).setSession(var2);
       this.field19980 = null;
       this.field19982 = null;
-      mc.gui.setScreen(new JoinMultiplayerScreen(TitleScreenHooks.method11006()));
+      mc.setScreen(new JoinMultiplayerScreen(TitleScreenHooks.method11006()));
       if (var1 != null) {
          NotificationManager.method08597(var1.method00137().method00491() + " продолжает сам, ты в списке серверов", 3500L, NotificationType.INFO);
       }
@@ -228,7 +228,7 @@ public enum BotSessionManager implements MinecraftAccess {
       } finally {
          this.field19986 = false;
          if (!var2 && mc.level == null) {
-            mc.gui.setScreen(null);
+            mc.setScreen(null);
          }
       }
    }
@@ -331,7 +331,7 @@ public enum BotSessionManager implements MinecraftAccess {
             var5.method00152(((ClientPacketListenerMixin)(Object)var2).getNextChatIndex());
             var5.method00124(((ClientPacketListenerMixin)(Object)var2).getLastSeenMessages());
             var5.method00073(((ClientPacketListenerMixin)(Object)var2).getMessageSignatureCache());
-            var5.method00064(mc.gui.hud.getChat().storeState());
+            var5.method00064(mc.gui.getChat().storeState());
             var5.method00130(((ClientPacketListenerMixin)(Object)var2).getCommandDispatcher());
             boolean var10 = false;
 

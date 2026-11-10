@@ -216,7 +216,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
       }
 
       int var3 = method05494(var1.getItem(), var0);
-      return var3 == -1 ? null : new ServerItemActionUtils.Nested168(var1, var2, var3, var2.items().get(var3).create());
+      return var3 == -1 ? null : new ServerItemActionUtils.Nested168(var1, var2, var3, bundleItems(var2).get(var3));
    }
 
    public static int method05480(ItemStack var0, Item var1) {
@@ -250,19 +250,27 @@ public final class ServerItemActionUtils implements MinecraftAccess {
       if (var0 == null) {
          return false;
       }
-      Mutable var2 = new Mutable();
-      var0.itemCopies().forEach(var2::tryInsert);
+      Mutable var2 = new Mutable(var0);
       return var2.tryInsert(var1.copy()) >= var1.getCount();
    }
 
    private static boolean method05488(ServerItemActionUtils.Nested168 var0, ItemStack var1) {
-      Mutable var2 = new Mutable();
-      var0.contents().itemCopies().forEach(var2::tryInsert);
+      Mutable var2 = new Mutable(var0.contents());
       if (var0.contents().getSelectedItem() != var0.index()) {
          var2.toggleSelectedItem(var0.index());
       }
 
       return var2.removeOne() == null ? false : var2.tryInsert(var1.copy()) >= var1.getCount();
+   }
+
+   // 1.21.11: BundleContents.items() Iterable doner, indeksli erisim icin listeye cevir
+   private static List<ItemStack> bundleItems(BundleContents contents) {
+      List<ItemStack> list = new java.util.ArrayList<>();
+      for (ItemStack stack : contents.items()) {
+         list.add(stack);
+      }
+
+      return list;
    }
 
    private ServerItemActionUtils() {
@@ -272,7 +280,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
    public static void method05489(ItemStack var0, List<ItemStack> var1) {
       BundleContents var2 = var0.get(DataComponents.BUNDLE_CONTENTS);
       if (var2 != null) {
-         var var3 = var2.items();
+         List<ItemStack> var3 = bundleItems(var2);
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
             ItemStack var5 = (ItemStack)var3.get(var4);
@@ -303,7 +311,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
          return -1;
       }
 
-      var var3 = var2.items();
+      List<ItemStack> var3 = bundleItems(var2);
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
          if (var1.test((ItemStack)var3.get(var4))) {

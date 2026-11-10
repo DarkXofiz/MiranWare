@@ -289,13 +289,13 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
    public MainMenuScreen() {
       super(Component.literal(field21855));
       ensureTextures();
-      this.field21851.add(new MainMenuScreen.Nested267(field21856, () -> this.minecraft.gui.setScreen(new SelectWorldScreen(this))));
+      this.field21851.add(new MainMenuScreen.Nested267(field21856, () -> this.minecraft.setScreen(new SelectWorldScreen(this))));
       this.field21851.add(new MainMenuScreen.Nested267(field21857, () -> {
          Screen var1 = this.minecraft.options.skipMultiplayerWarning ? new JoinMultiplayerScreen(this) : new SafetyScreen(this);
-         this.minecraft.gui.setScreen(var1);
+         this.minecraft.setScreen(var1);
       }));
       this.field21851
-         .add(new MainMenuScreen.Nested267(field21858, () -> this.minecraft.gui.setScreen(new OptionsScreen(this, this.minecraft.options))));
+         .add(new MainMenuScreen.Nested267(field21858, () -> this.minecraft.setScreen(new OptionsScreen(this, this.minecraft.options))));
       this.field21851.add(new MainMenuScreen.Nested267(field21859, () -> AccountScreenCompatibility.method00792(this)));
       this.field21851.add(new MainMenuScreen.Nested267(field21860, () -> this.minecraft.stop()));
    }
@@ -310,11 +310,11 @@ public class MainMenuScreen extends Screen implements MinecraftAccess {
    }
 
    @Override
-   public void extractBackground(GuiGraphics var1, int var2, int var3, float var4) {
+   public void renderBackground(GuiGraphics var1, int var2, int var3, float var4) {
    }
 
    @Override
-   public void extractRenderState(GuiGraphics var1, int var2, int var3, float var4) {
+   public void render(GuiGraphics var1, int var2, int var3, float var4) {
       Vec2 var5 = GuiScaleUtils.method06746(var2, var3);
       var2 = (int)var5.x;
       var3 = (int)var5.y;

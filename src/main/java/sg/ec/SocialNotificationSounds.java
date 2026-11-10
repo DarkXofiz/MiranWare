@@ -33,7 +33,7 @@ public final class SocialNotificationSounds {
             ServerAddress var1 = ServerAddress.parseString(var0);
             ServerData var2 = new ServerData(field11802, var0, Type.OTHER);
             Minecraft var3 = Minecraft.getInstance();
-            ConnectScreen.startConnecting(var3.gui.screen() != null ? var3.gui.screen() : TitleScreenHooks.method11006(), var3, var1, var2, false, null);
+            ConnectScreen.startConnecting(var3.screen != null ? var3.screen : TitleScreenHooks.method11006(), var3, var1, var2, false, null);
          } catch (Throwable var5) {
             try {
                Minecraft.getInstance().keyboardHandler.setClipboard(var0);

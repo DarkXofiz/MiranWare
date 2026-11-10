@@ -64,7 +64,7 @@ public final class AuctionContainerUtils implements MinecraftAccess {
 
    public static void method02614(AbstractContainerMenu var0, int var1, ClickType var2) {
       if (var0 != null && mc.player != null && mc.gameMode != null && var1 >= 0 && var1 < var0.slots.size()) {
-         mc.gameMode.handleContainerInput(var0.containerId, var1, 0, var2, mc.player);
+         mc.gameMode.handleInventoryMouseClick(var0.containerId, var1, 0, var2, mc.player);
       }
    }
 
@@ -121,7 +121,7 @@ public final class AuctionContainerUtils implements MinecraftAccess {
    }
 
    public static String method02619() {
-      return mc.gui != null && mc.gui.screen() != null && mc.gui.screen().getTitle() != null ? mc.gui.screen().getTitle().getString() : "";
+      return mc.gui != null && mc.screen != null && mc.screen.getTitle() != null ? mc.screen.getTitle().getString() : "";
    }
 
    private static AbstractContainerMenu method02620() {
@@ -153,8 +153,8 @@ public final class AuctionContainerUtils implements MinecraftAccess {
 
    public static void method02623() {
       if (mc.player != null) {
-         if (mc.gui != null && mc.gui.screen() != null) {
-            mc.gui.setScreen(null);
+         if (mc.gui != null && mc.screen != null) {
+            mc.setScreen(null);
          }
 
          if (mc.player.containerMenu != mc.player.inventoryMenu) {
@@ -164,7 +164,7 @@ public final class AuctionContainerUtils implements MinecraftAccess {
    }
 
    public static boolean method02624() {
-      return mc.gui != null && mc.gui.screen() != null;
+      return mc.gui != null && mc.screen != null;
    }
 
    private static boolean method02625(ItemStack var0) {

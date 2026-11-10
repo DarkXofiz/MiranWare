@@ -173,7 +173,7 @@ public class AuctionHelper extends ClientModule {
    @Subscribe
    private void method06645(TooltipRenderEvent var1) {
       if (this.field14915.method05999() && this.method06650()) {
-         if (mc.gui.screen() instanceof AbstractContainerScreen var2) {
+         if (mc.screen instanceof AbstractContainerScreen var2) {
             Slot var7 = var2.hoveredSlot;
             if (var7 != null && !var7.getItem().isEmpty()) {
                AuctionHelper.Nested192 var4 = this.method06651(var1.method07401());
@@ -248,11 +248,11 @@ public class AuctionHelper extends ClientModule {
    }
 
    private boolean method06650() {
-      if (mc.gui.screen() == null) {
+      if (mc.screen == null) {
          return false;
       }
 
-      String var1 = mc.gui.screen().getTitle().getString().toLowerCase();
+      String var1 = mc.screen.getTitle().getString().toLowerCase();
       return var1.contains(field14937) || var1.contains(field14938) || var1.contains(field14939);
    }
 
