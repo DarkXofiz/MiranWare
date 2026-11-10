@@ -8,7 +8,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.protocol.game.ServerboundSelectBundleItemPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BundleItem;
 import net.minecraft.world.item.Item;
@@ -120,7 +120,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
          if (var3 != null) {
             ItemStack var4 = var3.getItem();
             if (method05500(var4)) {
-               if (BundleItem.getSelectedItemIndex(var4) != var2) {
+               if (BundleItem.getSelectedItem(var4) != var2) {
                   BundleItem.toggleSelectedItem(var4, var2);
                   mc.player.connection.send(new ServerboundSelectBundleItemPacket(var1, var2));
                }
@@ -160,7 +160,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
          .method07536(() -> {
             InteractionResult var3x = InventoryUtils.method06128(var1, var2, var3);
             if (var3x == InteractionResult.SUCCESS) {
-               mc.player.swing(var1, net.minecraft.world.item.component.SwingAnimation.DEFAULT, false);
+               mc.player.swing(var1);
             }
          }, 1, false)
          .method07542(1, false)
@@ -258,7 +258,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
    private static boolean method05488(ServerItemActionUtils.Nested168 var0, ItemStack var1) {
       Mutable var2 = new Mutable();
       var0.contents().itemCopies().forEach(var2::tryInsert);
-      if (var0.contents().getSelectedItemIndex() != var0.index()) {
+      if (var0.contents().getSelectedItem() != var0.index()) {
          var2.toggleSelectedItem(var0.index());
       }
 
@@ -367,7 +367,7 @@ public final class ServerItemActionUtils implements MinecraftAccess {
    private static void method05501(int var0, int var1, int var2) {
       if (mc.player != null && mc.gameMode != null) {
          if (mc.player.containerMenu.containerId == var0) {
-            mc.gameMode.handleContainerInput(var0, var1, var2, ContainerInput.PICKUP, mc.player);
+            mc.gameMode.handleInventoryMouseClick(var0, var1, var2, ClickType.PICKUP, mc.player);
          }
       }
    }

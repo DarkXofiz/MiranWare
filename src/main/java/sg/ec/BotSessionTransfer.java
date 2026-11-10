@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import net.minecraft.client.GuiMessage;
 import net.minecraft.client.gui.components.ChatComponent.State;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.CommonListenerCookie;
 import net.minecraft.client.multiplayer.LevelLoadTracker;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerData.Type;
-import net.minecraft.client.multiplayer.chat.GuiMessage;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.client.resources.server.ServerPackManager.PackPromptStatus;
 import net.minecraft.network.Connection;
@@ -130,7 +130,7 @@ public final class BotSessionTransfer implements MinecraftAccess {
       var8.setLastSeenMessages(var0.method00083());
       var8.setMessageSignatureCache(var0.method00112());
       if (mc.player == null) {
-         mc.gui.setScreen(null);
+         mc.setScreen(null);
       } else {
          if (mc.gameMode != null) {
             ((MultiPlayerGameModeMixin_1233)(Object)mc.gameMode).setCarriedIndex(var3.method07987());
@@ -172,8 +172,8 @@ public final class BotSessionTransfer implements MinecraftAccess {
          var8.markClientLoaded(true);
          var1.send(new ServerboundPlayerLoadedPacket());
          var7.broadcastClientInformation(mc.options.buildPlayerInformation());
-         if (mc.gui.screen() != null) {
-            mc.gui.setScreen(null);
+         if (mc.screen != null) {
+            mc.setScreen(null);
          }
       }
    }
@@ -187,14 +187,14 @@ public final class BotSessionTransfer implements MinecraftAccess {
    }
 
    private static State method02476(BotClient var0) {
-      var var1 = new ArrayList<>(mc.gui.hud.getChat().getRecentChat());
+      var var1 = new ArrayList<>(mc.gui.getChat().getRecentChat());
       var var2 = var0.method00141();
       if (var2.isEmpty()) {
          return null;
       }
 
       var var3 = new ArrayList(var2.size());
-      int var4 = mc.gui.hud.getGuiTicks();
+      int var4 = mc.gui.getGuiTicks();
 
       for (int var5 = var2.size() - 1; var5 >= 0; var5--) {
          var3.add(new GuiMessage(var4, (Component)var2.get(var5), null, null));

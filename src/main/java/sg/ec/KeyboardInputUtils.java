@@ -4,7 +4,7 @@ package sg.ec;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.CharacterEvent;
 import net.minecraft.client.input.KeyEvent;
@@ -34,7 +34,7 @@ public final class KeyboardInputUtils {
    private KeyboardInputUtils() {
    }
 
-   public static void method00910(GuiGraphicsExtractor var0, float var1) {
+   public static void method00910(GuiGraphics var0, float var1) {
       if (ClientScreenManager.INSTANCE.method08318()) {
          Minecraft var2 = Minecraft.getInstance();
          Window var3 = var2.getWindow();
@@ -49,7 +49,7 @@ public final class KeyboardInputUtils {
    }
 
    private static boolean method00912(Minecraft var0, KeyEvent var1) {
-      Screen var2 = var0.gui.screen();
+      Screen var2 = var0.screen;
       if (var2 != null && !InventoryInputPolicy.method01915(var2)) {
          ClickGUI var3 = ModuleManager.INSTANCE.method08250();
          if (var3 != null && var3.method03930().method05871() == InputCompat.glfwKey(var1.key())) {
@@ -89,9 +89,8 @@ public final class KeyboardInputUtils {
          if (var3 == 0) {
             return true;
          } else {
-            return var0.handleGlobalKeyPress(InputConstants.getKey(var4), var4.hasControlDownWithQuirk())
-               ? true
-               : ClientScreenManager.INSTANCE.method08327(InputCompat.glfwKey(var4.key()), var4.scancode(), var4.modifiers());
+            // TODO(port 1.21.11): 26.x'teki Minecraft.handleGlobalKeyPress karsiligi dogrulanamadi (F11/F2 gibi global tuslar)
+            return ClientScreenManager.INSTANCE.method08327(InputCompat.glfwKey(var4.key()), var4.scancode(), var4.modifiers());
          }
       } else {
          return var3 != 0 && method00912(var0, var4);

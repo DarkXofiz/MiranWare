@@ -164,7 +164,8 @@
     "LevelMixin",
     "BlockStatePredictionHandlerMixin",
     "ClientLevelMixin_1241",
-    "FrustumMixin_1266"
+    "FrustumMixin_1266",
+    "ItemInHandRendererTickMixin"
   ],
   "package": "sg.mx",
   "plugin": "sg.ec.MiranWare$Nested22"

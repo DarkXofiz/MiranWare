@@ -16,7 +16,7 @@ public final class KeyboardHandlerHooks {
          return true;
       }
 
-      if (var0.gui.screen() == null && var1 == 1) {
+      if (var0.screen == null && var1 == 1) {
          KeyInputEvent.field12526.method05886(var3, InputAction.PRESS);
       } else if (var1 == 0) {
          KeyInputEvent.field12526.method05886(var3, InputAction.RELEASE);

@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector2f;
-import sg.mx.ItemInHandRendererMixin_1191;
 import sg.mx.LivingEntityMixin_1248;
 
 // $VF: Compiled from s
@@ -1315,7 +1314,7 @@ public class AttackAura extends ClientModule {
          var2 -= field00956;
       }
 
-      return ((ItemInHandRendererMixin_1191)(Object)mc.player.firstPersonHandsAndItems()).getMainHandHeight() > var2;
+      return HandHeightTracker.mainHandHeight() > var2;
    }
 
    // $VF: Compiled from s

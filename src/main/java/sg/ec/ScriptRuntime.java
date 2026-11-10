@@ -6,7 +6,7 @@ import hex.script.api.Point;
 import hex.script.api.Script;
 import hex.script.api.Setting;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 
@@ -432,7 +432,7 @@ public enum ScriptRuntime implements MinecraftAccess {
    private void method06221(HudRenderEvent var1) {
       ScriptManager.method01295();
       if (this.field13894 != 0) {
-         GuiGraphicsExtractor var2 = var1.method05424();
+         GuiGraphics var2 = var1.method05424();
          if (var2 != null) {
             this.field13891.method11771();
             ScriptRender2DAdapter var3 = this.field13891.method11765();
