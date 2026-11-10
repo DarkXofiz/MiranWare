@@ -7,7 +7,7 @@ import net.minecraft.client.AttackIndicatorStatus;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -279,7 +279,7 @@ public class Beautification extends ClientModule {
       if (var1.method09179() != HotbarRenderEvent.Nested254.END) {
          if (this.field07749) {
             Minecraft var2 = var1.method09175();
-            Hud var3 = var1.method09180();
+            Gui var3 = var1.method09180();
             GuiGraphics var4 = var1.method09170();
             DeltaTracker var5 = var1.method09181();
             Player var6 = ((HudMixin_1316)(Object)var3).IgetCameraPlayer();

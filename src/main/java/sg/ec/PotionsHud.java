@@ -4,7 +4,7 @@ package sg.ec;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.language.I18n;
@@ -188,7 +188,7 @@ public class PotionsHud extends HudElement {
       if (var3 == MobEffectEvent.Nested241.ADD) {
          if (var4 == null || var4.method04498()) {
             PotionsHud.Nested136 var10 = new PotionsHud.Nested136(I18n.get(var2.getDescriptionId()), var2);
-            var10.method04502(Hud.getMobEffectSprite(var10.field10026.getEffect()));
+            var10.method04502(Gui.getMobEffectSprite(var10.field10026.getEffect()));
             this.method04479(var10);
             this.field09994.add(var10);
          }
@@ -249,7 +249,7 @@ public class PotionsHud extends HudElement {
       for (MobEffectInstance var8 : var1) {
          if (this.method04481(var8) == null) {
             PotionsHud.Nested136 var9 = new PotionsHud.Nested136(I18n.get(var8.getDescriptionId()), var8);
-            var9.method04502(Hud.getMobEffectSprite(var9.field10026.getEffect()));
+            var9.method04502(Gui.getMobEffectSprite(var9.field10026.getEffect()));
             this.method04479(var9);
             this.field09994.add(var9);
          }

@@ -3,13 +3,13 @@ package sg.mx;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mojang.renderpearl.api.pipeline.RenderPipeline;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import sg.ec.HudBlitRenderer;
 
 // $VF: Compiled from s
-@Mixin(Hud.class)
+@Mixin(Gui.class)
 public class HudMixin_1301 {
    @ModifyExpressionValue(
       method = "extractConfusionOverlay",

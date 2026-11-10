@@ -5,7 +5,7 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.world.scores.Objective;
 import org.spongepowered.asm.mixin.Final;
@@ -22,7 +22,7 @@ import sg.ec.VisualRemovalEvent;
 import sg.ec.HotbarRenderEvent;
 
 // $VF: Compiled from s
-@Mixin(Hud.class)
+@Mixin(Gui.class)
 public class HudMixin {
    @Shadow
    @Final
@@ -63,12 +63,12 @@ public class HudMixin {
 
    @Inject(method = "extractItemHotbar", at = @At("HEAD"), cancellable = true)
    private void renderHotbarStart(GuiGraphics var1, DeltaTracker var2, CallbackInfo var3) {
-      HotbarRenderEvent.field20796.method09172(HotbarRenderEvent.Nested254.START, var2, this.minecraft, (Hud)(Object)this, var1, var3);
+      HotbarRenderEvent.field20796.method09172(HotbarRenderEvent.Nested254.START, var2, this.minecraft, (Gui)(Object)this, var1, var3);
    }
 
    @Inject(method = "extractItemHotbar", at = @At("RETURN"), cancellable = true)
    private void renderHotbarEnd(GuiGraphics var1, DeltaTracker var2, CallbackInfo var3) {
-      HotbarRenderEvent.field20796.method09172(HotbarRenderEvent.Nested254.END, var2, this.minecraft, (Hud)(Object)this, var1, var3);
+      HotbarRenderEvent.field20796.method09172(HotbarRenderEvent.Nested254.END, var2, this.minecraft, (Gui)(Object)this, var1, var3);
    }
 
    @ModifyExpressionValue(method = "extractItemHotbar", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;getSelectedSlot()I"))

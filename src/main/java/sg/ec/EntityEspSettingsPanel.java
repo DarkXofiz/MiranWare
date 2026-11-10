@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.zombie.Zombie;
 import net.minecraft.world.entity.npc.villager.Villager;
@@ -144,7 +144,7 @@ public class EntityEspSettingsPanel extends GuiPanel implements GuiOverlay {
    private Entity method02838(int var1) {
       Entity var2 = switch (var1) {
          case 1 -> new Zombie(mc.level);
-         case 2 -> new Villager(EntityTypes.VILLAGER, mc.level);
+         case 2 -> new Villager(EntityType.VILLAGER, mc.level);
          case 3 -> new ItemEntity(mc.level, 0.0, 0.0, 0.0, new ItemStack(Items.ENDER_PEARL, 16));
          default -> RenderUtils.method02206();
       };

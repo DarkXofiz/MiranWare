@@ -16,7 +16,7 @@ import net.minecraft.network.protocol.game.ClientboundSetPassengersPacket;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -41,7 +41,7 @@ public final class BotEntityTracker {
 
    public void method07245(ClientboundAddEntityPacket var1, GameProfile var2) {
       if (this.field17669.size() < 1024 && !this.field17669.containsKey(var1.getId())) {
-         Entity var3 = var1.getType() == EntityTypes.PLAYER
+         Entity var3 = var1.getType() == EntityType.PLAYER
             ? (var2 == null ? null : new RemotePlayer(this.field17668, var2))
             : var1.getType().create(this.field17668, EntitySpawnReason.LOAD);
          if (var3 != null) {

@@ -176,6 +176,16 @@ sourceSets {
 			exclude 'sg/mx/VulkanCommandEncoderMixin.java'
 			exclude 'sg/mx/VulkanGpuSurfaceMixin.java'
 			exclude 'sg/mx/VulkanRenderPassMixin.java'
+			// adim 4
+			exclude 'sg/mx/ClientClockManagerMixin.java'
+			exclude 'sg/ec/ClientClockManagerHooks.java'
+			exclude 'sg/mx/ModelManagerMixin.java'
+			exclude 'sg/mx/FirstPersonHandsAndItemsMixin.java'
+			exclude 'sg/mx/ClientPacketListenerMixin_1289.java'
+			exclude 'sg/mx/PackMixin.java'
+			exclude 'sg/ec/PackMetadataReader.java'
+			exclude 'sg/mx/ChatComponentMixin_1214.java'
+			exclude 'sg/mx/GuiMessageMixin.java'
 		}
 	}
 }

@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.monster.Enderman;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.spider.Spider;
 import net.minecraft.world.entity.monster.zombie.ZombifiedPiglin;
 
@@ -45,7 +45,7 @@ public class Avoidance {
             .filter(var0x -> var0x instanceof Mob)
             .filter(var1x -> !(var1x instanceof Spider) || var0.player().getLightLevelDependentMagicValue() < АЖщ)
             .filter(var0x -> !(var0x instanceof ZombifiedPiglin) || ((ZombifiedPiglin)var0x).getLastHurtByMob() != null)
-            .filter(var0x -> !(var0x instanceof Enderman) || ((Enderman)var0x).isCreepy())
+            .filter(var0x -> !(var0x instanceof EnderMan) || ((EnderMan)var0x).isCreepy())
             .forEach(var3 -> var1.add(new Avoidance(var3.blockPosition(), sxx, Baritone.settings().mobAvoidanceRadius.value)));
       }
 

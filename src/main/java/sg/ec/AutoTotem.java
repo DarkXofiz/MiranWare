@@ -20,7 +20,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.vehicle.minecart.MinecartTNT;
@@ -541,11 +541,11 @@ public class AutoTotem extends ClientModule {
    }
 
    private float method08653(EntityType<?> var1) {
-      if (var1 == EntityTypes.END_CRYSTAL) {
+      if (var1 == EntityType.END_CRYSTAL) {
          return this.field19732.method04520(field19811) ? this.field19741.method03022() : 0.0F;
-      } else if (var1 == EntityTypes.TNT) {
+      } else if (var1 == EntityType.TNT) {
          return this.field19732.method04520(field19812) ? this.field19744.method03022() : 0.0F;
-      } else if (var1 == EntityTypes.TNT_MINECART) {
+      } else if (var1 == EntityType.TNT_MINECART) {
          return this.field19732.method04520(field19813) ? this.field19743.method03022() : 0.0F;
       } else {
          return 0.0F;

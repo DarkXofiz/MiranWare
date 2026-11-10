@@ -3,7 +3,7 @@ package sg.mx;
 
 import java.util.List;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.network.chat.Component;
@@ -26,7 +26,7 @@ public class PlayerTabOverlayMixin {
    private Minecraft minecraft;
    @Shadow
    @Final
-   private Hud hud;
+   private Gui hud;
    @Unique
    private PlayerTabOverlayHooks hex$cache;
 

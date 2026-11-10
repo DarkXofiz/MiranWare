@@ -21,7 +21,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity.RemovalReason;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import net.minecraft.world.level.block.RenderShape;
@@ -210,7 +210,7 @@ public class CrystalPlacementRenderer implements MinecraftAccess {
 
       this.field21341.clear();
       if (var3) {
-         mc.level.getEntities(EntityTypes.END_CRYSTAL, mc.player.getBoundingBox().inflate(var1), var0 -> !var0.isRemoved(), this.field21341);
+         mc.level.getEntities(EntityType.END_CRYSTAL, mc.player.getBoundingBox().inflate(var1), var0 -> !var0.isRemoved(), this.field21341);
       }
    }
 
