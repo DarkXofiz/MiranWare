@@ -99,25 +99,20 @@ public abstract class MutableComponentMixin_1227 implements ComponentTextCacheAc
       this.hex$hash = var1.getReturnValueI();
    }
 
-   @Redirect(
-      method = "setStyle",
-      at = @At(value = "FIELD", target = "Lnet/minecraft/network/chat/MutableComponent;style:Lnet/minecraft/network/chat/Style;", opcode = 181)
-   )
-   private void hex$invalidateOnStyle(MutableComponent var1, Style var2) {
-      this.style = var2;
+   @Inject(method = "setStyle", at = @At("HEAD"))
+   private void hex$invalidateOnStyle(CallbackInfoReturnable<MutableComponent> var1) {
       this.hex$hash = 0;
       this.hex$text = 0L;
       this.hex$formatted = null;
    }
 
-   @Redirect(
+   @Inject(
       method = "append(Lnet/minecraft/network/chat/Component;)Lnet/minecraft/network/chat/MutableComponent;",
-      at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z")
+      at = @At("HEAD")
    )
-   private boolean hex$invalidateOnAppend(List<Component> var1, Object var2) {
+   private void hex$invalidateOnAppend(CallbackInfoReturnable<MutableComponent> var1) {
       this.hex$hash = 0;
       this.hex$text = 0L;
       this.hex$formatted = null;
-      return var1.add((Component)var2);
    }
 }
