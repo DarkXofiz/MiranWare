@@ -1,6 +1,8 @@
 // Original binary: sg/mx/1jLZZ0xgU7EAldlO
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.Camera;
@@ -17,13 +19,13 @@ import sg.ec.CameraPositionHooks;
 // $VF: Compiled from s
 @Mixin(Camera.class)
 public class CameraMixin {
-   @Redirect(method = "alignWithEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setRotation(FF)V", ordinal = 1))
-   public void update(Camera var1, float var2, float var3, @Local(ordinal = 0, argsOnly = true) float var4) {
+   @WrapOperation(method = "alignWithEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setRotation(FF)V", ordinal = 1))
+   public void update(Camera var1, float var2, float var3, Operation<Void> hex$original, @Local(ordinal = 0, argsOnly = true) float var4) {
       CameraRotationEvent.field12724.method05954(var1, var2, var3, var4);
    }
 
-   @Redirect(method = "alignWithEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setPosition(DDD)V"))
-   private void modifyCameraPosition(Camera var1, double var2, double var4, double var6) {
+   @WrapOperation(method = "alignWithEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setPosition(DDD)V"))
+   private void modifyCameraPosition(Camera var1, double var2, double var4, double var6, Operation<Void> hex$original) {
       CameraPositionHooks.method11613(var1, var2, var4, var6);
    }
 

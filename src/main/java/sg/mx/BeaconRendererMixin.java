@@ -1,6 +1,8 @@
 // Original binary: sg/mx/gbIkCZtwMPc0NVDH
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import java.util.List;
 import java.util.stream.Stream;
 import net.minecraft.client.renderer.blockentity.BeaconRenderer;
@@ -16,8 +18,8 @@ import sg.ec.BeaconRendererHooks;
 // $VF: Compiled from s
 @Mixin(BeaconRenderer.class)
 public class BeaconRendererMixin {
-   @Redirect(method = "extract", at = @At(value = "INVOKE", target = "Ljava/util/stream/Stream;toList()Ljava/util/List;"))
-   private static List<Section> hex$cachedSections(Stream<?> var0, BlockEntity var1, BeaconRenderState var2, float var3, Vec3 var4) {
+   @WrapOperation(method = "extract", at = @At(value = "INVOKE", target = "Ljava/util/stream/Stream;toList()Ljava/util/List;"))
+   private static List<Section> hex$cachedSections(Stream<?> var0, BlockEntity var1, BeaconRenderState var2, float var3, Vec3 var4, Operation<List<Section>> hex$original) {
       return BeaconRendererHooks.method03514(var1);
    }
 }

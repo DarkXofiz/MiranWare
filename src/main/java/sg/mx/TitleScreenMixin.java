@@ -1,6 +1,8 @@
 // Original binary: sg/mx/OX8vdHVzqP1IK7z8
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.realmsclient.gui.screens.RealmsNotificationsScreen;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -13,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 // $VF: Compiled from s
 @Mixin(TitleScreen.class)
 public class TitleScreenMixin {
-   @Redirect(
+   @WrapOperation(
       method = "init()V",
       at = @At(
          value = "FIELD",
@@ -21,10 +23,10 @@ public class TitleScreenMixin {
          opcode = 181
       )
    )
-   private void hex$noNotifications(TitleScreen var1, RealmsNotificationsScreen var2) {
+   private void hex$noNotifications(TitleScreen var1, RealmsNotificationsScreen var2, Operation<Void> hex$original) {
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "createNormalMenuOptions",
       at = @At(
          value = "INVOKE",
@@ -32,7 +34,7 @@ public class TitleScreenMixin {
          ordinal = 3
       )
    )
-   private GuiEventListener hex$dropRealmsButton(TitleScreen var1, GuiEventListener var2) {
+   private GuiEventListener hex$dropRealmsButton(TitleScreen var1, GuiEventListener var2, Operation<GuiEventListener> hex$original) {
       return var2;
    }
 

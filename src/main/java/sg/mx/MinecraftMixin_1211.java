@@ -1,6 +1,8 @@
 // Original binary: sg/mx/RPSItrikE7v0gc32
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mojang.blaze3d.platform.Window;
 import java.util.UUID;
@@ -133,18 +135,18 @@ public abstract class MinecraftMixin_1211 implements MinecraftInteractionAccess 
       BlockBreakManager.INSTANCE.method04911();
    }
 
-   @Redirect(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;startUseItem()V", ordinal = 1))
-   private void handleInputEvents$doItemUse(Minecraft var1) {
+   @WrapOperation(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;startUseItem()V", ordinal = 1))
+   private void handleInputEvents$doItemUse(Minecraft var1, Operation<Void> hex$original) {
       ItemUseInputDispatchEvent.field24204.method10890(var1);
    }
 
-   @Redirect(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"))
-   private void handleInputEvents$selectSlot(Inventory var1, int var2) {
+   @WrapOperation(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"))
+   private void handleInputEvents$selectSlot(Inventory var1, int var2, Operation<Void> hex$original) {
       MinecraftHooks.method04016(var1, var2);
    }
 
-   @Redirect(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/KeyMapping;isDown()Z"))
-   private boolean handleInputEvents$isPressed(KeyMapping var1) {
+   @WrapOperation(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/KeyMapping;isDown()Z"))
+   private boolean handleInputEvents$isPressed(KeyMapping var1, Operation<Boolean> hex$original) {
       return MinecraftHooks.method04015(var1, this.options);
    }
 

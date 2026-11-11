@@ -1,6 +1,8 @@
 // Original binary: sg/mx/aGlrUVWTOuHAQ6Pg
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.QuadInstance;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -54,14 +56,14 @@ public abstract class ItemFeatureRendererMixin {
       }
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "prepareMainSubmit",
       at = @At(
          value = "INVOKE",
          target = "Lcom/mojang/blaze3d/vertex/VertexConsumer;putBakedQuad(Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/resources/model/geometry/BakedQuad;Lcom/mojang/blaze3d/vertex/QuadInstance;)V"
       )
    )
-   private void hmi$putBakedQuad(VertexConsumer var1, Pose var2, BakedQuad var3, QuadInstance var4) {
+   private void hmi$putBakedQuad(VertexConsumer var1, Pose var2, BakedQuad var3, QuadInstance var4, Operation<Void> hex$original) {
       if (this.hmi$animating) {
          this.hmi$scratch().last().set(var2);
          ItemFeatureRendererHooks.field07286.method11237(this.hmi$index, this.hmi$scratch());

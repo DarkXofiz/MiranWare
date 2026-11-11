@@ -1,6 +1,8 @@
 // Original binary: sg/mx/TQ9WKHQDlHr5vbnw
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.renderpearl.api.commands.CommandEncoder;
 import com.mojang.renderpearl.api.commands.RenderPass;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
@@ -29,7 +31,7 @@ public class SkyRendererMixin {
       SkyRendererHooks.method09494();
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"renderSkyDisc", "renderSunriseAndSunset", "renderSun", "renderMoon", "renderStars"},
       require = 0,
       at = @At(
@@ -38,17 +40,16 @@ public class SkyRendererMixin {
       )
    )
    private RenderPass hex$skyMergeAcquire(
-      CommandEncoder var1, Supplier<String> var2, GpuTextureView var3, Optional<Vector4fc> var4, GpuTextureView var5, OptionalDouble var6
-   ) {
+      CommandEncoder var1, Supplier<String> var2, GpuTextureView var3, Optional<Vector4fc> var4, GpuTextureView var5, OptionalDouble var6, Operation<RenderPass> hex$original) {
       return SkyRendererHooks.method09491(var1, var2, var3, var4, var5, var6);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"renderSkyDisc", "renderSunriseAndSunset", "renderSun", "renderMoon", "renderStars"},
       require = 0,
       at = @At(value = "INVOKE", target = "Lcom/mojang/renderpearl/api/commands/RenderPass;close()V")
    )
-   private void hex$skyMergeClose(RenderPass var1) {
+   private void hex$skyMergeClose(RenderPass var1, Operation<Void> hex$original) {
       SkyRendererHooks.method09493(var1);
    }
 }

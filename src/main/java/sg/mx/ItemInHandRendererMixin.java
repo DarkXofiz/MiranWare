@@ -1,5 +1,7 @@
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -63,24 +65,24 @@ public abstract class ItemInHandRendererMixin {
       return ItemInHandRendererHooks.field11293 ? var1 : HeldItemRenderHooks.method05665(var6, this.minecraft, var1);
    }
 
-   @Redirect(method = "swingArm", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V"))
-   private void swingArmTranslate(PoseStack var1, float var2, float var3, float var4) {
+   @WrapOperation(method = "swingArm", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V"))
+   private void swingArmTranslate(PoseStack var1, float var2, float var3, float var4, Operation<Void> hex$original) {
       SwingTransformEvent.field01060.method00536(var1, var2, var3, var4);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "swingArm",
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/client/renderer/FirstPersonHandsAndItemsRenderer;applyItemArmAttackTransform(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/entity/HumanoidArm;F)V"
       )
    )
-   private void swingArm(FirstPersonHandsAndItemsRenderer var1, PoseStack var2, HumanoidArm var3, float var4) {
+   private void swingArm(FirstPersonHandsAndItemsRenderer var1, PoseStack var2, HumanoidArm var3, float var4, Operation<Void> hex$original) {
       SwingTransformEvent.field01060.method00534(var2, var3, var4, () -> this.applyItemArmAttackTransform(var2, var3, var4));
    }
 
-   @Redirect(method = "applyItemArmTransform", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V"))
-   private void applyEquipOffset(PoseStack var1, float var2, float var3, float var4, @Local(ordinal = 0) int var5, @Local(argsOnly = true) float var6) {
+   @WrapOperation(method = "applyItemArmTransform", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V"))
+   private void applyEquipOffset(PoseStack var1, float var2, float var3, float var4, Operation<Void> hex$original, @Local(ordinal = 0) int var5,@Local(argsOnly = true) float var6) {
       SwingTransformEvent.field01060.method00535(var1, var2, var3, var4, var5, var6);
    }
 

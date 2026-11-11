@@ -1,6 +1,8 @@
 // Original binary: sg/mx/SOkjCf1r0jpespDg
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.InteractionHand;
@@ -30,11 +32,11 @@ public abstract class MinecraftMixin_1215 {
       }
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "startUseItem",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;swing(Lnet/minecraft/world/InteractionHand;)V")
    )
-   private void hmiDoItemUse(LocalPlayer var1, InteractionHand var2) {
+   private void hmiDoItemUse(LocalPlayer var1, InteractionHand var2, Operation<Void> hex$original) {
       if (var1 instanceof PlayerAnimationAccess var3) {
          if (var2 == InteractionHand.MAIN_HAND) {
             var3.hMI5_0$resetMainHandSwing(true);

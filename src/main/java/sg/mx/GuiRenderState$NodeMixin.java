@@ -1,6 +1,8 @@
 // Original binary: sg/mx/2b0Xxh28vqn4OGpe
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import java.util.ArrayList;
 import net.minecraft.client.renderer.state.gui.GuiRenderState.Node;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,18 +13,18 @@ import sg.ec.GuiNodeListFactory;
 // $VF: Compiled from s
 @Mixin(Node.class)
 public class GuiRenderState$NodeMixin {
-   @Redirect(method = "addGlyph", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
-   private ArrayList hex$presizeGlyphs() {
+   @WrapOperation(method = "addGlyph", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
+   private ArrayList hex$presizeGlyphs(Operation<ArrayList> hex$original) {
       return GuiNodeListFactory.method03304();
    }
 
-   @Redirect(method = "addGuiElement", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
-   private ArrayList hex$presizeElements() {
+   @WrapOperation(method = "addGuiElement", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
+   private ArrayList hex$presizeElements(Operation<ArrayList> hex$original) {
       return GuiNodeListFactory.method03305();
    }
 
-   @Redirect(method = "addText", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
-   private ArrayList hex$presizeText() {
+   @WrapOperation(method = "addText", at = @At(value = "NEW", target = "java/util/ArrayList"), require = 0)
+   private ArrayList hex$presizeText(Operation<ArrayList> hex$original) {
       return GuiNodeListFactory.method03306();
    }
 }

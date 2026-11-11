@@ -1,6 +1,8 @@
 // Original binary: sg/mx/A29TaMbnSAWtRkh6
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.renderpearl.api.buffers.GpuBufferSlice;
 import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import com.mojang.blaze3d.pipeline.RenderTarget;
@@ -92,8 +94,8 @@ public class GuiRendererMixin {
       }
    }
 
-   @Redirect(method = "executeDraw", at = @At(value = "INVOKE", target = "Lcom/mojang/renderpearl/api/commands/RenderPass;drawIndexed(IIIII)V"))
-   private void hex_skipEmptyScissorDraw(RenderPass var1, int var2, int var3, int var4, int var5, int var6) {
+   @WrapOperation(method = "executeDraw", at = @At(value = "INVOKE", target = "Lcom/mojang/renderpearl/api/commands/RenderPass;drawIndexed(IIIII)V"))
+   private void hex_skipEmptyScissorDraw(RenderPass var1, int var2, int var3, int var4, int var5, int var6, Operation<Void> hex$original) {
       if (this.hex_emptyScissor) {
          this.hex_emptyScissor = false;
       } else {
@@ -101,14 +103,14 @@ public class GuiRendererMixin {
       }
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "draw",
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/client/gui/render/GuiRenderer;executeDrawRange(Ljava/util/function/Supplier;Lcom/mojang/blaze3d/pipeline/RenderTarget;Lcom/mojang/renderpearl/api/buffers/GpuBufferSlice;II)V"
       )
    )
-   private void hex_captureBeforeClientScreen(GuiRenderer var1, Supplier<String> var2, RenderTarget var3, GpuBufferSlice var4, int var5, int var6) {
+   private void hex_captureBeforeClientScreen(GuiRenderer var1, Supplier<String> var2, RenderTarget var3, GpuBufferSlice var4, int var5, int var6, Operation<Void> hex$original) {
       int var7 = var5;
       int var8 = 0;
 

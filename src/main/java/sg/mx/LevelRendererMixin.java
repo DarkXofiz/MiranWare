@@ -1,6 +1,8 @@
 // Original binary: sg/mx/MwmyboJtUstIjKmH
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.renderpearl.api.buffers.GpuBufferSlice;
@@ -100,14 +102,14 @@ public abstract class LevelRendererMixin implements LevelRendererAccess {
       );
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "blitEntityOutline",
       at = @At(
          value = "INVOKE",
          target = "Lcom/mojang/blaze3d/pipeline/RenderTarget;blitAndBlendToTexture(Lcom/mojang/renderpearl/api/textures/GpuTextureView;Lcom/mojang/renderpearl/api/textures/GpuTextureView;)V"
       )
    )
-   private void doEntityOutline(RenderTarget var1, GpuTextureView var2, GpuTextureView var3) {
+   private void doEntityOutline(RenderTarget var1, GpuTextureView var2, GpuTextureView var3, Operation<Void> hex$original) {
       LevelRendererHooks.method08953(var1, var2, var3);
    }
 

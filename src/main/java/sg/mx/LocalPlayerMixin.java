@@ -1,6 +1,8 @@
 // Original binary: sg/mx/4dLfMuv1yo87NYnt
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.Minecraft;
@@ -162,8 +164,8 @@ public abstract class LocalPlayerMixin {
       return !this.owner() ? var1 : PreMovementPacketEvent.field17844.method07320(var1);
    }
 
-   @Redirect(method = "modifyInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
-   private boolean tickMovement(LocalPlayer var1) {
+   @WrapOperation(method = "modifyInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
+   private boolean tickMovement(LocalPlayer var1, Operation<Boolean> hex$original) {
       return !this.owner() ? var1.isUsingItem() : ItemUseSlowdownEvent.field19179.method08337(var1.isUsingItem());
    }
 
@@ -192,22 +194,22 @@ public abstract class LocalPlayerMixin {
       return this.owner() ? var1 : ((LocalPlayer)(Object)this).isSpectator();
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"aiStep", "handlePortalTransitionEffect"},
       at = @At(value = "FIELD", target = "Lnet/minecraft/client/Minecraft;screen:Lnet/minecraft/client/gui/screens/Screen;", opcode = 180)
    )
-   private Screen isolateBotScreen(net.minecraft.client.Minecraft var1) {
+   private Screen isolateBotScreen(net.minecraft.client.Minecraft var1, Operation<Screen> hex$original) {
       return this.owner() ? var1.screen : null;
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "handlePortalTransitionEffect",
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/client/sounds/SoundManager;play(Lnet/minecraft/client/resources/sounds/SoundInstance;)Lnet/minecraft/client/sounds/SoundEngine$PlayResult;"
       )
    )
-   private PlayResult suppressBotPortalSound(SoundManager var1, SoundInstance var2) {
+   private PlayResult suppressBotPortalSound(SoundManager var1, SoundInstance var2, Operation<PlayResult> hex$original) {
       return !this.owner() ? PlayResult.NOT_STARTED : var1.play(var2);
    }
 
@@ -229,22 +231,22 @@ public abstract class LocalPlayerMixin {
       return RaycastEvent.field09341.method04124(var0);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"onSyncedDataUpdated", "updateIsUnderwater()Z", "startRiding(Lnet/minecraft/world/entity/Entity;ZZ)Z"},
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/client/sounds/SoundManager;play(Lnet/minecraft/client/resources/sounds/SoundInstance;)Lnet/minecraft/client/sounds/SoundEngine$PlayResult;"
       )
    )
-   private PlayResult hexSuppressBotSound(SoundManager var1, SoundInstance var2) {
+   private PlayResult hexSuppressBotSound(SoundManager var1, SoundInstance var2, Operation<PlayResult> hex$original) {
       return !this.owner() ? PlayResult.NOT_STARTED : var1.play(var2);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "aiStep",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/Tutorial;onInput(Lnet/minecraft/client/player/ClientInput;)V")
    )
-   private void hexSuppressBotTutorial(Tutorial var1, ClientInput var2) {
+   private void hexSuppressBotTutorial(Tutorial var1, ClientInput var2, Operation<Void> hex$original) {
       if (this.owner()) {
          var1.onInput(var2);
       }

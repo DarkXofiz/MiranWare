@@ -1,6 +1,8 @@
 // Original binary: sg/mx/kIv9efjd31h8rLnX
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.renderer.texture.SpriteContents;
 import net.minecraft.util.ARGB;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class SpriteContentsMixin_1277 {
    private static final int ITEM_ALPHA_CUTOFF = 26;
 
-   @Redirect(method = "isTransparent(III)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/ARGB;alpha(I)I"))
-   private int hex$treatFaintAlphaAsTransparent(int var1) {
+   @WrapOperation(method = "isTransparent(III)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/ARGB;alpha(I)I"))
+   private int hex$treatFaintAlphaAsTransparent(int var1, Operation<Integer> hex$original) {
       int var2 = ARGB.alpha(var1);
       return var2 < 26 ? 0 : var2;
    }

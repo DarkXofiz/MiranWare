@@ -1,6 +1,8 @@
 // Original binary: sg/mx/CoZqc7THtqquvzpi
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import hex.api.baritone.api.utils.BlockOptionalMeta;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.ReloadableServerRegistries.Holder;
@@ -17,14 +19,14 @@ public abstract class LootContext$BuilderMixin {
    @Shadow
    public abstract ServerLevel getLevel();
 
-   @Redirect(
+   @WrapOperation(
       method = "create",
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/server/MinecraftServer;reloadableRegistries()Lnet/minecraft/server/ReloadableServerRegistries$Holder;"
       )
    )
-   private Holder hex$create(MinecraftServer var1) {
+   private Holder hex$create(MinecraftServer var1, Operation<Holder> hex$original) {
       if (var1 != null) {
          return var1.reloadableRegistries();
       } else {

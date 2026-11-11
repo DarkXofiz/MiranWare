@@ -1,6 +1,8 @@
 // Original binary: sg/mx/G3vicJCEV3ZQLrrl
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.renderer.culling.Frustum;
 import org.joml.FrustumIntersection;
 import org.spongepowered.asm.mixin.Final;
@@ -23,8 +25,8 @@ public class FrustumMixin {
    @Shadow
    private double camZ;
 
-   @Redirect(method = "isVisible", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/culling/Frustum;cubeInFrustum(DDDDDD)I"))
-   private int hex$testAab(Frustum var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   @WrapOperation(method = "isVisible", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/culling/Frustum;cubeInFrustum(DDDDDD)I"))
+   private int hex$testAab(Frustum var1, double var2, double var4, double var6, double var8, double var10, double var12, Operation<Integer> hex$original) {
       return FrustumHooks.method10821(this.intersection, this.camX, this.camY, this.camZ, var2, var4, var6, var8, var10, var12);
    }
 }

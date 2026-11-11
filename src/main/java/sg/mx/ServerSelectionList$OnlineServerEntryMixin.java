@@ -1,6 +1,8 @@
 // Original binary: sg/mx/XU1WoKnQCR77bGoF
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.multiplayer.ServerSelectionList;
@@ -50,11 +52,11 @@ public class ServerSelectionList$OnlineServerEntryMixin implements MultiplayerSe
       }
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"extractContent", "keyPressed", "mouseClicked"},
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/multiplayer/ServerSelectionList;children()Ljava/util/List;")
    )
-   private List<Entry> hex$userEntries(ServerSelectionList var1) {
+   private List<Entry> hex$userEntries(ServerSelectionList var1, Operation<List<Entry>> hex$original) {
       var var2 = var1.children();
       int var3 = 0;
 
@@ -69,11 +71,11 @@ public class ServerSelectionList$OnlineServerEntryMixin implements MultiplayerSe
       return var3 == 0 ? var2 : var2.subList(var3, var2.size());
    }
 
-   @Redirect(
+   @WrapOperation(
       method = {"extractContent", "keyPressed", "mouseClicked"},
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ServerList;size()I")
    )
-   private int hex$userServerCount(ServerList var1) {
+   private int hex$userServerCount(ServerList var1, Operation<Integer> hex$original) {
       return this.hex$promoted() ? 0 : var1.size();
    }
 

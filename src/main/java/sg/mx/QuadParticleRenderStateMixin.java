@@ -1,6 +1,8 @@
 // Original binary: sg/mx/A9lgdI20A1gsHMZl
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import java.util.Map;
 import java.util.function.Function;
 import net.minecraft.client.particle.SingleQuadParticle.Layer;
@@ -18,11 +20,11 @@ public class QuadParticleRenderStateMixin {
    @Unique
    private Object hex$storage;
 
-   @Redirect(
+   @WrapOperation(
       method = "add",
       at = @At(value = "INVOKE", target = "Ljava/util/Map;computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;")
    )
-   private Object hex$cachedStorage(Map<Object, Object> var1, Object var2, Function<Object, Object> var3) {
+   private Object hex$cachedStorage(Map<Object, Object> var1, Object var2, Function<Object, Object> var3, Operation<Object> hex$original) {
       if (var2 == this.hex$layer) {
          return this.hex$storage;
       }

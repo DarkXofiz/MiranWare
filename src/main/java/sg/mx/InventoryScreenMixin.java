@@ -1,6 +1,8 @@
 // Original binary: sg/mx/75DbtD0CzGAjw0Gn
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
@@ -55,7 +57,7 @@ public abstract class InventoryScreenMixin extends AbstractRecipeBookScreen<Inve
       ContainerAnimationEvent.field11706.method05385(var6, var7, this, var1, this.anim());
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "extractBackground",
       at = @At(
          value = "INVOKE",
@@ -63,8 +65,7 @@ public abstract class InventoryScreenMixin extends AbstractRecipeBookScreen<Inve
       )
    )
    private void redirectDrawEntity(
-      GuiGraphics var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, LivingEntity var10
-   ) {
+      GuiGraphics var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, LivingEntity var10, Operation<Void> hex$original) {
       InventoryEntityRenderHook.method00748(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 

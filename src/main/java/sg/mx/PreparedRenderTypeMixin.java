@@ -1,6 +1,8 @@
 // Original binary: sg/mx/cLyao7zqLFSJlqQK
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.renderpearl.api.commands.CommandEncoder;
 import com.mojang.renderpearl.api.commands.RenderPass;
 import com.mojang.renderpearl.api.textures.GpuTextureView;
@@ -17,7 +19,7 @@ import sg.ec.EntityMaskRenderHooks;
 // $VF: Compiled from s
 @Mixin(PreparedRenderType.class)
 public class PreparedRenderTypeMixin {
-   @Redirect(
+   @WrapOperation(
       method = "drawFromBuffer(Lcom/mojang/renderpearl/api/buffers/GpuBuffer;Lcom/mojang/renderpearl/api/buffers/GpuBuffer;Lcom/mojang/renderpearl/api/pipeline/IndexType;III)V",
       require = 0,
       at = @At(
@@ -26,17 +28,16 @@ public class PreparedRenderTypeMixin {
       )
    )
    private RenderPass hex$worldAcquire(
-      CommandEncoder var1, Supplier<String> var2, GpuTextureView var3, Optional<Vector4fc> var4, GpuTextureView var5, OptionalDouble var6
-   ) {
+      CommandEncoder var1, Supplier<String> var2, GpuTextureView var3, Optional<Vector4fc> var4, GpuTextureView var5, OptionalDouble var6, Operation<RenderPass> hex$original) {
       return EntityMaskRenderHooks.method04012(var1, var2, var3, var4, var5, var6);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "drawFromBuffer(Lcom/mojang/renderpearl/api/buffers/GpuBuffer;Lcom/mojang/renderpearl/api/buffers/GpuBuffer;Lcom/mojang/renderpearl/api/pipeline/IndexType;III)V",
       require = 0,
       at = @At(value = "INVOKE", target = "Lcom/mojang/renderpearl/api/commands/RenderPass;close()V")
    )
-   private void hex$worldClose(RenderPass var1) {
+   private void hex$worldClose(RenderPass var1, Operation<Void> hex$original) {
       EntityMaskRenderHooks.method04013(var1);
    }
 }

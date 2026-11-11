@@ -1,6 +1,8 @@
 // Original binary: sg/mx/1zTNYMwWGz443fKG
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -55,16 +57,16 @@ public abstract class PlayerMixin extends LivingEntity implements LastHealthAcce
       }
    }
 
-   @Redirect(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isSprinting()Z"))
-   private boolean attackWithServerKnownSprint(Player var1) {
+   @WrapOperation(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isSprinting()Z"))
+   private boolean attackWithServerKnownSprint(Player var1, Operation<Boolean> hex$original) {
       return var1 instanceof LocalPlayer && !BotEntityUtils.method03835(var1) ? ((LocalPlayerMixin_1170)(Object)var1).wasSprinting() : var1.isSprinting();
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "causeExtraKnockback",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V")
    )
-   private void onSetVelocity(Player var1, Vec3 var2) {
+   private void onSetVelocity(Player var1, Vec3 var2, Operation<Void> hex$original) {
       if (BotEntityUtils.method03835(var1)) {
          var1.setDeltaMovement(var2);
       } else {
@@ -72,8 +74,8 @@ public abstract class PlayerMixin extends LivingEntity implements LastHealthAcce
       }
    }
 
-   @Redirect(method = "causeExtraKnockback", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;setSprinting(Z)V"))
-   private void onSetSprinting(Player var1, boolean var2) {
+   @WrapOperation(method = "causeExtraKnockback", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;setSprinting(Z)V"))
+   private void onSetSprinting(Player var1, boolean var2, Operation<Void> hex$original) {
       if (BotEntityUtils.method03835(var1)) {
          var1.setSprinting(var2);
       } else {

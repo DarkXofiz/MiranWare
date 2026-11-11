@@ -1,6 +1,8 @@
 // Original binary: sg/mx/TE8CmUEWucG4SpOn
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.blaze3d.pipeline.RenderTarget;
 import net.minecraft.client.gui.render.GuiRenderer;
 import net.minecraft.client.renderer.GameRenderer;
@@ -24,11 +26,11 @@ public class GuiRendererMixin_1217 {
       HudRenderTargetHooks.method06929();
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "draw",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GameRenderer;mainRenderTarget()Lcom/mojang/blaze3d/pipeline/RenderTarget;")
    )
-   private RenderTarget hex$redirectTarget(GameRenderer var1) {
+   private RenderTarget hex$redirectTarget(GameRenderer var1, Operation<RenderTarget> hex$original) {
       return HudRenderTargetHooks.method06928(var1);
    }
 }

@@ -1,6 +1,8 @@
 // Original binary: sg/mx/UtXH2EjZpoyushXt
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.BlockPos;
@@ -26,7 +28,7 @@ public abstract class ClientLevelMixin {
       WorldTimeTickEvent.field22027.method09736((ClientLevel)(Object)this, var1);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "playSound",
       at = @At(
          value = "NEW",
@@ -34,8 +36,7 @@ public abstract class ClientLevelMixin {
       )
    )
    private SimpleSoundInstance onPlaySounds(
-      SoundEvent var1, SoundSource var2, float var3, float var4, RandomSource var5, double var6, double var8, double var10
-   ) {
+      SoundEvent var1, SoundSource var2, float var3, float var4, RandomSource var5, double var6, double var8, double var10, Operation<SimpleSoundInstance> hex$original) {
       return WorldSoundEvent.field20209.method08879(WorldSoundEvent.Nested247.method08882(var1), var1, var2, var3, var4, var5, var6, var8, var10);
    }
 

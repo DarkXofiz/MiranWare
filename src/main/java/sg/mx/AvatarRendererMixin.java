@@ -1,6 +1,8 @@
 // Original binary: sg/mx/5vPRNAa8Q0Aeg6Ti
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -31,7 +33,7 @@ public abstract class AvatarRendererMixin {
       NameTagRenderEvent.field05154.method02159(((EntityRenderStateAccess)var1).getHexEntity(), var5);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "renderHand",
       at = @At(
          value = "INVOKE",
@@ -39,8 +41,7 @@ public abstract class AvatarRendererMixin {
       )
    )
    private void hexRenderTransparentHand(
-      SubmitNodeCollector var1, ModelPart var2, PoseStack var3, RenderType var4, int var5, int var6, @Nullable net.minecraft.client.renderer.texture.UvMapping var7
-   ) {
+      SubmitNodeCollector var1, ModelPart var2, PoseStack var3, RenderType var4, int var5, int var6, @Nullable net.minecraft.client.renderer.texture.UvMapping var7, Operation<Void> hex$original) {
       var1.submitModelPart(var2, var3, var4, var5, var6, var7, HeldItemRenderHooks.method05666(-1), 0);
    }
 }

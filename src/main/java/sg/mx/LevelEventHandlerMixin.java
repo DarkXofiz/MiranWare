@@ -1,6 +1,8 @@
 // Original binary: sg/mx/hNlrQtWAsCd4jzTx
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.LevelEventHandler;
 import net.minecraft.core.BlockPos;
@@ -20,7 +22,7 @@ public abstract class LevelEventHandlerMixin {
    private static final int EXPERIENCE_BOTTLE_COLOR = -13083194;
    private static final int field28033 = -13083194;
 
-   @Redirect(
+   @WrapOperation(
       method = "levelEvent",
       at = @At(
          value = "INVOKE",
@@ -28,8 +30,7 @@ public abstract class LevelEventHandlerMixin {
       )
    )
    private void redirectExperienceBottleSound(
-      ClientLevel var1, BlockPos var2, SoundEvent var3, SoundSource var4, float var5, float var6, boolean var7, int var8, BlockPos var9, int var10
-   ) {
+      ClientLevel var1, BlockPos var2, SoundEvent var3, SoundSource var4, float var5, float var6, boolean var7, int var8, BlockPos var9, int var10, Operation<Void> hex$original) {
       if (var8 == 2002 && var10 == field28033 && var3.equals(SoundEvents.SPLASH_POTION_BREAK)) {
          var5 = WorldSoundEvent.field20209.method08875(WorldSoundEvent.Nested247.EXPERIENCE_BOTTLE, var5, Vec3.atCenterOf(var2));
       }

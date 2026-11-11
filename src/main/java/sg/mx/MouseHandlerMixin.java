@@ -1,6 +1,8 @@
 // Original binary: sg/mx/YgvJLGLwsCDSikbH
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.MouseHandler;
 import net.minecraft.client.input.MouseButtonInfo;
@@ -55,13 +57,13 @@ public abstract class MouseHandlerMixin {
       }
    }
 
-   @Redirect(method = "turnPlayer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;turn(DD)V"))
-   private void onMouse(LocalPlayer var1, double var2, double var4) {
+   @WrapOperation(method = "turnPlayer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;turn(DD)V"))
+   private void onMouse(LocalPlayer var1, double var2, double var4, Operation<Void> hex$original) {
       MouseTurnEvent.field09721.method04332(var1, var2, var4);
    }
 
-   @Redirect(method = "onScroll", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"))
-   private void onScrollSelectSlot(Inventory var1, int var2) {
+   @WrapOperation(method = "onScroll", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;setSelectedSlot(I)V"))
+   private void onScrollSelectSlot(Inventory var1, int var2, Operation<Void> hex$original) {
       MouseHandlerHooks.method06579(var1, var2);
    }
 }

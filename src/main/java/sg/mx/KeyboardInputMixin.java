@@ -1,6 +1,8 @@
 // Original binary: sg/mx/AcCniwYYmHgo23q2
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.client.Options;
 import net.minecraft.client.player.KeyboardInput;
 import net.minecraft.world.entity.player.Input;
@@ -25,18 +27,18 @@ public abstract class KeyboardInputMixin {
       PlayerInputEvent.field06252.method02727(this.options);
    }
 
-   @Redirect(method = "tick", at = @At(value = "NEW", target = "Lnet/minecraft/world/entity/player/Input;"))
-   public Input redirectInput(boolean var1, boolean var2, boolean var3, boolean var4, boolean var5, boolean var6, boolean var7) {
+   @WrapOperation(method = "tick", at = @At(value = "NEW", target = "Lnet/minecraft/world/entity/player/Input;"))
+   public Input redirectInput(boolean var1, boolean var2, boolean var3, boolean var4, boolean var5, boolean var6, boolean var7, Operation<Input> hex$original) {
       return PlayerInputEvent.field06252.method11171();
    }
 
-   @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/KeyboardInput;calculateImpulse(ZZ)F", ordinal = 0))
-   public float forward(boolean var1, boolean var2) {
+   @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/KeyboardInput;calculateImpulse(ZZ)F", ordinal = 0))
+   public float forward(boolean var1, boolean var2, Operation<Float> hex$original) {
       return PlayerInputEvent.field06252.method11161();
    }
 
-   @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/KeyboardInput;calculateImpulse(ZZ)F", ordinal = 1))
-   public float strafe(boolean var1, boolean var2) {
+   @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/KeyboardInput;calculateImpulse(ZZ)F", ordinal = 1))
+   public float strafe(boolean var1, boolean var2, Operation<Float> hex$original) {
       return PlayerInputEvent.field06252.method11166();
    }
 }

@@ -1,6 +1,8 @@
 // Original binary: sg/mx/hjpakMTctD5kvQx5
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import java.util.Comparator;
 import java.util.List;
 import net.minecraft.client.renderer.state.gui.GuiElementRenderState;
@@ -24,8 +26,8 @@ public abstract class GuiRenderStateMixin_1265 implements GuiRenderStateAccess {
       return this.current;
    }
 
-   @Redirect(method = "lambda$sortElements$0", at = @At(value = "INVOKE", target = "Ljava/util/List;sort(Ljava/util/Comparator;)V"))
-   private static void hex$fastSort(List<GuiElementRenderState> var0, Comparator<GuiElementRenderState> var1) {
+   @WrapOperation(method = "lambda$sortElements$0", at = @At(value = "INVOKE", target = "Ljava/util/List;sort(Ljava/util/Comparator;)V"))
+   private static void hex$fastSort(List<GuiElementRenderState> var0, Comparator<GuiElementRenderState> var1, Operation<Void> hex$original) {
       GuiRenderStateHooks.method09343(var0);
    }
 }

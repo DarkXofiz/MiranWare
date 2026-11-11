@@ -1,6 +1,8 @@
 // Original binary: sg/mx/nx0LQib2oUTsJz2P
 package sg.mx;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.EntityModel;
@@ -78,30 +80,30 @@ public abstract class LivingEntityRendererMixin_1290<T extends LivingEntity, S e
       return LivingEntityRendererHooks.method10659(var2, var1);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getXRot(F)F")
    )
-   private float updateRenderStatePitch(LivingEntity var1, float var2) {
+   private float updateRenderStatePitch(LivingEntity var1, float var2, Operation<Float> hex$original) {
       return LivingEntityRendererHooks.method10655(var1, var2);
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V",
       at = @At(
          value = "INVOKE",
          target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;solveBodyRot(Lnet/minecraft/world/entity/LivingEntity;FF)F"
       )
    )
-   private float updateRenderStateYawBody(LivingEntity var1, float var2, float var3) {
+   private float updateRenderStateYawBody(LivingEntity var1, float var2, float var3, Operation<Float> hex$original) {
       return LivingEntityRendererHooks.method10654(var1, var3, solveBodyRot(var1, var2, var3));
    }
 
-   @Redirect(
+   @WrapOperation(
       method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;wrapDegrees(F)F")
    )
-   private float updateRenderStateYawHead(float var1, @Local(argsOnly = true) float var2, @Local(argsOnly = true) T var3) {
+   private float updateRenderStateYawHead(float var1, Operation<Float> hex$original, @Local(argsOnly = true) float var2,@Local(argsOnly = true) T var3) {
       return LivingEntityRendererHooks.method10656(var3, var2, var1);
    }
 
