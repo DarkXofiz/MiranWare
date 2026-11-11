@@ -476,7 +476,7 @@ public final class RotationModelRepository {
             this.field08082 = field08096;
             this.field08088 = false;
             this.method03664();
-         } catch (Exception var8) {
+         } catch (Throwable var8) {
          }
       }
    }

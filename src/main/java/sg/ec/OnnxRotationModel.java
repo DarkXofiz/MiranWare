@@ -30,7 +30,16 @@ public final class OnnxRotationModel {
    private static final int field01572 = 40;
    private final int field01573;
    private final String field01574;
-   private final OrtEnvironment field01575 = OrtEnvironment.getEnvironment();
+   private final OrtEnvironment field01575 = safeEnvironment();
+
+   private static OrtEnvironment safeEnvironment() {
+      try {
+         return OrtEnvironment.getEnvironment();
+      } catch (Throwable var0) {
+         System.err.println("[MiranWare] ONNX Runtime yuklenemedi, rotasyon modeli devre disi: " + var0);
+         return null;
+      }
+   }
    private final ArrayDeque<float[]> field01576 = new ArrayDeque<>();
    private final Random field01577 = new Random();
    private final OnnxRotationModel.Nested20 field01578 = new OnnxRotationModel.Nested20();
@@ -385,6 +394,10 @@ public final class OnnxRotationModel {
    }
 
    public synchronized void method00701(byte[] var1, String var2) throws OrtException {
+      if (this.field01575 == null) {
+         throw new OrtException(OrtException.OrtErrorCode.ORT_FAIL, "ONNX Runtime yuklenemedi");
+      }
+
       this.method00708();
       SessionOptions var3 = new SessionOptions();
       var3.setOptimizationLevel(OptLevel.ALL_OPT);
@@ -620,6 +633,10 @@ public final class OnnxRotationModel {
    }
 
    public synchronized void method00718(Path var1) throws OrtException {
+      if (this.field01575 == null) {
+         throw new OrtException(OrtException.OrtErrorCode.ORT_FAIL, "ONNX Runtime yuklenemedi");
+      }
+
       this.method00708();
       SessionOptions var2 = new SessionOptions();
       var2.setOptimizationLevel(OptLevel.ALL_OPT);

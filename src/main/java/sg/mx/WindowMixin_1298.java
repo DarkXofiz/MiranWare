@@ -17,7 +17,7 @@ public class WindowMixin_1298 {
    }
 
    @Inject(method = "onResize", at = @At("TAIL"))
-   private void onWindowSizeChanged(int var1, int var2, CallbackInfo var3) {
+   private void onWindowSizeChanged(long var1, int var2, int var3, CallbackInfo var4) {
       DragManager.INSTANCE.method05203((Window)(Object)this);
    }
 }
